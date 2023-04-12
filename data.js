@@ -50,6 +50,32 @@ module.exports = function () {
         Gender_id: 2,
       },
     ],
+    reviews:[
+      {
+        id:1,
+        content:"excelente servicio",
+        date:"2023-04-10",
+        likes:4,
+        Client_id: 2,
+        Psychologist_id:3,
+      },
+      {
+        id:2,
+        content:"trato muy agradable",
+        date:"2022-07-22",
+        likes:3,
+        Client_id: 4,
+        Psychologist_id:2,
+      },
+      {
+        id:3,
+        content:"muy recomendado",
+        date:"2022-02-18",
+        likes:5,
+        Client_id: 4,
+        Psychologist_id:1,
+      }
+    ]
   };
   return data;
 };
