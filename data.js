@@ -75,7 +75,38 @@ module.exports = function () {
         Client_id: 4,
         Psychologist_id:1,
       }
-    ]
+    ],
+        psychologists: [
+      {
+        id:1,
+        userNamePsi: "Jorge",
+        passwordPsi: "170902jorge",
+        namesPsi:"Jorge Miguel",
+        lastNamesPsi:"Chavez Perez",
+        emailAddressPsi:"jorge.h.iguel@gmail.com",
+        phoneNumberPsi:"917081429",
+        genderPsi:"Masculino",
+        agePsi:27,
+        ratingPsi:4,
+        userStatus_Id:1,
+        speciality_id:2,
+      },
+      {
+        id:2,
+        userNamePsi: "Estela",
+        passwordPsi: "213402estel",
+        namesPsi:"Esteli Rosa",
+        lastNamesPsi:"Serna Huamani",
+        emailAddressPsi:"estelita.y.tuo@gmail.com",
+        phoneNumberPsi:"963233429",
+        genderPsi:"Femenino",
+        agePsi:30,
+        ratingPsi:3,
+        userStatus_Id:2,
+        speciality_id:3,
+      }
+
+    ],
   };
   return data;
 };
