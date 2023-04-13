@@ -1,1 +1,73 @@
-<p>payment-insertar works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form [formGroup]="form" (submit)="aceptar()">
+    <mat-form-field class="example-full-width">
+      <mat-label>ID</mat-label>
+      <input matInput placeholder="ID" formControlName="id">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Código de Pago</mat-label>
+      <input matInput placeholder="Código de Pago" formControlName="paymentCode">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Fecha de Pago</mat-label>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="date"
+        [max]="maxFecha">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Tarjeta</mat-label>
+      <input matInput placeholder="Num Tarjeta" formControlName="cardNumber">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Código Cliente</mat-label>
+      <input matInput placeholder="Num Tarjeta" formControlName="Client_id">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Código Psicólogo</mat-label>
+      <input matInput placeholder="Num Tarjeta" formControlName="Psychologist_id">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Estado</mat-label>
+      <mat-select placeholder="Elija Estado" formControlName="active">
+        <mat-option value="1">Activo</mat-option>
+        <mat-option value="0">Inactivo</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+<!--
+    <mat-form-field appearance="fill">
+      <mat-label>Género</mat-label>
+      <mat-select placeholder="Elija género" formControlName="genderPet">
+        <mat-option value="Macho">Macho</mat-option>
+        <mat-option value="Hembra">Hembra</mat-option>
+      </mat-select>
+
+    </mat-form-field>
+-->
+
+    <button mat-button color="primary">Aceptar</button>
+    <button mat-button color="warn" routerLink="/pets">Cancelar</button>
+    <p>{{mensaje}}</p>
+
+  </form>
+</body>
+
+</html>
