@@ -5,6 +5,7 @@ import * as moment from 'moment';
 import { ReviewService } from 'src/app/service/review.service';
 import { Router } from '@angular/router';
 
+let date: Date = new Date();//para asignar la fecha de manera automatica
 
 @Component({
   selector: 'app-review-insert',
@@ -34,7 +35,8 @@ export class ReviewInsertComponent implements OnInit{
 
     this.review.id = this.form.value['id'];
     this.review.content = this.form.value['content'];
-    this.review.date = this.form.value['date'];
+    //this.review.date = this.form.value['date'];
+    this.review.date = date;
     this.review.likes = this.form.value['likes'];
     this.review.Client_id = this.form.value['Client_id'];
     this.review.Psychologist_id = this.form.value['Psychologist_id'];

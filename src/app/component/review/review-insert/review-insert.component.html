@@ -14,22 +14,14 @@
             <mat-label>id</mat-label>
             <input matInput placeholder="id" formControlName="id">
         </mat-form-field>
+        <br>
 
 
         <mat-form-field class="example-full-width">
             <mat-label>Comment</mat-label>
             <input matInput placeholder="content" formControlName="content">
         </mat-form-field>
-
-
-        <mat-form-field appearance="fill">
-          <mat-label>Comment Date</mat-label>
-          <input matInput [matDatepicker]="picker" placeholder="Choose a date"
-          formControlName="date" [max]="maxFecha">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-
+        <br>
 
         <mat-form-field appearance="fill">
             <mat-label>Likes</mat-label>
@@ -41,22 +33,25 @@
                 <mat-option value="5">5</mat-option>
             </mat-select>
         </mat-form-field>
+        <br>
 
 
         <mat-form-field class="example-full-width">
           <mat-label>Client</mat-label>
           <input matInput placeholder="Client_id" formControlName="Client_id">
         </mat-form-field>
+        <br>
 
 
         <mat-form-field class="example-full-width">
           <mat-label>Psychologist</mat-label>
           <input matInput placeholder="Psychologist_id" formControlName="Psychologist_id">
         </mat-form-field>
+        <br>
 
 
-        <button mat-button color="primary">Aceptar</button>
-        <button mat-button color="warn" routerLink="/reviews">Cancelar</button>
+        <button mat-raised-button color="primary">Aceptar</button>
+        <button mat-raised-button color="warn" routerLink="/reviews">Cancelar</button>
         <p>{{mensaje}}</p>
 
     </form>
