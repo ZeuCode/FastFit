@@ -24,7 +24,7 @@ export class ReviewService {
   getList(){
     return this.listChange.asObservable();
   }
-  setList(listaNueva:Review[]){
-    this.listChange.next(listaNueva);
+  setList(NewList:Review[]){
+    this.listChange.next(NewList);
       }
 }
