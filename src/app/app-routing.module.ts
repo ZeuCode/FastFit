@@ -4,6 +4,8 @@ import { HomeComponent } from './component/home/home.component';
 import { ClientComponent } from './component/client/client.component';
 import { ClientListarComponent } from './component/client/client-listar/client-listar.component';
 import { ClientInsertarComponent } from './component/client/client-insertar/client-insertar.component';
+import { PaymentComponent } from './component/payment/payment.component';
+import { PaymentInsertarComponent } from './component/payment/payment-insertar/payment-insertar.component';
 
 const routes: Routes = [
   {
@@ -20,6 +22,12 @@ const routes: Routes = [
       },
     ],
   },
+
+  {
+    path:'payment',component:PaymentComponent,children:[{
+      path:'paymentsinsertar',component:PaymentInsertarComponent,
+    }]
+  }
 ];
 
 @NgModule({

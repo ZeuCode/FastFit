@@ -106,6 +106,26 @@ module.exports = function () {
         speciality_id: 3,
       },
     ],
+payments:[
+      {
+        id:1,
+        paymentCode:"5507866",
+        date:"2023-04-10",
+        cardNumber: "4236178832453296",
+        Client_id: 2,
+        Psychologist_id:3,
+        active: 1,
+      },
+      {
+        id:2,
+        paymentCode:"5507869",
+        date:"2023-04-12",
+        cardNumber: "4236178832453567",
+        Client_id: 3,
+        Psychologist_id:2,
+        active: 1,
+      },
+    ],
   };
   return data;
 };

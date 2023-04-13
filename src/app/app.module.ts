@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClientComponent } from './component/client/client.component';
@@ -20,6 +19,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatNativeDateModule } from '@angular/material/core';
 
+import { PaymentComponent } from './component/payment/payment.component';
+import { PaymentListarComponent } from './component/payment/payment-listar/payment-listar.component';
+import { PaymentInsertarComponent } from './component/payment/payment-insertar/payment-insertar.component';
+
+
 
 @NgModule({
   declarations: [
@@ -28,6 +32,10 @@ import { MatNativeDateModule } from '@angular/material/core';
     ClientListarComponent,
     HomeComponent,
     ClientInsertarComponent,
+    PaymentComponent,
+    PaymentListarComponent,
+    PaymentInsertarComponent,
+
   ],
   imports: [
     BrowserModule,
