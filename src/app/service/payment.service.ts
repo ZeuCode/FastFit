@@ -11,7 +11,7 @@ const base_url = Environment.base
 })
 
 export class PaymentService {
-  private url = `${base_url}/payment`
+  private url = `${base_url}/payments`
   private listaCambio =new Subject<payment[]>
 
   constructor(private Http: HttpClient) { }
