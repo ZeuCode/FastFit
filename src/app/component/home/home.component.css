@@ -3,6 +3,7 @@
   background-color: #fff;
   color: rgba(0,0,0,.87);
   position: relative; /* Asegurarse que el elemento tenga una posición relativa */
+  height: 70px; /* Ajustar la altura del toolbar según tus necesidades */
 }
 
 .mat-toolbar::after {
@@ -42,7 +43,7 @@
 }
 
 .sidenav {
-  width: 220px;
+  width: 200px;
 }
 
 .sidenav .mat-toolbar {
@@ -72,7 +73,7 @@
 
 /* Agrega margen derecho a "icono" para separarlo del "nombre_icono" */
 .icono {
-  font-size: 20px; /* Cambia el tamaño de fuente del ícono a tu preferencia */
+  font-size: 24px; /* Cambia el tamaño de fuente del ícono a tu preferencia */
   display: flex;
   align-items: center;
   margin-right: 4px; /* Puedes ajustar la cantidad de margen a tu preferencia */
@@ -80,7 +81,8 @@
 
 /* Agrega margen izquierdo a "nombre_icono" para separarlo del "icono" */
 .nombre_icono {
-  font-size: 20px; /* Cambia el tamaño de fuente del texto a tu preferencia */
+  font-size: 14px; /* Cambia el tamaño de fuente del texto a tu preferencia */
+  font-weight: 500;
   text-decoration: none;
   color: inherit;
   flex-grow: 1;
