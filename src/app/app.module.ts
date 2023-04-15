@@ -6,6 +6,7 @@ import { ClientComponent } from './component/client/client.component';
 import { ClientListarComponent } from './component/client/client-listar/client-listar.component';
 import { HomeComponent } from './component/home/home.component';
 import { ClientInsertarComponent } from './component/client/client-insertar/client-insertar.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -22,8 +23,11 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { PaymentComponent } from './component/payment/payment.component';
 import { PaymentListarComponent } from './component/payment/payment-listar/payment-listar.component';
 import { PaymentInsertarComponent } from './component/payment/payment-insertar/payment-insertar.component';
-
-
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,6 @@ import { PaymentInsertarComponent } from './component/payment/payment-insertar/p
     PaymentComponent,
     PaymentListarComponent,
     PaymentInsertarComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,12 @@ import { PaymentInsertarComponent } from './component/payment/payment-insertar/p
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+    LayoutModule,
+    MatListModule,
 
   ],
   providers: [],
