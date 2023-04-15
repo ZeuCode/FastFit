@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <form [formGroup]="form" (submit)="aceptar()">
+    <mat-form-field class="example-full-width">
+
+      <mat-label>id</mat-label>
+      <input matInput placeholder="id" formControlName="id">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>date</mat-label>
+      <input matInput [matDatepicker]="picker" placeholder="date" formControlName="date" [max]="maxFecha">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>cliente_id</mat-label>
+      <input matInput placeholder="client_id" formControlName="client_id">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Psychologist_ID</mat-label>
+      <input matInput placeholder="PsychologistID" formControlName="PsychologistID">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>appp</mat-label>
+      <input matInput placeholder="AppointStatusID" formControlName="appointment_id">
+    </mat-form-field>
+
+
+
+    <button mat-button color="primary">Aceptar</button>
+    <button mat-button color="warn" routerLink="/citas">Cancelar</button>
+    <p>{{mensaje}}</p>
+
+  </form>
+</body>
+
+</html>
