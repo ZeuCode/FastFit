@@ -8,22 +8,19 @@ import { HomeComponent } from './component/home/home.component';
 import { ClientInsertarComponent } from './component/client/client-insertar/client-insertar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-
 import { MatSelectModule } from '@angular/material/select';
-
 import { MatTableModule } from '@angular/material/table';
 import { MatNativeDateModule } from '@angular/material/core';
-
 import { PaymentComponent } from './component/payment/payment.component';
 import { PaymentListarComponent } from './component/payment/payment-listar/payment-listar.component';
 import { PaymentInsertarComponent } from './component/payment/payment-insertar/payment-insertar.component';
-
-
+import { CitaComponent } from './component/cita/cita.component';
+import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
+import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-insertar.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +32,10 @@ import { PaymentInsertarComponent } from './component/payment/payment-insertar/p
     PaymentComponent,
     PaymentListarComponent,
     PaymentInsertarComponent,
+    CitaComponent,
+    CitaListarComponent,
+    CitaInsertarComponent,
+
 
   ],
   imports: [

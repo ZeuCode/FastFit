@@ -6,8 +6,11 @@ import { ClientListarComponent } from './component/client/client-listar/client-l
 import { ClientInsertarComponent } from './component/client/client-insertar/client-insertar.component';
 import { PaymentComponent } from './component/payment/payment.component';
 import { PaymentInsertarComponent } from './component/payment/payment-insertar/payment-insertar.component';
+import { CitaComponent } from './component/cita/cita.component';
+import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-insertar.component';
 
 const routes: Routes = [
+
   {
     path: '',
     component: HomeComponent,
@@ -27,7 +30,14 @@ const routes: Routes = [
     path:'payment',component:PaymentComponent,children:[{
       path:'paymentsinsertar',component:PaymentInsertarComponent,
     }]
-  }
+  },
+  {
+    path: 'citas', component: CitaComponent, children: [
+      {
+        path: 'citainsertar', component: CitaInsertarComponent,
+      }
+    ]
+  },
 ];
 
 @NgModule({
