@@ -1,26 +1,53 @@
 
-
-/* Estilo para el título de la barra de herramientas */
-.mat-toolbar h1 {
-  font-size: 48px; /* Cambia el tamaño de fuente a tu preferencia */
-  margin: 0; /* Elimina el margen por defecto del título */
-  padding: 16px; /* Agrega un espacio de relleno alrededor del título */
+.mat-toolbar {
+  background-color: #fff;
+  color: rgba(0,0,0,.87);
+  position: relative; /* Asegurarse que el elemento tenga una posición relativa */
 }
 
+.mat-toolbar::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; /* Ajustar la distancia vertical de la sombra */
+  left: 0;
+  right: 0;
+  height: 2px; /* Ajustar el grosor de la sombra */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.87); /* Ajustar los valores de la sombra a tu preferencia */
+}
+
+
+.toolbar-title {
+  font-size: 48px; /* Cambia el tamaño de fuente a tu preferencia */
+  margin: 0; /* Elimina el margen por defecto del título */
+  padding: 0px; /* Agrega un espacio de relleno alrededor del título */
+  text-align: center; /* Centra el texto en el centro de la barra de herramientas */
+
+}
+
+.mat-nav-list {
+  flex: 1 1 0%;
+  box-sizing: border-box;
+}
+
+/* Estilo para los ítems de la lista en la barra lateral */
+.mat-nav-list .list-item {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  padding: 20px;
+}
 
 .sidenav-container {
   height: 100%;
 }
 
-
 .sidenav {
-  width: 200px;
+  width: 220px;
 }
 
 .sidenav .mat-toolbar {
   background: inherit;
 }
-
 
 .mat-toolbar.mat-primary {
   position: sticky;
@@ -28,32 +55,37 @@
   z-index: 1;
 }
 
-.list-item {
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  padding: 20px;
-}
-
 .flex-container {
   display: flex;
   align-items: center;
 }
 
-.icon {
-  margin-right: 0px;
-  font-size: 20px;
+/* Estilo para el hover en los ítems de la lista */
+.mat-nav-list .list-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
-.link {
+/* Estilo para el contenido principal debajo de la barra lateral */
+.mat-sidenav-content > div {
+  height: 88vh; /* Cambia la altura a tu preferencia */
+}
+
+/* Agrega margen derecho a "icono" para separarlo del "nombre_icono" */
+.icono {
+  font-size: 20px; /* Cambia el tamaño de fuente del ícono a tu preferencia */
+  display: flex;
+  align-items: center;
+  margin-right: 4px; /* Puedes ajustar la cantidad de margen a tu preferencia */
+}
+
+/* Agrega margen izquierdo a "nombre_icono" para separarlo del "icono" */
+.nombre_icono {
+  font-size: 20px; /* Cambia el tamaño de fuente del texto a tu preferencia */
   text-decoration: none;
-  margin-left: 8px;
   color: inherit;
   flex-grow: 1;
-}
-
-
-.list-item:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  margin-left: 12px; /* Puedes ajustar la cantidad de margen a tu preferencia */
 }
 
