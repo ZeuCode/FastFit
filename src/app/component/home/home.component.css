@@ -1,0 +1,59 @@
+
+
+/* Estilo para el título de la barra de herramientas */
+.mat-toolbar h1 {
+  font-size: 48px; /* Cambia el tamaño de fuente a tu preferencia */
+  margin: 0; /* Elimina el margen por defecto del título */
+  padding: 16px; /* Agrega un espacio de relleno alrededor del título */
+}
+
+
+.sidenav-container {
+  height: 100%;
+}
+
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.list-item {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  padding: 20px;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 0px;
+  font-size: 20px;
+}
+
+.link {
+  text-decoration: none;
+  margin-left: 8px;
+  color: inherit;
+  flex-grow: 1;
+}
+
+
+.list-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+

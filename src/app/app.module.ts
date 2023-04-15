@@ -24,11 +24,13 @@ import { PaymentComponent } from './component/payment/payment.component';
 import { PaymentListarComponent } from './component/payment/payment-listar/payment-listar.component';
 import { PaymentInsertarComponent } from './component/payment/payment-insertar/payment-insertar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatIconModule} from '@angular/material/icon';
+import { MatSidenavModule} from '@angular/material/sidenav';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatListModule } from '@angular/material/list';
-
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +60,9 @@ import { MatListModule } from '@angular/material/list';
     MatSidenavModule,
     LayoutModule,
     MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
 
   ],
   providers: [],
