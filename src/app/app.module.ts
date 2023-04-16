@@ -8,10 +8,8 @@ import { ReviewComponent } from './component/review/review.component';
 import { ReviewListComponent } from './component/review/review-list/review-list.component';
 import { ReviewInsertComponent } from './component/review/review-insert/review-insert.component';
 
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 //componenete HOME
@@ -40,8 +38,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule} from '@angular/material/icon';
-import { MatSidenavModule} from '@angular/material/sidenav';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
@@ -49,6 +48,14 @@ import { MatMenuModule } from '@angular/material/menu';
 
 //Angular cdk
 import { LayoutModule } from '@angular/cdk/layout';
+
+//componente Cita
+import { CitaComponent } from './component/cita/cita.component';
+import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
+import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-insertar.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,16 +71,20 @@ import { LayoutModule } from '@angular/cdk/layout';
     PsiInsertarComponent,
     ReviewComponent,
     ReviewListComponent,
-    ReviewInsertComponent
+    ReviewInsertComponent,
+    CitaComponent,
+    CitaListarComponent,
+    CitaInsertarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatTableModule,
     ReactiveFormsModule,
     FormsModule,
+
+    MatTableModule,
     MatInputModule,
     MatSelectModule,
     MatDatepickerModule,

@@ -1,5 +1,31 @@
 module.exports = function () {
   var data = {
+    citas:[
+      { id:1,
+       date:"2023-04-10",
+       client_id: 24,
+       PsychologistID:35,
+       AppointStatusID: 3343,
+
+      },
+      { id:2,
+       date:"2023-04-10",
+       client_id: 21,
+       PsychologistID:31,
+       AppointStatusID: 3113,
+
+      },
+      { id:3,
+       date:"2023-04-10",
+       client_id: 23,
+       PsychologistID:132,
+       AppointStatusID: 32,
+
+      },
+
+
+
+     ],
     clients: [
       {
         id: 1,
