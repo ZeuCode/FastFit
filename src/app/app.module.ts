@@ -4,6 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { ReviewComponent } from './component/review/review.component';
+import { ReviewListComponent } from './component/review/review-list/review-list.component';
+import { ReviewInsertComponent } from './component/review/review-insert/review-insert.component';
+
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -57,6 +62,9 @@ import { LayoutModule } from '@angular/cdk/layout';
     PsiComponent,
     PsiListarComponent,
     PsiInsertarComponent,
+    ReviewComponent,
+    ReviewListComponent,
+    ReviewInsertComponent
   ],
   imports: [
     BrowserModule,

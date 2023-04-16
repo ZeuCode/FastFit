@@ -2,6 +2,8 @@ import { PsiInsertarComponent } from './component/psi/psi-insertar/psi-insertar.
 import { PsiComponent } from './component/psi/psi.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ReviewComponent } from './component/review/review.component';
+import { ReviewInsertComponent } from './component/review/review-insert/review-insert.component';
 import { HomeComponent } from './component/home/home.component';
 import { ClientComponent } from './component/client/client.component';
 import { ClientListarComponent } from './component/client/client-listar/client-listar.component';
@@ -10,10 +12,12 @@ import { PaymentComponent } from './component/payment/payment.component';
 import { PaymentInsertarComponent } from './component/payment/payment-insertar/payment-insertar.component';
 
 const routes: Routes = [
+  //path para el HOME
   {
     path: '',
     component: HomeComponent,
   },
+  //path para clients
   {
     path: 'clients',
     component: ClientComponent,
@@ -24,6 +28,7 @@ const routes: Routes = [
       },
     ],
   },
+  //path para payment
   {
     path: 'payment',
     component: PaymentComponent, children: [
@@ -32,6 +37,7 @@ const routes: Routes = [
       }
     ]
   },
+  //path para psicologos
   {
     path: 'psis',
     component: PsiComponent, children: [
@@ -40,6 +46,15 @@ const routes: Routes = [
       },
     ],
   },
+  //path para reviews
+  {
+    path: 'reviews',
+    component:ReviewComponent,children:[
+      {
+        path:'reviewinsert',component: ReviewInsertComponent,
+      },
+    ],
+  }
 ];
 
 @NgModule({
