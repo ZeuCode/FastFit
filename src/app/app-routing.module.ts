@@ -1,4 +1,6 @@
-import { NgModule } from '@angular/core';
+import { PsiInsertarComponent } from './component/psi/psi-insertar/psi-insertar.component';
+import { PsiComponent } from './component/psi/psi.component';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './component/home/home.component';
 import { ClientComponent } from './component/client/client.component';
@@ -22,16 +24,27 @@ const routes: Routes = [
       },
     ],
   },
-
   {
-    path:'payment',component:PaymentComponent,children:[{
-      path:'paymentsinsertar',component:PaymentInsertarComponent,
-    }]
-  }
+    path: 'payment',
+    component: PaymentComponent, children: [
+      {
+        path: 'paymentsinsertar', component: PaymentInsertarComponent,
+      }
+    ]
+  },
+  {
+    path: 'psis',
+    component: PsiComponent, children: [
+      {
+        path: 'psisinsertar', component: PsiInsertarComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
+
 })
 export class AppRoutingModule {}
