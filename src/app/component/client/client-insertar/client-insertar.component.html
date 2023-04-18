@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <br>
+  <div class="container-fluid" style="text-align: center;">
+
+    <div style="text-align: center;">
+      <h1>Registrar Cliente</h1>
+    </div>
+
     <form [formGroup]="form" (submit)="aceptar()">
       <mat-form-field class="example-full-width">
         <mat-label>Código</mat-label>
@@ -40,32 +49,30 @@
 
       <mat-form-field class="example-full-width">
         <mat-label>Email address</mat-label>
-        <input
-          matInput
-          placeholder="Email address"
-          formControlName="emailAddress"
-        />
+        <input matInput placeholder="Email address" formControlName="emailAddress" />
       </mat-form-field>
-<br/>
+
+      <br />
+
       <mat-form-field class="example-full-width">
         <mat-label>Phone number</mat-label>
-        <input
-          matInput
-          placeholder="Phone number"
-          formControlName="phoneNumber"
-        />
+        <input matInput placeholder="Phone number" formControlName="phoneNumber" />
       </mat-form-field>
+
       <br />
+
       <mat-form-field class="example-full-width">
         <mat-label>Age</mat-label>
         <input matInput placeholder="Age" formControlName="age" />
       </mat-form-field>
-
-      <br />
-      <button mat-button color="primary">Aceptar</button>
-      <button mat-button color="warn" routerLink="/clients">Cancelar</button>
-      <br />
-      <p>{{ mensaje }}</p>
+      <br>
+      <div style="text-align: center;">
+        <button mat-button color="primary">Aceptar</button>
+        <button mat-button color="warn" routerLink="/clients">Cancelar</button>
+        <p>{{ mensaje }}</p>
+      </div>
     </form>
-  </body>
+  </div>
+</body>
+
 </html>

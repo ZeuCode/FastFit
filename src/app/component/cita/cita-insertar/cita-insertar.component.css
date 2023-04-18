@@ -1,14 +1,18 @@
-div.ingreso{
+div.ingreso {
 
-width: 420px;
+  width: 420px;
 
- flex:1 1 auto;
- margin: auto;
- margin-top: 30px;
+  flex: 1 1 auto;
+  margin: auto;
+  margin-top: 30px;
 }
-h1{
+
+h1 {
   text-align: center;
   margin-top: auto;
   flex: 1 1 auto;
 }
 
+mat-form-field {
+  width: 100%;
+}

@@ -6,7 +6,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./cita.component.css']
 })
 export class CitaComponent implements OnInit {
-  constructor(public route: ActivatedRoute) { }
+  constructor(public route: ActivatedRoute) {
+  }
   ngOnInit(): void {
 
   }
