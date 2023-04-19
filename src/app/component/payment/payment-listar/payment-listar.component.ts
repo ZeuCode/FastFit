@@ -22,5 +22,10 @@ export class PaymentListarComponent {
     this.pS.list().subscribe(data=>{
       this.dataSource=new MatTableDataSource(data);
     })
+    this.pS.getList().subscribe(data => {
+      this.dataSource = new MatTableDataSource(data);
+    }
+
+    )
   }
 }

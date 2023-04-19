@@ -18,6 +18,11 @@ export class ReviewListComponent implements OnInit{
     this.RevS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
     });
+    this.RevS.getList().subscribe(data => {
+      this.dataSource = new MatTableDataSource(data);
+    }
+
+    )
   }
 
 }

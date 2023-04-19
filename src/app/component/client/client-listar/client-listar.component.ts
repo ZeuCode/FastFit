@@ -27,5 +27,9 @@ export class ClientListarComponent implements OnInit {
     this.pC.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
     });
+
+    this.pC.getList().subscribe((data) => {
+      this.dataSource = new MatTableDataSource(data);
+    });
   }
 }

@@ -54,7 +54,7 @@ export class PsiInsertarComponent implements OnInit {
           this.pS.setList(data);
         });
       });
-      this.router.navigate(['psychologists']);
+      this.router.navigate(['psis']);
     } else {
       this.mensaje = 'Ingrese el nombre del psicologo!!';
     }
