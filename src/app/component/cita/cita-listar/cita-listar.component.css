@@ -1,9 +1,20 @@
-h1{
+h1 {
   text-align: center;
   margin-top: auto;
   flex: 1 1 auto;
 }
-button:hover{
-color: rgb(0, 0, 0);
+
+button:hover {
+  color: rgb(0, 0, 0);
 
 }
+
+div.top {
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex: 1;
+  height: auto;
+}
+
+

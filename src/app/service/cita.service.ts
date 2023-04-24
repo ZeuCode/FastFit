@@ -27,6 +27,16 @@ export class CitaService {
   setList(listaNueva:Citas[]){
 this.listaCambio.next(listaNueva);
   }
+
+
+  listid(id: number) {
+    return this.Http.get<Citas>(`${this.url}/${id}`);
+  }
+
+  update(citas: Citas) {
+    return this.Http.put(this.url + "/" + citas.id, citas);
+
+  }
 }
 
 

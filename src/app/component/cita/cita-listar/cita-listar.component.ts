@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import{MatTableDataSource} from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
 import { CitaService } from 'src/app/service/cita.service';
 import { Citas } from 'src/app/model/cita';
 @Component({
@@ -7,24 +7,25 @@ import { Citas } from 'src/app/model/cita';
   templateUrl: './cita-listar.component.html',
   styleUrls: ['./cita-listar.component.css']
 })
-export class CitaListarComponent implements OnInit{
+export class CitaListarComponent implements OnInit {
 
 
-  dataSource: MatTableDataSource<Citas>=new MatTableDataSource();
-  lista:Citas[]=[];
+  dataSource: MatTableDataSource<Citas> = new MatTableDataSource();
+  lista: Citas[] = [];
 
-  constructor(private pS:CitaService){
+  constructor(private pS: CitaService) {
 
   }
-  displayedColumns:String[]=[
+  displayedColumns: String[] = [
     'id',
     'date',
     'client_id',
     'PsychologistID',
-    'AppointStatusID']
+    'AppointStatusID',
+ ]
   ngOnInit(): void {
-    this.pS.list().subscribe(data=>{
-      this.dataSource=new MatTableDataSource(data);
+    this.pS.list().subscribe(data => {
+      this.dataSource = new MatTableDataSource(data);
     })
     this.pS.getList().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
@@ -32,6 +33,9 @@ export class CitaListarComponent implements OnInit{
 
     )
   }
-
+  //filtrado
+  filtrar(e: any) {
+    this.dataSource.filter = e.target.value.trim();
+  }
 
 }
