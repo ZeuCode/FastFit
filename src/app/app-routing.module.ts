@@ -28,49 +28,61 @@ const routes: Routes = [
         path: 'clientsinsertar',
         component: ClientInsertarComponent,
       },
+      {
+        path: 'edicion/:id',
+        component: ClientInsertarComponent,
+      },
     ],
   },
   //path para payment
   {
     path: 'payment',
-    component: PaymentComponent, children: [
+    component: PaymentComponent,
+    children: [
       {
-        path: 'paymentsinsertar', component: PaymentInsertarComponent,
-      }
-    ]
+        path: 'paymentsinsertar',
+        component: PaymentInsertarComponent,
+      },
+    ],
   },
   //path para psicologos
   {
     path: 'psis',
-    component: PsiComponent, children: [
+    component: PsiComponent,
+    children: [
       {
-        path: 'psisinsertar', component: PsiInsertarComponent,
+        path: 'psisinsertar',
+        component: PsiInsertarComponent,
       },
     ],
   },
   //path para reviews
   {
     path: 'reviews',
-    component:ReviewComponent,children:[
+    component: ReviewComponent,
+    children: [
       {
-        path:'reviewinsert',component: ReviewInsertComponent,
+        path: 'reviewinsert',
+        component: ReviewInsertComponent,
       },
     ],
   },
 
   //path para citas
   {
-    path: 'citas', component: CitaComponent, children: [
+    path: 'citas',
+    component: CitaComponent,
+    children: [
       {
-        path: 'citainsertar', component: CitaInsertarComponent,
-      }
-    ]
+        path: 'citainsertar',
+        component: CitaInsertarComponent,
+      },
+    ],
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-
 })
 export class AppRoutingModule {}
