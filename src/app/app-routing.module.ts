@@ -36,6 +36,9 @@ const routes: Routes = [
     component: PaymentComponent, children: [
       {
         path: 'paymentsinsertar', component: PaymentInsertarComponent,
+      },
+      {
+        path:'edicion/:id',component:PaymentInsertarComponent
       }
     ]
   },
