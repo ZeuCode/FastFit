@@ -55,6 +55,9 @@ const routes: Routes = [
       {
         path:'reviewinsert',component: ReviewInsertComponent,
       },
+      {
+        path:'edition/:id',component:ReviewInsertComponent,
+      }
     ],
   },
 
