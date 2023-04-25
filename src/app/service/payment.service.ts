@@ -13,6 +13,7 @@ const base_url = environment.base;
 export class PaymentService {
   private url = `${base_url}/payments`;
   private listaCambio = new Subject<payment[]>();
+  private confirmaEliminacion = new Subject<Boolean>()
 
   constructor(private Http: HttpClient) {}
 
@@ -39,5 +40,15 @@ export class PaymentService {
 
   update(p:payment) {
     return this.Http.put(this.url + '/' + p.id, p);
+  }
+
+  eliminar(id: number) {
+    return this.Http.delete(`${this.url}/${id}`);
+  }
+  getConfirmaEliminacion() {
+    return this.confirmaEliminacion.asObservable();
+  }
+  setConfirmaEliminacion(estado: Boolean) {
+    this.confirmaEliminacion.next(estado);
   }
 }
