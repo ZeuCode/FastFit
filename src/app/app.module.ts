@@ -11,6 +11,7 @@ import { ReviewInsertComponent } from './component/review/review-insert/review-i
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 
 //componenete HOME
 import { HomeComponent } from './component/home/home.component';
@@ -53,6 +54,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { CitaComponent } from './component/cita/cita.component';
 import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
 import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-insertar.component';
+import { ReviewDialogComponent } from './component/review/review-list/review-dialog/review-dialog.component';
 
 
 
@@ -75,6 +77,8 @@ import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-inser
     CitaComponent,
     CitaListarComponent,
     CitaInsertarComponent,
+    ReviewDialogComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -98,6 +102,7 @@ import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-inser
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -12,6 +12,7 @@ const base_url=environment.base
 export class ReviewService {
   private url=`${base_url}/reviews`;
   private listChange=new Subject<Review[]>
+  private confirmDelete = new Subject<Boolean>()
 
   constructor(private http:HttpClient) { }
 
@@ -32,5 +33,15 @@ export class ReviewService {
   }
   update(r:Review){
     return this.http.put(this.url+'/'+r.id,r)
+  }
+  delete(id: number) {
+
+    return this.http.delete(`${this.url}/${id}`);
+  }
+  getConfirmDelete() {
+    return this.confirmDelete.asObservable();
+  }
+  setConfirmDelete(estat: Boolean) {
+    this.confirmDelete.next(estat);
   }
 }
