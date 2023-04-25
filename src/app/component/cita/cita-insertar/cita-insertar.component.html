@@ -9,9 +9,10 @@
 </head>
 
 <body>
-  <mat-toolbar color="primary" text-aling="center">
-    <h1 >Agregar nueva cita</h1>
-  </mat-toolbar>
+  <div class="top">
+    <h1>Agregar nueva cita</h1>
+
+  </div>
 
   <div class="ingreso">
     <form [formGroup]="form" (submit)="aceptar()">
@@ -20,29 +21,29 @@
         <mat-label>Id</mat-label>
         <input matInput placeholder="ejm: 4" formControlName="id">
       </mat-form-field>
-<br>
+      <br>
       <mat-form-field class="example-full-width">
         <mat-label>Date</mat-label>
         <input matInput [matDatepicker]="picker" placeholder="3/04/2022" formControlName="date" [max]="maxFecha">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
-<br>
+      <br>
       <mat-form-field class="example-full-width">
         <mat-label>Cliente_ID</mat-label>
         <input matInput placeholder="ejm: 1" formControlName="client_id">
       </mat-form-field>
-<br>
+      <br>
       <mat-form-field appearance="fill">
         <mat-label>Psychologist_ID</mat-label>
         <input matInput placeholder="ejm: 2" formControlName="PsychologistID">
       </mat-form-field>
-<br>
+      <br>
       <mat-form-field class="example-full-width">
         <mat-label>AppointentStatus_ID</mat-label>
         <input matInput placeholder="ejm: 3" formControlName="appointment_id">
       </mat-form-field>
-<br>
+      <br>
       <div style="text-align: center;">
         <button mat-button color="primary">Aceptar</button>
         <button mat-button color="warn" routerLink="/citas">Cancelar</button>

@@ -22,6 +22,7 @@ export class CitaListarComponent implements OnInit {
     'client_id',
     'PsychologistID',
     'AppointStatusID',
+    'ceditar',
  ]
   ngOnInit(): void {
     this.pS.list().subscribe(data => {

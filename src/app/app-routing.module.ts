@@ -63,7 +63,8 @@ const routes: Routes = [
     path: 'citas', component: CitaComponent, children: [
       {
         path: 'citainsertar', component: CitaInsertarComponent,
-      }
+      },
+      { path: 'edicion/:id', component: CitaInsertarComponent }
     ]
   },
 ];

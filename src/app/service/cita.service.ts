@@ -33,8 +33,8 @@ this.listaCambio.next(listaNueva);
     return this.Http.get<Citas>(`${this.url}/${id}`);
   }
 
-  update(citas: Citas) {
-    return this.Http.put(this.url + "/" + citas.id, citas);
+  update(c: Citas) {
+    return this.Http.put(this.url + "/" + c.id, c);
 
   }
 }
