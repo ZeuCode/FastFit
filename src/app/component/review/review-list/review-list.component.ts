@@ -10,8 +10,8 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class ReviewListComponent implements OnInit{
   dataSource: MatTableDataSource<Review> = new MatTableDataSource();
-  lista: Review[] = [];
-  displayedColumns: string[] = ['id', 'content', 'date', 'likes', 'Client_id', 'Psychologist_id'];
+  list: Review[] = [];
+  displayedColumns: string[] = ['id', 'content', 'date', 'likes', 'Client_id', 'Psychologist_id', 'cedit'];
 
   constructor(private RevS: ReviewService) {}
   ngOnInit(): void {
@@ -20,9 +20,11 @@ export class ReviewListComponent implements OnInit{
     });
     this.RevS.getList().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
-    }
 
-    )
+    });
   }
+  filter(e:any){
+    this.dataSource.filter=e.target.value.trim();
 
+  }
 }

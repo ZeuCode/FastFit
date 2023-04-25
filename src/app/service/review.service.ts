@@ -27,4 +27,10 @@ export class ReviewService {
   setList(NewList: Review[]) {
     this.listChange.next(NewList);
   }
+  listId(Id:number){
+    return this.http.get<Review>(`${this.url}/${Id}`);
+  }
+  update(r:Review){
+    return this.http.put(this.url+'/'+r.id,r)
+  }
 }

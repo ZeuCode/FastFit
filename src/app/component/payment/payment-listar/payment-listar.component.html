@@ -15,6 +15,14 @@
     <div style="text-align: center;">
       <h1>Lista de Pagos</h1>
     </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline" class="filtro">
+        <input matInput type="text" (keyup)="filtrar($event)" placeholder="Buscar" />
+      </mat-form-field>
+    </div>
+
+
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
       <!--- Note that these columns can be defined in any order.The actual rendered columns are set as a property on the row definition" --><!-- Position Column -->
@@ -30,7 +38,7 @@
 
       <!-- Weight Column --><ng-container matColumnDef="fecha">
         <th mat-header-cell *matHeaderCellDef> Fecha de Pago </th>
-        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.date | date : "dd/MM/yyyy" }} </td>
       </ng-container>
 
       <!-- Symbol Column --><ng-container matColumnDef="tarjeta">
@@ -54,11 +62,21 @@
         <td mat-cell *matCellDef="let element"> {{element.active}} </td>
       </ng-container>
 
+      <ng-container matColumnDef="ceditar">
+        <th mat-header-cell *matHeaderCellDef>Acciones</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-raised-button color="warn" [routerLink]="['edicion', element.id]">
+            Actualizar
+          </button>
+        </td>
+      </ng-container>
+
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
     <div style="text-align: center;">
-      <button mat-raised-button color="primary" routerLink="paymentsinsertar" style="margin: 10px;">Agregar pago</button>
+      <button mat-raised-button color="primary" routerLink="paymentsinsertar" style="margin: 10px;">Agregar
+        pago</button>
       <button mat-raised-button color="warn" routerLink="" style="margin: 10px;">Atrás</button>
     </div>
   </div>

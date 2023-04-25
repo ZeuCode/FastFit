@@ -21,6 +21,7 @@ export class ClientListarComponent implements OnInit {
     'edad',
     'emailAddress',
     'phoneNumber',
+    'ceditar',
   ];
   constructor(private pC: ClientService) {}
   ngOnInit(): void {
@@ -31,5 +32,8 @@ export class ClientListarComponent implements OnInit {
     this.pC.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
     });
+  }
+  filtrar(e: any) {
+    this.dataSource.filter = e.target.value.trim();
   }
 }
