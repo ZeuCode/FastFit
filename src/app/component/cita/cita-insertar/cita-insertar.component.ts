@@ -4,12 +4,12 @@ import * as moment from 'moment';
 import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
 import { CitaService } from 'src/app/service/cita.service';
 import { Citas } from 'src/app/model/cita';
-
 @Component({
   selector: 'app-insertar',
   templateUrl: './cita-insertar.component.html',
   styleUrls: ['./cita-insertar.component.css'],
 })
+
 export class CitaInsertarComponent implements OnInit {
   id: number = 0;
   form: FormGroup = new FormGroup({});
@@ -41,13 +41,10 @@ export class CitaInsertarComponent implements OnInit {
   modificar(): void {
     if (this.id > 0) {
       this.variable_cambio = "Editar cita";
+      
     } else {
       this.variable_cambio = "Agregar nueva cita";
-
     }
-
-
-
   }
 
 
@@ -59,7 +56,7 @@ export class CitaInsertarComponent implements OnInit {
     this.cita.PsychologistID = this.form.value['PsychologistID'];
     this.cita.AppointStatusID = this.form.value['appointment_id'];
 
-    if (this.form.value['date'].length > 0) {
+    if (this.form.value['id'].length > 0 || this.form.value['date'].length > 0) {
 
       if (this.edicion) {
         //guargadar los datos

@@ -11,7 +11,7 @@
 <body>
   <div class="top">
 
-    <h1 class="titulo" > {{variable_cambio}}</h1>
+    <h1 class="titulo"> {{variable_cambio}}</h1>
 
   </div>
 
@@ -20,7 +20,7 @@
 
       <mat-form-field class="example-full-width">
         <mat-label>Id</mat-label>
-        <input matInput placeholder="ejm: 4" formControlName="id">
+        <input matInput placeholder="ejm: 4" formControlName="id" id="inputid">
       </mat-form-field>
       <br>
       <mat-form-field class="example-full-width">
@@ -46,8 +46,10 @@
       </mat-form-field>
       <br>
       <div style="text-align: center;">
-        <button mat-button color="primary">Aceptar</button>
+        <button mat-button color="primary" id="miBoton">Aceptar</button>
         <button mat-button color="warn" routerLink="/citas">Cancelar</button>
+
+       
       </div>
 
     </form>

@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { CitaService } from 'src/app/service/cita.service';
 import { Citas } from 'src/app/model/cita';
+
 @Component({
   selector: 'app-cita-listar',
   templateUrl: './cita-listar.component.html',
   styleUrls: ['./cita-listar.component.css']
 })
+
 export class CitaListarComponent implements OnInit {
 
 
@@ -31,9 +33,8 @@ export class CitaListarComponent implements OnInit {
     })
     this.pS.getList().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
-    }
+    });
 
-    )
   }
   //filtrado
   filtrar(e: any) {
