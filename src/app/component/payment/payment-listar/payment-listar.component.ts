@@ -17,7 +17,8 @@ export class PaymentListarComponent {
   constructor(private pS:PaymentService){
   }
 
-  displayedColumns:String[]=['numero','codigoPago','fecha','tarjeta','cliente','psicologo','estado']
+  displayedColumns:String[]=['numero','codigoPago','fecha','tarjeta','cliente','psicologo','estado','ceditar']
+
   ngOnInit(): void {
     this.pS.list().subscribe(data=>{
       this.dataSource=new MatTableDataSource(data);
@@ -27,5 +28,9 @@ export class PaymentListarComponent {
     }
 
     )
+  }
+
+  filtrar(e:any) {
+    this.dataSource.filter = e.target.value.trim();
   }
 }
