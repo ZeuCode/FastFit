@@ -10,7 +10,8 @@
 
 <body>
   <div class="top">
-    <h1>Agregar nueva cita</h1>
+
+    <h1 class="titulo" > {{variable_cambio}}</h1>
 
   </div>
 
@@ -24,7 +25,7 @@
       <br>
       <mat-form-field class="example-full-width">
         <mat-label>Date</mat-label>
-        <input matInput [matDatepicker]="picker" placeholder="3/04/2022" formControlName="date" [max]="maxFecha">
+        <input matInput [matDatepicker]="picker" placeholder="3/04/2022" formControlName="date" [min]="minFecha">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>

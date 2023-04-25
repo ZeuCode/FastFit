@@ -9,12 +9,32 @@ button:hover {
 
 }
 
+
 div.top {
   margin: auto;
   text-align: center;
   display: flex;
   flex: 1;
   height: auto;
+  width: 50%;
+}
+.demo-table {
+  width: 100%;
 }
 
 
+.mat-mdc-row .mat-mdc-cell {
+  border-bottom: 0px solid transparent;
+  border-top: 0px solid transparent;
+  cursor: pointer;
+
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+  border-color: currentColor;
+   background-color: hsl(0, 61%, 98%);
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}

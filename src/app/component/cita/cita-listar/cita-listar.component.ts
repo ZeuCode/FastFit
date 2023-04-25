@@ -13,6 +13,7 @@ export class CitaListarComponent implements OnInit {
   dataSource: MatTableDataSource<Citas> = new MatTableDataSource();
   lista: Citas[] = [];
 
+
   constructor(private pS: CitaService) {
 
   }
