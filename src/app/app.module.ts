@@ -53,9 +53,10 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { CitaComponent } from './component/cita/cita.component';
 import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
 import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-insertar.component';
+import { CitaDialogoComponent } from './component/cita/cita-listar/cita-dialogo/cita-dialogo.component';
 
 
-
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,6 +76,7 @@ import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-inser
     CitaComponent,
     CitaListarComponent,
     CitaInsertarComponent,
+    CitaDialogoComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,6 +100,7 @@ import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-inser
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

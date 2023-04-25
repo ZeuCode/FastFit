@@ -13,7 +13,7 @@ const  base_url=environment.base
 export class CitaService {
   private url = `${base_url}/citas`
   private listaCambio =new Subject<Citas[]>
-
+  private confirmaEliminacion = new Subject<Boolean>()
   constructor(private Http: HttpClient) { }
   list() {
     return this.Http.get<Citas[]>(this.url)
@@ -37,6 +37,15 @@ this.listaCambio.next(listaNueva);
     return this.Http.put(this.url + "/" + c.id, c);
 
   }
+  eliminar(id: number) {
+  return this.Http.delete(`${this.url}/${id}`);
+}
+getConfirmaEliminacion() {
+  return this.confirmaEliminacion.asObservable();
+}
+setConfirmaEliminacion(estado: Boolean) {
+  this.confirmaEliminacion.next(estado);
+}
 }
 
 
