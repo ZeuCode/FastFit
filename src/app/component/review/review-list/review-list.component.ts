@@ -11,7 +11,7 @@ import { ReviewDialogComponent } from './review-dialog/review-dialog.component';
   styleUrls: ['./review-list.component.css']
 })
 export class ReviewListComponent implements OnInit{
-  dataSource: MatTableDataSource<Review> = new MatTableDataSource();
+  dataSource: MatTableDataSource  <Review> = new MatTableDataSource();
   list: Review[] = [];
   displayedColumns: string[] = ['id', 'content', 'date', 'likes', 'Client_id', 'Psychologist_id', 'actions'];
 
