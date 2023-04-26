@@ -45,6 +45,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 //Angular cdk
 import { LayoutModule } from '@angular/cdk/layout';
@@ -53,6 +55,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { CitaComponent } from './component/cita/cita.component';
 import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
 import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-insertar.component';
+import { PsiDialogoComponent } from './component/psi/psi-listar/psi-dialogo/psi-dialogo.component';
 
 
 
@@ -75,6 +78,7 @@ import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-inser
     CitaComponent,
     CitaListarComponent,
     CitaInsertarComponent,
+    PsiDialogoComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,6 +102,7 @@ import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-inser
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
