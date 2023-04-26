@@ -58,8 +58,6 @@ import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.co
 import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-insertar.component';
 import { CitaDialogoComponent } from './component/cita/cita-listar/cita-dialogo/cita-dialogo.component';
 
-
-import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
