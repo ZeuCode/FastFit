@@ -29,6 +29,7 @@ import { PsiInsertarComponent } from './component/psi/psi-insertar/psi-insertar.
 import { PaymentComponent } from './component/payment/payment.component';
 import { PaymentListarComponent } from './component/payment/payment-listar/payment-listar.component';
 import { PaymentInsertarComponent } from './component/payment/payment-insertar/payment-insertar.component';
+import { PaymentDialogoComponent } from './component/payment/payment-listar/payment-dialogo/payment-dialogo.component';
 
 //Angular Material
 import { MatButtonModule } from '@angular/material/button';
@@ -45,6 +46,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 //Angular cdk
 import { LayoutModule } from '@angular/cdk/layout';
@@ -67,6 +70,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     PaymentComponent,
     PaymentListarComponent,
     PaymentInsertarComponent,
+    PaymentDialogoComponent,
     PsiComponent,
     PsiListarComponent,
     PsiInsertarComponent,
