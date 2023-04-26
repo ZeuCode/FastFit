@@ -3,7 +3,7 @@
   background-color: #fff;
   color: rgba(0,0,0,.87);
   position: relative; /* Asegurarse que el elemento tenga una posición relativa */
-  height: 70px; /* Ajustar la altura del toolbar según tus necesidades */
+  height: 80px; /* Ajustar la altura del toolbar según tus necesidades */
 }
 
 .mat-toolbar::after {
@@ -16,6 +16,13 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.87); /* Ajustar los valores de la sombra a tu preferencia */
 }
 
+.logo {
+  width: 200px;
+  height: 60px;
+  background-image: url(src\assets\logoFastFit.svg);
+  background-repeat: no-repeat;
+}
+
 
 .toolbar-title {
   font-size: 48px; /* Cambia el tamaño de fuente a tu preferencia */
@@ -25,18 +32,12 @@
 
 }
 
-.mat-nav-list {
+mat-nav-list {
   flex: 1 1 0%;
   box-sizing: border-box;
 }
 
-/* Estilo para los ítems de la lista en la barra lateral */
-.mat-nav-list .list-item {
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  padding: 20px;
-}
+
 
 .sidenav-container {
   height: 100%;
@@ -61,33 +62,43 @@
   align-items: center;
 }
 
-/* Estilo para el hover en los ítems de la lista */
-.mat-nav-list .list-item:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-}
 
 /* Estilo para el contenido principal debajo de la barra lateral */
 .mat-sidenav-content > div {
   height: 88vh; /* Cambia la altura a tu preferencia */
 }
 
+
+.list-item {
+  width: 150px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: #6582FD;
+}
+
 /* Agrega margen derecho a "icono" para separarlo del "nombre_icono" */
-.icono {
-  font-size: 24px; /* Cambia el tamaño de fuente del ícono a tu preferencia */
+.icono{
+  width: 32px;
+  font-size: 32px; /* Cambia el tamaño de fuente del ícono a tu preferencia */
   display: flex;
   align-items: center;
-  margin-right: 4px; /* Puedes ajustar la cantidad de margen a tu preferencia */
+  justify-content: center;
+  color: #6582FD;
 }
 
 /* Agrega margen izquierdo a "nombre_icono" para separarlo del "icono" */
 .nombre_icono {
-  font-size: 14px; /* Cambia el tamaño de fuente del texto a tu preferencia */
+  width: 110px;
+  font-size: 16px; /* Cambia el tamaño de fuente del texto a tu preferencia */
   font-weight: 500;
   text-decoration: none;
   color: inherit;
   flex-grow: 1;
   display: flex;
-  align-items: center;
-  margin-left: 12px; /* Puedes ajustar la cantidad de margen a tu preferencia */
+  align-items:center;
+  margin-left: 7px;
 }
 
