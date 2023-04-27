@@ -2,7 +2,7 @@
 .contenido{
   justify-content: center;
   align-items: center;
-  height: 60vh; /* altura del viewport */
+  height: 75%; /* altura del viewport */
 }
 
 .contenido h1 {
@@ -19,3 +19,8 @@
   background-position: center;
   margin-left: 5%;
 }
+body{
+
+  overflow: hidden;
+
+  }
