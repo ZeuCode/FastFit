@@ -21,58 +21,57 @@
 
       <mat-form-field class="example-full-width">
         <mat-label>Código</mat-label>
-        <input matInput placeholder="Código" formControlName="id" />
+        <input required matInput placeholder="Código" formControlName="id" />
       </mat-form-field>
       <br>
 
       <mat-form-field class="example-full-width">
         <mat-label>Username</mat-label>
-        <input matInput placeholder="Username" formControlName="userName" />
+        <input required matInput placeholder="Username" formControlName="userName" />
       </mat-form-field>
       <br>
 
       <mat-form-field class="example-full-width">
         <mat-label>Password</mat-label>
-        <input matInput placeholder="Password" formControlName="password" type="password" />
+        <input required matInput placeholder="Password" formControlName="password" type="password" />
       </mat-form-field>
       <br>
 
       <mat-form-field class="example-full-width">
         <mat-label>Names</mat-label>
-        <input matInput placeholder="Names" formControlName="names" />
+        <input required matInput placeholder="Names" formControlName="names" />
       </mat-form-field>
       <br>
 
       <mat-form-field class="example-full-width">
         <mat-label>Last names</mat-label>
-        <input matInput placeholder="Last names" formControlName="lastNames" />
+        <input required matInput placeholder="Last names" formControlName="lastNames" />
       </mat-form-field>
       <br>
 
       <mat-form-field class="example-full-width">
         <mat-label>Email address</mat-label>
-        <input matInput placeholder="Email address" formControlName="emailAddress" />
+        <input required  matInput placeholder="Email address" formControlName="emailAddress" />
       </mat-form-field>
 
       <br>
 
       <mat-form-field class="example-full-width">
         <mat-label>Phone number</mat-label>
-        <input matInput placeholder="Phone number" formControlName="phoneNumber" />
+        <input required  matInput placeholder="Phone number" formControlName="phoneNumber" />
       </mat-form-field>
 
       <br>
 
       <mat-form-field class="example-full-width">
         <mat-label>Age</mat-label>
-        <input matInput placeholder="Age" formControlName="age">
+        <input required matInput placeholder="Age" formControlName="age">
       </mat-form-field>
       <br>
 
       <div style="text-align: center">
         <button mat-raised-button color="primary" style="margin-right: 8px;"> Aceptar </button>
         <button mat-raised-button routerLink="/clients" style="margin-left: 8px;"> Cancelar </button>
-        <button mat-flat-button>Basic</button>
         <p>{{ mensaje }}</p>
       </div>
 

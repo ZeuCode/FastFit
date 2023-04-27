@@ -3,6 +3,8 @@ import { Client } from './../../../model/client';
 
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
+import { ClientDialogoComponent } from './client-dialogo/client-dialogo.component';
 
 @Component({
   selector: 'app-client-listar',
@@ -23,7 +25,8 @@ export class ClientListarComponent implements OnInit {
     'phoneNumber',
     'ceditar',
   ];
-  constructor(private pC: ClientService) {}
+  private idMayor: number = 0;
+  constructor(private pC: ClientService, private dialog: MatDialog) {}
   ngOnInit(): void {
     this.pC.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
@@ -32,8 +35,23 @@ export class ClientListarComponent implements OnInit {
     this.pC.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
     });
+    this.pC.getConfirmaEliminacion().subscribe((data) => {
+      data == true ? this.eliminar(this.idMayor) : false;
+    });
   }
   filtrar(e: any) {
     this.dataSource.filter = e.target.value.trim();
+  }
+  confirmar(id: number) {
+    this.idMayor = id;
+    this.dialog.open(ClientDialogoComponent);
+  }
+
+  eliminar(id: number) {
+    this.pC.eliminar(id).subscribe(() => {
+      this.pC.list().subscribe((data) => {
+        this.pC.setList(data);
+      });
+    });
   }
 }

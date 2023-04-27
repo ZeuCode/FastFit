@@ -60,6 +60,7 @@ import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-inser
 import { CitaDialogoComponent } from './component/cita/cita-listar/cita-dialogo/cita-dialogo.component';
 
 import { ReviewDialogComponent } from './component/review/review-list/review-dialog/review-dialog.component';
+import { ClientDialogoComponent } from './component/client/client-listar/client-dialogo/client-dialogo.component';
 
 
 @NgModule({
@@ -84,6 +85,7 @@ import { ReviewDialogComponent } from './component/review/review-list/review-dia
     CitaInsertarComponent,
     CitaDialogoComponent,
     ReviewDialogComponent,
+    ClientDialogoComponent,
   ],
   imports: [
     BrowserModule,
