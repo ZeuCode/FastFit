@@ -12,15 +12,15 @@
 
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div style="text-align: center;">
             <h1>Lista de Psicologos de alta categoria</h1>
         </div>
 
-        <mat-form-field>
-            <input  matInput (keyup)="filtrar($event)" placeholder="Buscar"/>
+        <mat-form-field appearance="outline" class="filtrar">
+            <input  matInput type="text" (keyup)="filtrar($event)" placeholder="Buscar"/>
           </mat-form-field>
-        <table class="table table-hover table-striped" mat-table [dataSource]="dataSource">
+        <table  mat-table  class="mat-elevation-z8" mat-table [dataSource]="dataSource">
 
             <!--- Note that these columns can be defined in any order.
             The actual rendered columns are set as a property on the row definition" -->
@@ -112,9 +112,6 @@
 <div style="text-align: center;">
         <section>
           <button style="margin-right: 10px ;" mat-raised-button color="primary" routerLink="/psis/psisinsertar">Registrar psicologos</button>
-          
-          <button mat-raised-button color="warn" routerLink="/psis">Atras</button>
-
 
         </section>
     </div>
