@@ -14,20 +14,15 @@
 
 <body>
     <div class="container-fluid">
-        
-        <div class="row">
-            <div style="text-align: center;">
-                <h1>Lista de Psicólogos</h1>
-            </div>
+        <div style="text-align: center;">
+            <h1>Lista de Psicólogos</h1>
         </div>
 
+        <mat-form-field appearance="outline" >
+            <input  matInput type="text" (keyup)="filtrar($event)" placeholder="Buscar"/>
+          </mat-form-field>
+        <table  mat-table  class="mat-elevation-z8" mat-table [dataSource]="dataSource">
 
-        <mat-form-field appearance="outline" class="filtro">
-            <input matInput (keyup)="filtrar($event)" placeholder="Buscar" />
-        </mat-form-field>
-        <br>
-        <br>
-        <table class="mat-elevation-z8" mat-table [dataSource]="dataSource">
 
             <!--- Note that these columns can be defined in any order.
             The actual rendered columns are set as a property on the row definition" -->
