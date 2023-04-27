@@ -14,10 +14,10 @@
 <body>
     <div class="container-fluid">
         <div style="text-align: center;">
-            <h1>Lista de Psicologos de alta categoria</h1>
+            <h1>Lista de Psicólogos</h1>
         </div>
 
-        <mat-form-field appearance="outline" class="filtro">
+        <mat-form-field appearance="outline" >
             <input  matInput type="text" (keyup)="filtrar($event)" placeholder="Buscar"/>
           </mat-form-field>
         <table  mat-table  class="mat-elevation-z8" mat-table [dataSource]="dataSource">
