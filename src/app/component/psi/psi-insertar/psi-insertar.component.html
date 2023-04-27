@@ -9,99 +9,103 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container-fluid">
+
     <div style="text-align: center;">
       <h1>Registrar un nuevo Psicologo</h1>
-    
-    <form [formGroup]="form" (submit)="aceptar()">
-      <mat-form-field class="example-full-width">
-        <mat-label>Código</mat-label>
-        <input matInput placeholder="numero" formControlName="id" />
-      </mat-form-field>
-      <br>
+    </div>
+
+    <div class="ingreso">
+
+      <form [formGroup]="form" (submit)="aceptar()">
+        <mat-form-field class="example-full-width">
+          <mat-label>Código</mat-label>
+          <input matInput placeholder="numero" formControlName="id" />
+        </mat-form-field>
+        <br>
 
 
-      <mat-form-field class="example-full-width">
-        <mat-label>usuario</mat-label>
-        <input matInput placeholder="usuario" formControlName="userName" />
-      </mat-form-field>
-      <br>
+        <mat-form-field class="example-full-width">
+          <mat-label>usuario</mat-label>
+          <input required matInput placeholder="usuario" formControlName="userName" />
+        </mat-form-field>
+        <br>
 
 
-      <mat-form-field class="example-full-width">
-        <mat-label>contraseña</mat-label>
-        <input matInput placeholder="contraseña" formControlName="password" />
-      </mat-form-field>
-      <br>
+        <mat-form-field class="example-full-width">
+          <mat-label>contraseña</mat-label>
+          <input matInput required placeholder="contraseña" formControlName="password" />
+        </mat-form-field>
+        <br>
 
-      <mat-form-field class="example-full-width">
-        <mat-label>nombres</mat-label>
-        <input matInput placeholder="nombres" formControlName="names" />
-      </mat-form-field>
-      <br>
+        <mat-form-field class="example-full-width">
+          <mat-label>nombres</mat-label>
+          <input matInput  required placeholder="nombres" formControlName="names" />
+        </mat-form-field>
+        <br>
 
-      <mat-form-field class="example-full-width">
-        <mat-label>apellidos</mat-label>
-        <input matInput placeholder="apellidos" formControlName="lastNames" />
-      </mat-form-field>
-      <br>
-      <mat-form-field class="example-full-width">
-        <mat-label>email</mat-label>
-        <input matInput placeholder="email" formControlName="emailAddress" />
-      </mat-form-field>
-      <br>
-
-
-      <mat-form-field class="example-full-width">
-        <mat-label>telefono</mat-label>
-        <input matInput placeholder="telefono" formControlName="phoneNumber" />
-      </mat-form-field>
-      <br>
-
-      <mat-form-field class="example-full-width">
-        <mat-label>edad</mat-label>
-        <input matInput placeholder="edad" formControlName="age" />
-      </mat-form-field>
-      <br>
-
-      <mat-form-field class="example-full-width">
-        <mat-label>rating</mat-label>
-        <input matInput placeholder="rating" formControlName="rating" />
-      </mat-form-field>
-      <br>
-
-      <mat-form-field class="example-full-width">
-        <mat-label>UserStatus_Id</mat-label>
-        <input matInput placeholder="UserStatus_Id" formControlName="UserStatus_Id" />
-      </mat-form-field>
-      <br>
-
-      <mat-form-field class="example-full-width">
-        <mat-label>Speciality_id</mat-label>
-        <input matInput placeholder="Speciality_id" formControlName="Speciality_id" />
-      </mat-form-field>
-      <br>
-      <mat-form-field appearance="fill">
-        <mat-label>Genero</mat-label>
-        <mat-select placeholder="genero" formControlName="Gender_id">
-          <mat-option value="Masculino">Masculino</mat-option>
-          <mat-option value="Femenino">Femenino</mat-option>
-        </mat-select>
-
-      </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>apellidos</mat-label>
+          <input matInput required placeholder="apellidos" formControlName="lastNames" />
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width">
+          <mat-label>email</mat-label>
+          <input matInput required placeholder="email" formControlName="emailAddress" />
+        </mat-form-field>
+        <br>
 
 
-      <div style="text-align: center;">
-        <button mat-raised-button color="primary">Aceptar</button>
-        <button mat-raised-button color="warn" routerLink="/psis">Cancelar</button>
+        <mat-form-field class="example-full-width">
+          <mat-label>telefono</mat-label>
+          <input matInput required placeholder="telefono" formControlName="phoneNumber" />
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>edad</mat-label>
+          <input matInput required placeholder="edad" formControlName="age" />
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>rating</mat-label>
+          <input matInput required placeholder="rating" formControlName="rating" />
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>UserStatus_Id</mat-label>
+          <input matInput required placeholder="UserStatus_Id" formControlName="UserStatus_Id" />
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Speciality_id</mat-label>
+          <input matInput required placeholder="Speciality_id" formControlName="Speciality_id" />
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Genero</mat-label>
+          <mat-select placeholder="genero" formControlName="Gender_id">
+            <mat-option value="Masculino">Masculino</mat-option>
+            <mat-option value="Femenino">Femenino</mat-option>
+          </mat-select>
+
+        </mat-form-field>
 
 
-      </div>
-      <br>
-      <p>{{ mensaje }}</p>
-    </form>
+        <div style="text-align: center;">
+          <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
+          <button mat-raised-button routerLink="/psis" style="margin-left: 8px;">Cancelar</button>
+
+
+        </div>
+        <br>
+        <p>{{ mensaje }}</p>
+      </form>
+    </div>
   </div>
-</div>
 
 </body>
 
