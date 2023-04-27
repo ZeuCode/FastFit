@@ -14,6 +14,7 @@
     <h1 class="titulo"> {{variable_cambio}}</h1>
 
   </div>
+  <br>
 
   <div class="ingreso">
     <form [formGroup]="form" (submit)="aceptar()">
@@ -22,6 +23,7 @@
         <mat-label>Id</mat-label>
         <input matInput placeholder="ejm: 4" formControlName="id" id="inputid">
       </mat-form-field>
+
       <br>
       <mat-form-field class="example-full-width">
         <mat-label>Date</mat-label>
@@ -29,6 +31,7 @@
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
+
       <br>
       <mat-form-field class="example-full-width">
         <mat-label>Cliente_ID</mat-label>
@@ -39,17 +42,17 @@
         <mat-label>Psychologist_ID</mat-label>
         <input matInput placeholder="ejm: 2" formControlName="PsychologistID">
       </mat-form-field>
+
       <br>
       <mat-form-field class="example-full-width">
         <mat-label>AppointentStatus_ID</mat-label>
         <input matInput placeholder="ejm: 3" formControlName="appointment_id">
       </mat-form-field>
       <br>
-      <div style="text-align: center;">
-        <button mat-button color="primary" id="miBoton">Aceptar</button>
-        <button mat-button color="warn" routerLink="/citas">Cancelar</button>
 
-       
+      <div style="text-align: center;">
+        <button mat-raised-button color="primary" id="miBoton" style="margin-right: 8px;">Aceptar</button>
+        <button mat-raised-button routerLink="/citas" style="margin-left: 8px;">Cancelar</button>
       </div>
 
     </form>

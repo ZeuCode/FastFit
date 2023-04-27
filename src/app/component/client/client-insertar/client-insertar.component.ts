@@ -43,6 +43,7 @@ export class ClientInsertarComponent implements OnInit {
   }
 
   aceptar(): void {
+
     this.client.id = this.form.value['id'];
     this.client.userName = this.form.value['userName'];
     this.client.password = this.form.value['password'];
@@ -51,7 +52,21 @@ export class ClientInsertarComponent implements OnInit {
     this.client.emailAddress = this.form.value['emailAddress'];
     this.client.phoneNumber = this.form.value['phoneNumber'];
     this.client.age = this.form.value['age'];
-    if (this.form.value['userName'].length > 0) {
+
+    if (
+
+
+
+      // this.form.value['id'].length *
+      //   this.form.value['userName'].length *
+      //   this.form.value['password'].length *
+      //   this.form.value['names'].length *
+      //   this.form.value['lastNames'].length *
+      //   this.form.value['emailAddress'].length *
+      //   this.form.value['phoneNumber'].length *
+      //   this.form.value['age'].length > 0
+      this.form.value['userName'].length > 0
+    ) {
       //guardar lo actualizado
       if (this.edicion) {
         //

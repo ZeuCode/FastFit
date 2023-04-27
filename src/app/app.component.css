@@ -1,0 +1,100 @@
+
+.mat-toolbar {
+  background-color: #fff;
+  color: rgba(0,0,0,.87);
+  position: relative; /* Asegurarse que el elemento tenga una posición relativa */
+  height: 80px; /* Ajustar la altura del toolbar según tus necesidades */
+}
+
+.mat-toolbar::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; /* Ajustar la distancia vertical de la sombra */
+  left: 0;
+  right: 0;
+  height: 2px; /* Ajustar el grosor de la sombra */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.87); /* Ajustar los valores de la sombra a tu preferencia */
+}
+
+.logo {
+  width: 200px;
+  height: 60px;
+  background-image: url(src\assets\logoFastFit.svg);
+  background-repeat: no-repeat;
+}
+
+
+.toolbar-title {
+  font-size: 48px; /* Cambia el tamaño de fuente a tu preferencia */
+  margin: 0; /* Elimina el margen por defecto del título */
+  padding: 0px; /* Agrega un espacio de relleno alrededor del título */
+  text-align: center; /* Centra el texto en el centro de la barra de herramientas */
+
+}
+
+mat-nav-list {
+  flex: 1 1 0%;
+  box-sizing: border-box;
+}
+
+
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+}
+
+.contenido{
+background-color: #fff;
+}
+
+.list-item {
+  width: 150px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  margin: auto;
+  border-radius: 10px;
+}
+
+/* Agrega margen derecho a "icono" para separarlo del "nombre_icono" */
+.icono{
+  width: 32px;
+  font-size: 32px; /* Cambia el tamaño de fuente del ícono a tu preferencia */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3F51B5;
+}
+
+/* Agrega margen izquierdo a "nombre_icono" para separarlo del "icono" */
+.nombre_icono {
+  width: 110px;
+  font-size: 16px; /* Cambia el tamaño de fuente del texto a tu preferencia */
+  font-weight: 500;
+  text-decoration: none;
+  color: inherit;
+  flex-grow: 1;
+  display: flex;
+  align-items:center;
+  margin-left: 7px;
+}
+

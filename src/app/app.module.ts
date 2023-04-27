@@ -11,6 +11,7 @@ import { ReviewInsertComponent } from './component/review/review-insert/review-i
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 
 //componenete HOME
 import { HomeComponent } from './component/home/home.component';
@@ -29,6 +30,7 @@ import { PsiInsertarComponent } from './component/psi/psi-insertar/psi-insertar.
 import { PaymentComponent } from './component/payment/payment.component';
 import { PaymentListarComponent } from './component/payment/payment-listar/payment-listar.component';
 import { PaymentInsertarComponent } from './component/payment/payment-insertar/payment-insertar.component';
+import { PaymentDialogoComponent } from './component/payment/payment-listar/payment-dialogo/payment-dialogo.component';
 
 //Angular Material
 import { MatButtonModule } from '@angular/material/button';
@@ -46,6 +48,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 
+
 //Angular cdk
 import { LayoutModule } from '@angular/cdk/layout';
 
@@ -53,10 +56,13 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { CitaComponent } from './component/cita/cita.component';
 import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
 import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-insertar.component';
+
 import { CitaDialogoComponent } from './component/cita/cita-listar/cita-dialogo/cita-dialogo.component';
 
+import { ReviewDialogComponent } from './component/review/review-list/review-dialog/review-dialog.component';
+import { ClientDialogoComponent } from './component/client/client-listar/client-dialogo/client-dialogo.component';
 
-import { MatDialogModule } from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,6 +73,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     PaymentComponent,
     PaymentListarComponent,
     PaymentInsertarComponent,
+    PaymentDialogoComponent,
     PsiComponent,
     PsiListarComponent,
     PsiInsertarComponent,
@@ -77,6 +84,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     CitaListarComponent,
     CitaInsertarComponent,
     CitaDialogoComponent,
+    ReviewDialogComponent,
+    ClientDialogoComponent,
   ],
   imports: [
     BrowserModule,
@@ -100,6 +109,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
+
     MatDialogModule,
   ],
   providers: [],
