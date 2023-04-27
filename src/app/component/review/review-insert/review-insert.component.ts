@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Review } from 'src/app/model/review';
-import * as moment from 'moment';
 import { ReviewService } from 'src/app/service/review.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
@@ -20,7 +19,6 @@ export class ReviewInsertComponent implements OnInit{
   form:FormGroup=new FormGroup({});
   review:Review=new Review();
   mensaje: string = '';
-  maxFecha: Date = moment().add(-1, 'days').toDate();
 
   constructor(private revS: ReviewService, private router:Router, private route:ActivatedRoute) { }
 
@@ -91,6 +89,7 @@ export class ReviewInsertComponent implements OnInit{
           Client_id:new FormControl(data.likes),
           Psychologist_id:new FormControl(data.Psychologist_id),
         })
+        console.log(data);
       })
     }
 

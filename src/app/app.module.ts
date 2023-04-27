@@ -11,6 +11,7 @@ import { ReviewInsertComponent } from './component/review/review-insert/review-i
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 
 //componenete HOME
 import { HomeComponent } from './component/home/home.component';
@@ -46,7 +47,6 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatDialogModule } from '@angular/material/dialog';
 
 
 //Angular cdk
@@ -56,7 +56,11 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { CitaComponent } from './component/cita/cita.component';
 import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
 import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-insertar.component';
+
 import { CitaDialogoComponent } from './component/cita/cita-listar/cita-dialogo/cita-dialogo.component';
+
+import { ReviewDialogComponent } from './component/review/review-list/review-dialog/review-dialog.component';
+
 
 @NgModule({
   declarations: [
@@ -79,6 +83,7 @@ import { CitaDialogoComponent } from './component/cita/cita-listar/cita-dialogo/
     CitaListarComponent,
     CitaInsertarComponent,
     CitaDialogoComponent,
+    ReviewDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -102,6 +107,7 @@ import { CitaDialogoComponent } from './component/cita/cita-listar/cita-dialogo/
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
+
     MatDialogModule,
   ],
   providers: [],
