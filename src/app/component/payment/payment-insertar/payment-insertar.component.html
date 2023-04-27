@@ -23,19 +23,19 @@
 
         <mat-form-field class="example-full-width">
           <mat-label>ID</mat-label>
-          <input matInput placeholder="ID" formControlName="id">
+          <input matInput required placeholder="ID" formControlName="id">
         </mat-form-field>
         <br>
 
         <mat-form-field class="example-full-width">
           <mat-label>Código de Pago</mat-label>
-          <input matInput placeholder="Código de Pago" formControlName="paymentCode">
+          <input matInput required placeholder="Código de Pago" formControlName="paymentCode">
         </mat-form-field>
         <br>
 
         <mat-form-field appearance="fill">
           <mat-label>Fecha de Pago</mat-label>
-          <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="date" [max]="maxFecha">
+          <input matInput required [matDatepicker]="picker" placeholder="Choose a date" formControlName="date" [max]="maxFecha">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
@@ -43,25 +43,25 @@
 
         <mat-form-field class="example-full-width">
           <mat-label>Tarjeta</mat-label>
-          <input matInput placeholder="Num Tarjeta" formControlName="cardNumber">
+          <input matInput required placeholder="Num Tarjeta" formControlName="cardNumber">
         </mat-form-field>
         <br>
 
         <mat-form-field class="example-full-width">
           <mat-label>Código Cliente</mat-label>
-          <input matInput placeholder="Num Tarjeta" formControlName="Client_id">
+          <input matInput required placeholder="Num Tarjeta" formControlName="Client_id">
         </mat-form-field>
         <br>
 
         <mat-form-field class="example-full-width">
           <mat-label>Código Psicólogo</mat-label>
-          <input matInput placeholder="Num Tarjeta" formControlName="Psychologist_id">
+          <input matInput required placeholder="Num Tarjeta" formControlName="Psychologist_id">
         </mat-form-field>
         <br>
 
         <mat-form-field appearance="fill">
           <mat-label>Estado</mat-label>
-          <mat-select placeholder="Elija Estado" formControlName="active">
+          <mat-select required placeholder="Elija Estado" formControlName="active">
             <mat-option value="1">Activo</mat-option>
             <mat-option value="0">Inactivo</mat-option>
           </mat-select>

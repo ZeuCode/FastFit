@@ -27,7 +27,7 @@
       <br>
       <mat-form-field class="example-full-width">
         <mat-label>Date</mat-label>
-        <input matInput [matDatepicker]="picker" placeholder="3/04/2022" formControlName="date" [min]="minFecha">
+        <input matInput required [matDatepicker]="picker" placeholder="3/04/2022" formControlName="date" [min]="minFecha">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
@@ -35,18 +35,18 @@
       <br>
       <mat-form-field class="example-full-width">
         <mat-label>Cliente_ID</mat-label>
-        <input matInput placeholder="ejm: 1" formControlName="client_id">
+        <input matInput required placeholder="ejm: 1" formControlName="client_id">
       </mat-form-field>
       <br>
       <mat-form-field appearance="fill">
         <mat-label>Psychologist_ID</mat-label>
-        <input matInput placeholder="ejm: 2" formControlName="PsychologistID">
+        <input matInput required placeholder="ejm: 2" formControlName="PsychologistID">
       </mat-form-field>
 
       <br>
       <mat-form-field class="example-full-width">
         <mat-label>AppointentStatus_ID</mat-label>
-        <input matInput placeholder="ejm: 3" formControlName="appointment_id">
+        <input matInput required placeholder="ejm: 3" formControlName="appointment_id">
       </mat-form-field>
       <br>
 
