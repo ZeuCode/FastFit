@@ -3,20 +3,28 @@ import { Psi } from './../../../model/psi';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import * as moment from 'moment';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 @Component({
   selector: 'app-psi-insertar',
   templateUrl: './psi-insertar.component.html',
   styleUrls: ['./psi-insertar.component.css'],
 })
 export class PsiInsertarComponent implements OnInit {
+
+  id: number = 0;
+  edicion: boolean = false;
   form: FormGroup = new FormGroup({});
   psi: Psi = new Psi();
   mensaje: string = '';
   maxFecha: Date = moment().add(-1, 'days').toDate();
-  constructor(private pS: PsiService, private router: Router) {}
+  constructor(private pS: PsiService, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.route.params.subscribe((data: Params) => {
+      this.id = data['id'];
+      this.edicion = data['id'] != null;
+      this.init();
+    });
     this.form = new FormGroup({
       id: new FormControl(),
       userName: new FormControl(),
@@ -59,4 +67,35 @@ export class PsiInsertarComponent implements OnInit {
       this.mensaje = 'Ingrese el nombre del psicologo!!';
     }
   }
+  init() {
+    if (this.edicion) {
+      this.pS.listarId(this.id).subscribe(data => {
+        //this.propietario = data
+
+        this.form = new FormGroup({
+          id: new FormControl(data.id),
+          userName: new FormControl(data.userName),
+          password: new FormControl(data.password),
+          names: new FormControl(data.names),
+          lastNames: new FormControl(data.lastNames),
+
+          emailAddress: new FormControl(data.emailAddress),
+          phoneNumber: new FormControl(data.phoneNumber),
+          age: new FormControl(data.age),
+          rating: new FormControl(data.rating),
+          UserStatus_Id: new FormControl(data.UserStatus_Id),
+
+          Speciality_id: new FormControl(data.Speciality_id),
+          Gender_id: new FormControl(data.Gender_id),
+
+
+        });
+        console.log(data);
+      });
+    }
+  }
 }
+
+
+
+

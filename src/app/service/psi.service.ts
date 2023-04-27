@@ -10,6 +10,8 @@ const base_url = environment.base;
 export class PsiService {
   private url = `${base_url}/psychologists`;
   private listaCambio = new Subject<Psi[]>();
+  private confirmaEliminacion = new Subject<Boolean>()
+
   constructor(private http: HttpClient) {}
   list() {
     return this.http.get<Psi[]>(this.url);
@@ -23,6 +25,26 @@ export class PsiService {
   }
   setList(listaNueva: Psi[]) {
     this.listaCambio.next(listaNueva);
+  }
+  listId(id: number) {
+    return this.http.get<Psi>(`${this.url}/${id}`);
+  }
+
+  update(p: Psi) {
+    return this.http.put(this.url + '/' + p.id, p);
+  }
+  listarId(id: number) {
+    return this.http.get<Psi>(`${this.url}/${id}`);
+  }
+  eliminar(id: number) {
+
+    return this.http.delete(`${this.url}/${id}`);
+  }
+  getConfirmaEliminacion() {
+    return this.confirmaEliminacion.asObservable();
+  }
+  setConfirmaEliminacion(estado: Boolean) {
+    this.confirmaEliminacion.next(estado);
   }
 }
 

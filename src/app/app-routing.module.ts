@@ -61,6 +61,7 @@ const routes: Routes = [
         path: 'psisinsertar',
         component: PsiInsertarComponent,
       },
+      { path:'edicion/:id',component: PsiInsertarComponent},
     ],
   },
   //path para reviews

@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 
+
 //componenete HOME
 import { HomeComponent } from './component/home/home.component';
 
@@ -49,6 +50,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 
 
+
 //Angular cdk
 import { LayoutModule } from '@angular/cdk/layout';
 
@@ -56,6 +58,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { CitaComponent } from './component/cita/cita.component';
 import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
 import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-insertar.component';
+import { PsiDialogoComponent } from './component/psi/psi-listar/psi-dialogo/psi-dialogo.component';
 
 import { CitaDialogoComponent } from './component/cita/cita-listar/cita-dialogo/cita-dialogo.component';
 
@@ -86,6 +89,7 @@ import { ClientDialogoComponent } from './component/client/client-listar/client-
     CitaDialogoComponent,
     ReviewDialogComponent,
     ClientDialogoComponent,
+    PsiDialogoComponent
   ],
   imports: [
     BrowserModule,
@@ -94,7 +98,6 @@ import { ClientDialogoComponent } from './component/client/client-listar/client-
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-
     MatTableModule,
     MatInputModule,
     MatSelectModule,
@@ -109,7 +112,6 @@ import { ClientDialogoComponent } from './component/client/client-listar/client-
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
-
     MatDialogModule,
   ],
   providers: [],
