@@ -9,6 +9,17 @@ button:hover {
 
 }
 
+.row{
+  display: flex;
+  gap: 10px;
+}
+
+.filtro{
+  width :20%;
+  height: 30px;
+}
+
+
 /*
 div.top {
   margin: auto;

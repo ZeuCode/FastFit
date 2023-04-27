@@ -14,12 +14,16 @@
       <h1>Lista de Reseñas</h1>
     </div>
 
-    <mat-form-field>
-      <input matInput (keyup)="filter($event)" placeholder="Buscar"/>
-    </mat-form-field>
+    <div class="row">
+      <mat-form-field appearance="outline" class="filtro">
+        <input matInput type="text" (keyup)="filter($event)" placeholder="Buscar"/>
+      </mat-form-field>
+    </div>
+
+    <br>
+    <br>
 
     <table class="mat-elevation-z8" mat-table [dataSource]="dataSource">
-
       <!--  Column -->
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef> Id  </th>

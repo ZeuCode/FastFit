@@ -15,11 +15,17 @@
   <div class="container-fluid">
     <div class="top">
       <h1>Lista de citas</h1>
-      <mat-form-field>
-        <input matInput (keyup)="filtrar($event)" placeholder="buscar" />
-      </mat-form-field>
+
     </div>
 
+
+    <div class="row">
+      <mat-form-field appearance="outline" class="filtro">
+        <input matInput type="text" (keyup)="filtrar($event)" placeholder="Buscar"/>
+      </mat-form-field>
+    </div>
+    <br>
+    <br>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
       <!--- Note that these columns can be defined in any order.The actual rendered columns are set as a property on the row definition" --><!-- Position Column -->

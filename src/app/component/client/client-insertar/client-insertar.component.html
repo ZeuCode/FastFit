@@ -1,92 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!--Esto es un comentario-->
-  <!--Esto es un comentario 2!!-->
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
 
-  <body>
-    <br />
-    <div class="container-fluid" style="text-align: center">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <br>
+
+  <div class="container-fluid" style="text-align: center">
+
+    <div style="text-align: center">
+      <h1>Registrar Cliente</h1>
+    </div>
+
+    <form [formGroup]="form" (submit)="aceptar()">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Código</mat-label>
+        <input matInput placeholder="Código" formControlName="id" />
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Username" formControlName="userName" />
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Password" formControlName="password" type="password" />
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Names</mat-label>
+        <input matInput placeholder="Names" formControlName="names" />
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Last names</mat-label>
+        <input matInput placeholder="Last names" formControlName="lastNames" />
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Email address</mat-label>
+        <input matInput placeholder="Email address" formControlName="emailAddress" />
+      </mat-form-field>
+
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Phone number</mat-label>
+        <input matInput placeholder="Phone number" formControlName="phoneNumber" />
+      </mat-form-field>
+
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Age</mat-label>
+        <input matInput placeholder="Age" formControlName="age">
+      </mat-form-field>
+      <br>
+
       <div style="text-align: center">
-        <h1>Registrar Cliente</h1>
+        <button mat-raised-button color="primary" style="margin-right: 8px;"> Aceptar </button>
+        <button mat-raised-button routerLink="/clients" style="margin-left: 8px;"> Cancelar </button>
+        <button mat-flat-button>Basic</button>
+        <p>{{ mensaje }}</p>
       </div>
 
-      <form [formGroup]="form" (submit)="aceptar()">
-        <mat-form-field class="example-full-width">
-          <mat-label>Código</mat-label>
-          <input matInput placeholder="Código" formControlName="id" />
-        </mat-form-field>
-        <br />
+    </form>
+  </div>
+</body>
 
-        <mat-form-field class="example-full-width">
-          <mat-label>Username</mat-label>
-          <input matInput placeholder="Username" formControlName="userName" />
-        </mat-form-field>
-        <br />
-
-        <mat-form-field class="example-full-width">
-          <mat-label>Password</mat-label>
-          <input matInput placeholder="Password" formControlName="password" type="password" />
-        </mat-form-field>
-        <br />
-
-        <mat-form-field class="example-full-width">
-          <mat-label>Names</mat-label>
-          <input matInput placeholder="Names" formControlName="names" />
-        </mat-form-field>
-        <br />
-
-        <mat-form-field class="example-full-width">
-          <mat-label>Last names</mat-label>
-          <input
-            matInput
-            placeholder="Last names"
-            formControlName="lastNames"
-          />
-        </mat-form-field>
-        <br />
-
-        <mat-form-field class="example-full-width">
-          <mat-label>Email address</mat-label>
-          <input
-            matInput
-            placeholder="Email address"
-            formControlName="emailAddress"
-          />
-        </mat-form-field>
-
-        <br />
-
-        <mat-form-field class="example-full-width">
-          <mat-label>Phone number</mat-label>
-          <input
-            matInput
-            placeholder="Phone number"
-            formControlName="phoneNumber"
-          />
-        </mat-form-field>
-
-        <br />
-
-        <mat-form-field class="example-full-width">
-          <mat-label>Age</mat-label>
-          <input matInput placeholder="Age" formControlName="age" />
-        </mat-form-field>
-        <br />
-
-        <div style="text-align: center">
-          <button mat-raised-button color="primary">Aceptar</button>
-          <button mat-raised-button color="warn" routerLink="/clients">
-            Cancelar
-          </button>
-          <p>{{ mensaje }}</p>
-        </div>
-      </form>
-    </div>
-  </body>
 </html>

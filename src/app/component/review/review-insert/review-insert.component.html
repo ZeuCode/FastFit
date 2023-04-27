@@ -15,52 +15,54 @@
       <h1>Registrar Reseña</h1>
     </div>
 
-    <form [formGroup]="form" (submit)="accept()">
+    <br>
 
+    <div class="ingreso">
+      <form [formGroup]="form" (submit)="accept()">
+        <mat-form-field class="example-full-width">
+          <mat-label>id</mat-label>
+          <input matInput required placeholder="id" formControlName="id">
+        </mat-form-field>
+        <br>
 
-      <mat-form-field class="example-full-width">
-        <mat-label>id</mat-label>
-        <input matInput placeholder="id" formControlName="id">
-      </mat-form-field>
-      <br>
+        <mat-form-field class="example-full-width">
+          <mat-label>Comment</mat-label>
+          <input matInput required placeholder="content" formControlName="content">
+        </mat-form-field>
+        <br>
 
-      <mat-form-field class="example-full-width">
-        <mat-label>Comment</mat-label>
-        <input matInput placeholder="content" formControlName="content">
-      </mat-form-field>
-      <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Likes</mat-label>
+          <mat-select placeholder="likes" formControlName="likes" required>
+            <mat-option value="1">1</mat-option>
+            <mat-option value="2">2</mat-option>
+            <mat-option value="3">3</mat-option>
+            <mat-option value="4">4</mat-option>
+            <mat-option value="5">5</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
 
-      <mat-form-field appearance="fill">
-        <mat-label>Likes</mat-label>
-        <mat-select placeholder="likes" formControlName="likes">
-          <mat-option value="1">1</mat-option>
-          <mat-option value="2">2</mat-option>
-          <mat-option value="3">3</mat-option>
-          <mat-option value="4">4</mat-option>
-          <mat-option value="5">5</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <br>
+        <mat-form-field class="example-full-width">
+          <mat-label>Client</mat-label>
+          <input matInput placeholder="Client_id" formControlName="Client_id">
+        </mat-form-field>
+        <br>
 
+        <mat-form-field class="example-full-width">
+          <mat-label>Psychologist</mat-label>
+          <input matInput placeholder="Psychologist_id" formControlName="Psychologist_id">
+        </mat-form-field>
+        <br>
 
-      <mat-form-field class="example-full-width">
-        <mat-label>Client</mat-label>
-        <input matInput placeholder="Client_id" formControlName="Client_id">
-      </mat-form-field>
-      <br>
+        <div style="text-align: center;">
+          <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
+          <button mat-raised-button routerLink="/reviews" style="margin-left: 8px;">Cancelar</button>
+          <p>{{mensaje}}</p>
+        </div>
+      </form>
+    </div>
 
-
-      <mat-form-field class="example-full-width">
-        <mat-label>Psychologist</mat-label>
-        <input matInput placeholder="Psychologist_id" formControlName="Psychologist_id">
-      </mat-form-field>
-      <br>
-
-      <button mat-raised-button color="primary">Aceptar</button>
-      <button mat-raised-button color="warn" routerLink="/reviews">Cancelar</button>
-      <p>{{mensaje}}</p>
-
-    </form>
   </div>
 </body>
 
