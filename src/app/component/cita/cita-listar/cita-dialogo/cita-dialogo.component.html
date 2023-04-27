@@ -1,5 +1,7 @@
-<mat-dialog-content>
-  <p>¿Està seguro de eliminar?</p>
-  <button mat-raised-button color="primary" (click)="confirmar(true)">Si</button>
-  <button mat-raised-button color="accent" (click)="confirmar(false)">No</button>
-</mat-dialog-content>
+<div style="text-align: center;">
+  <mat-dialog-content>
+    <p>¿Está seguro de eliminar?</p>
+    <button mat-raised-button color="primary" (click)="confirmar(true)" style="margin: 10px;">Si</button>
+    <button mat-raised-button (click)="confirmar(false)" style="margin: 10px;">No</button>
+  </mat-dialog-content>
+</div>
