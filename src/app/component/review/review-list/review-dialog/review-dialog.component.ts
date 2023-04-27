@@ -11,7 +11,7 @@ export class ReviewDialogComponent implements OnInit{
   constructor(private revS: ReviewService,
   private dialogRef: MatDialogRef<ReviewDialogComponent>){  }
   ngOnInit(): void { }
-  confirmar(estado: boolean) {
+  confirm(estado: boolean) {
     this.revS.setConfirmDelete(estado);
     this.dialogRef.close();
   }
