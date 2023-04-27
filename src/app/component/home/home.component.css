@@ -1,0 +1,20 @@
+
+.contenido{
+  justify-content: center;
+  align-items: center;
+  height: 60vh; /* altura del viewport */
+}
+
+.contenido h1 {
+  text-align: center;
+  font-size: 6em;
+}
+
+
+.fondo1 {
+  width: 100%;
+  height: 100%;
+  background-image: url(src\assets\Psychologist-pana.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}

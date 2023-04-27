@@ -62,12 +62,9 @@ mat-nav-list {
   align-items: center;
 }
 
-
-/* Estilo para el contenido principal debajo de la barra lateral */
-.mat-sidenav-content > div {
-  height: 88vh; /* Cambia la altura a tu preferencia */
+.contenido{
+background-color: #fff;
 }
-
 
 .list-item {
   width: 150px;
@@ -76,7 +73,6 @@ mat-nav-list {
   align-items: center;
   margin: auto;
   border-radius: 10px;
-  box-shadow: #6582FD;
 }
 
 /* Agrega margen derecho a "icono" para separarlo del "nombre_icono" */
@@ -86,7 +82,7 @@ mat-nav-list {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #6582FD;
+  color: #3F51B5;
 }
 
 /* Agrega margen izquierdo a "nombre_icono" para separarlo del "icono" */
