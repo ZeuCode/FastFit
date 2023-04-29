@@ -13,7 +13,7 @@
 <body>
   <div class="container-fluid">
     <div style="text-align: center">
-      <h1>Lista de Pagos</h1>
+      <h1>Historial de Pagos</h1>
     </div>
 
     <div class="row">
@@ -23,48 +23,46 @@
     </div>
     <br>
     <br>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-      <!--- Note that these columns can be defined in any order.The actual rendered columns are set as a property on the row definition" --><!-- Position Column -->
-      <ng-container matColumnDef="numero">
-        <th mat-header-cell *matHeaderCellDef>No.</th>
-        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 pagotable">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">ID Transacción</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.id }}</td>
       </ng-container>
 
-      <!-- Name Column --><ng-container matColumnDef="codigoPago">
-        <th mat-header-cell *matHeaderCellDef>Código de Pago</th>
-        <td mat-cell *matCellDef="let element">{{ element.paymentCode }}</td>
+      <ng-container matColumnDef="codigoPago">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">Num. Documento</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.paymentCode }}</td>
       </ng-container>
 
-      <!-- Weight Column --><ng-container matColumnDef="fecha">
-        <th mat-header-cell *matHeaderCellDef>Fecha de Pago</th>
-        <td mat-cell *matCellDef="let element">
+      <ng-container matColumnDef="tarjeta">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">Tarjeta</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;">{{'*'.repeat(4) + element.cardNumber.substring(element.cardNumber.length - 4)}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="fecha">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">Fecha de Pago</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;">
           {{ element.date | date : "dd/MM/yyyy" }}
         </td>
       </ng-container>
 
-      <!-- Symbol Column --><ng-container matColumnDef="tarjeta">
-        <th mat-header-cell *matHeaderCellDef>Tarjeta</th>
-        <td mat-cell *matCellDef="let element">{{ element.cardNumber }}</td>
+      <ng-container matColumnDef="moneda">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">Moneda</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.currency }}</td>
       </ng-container>
 
-      <!-- Symbol Column --><ng-container matColumnDef="cliente">
-        <th mat-header-cell *matHeaderCellDef>Código de Cliente</th>
-        <td mat-cell *matCellDef="let element">{{ element.Client_id }}</td>
+      <ng-container matColumnDef="importe">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">Importe</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center; justify-items: right;">{{ element.import }}</td>
       </ng-container>
 
-      <!-- Symbol Column --><ng-container matColumnDef="psicologo">
-        <th mat-header-cell *matHeaderCellDef>Código de Psicólogo</th>
-        <td mat-cell *matCellDef="let element">
-          {{ element.Psychologist_id }}
-        </td>
+      <ng-container matColumnDef="usuario">
+        <th mat-header-cell *matHeaderCellDef style="text-align: left;">Titular de la Tarjeta</th>
+        <td mat-cell *matCellDef="let element" style="text-align: left">{{ element.name + ' ' + element.lastname }}</td>
       </ng-container>
 
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="estado">
-        <th mat-header-cell *matHeaderCellDef>Estado</th>
-        <td mat-cell *matCellDef="let element">{{ element.active }}</td>
-      </ng-container>
-
+      <!--
       <ng-container matColumnDef="ceditar">
         <th mat-header-cell *matHeaderCellDef> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Acciones</th>
         <td mat-cell *matCellDef="let element">
@@ -81,7 +79,7 @@
 
         </td>
       </ng-container>
-
+  -->
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>

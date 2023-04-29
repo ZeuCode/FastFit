@@ -10,6 +10,7 @@ import { PaymentDialogoComponent } from './payment-dialogo/payment-dialogo.compo
   templateUrl: './payment-listar.component.html',
   styleUrls: ['./payment-listar.component.css'],
 })
+
 export class PaymentListarComponent {
   dataSource: MatTableDataSource<payment> = new MatTableDataSource();
   lista: payment[] = [];
@@ -18,14 +19,14 @@ export class PaymentListarComponent {
   constructor(private pS: PaymentService, private dialog: MatDialog) {}
 
   displayedColumns: String[] = [
-    'numero',
+    'id',
     'codigoPago',
-    'fecha',
     'tarjeta',
-    'cliente',
-    'psicologo',
-    'estado',
-    'ceditar',
+    'fecha',
+    'moneda',
+    'importe',
+    'usuario',
+    //'ceditar',
   ];
 
   ngOnInit(): void {
