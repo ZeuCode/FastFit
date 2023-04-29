@@ -34,6 +34,7 @@ import { PaymentInsertarComponent } from './component/payment/payment-insertar/p
 import { PaymentDialogoComponent } from './component/payment/payment-listar/payment-dialogo/payment-dialogo.component';
 
 //Angular Material
+import {MatPaginator} from '@angular/material/paginator';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -113,6 +114,7 @@ import { ClientDialogoComponent } from './component/client/client-listar/client-
     MatCardModule,
     MatMenuModule,
     MatDialogModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent],

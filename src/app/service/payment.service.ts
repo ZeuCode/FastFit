@@ -32,6 +32,7 @@ export class PaymentService {
   setList(listaNueva: payment[]) {
     this.listaCambio.next(listaNueva);
     this.list();
+
   }
 
   listId(id:number) {
