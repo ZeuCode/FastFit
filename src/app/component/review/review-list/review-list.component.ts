@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { ReviewService } from './../../../service/review.service';
 import { Review } from './../../../model/review';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog'
 import { ReviewDialogComponent } from './review-dialog/review-dialog.component';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-review-list',
@@ -16,15 +17,16 @@ export class ReviewListComponent implements OnInit{
   displayedColumns: string[] = ['id', 'content', 'date', 'likes', 'Client_id', 'Psychologist_id', 'actions'];
 
   private idMayor: number = 0;
-
+  @ViewChild('paginator') paginator!: MatPaginator;
   constructor(private RevS: ReviewService, private dialog: MatDialog) {}
   ngOnInit(): void {
     this.RevS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     });
     this.RevS.getList().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
-
+      this.dataSource.paginator = this.paginator;
     });
     this.RevS.getConfirmDelete().subscribe(data => {
       data == true ? this.delete(this.idMayor) : false;

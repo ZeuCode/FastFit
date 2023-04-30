@@ -62,6 +62,13 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
     </table>
+    <br>
+    <mat-paginator
+        #paginator
+        [pageSizeOptions]="[5, 10, 100]"
+        showFirstLastButtons
+      ></mat-paginator>
+    <br>
     <div style="text-align: center;">
       <button mat-raised-button color="primary" routerLink="citainsertar" style="margin: 10px; ">Agregar Cita</button>
     </div>

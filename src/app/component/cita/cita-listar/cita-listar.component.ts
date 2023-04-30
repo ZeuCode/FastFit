@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { CitaService } from 'src/app/service/cita.service';
 import { Citas } from 'src/app/model/cita';
 import { MatDialog } from '@angular/material/dialog'
 import { CitaDialogoComponent } from './cita-dialogo/cita-dialogo.component';
-
+import { MatPaginator } from '@angular/material/paginator';
 @Component({
   selector: 'app-cita-listar',
   templateUrl: './cita-listar.component.html',
@@ -18,6 +18,7 @@ export class CitaListarComponent implements OnInit {
   lista: Citas[] = [];
 
   private idMayor: number = 0;
+  @ViewChild('paginator') paginator!: MatPaginator;
   constructor(private pS: CitaService, private dialog:MatDialog) {
 
   }
@@ -32,9 +33,11 @@ export class CitaListarComponent implements OnInit {
   ngOnInit(): void {
     this.pS.list().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     })
     this.pS.getList().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     });
     this.pS.getConfirmaEliminacion().subscribe(data => {
       data == true ? this.eliminar(this.idMayor) : false;

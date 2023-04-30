@@ -84,13 +84,10 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
-    <!--
+<br>
+    <mat-paginator #paginator [pageSizeOptions]="[5, 10, 100]" showFirstLastButtons></mat-paginator>
 
-
-    -->
-    <br>
-    <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
-    <br>
+<br>
 
     <div style="text-align: center">
       <button mat-raised-button color="primary" routerLink="paymentsinsertar" style="margin: 10px">

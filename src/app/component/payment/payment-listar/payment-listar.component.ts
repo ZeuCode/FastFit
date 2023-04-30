@@ -19,6 +19,7 @@ export class PaymentListarComponent {
   private idMayor: number = 0;
 
   constructor(private pS: PaymentService, private dialog: MatDialog) { }
+  @ViewChild('paginator') paginator!: MatPaginator;
   displayedColumns: String[] = [
     'id',
     'codigoPago',
@@ -34,10 +35,12 @@ export class PaymentListarComponent {
 
     this.pS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     });
 
     this.pS.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     });
 
     this.pS.getConfirmaEliminacion().subscribe(data => {

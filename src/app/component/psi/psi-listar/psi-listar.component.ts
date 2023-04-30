@@ -1,9 +1,10 @@
 import { PsiService } from './../../../service/psi.service';
 import { Psi } from './../../../model/psi';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog'
 import { PsiDialogoComponent } from './psi-dialogo/psi-dialogo.component';
+import { MatPaginator } from '@angular/material/paginator';
 
 
 @Component({
@@ -16,14 +17,16 @@ export class PsiListarComponent implements OnInit {
   lista: Psi[] = [];
   displayedColumns: string[] = ['id', 'userName', 'password', 'names', 'lastNames', 'emailAddress', 'phoneNumber', 'age', 'rating','UserStatus_Id','Speciality_id','Gender_id','ceditar',];
   private idMayor: number = 0;
-
+  @ViewChild('paginator') paginator!: MatPaginator;
   constructor(private pS: PsiService, private dialog: MatDialog) {}
   ngOnInit(): void {
     this.pS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     });
     this.pS.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     });
     this.pS.getConfirmaEliminacion().subscribe(data => {
       data == true ? this.eliminar(this.idMayor) : false;
