@@ -23,6 +23,7 @@ export class PaymentListarComponent {
   displayedColumns: String[] = [
     'id',
     'codigoPago',
+    'idAppointment',
     'tarjeta',
     'fecha',
     'moneda',

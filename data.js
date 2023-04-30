@@ -137,6 +137,7 @@ module.exports = function () {
       {
         id:1,
         paymentCode:"BV100-1746456",
+        idAppointment: 1,
         cardNumber: "4236178832453296",
         date:"2023-04-10",
         currency:"Soles",
@@ -150,6 +151,7 @@ module.exports = function () {
       {
         id:2,
         paymentCode:"BV100-1746566",
+        idAppointment: 2,
         cardNumber: "4236178832453567",
         date:"2023-04-12",
         currency:"Soles",
@@ -163,6 +165,7 @@ module.exports = function () {
       {
         id:3,
         paymentCode:"BV100-1746659",
+        idAppointment: 3,
         cardNumber: "4236178832453567",
         date:"2023-04-12",
         currency:"Soles",
@@ -176,6 +179,7 @@ module.exports = function () {
       {
         id:4,
         paymentCode:"BV100-1746678",
+        idAppointment: 4,
         cardNumber: "4236178832453567",
         date:"2023-04-12",
         currency:"Soles",
@@ -189,6 +193,7 @@ module.exports = function () {
       {
         id:5,
         paymentCode:"BV100-1746678",
+        idAppointment: 5,
         cardNumber: "4236178832453567",
         date:"2023-04-12",
         currency:"Soles",
@@ -202,6 +207,7 @@ module.exports = function () {
       {
         id:6,
         paymentCode:"BV100-1746678",
+        idAppointment: 6,
         cardNumber: "4236178832453567",
         date:"2023-04-12",
         currency:"Soles",
@@ -215,6 +221,7 @@ module.exports = function () {
       {
         id:7,
         paymentCode:"BV100-1746678",
+        idAppointment: 7,
         cardNumber: "4236178832453567",
         date:"2023-04-12",
         currency:"Soles",
@@ -228,6 +235,7 @@ module.exports = function () {
       {
         id:8,
         paymentCode:"BV100-1746678",
+        idAppointment: 8,
         cardNumber: "4236178832453567",
         date:"2023-04-12",
         currency:"Soles",
@@ -241,6 +249,7 @@ module.exports = function () {
       {
         id:9,
         paymentCode:"BV100-1746678",
+        idAppointment: 9,
         cardNumber: "4236178832453567",
         date:"2023-04-12",
         currency:"Soles",
@@ -254,6 +263,7 @@ module.exports = function () {
       {
         id:10,
         paymentCode:"BV100-1746678",
+        idAppointment: 10,
         cardNumber: "4236178832453567",
         date:"2023-04-12",
         currency:"Soles",

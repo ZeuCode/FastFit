@@ -35,6 +35,11 @@
         <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.paymentCode }}</td>
       </ng-container>
 
+      <ng-container matColumnDef="idAppointment">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">ID Cita</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.idAppointment }}</td>
+      </ng-container>
+
       <ng-container matColumnDef="tarjeta">
         <th mat-header-cell *matHeaderCellDef style="text-align: center;">Tarjeta</th>
         <td mat-cell *matCellDef="let element" style="text-align: center;">{{'*'.repeat(4) +

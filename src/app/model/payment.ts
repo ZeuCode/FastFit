@@ -1,6 +1,7 @@
 export class payment{
   id:number=0
   paymentCode: string=""
+  idAppointment: number=0
   cardNumber: string=""
   date: Date= new Date(Date.now())
   currency: string=""

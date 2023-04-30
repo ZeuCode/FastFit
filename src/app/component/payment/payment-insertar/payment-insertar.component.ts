@@ -36,6 +36,7 @@ export class PaymentInsertarComponent implements OnInit {
     this.form = new FormGroup({
       id: new FormControl(),
       paymentCode: new FormControl(),
+      idAppointment:new FormControl(),
       cardNumber: new FormControl(),
       date: new FormControl(),
       currency:new FormControl(),
@@ -53,6 +54,7 @@ export class PaymentInsertarComponent implements OnInit {
 
     this.payment.id = this.form.value['id'];
     this.payment.paymentCode = this.form.value['paymentCode'];
+    this.payment.idAppointment=this.form.value['idAppointment'];
     this.payment.cardNumber = this.form.value['cardNumber'];
     this.payment.date = this.form.value['date'];
     this.payment.currency = this.form.value['currency'];
@@ -90,6 +92,7 @@ export class PaymentInsertarComponent implements OnInit {
         this.form = new FormGroup({
           id: new FormControl(data.id),
           paymentCode: new FormControl(data.paymentCode),
+          idAppointment: new FormControl(data.idAppointment),
           cardNumber: new FormControl(data.cardNumber),
           date: new FormControl(data.date),
           currency:new FormControl(data.currency),
