@@ -1,10 +1,11 @@
 import { ClientService } from './../../../service/client.service';
 import { Client } from './../../../model/client';
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { ClientDialogoComponent } from './client-dialogo/client-dialogo.component';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-client-listar',
@@ -27,13 +28,17 @@ export class ClientListarComponent implements OnInit {
   ];
   private idMayor: number = 0;
   constructor(private pC: ClientService, private dialog: MatDialog) {}
+  @ViewChild('paginator') paginator!: MatPaginator;
+
   ngOnInit(): void {
     this.pC.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     });
 
     this.pC.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     });
     this.pC.getConfirmaEliminacion().subscribe((data) => {
       data == true ? this.eliminar(this.idMayor) : false;
