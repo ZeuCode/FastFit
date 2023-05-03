@@ -11,6 +11,8 @@ import { ReviewInsertComponent } from './component/review/review-insert/review-i
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 //componenete HOME
 import { HomeComponent } from './component/home/home.component';
@@ -29,8 +31,10 @@ import { PsiInsertarComponent } from './component/psi/psi-insertar/psi-insertar.
 import { PaymentComponent } from './component/payment/payment.component';
 import { PaymentListarComponent } from './component/payment/payment-listar/payment-listar.component';
 import { PaymentInsertarComponent } from './component/payment/payment-insertar/payment-insertar.component';
+import { PaymentDialogoComponent } from './component/payment/payment-listar/payment-dialogo/payment-dialogo.component';
 
 //Angular Material
+import {MatPaginator} from '@angular/material/paginator';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -45,7 +49,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
-import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 //Angular cdk
@@ -57,6 +61,10 @@ import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.co
 import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-insertar.component';
 import { PsiDialogoComponent } from './component/psi/psi-listar/psi-dialogo/psi-dialogo.component';
 
+import { CitaDialogoComponent } from './component/cita/cita-listar/cita-dialogo/cita-dialogo.component';
+
+import { ReviewDialogComponent } from './component/review/review-list/review-dialog/review-dialog.component';
+import { ClientDialogoComponent } from './component/client/client-listar/client-dialogo/client-dialogo.component';
 
 
 @NgModule({
@@ -69,6 +77,7 @@ import { PsiDialogoComponent } from './component/psi/psi-listar/psi-dialogo/psi-
     PaymentComponent,
     PaymentListarComponent,
     PaymentInsertarComponent,
+    PaymentDialogoComponent,
     PsiComponent,
     PsiListarComponent,
     PsiInsertarComponent,
@@ -78,7 +87,10 @@ import { PsiDialogoComponent } from './component/psi/psi-listar/psi-dialogo/psi-
     CitaComponent,
     CitaListarComponent,
     CitaInsertarComponent,
-    PsiDialogoComponent,
+    CitaDialogoComponent,
+    ReviewDialogComponent,
+    ClientDialogoComponent,
+    PsiDialogoComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +99,6 @@ import { PsiDialogoComponent } from './component/psi/psi-listar/psi-dialogo/psi-
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-
     MatTableModule,
     MatInputModule,
     MatSelectModule,
@@ -103,6 +114,7 @@ import { PsiDialogoComponent } from './component/psi/psi-listar/psi-dialogo/psi-
     MatCardModule,
     MatMenuModule,
     MatDialogModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent],

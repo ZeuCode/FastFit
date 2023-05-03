@@ -1,19 +1,20 @@
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import {environment} from '../../../src/environments/environment'
-import {Client} from '../model/client'
+import { environment } from '../../../src/environments/environment';
+import { Client } from '../model/client';
 
-const base_url=environment.base
+const base_url = environment.base;
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ClientService {
-private url=`${base_url}/clients`
-private listaCambio = new Subject<Client[]>();
-  constructor(private http:HttpClient) { }
-  list(){
-    return this.http.get<Client[]>(this.url)
+  private url = `${base_url}/clients`;
+  private listaCambio = new Subject<Client[]>();
+  private confirmaEliminacion = new Subject<Boolean>()
+  constructor(private http: HttpClient) {}
+  list() {
+    return this.http.get<Client[]>(this.url);
   }
   insert(client: Client) {
     return this.http.post(this.url, client);
@@ -23,7 +24,22 @@ private listaCambio = new Subject<Client[]>();
   }
   setList(listaNueva: Client[]) {
     this.listaCambio.next(listaNueva);
-    this.list() //porque funciona?
+  }
+  listId(id: number) {
+    return this.http.get<Client>(`${this.url}/${id}`);
+  }
+
+  update(c: Client) {
+    return this.http.put(this.url + '/' + c.id, c);
+  }
+  eliminar(id: number) {
+    return this.http.delete(`${this.url}/${id}`);
+  }
+  getConfirmaEliminacion() {
+    return this.confirmaEliminacion.asObservable();
+  }
+  setConfirmaEliminacion(estado: Boolean) {
+    this.confirmaEliminacion.next(estado);
   }
 
 }

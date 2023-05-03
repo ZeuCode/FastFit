@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PaymentComponent } from './payment.component';
+import { ReviewDialogComponent } from './review-dialog.component';
 
-describe('PaymentComponent', () => {
-  let component: PaymentComponent;
-  let fixture: ComponentFixture<PaymentComponent>;
+describe('ReviewDialogComponent', () => {
+  let component: ReviewDialogComponent;
+  let fixture: ComponentFixture<ReviewDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PaymentComponent ]
+      declarations: [ ReviewDialogComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PaymentComponent);
+    fixture = TestBed.createComponent(ReviewDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

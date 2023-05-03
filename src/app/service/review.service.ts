@@ -10,8 +10,10 @@ const base_url = environment.base;
   providedIn: 'root',
 })
 export class ReviewService {
+
   private url = `${base_url}/reviews`;
   private listChange = new Subject<Review[]>();
+  private confirmDelete = new Subject<Boolean>()
 
   constructor(private http: HttpClient) {}
 
@@ -26,5 +28,21 @@ export class ReviewService {
   }
   setList(NewList: Review[]) {
     this.listChange.next(NewList);
+  }
+  listId(Id:number){
+    return this.http.get<Review>(`${this.url}/${Id}`);
+  }
+  update(r:Review){
+    return this.http.put(this.url+'/'+r.id,r)
+  }
+  delete(id: number) {
+
+    return this.http.delete(`${this.url}/${id}`);
+  }
+  getConfirmDelete() {
+    return this.confirmDelete.asObservable();
+  }
+  setConfirmDelete(estat: Boolean) {
+    this.confirmDelete.next(estat);
   }
 }
