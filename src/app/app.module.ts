@@ -65,7 +65,9 @@ import { CitaDialogoComponent } from './component/cita/cita-listar/cita-dialogo/
 
 import { ReviewDialogComponent } from './component/review/review-list/review-dialog/review-dialog.component';
 import { ClientDialogoComponent } from './component/client/client-listar/client-dialogo/client-dialogo.component';
-
+import { SpecialtyComponent } from './component/specialty/specialty.component';
+import { SpecialtyListarComponent } from './component/specialty/specialty-listar/specialty-listar.component';
+import { SpecialtyDialogComponent } from './component/specialty/specialty-listar/specialty-dialog/specialty-dialog.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +92,10 @@ import { ClientDialogoComponent } from './component/client/client-listar/client-
     CitaDialogoComponent,
     ReviewDialogComponent,
     ClientDialogoComponent,
-    PsiDialogoComponent
+    PsiDialogoComponent,
+    SpecialtyComponent,
+    SpecialtyListarComponent,
+    SpecialtyDialogComponent,
   ],
   imports: [
     BrowserModule,

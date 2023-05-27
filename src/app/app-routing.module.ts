@@ -12,6 +12,8 @@ import { PaymentComponent } from './component/payment/payment.component';
 import { PaymentInsertarComponent } from './component/payment/payment-insertar/payment-insertar.component';
 import { CitaComponent } from './component/cita/cita.component';
 import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-insertar.component';
+import { SpecialtyComponent } from './component/specialty/specialty.component';
+import { SpecialtyInsertComponent } from './component/specialty/specialty-insert/specialty-insert.component';
 
 const routes: Routes = [
   //path para el HOME
@@ -49,6 +51,19 @@ const routes: Routes = [
       },
       {
         path:'edicion/:id',component:PaymentInsertarComponent
+      }
+    ]
+  },
+
+  {
+    path: 'specialty',
+    component: SpecialtyComponent,
+    children: [
+      {
+        path: 'specialtyinsertar', component: SpecialtyInsertComponent,
+      },
+      {
+        path:'edicion/:id',component:SpecialtyInsertComponent
       }
     ]
   },
