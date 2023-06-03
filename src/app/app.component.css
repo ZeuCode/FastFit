@@ -44,7 +44,7 @@ mat-nav-list {
 }
 
 .sidenav {
-  width: 200px;
+  width: 220px;
 }
 
 .sidenav .mat-toolbar {
@@ -67,7 +67,7 @@ background-color: #fff;
 }
 
 .list-item {
-  width: 150px;
+  width: 160px;
   display: flex;
   cursor: pointer;
   align-items: center;

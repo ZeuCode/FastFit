@@ -1,44 +1,36 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { payment } from 'src/app/model/payment';
+import { Component,OnInit, ViewChild } from '@angular/core';
+import { specialty } from 'src/app/model/especialidad';
 import { MatTableDataSource } from '@angular/material/table';
-import { PaymentService } from 'src/app/service/payment.service';
+import { EspecialidadService } from 'src/app/service/especialidad.service';
 import { MatDialog } from '@angular/material/dialog'
 import { MatPaginator } from '@angular/material/paginator';
-import { PaymentDialogoComponent } from './payment-dialogo/payment-dialogo.component';
+import { SpecialtyDialogComponent } from './specialty-dialog/specialty-dialog.component';
 
 @Component({
-  selector: 'app-payment-listar',
-  templateUrl: './payment-listar.component.html',
-  styleUrls: ['./payment-listar.component.css'],
+  selector: 'app-specialty-listar',
+  templateUrl: './specialty-listar.component.html',
+  styleUrls: ['./specialty-listar.component.css']
 })
-
-export class PaymentListarComponent implements OnInit{
-
-  dataSource: MatTableDataSource<payment> = new MatTableDataSource();
-  lista: payment[] = [];
+export class SpecialtyListarComponent implements OnInit{
+  dataSource: MatTableDataSource<specialty> = new MatTableDataSource();
+  lista: specialty[] = [];
   private idMayor: number = 0;
 
-  constructor(private pS: PaymentService, private dialog: MatDialog) { }
+  constructor(private pS: EspecialidadService, private dialog: MatDialog) { }
+
   @ViewChild('paginator') paginator!: MatPaginator;
   displayedColumns: String[] = [
     'id',
-    'codigoPago',
-    'idAppointment',
-    'tarjeta',
-    'fecha',
-    'moneda',
-    'importe',
-    'usuario',
+    'name',
+    'description',
     'ceditar',
   ];
 
   ngOnInit(): void {
-
     this.pS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     });
-
     this.pS.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
@@ -56,8 +48,7 @@ export class PaymentListarComponent implements OnInit{
 
   confirmar(id: number) {
     this.idMayor = id;
-    this.dialog.open(PaymentDialogoComponent);
-
+    this.dialog.open(SpecialtyDialogComponent);
   }
 
   eliminar(id: number) {
@@ -67,5 +58,8 @@ export class PaymentListarComponent implements OnInit{
       });
     });
   }
+
+
+
 
 }
