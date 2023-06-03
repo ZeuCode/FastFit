@@ -25,9 +25,6 @@ module.exports = function () {
         AppointStatusID: 32,
 
       },
-
-
-
     ],
     clients: [
       {
@@ -117,8 +114,13 @@ module.exports = function () {
         age: 27,
         rating: 4,
         UserStatus_Id: 1,
-        Speciality_id: 2,
         Gender_id: "Masculino",
+        specialty:
+        {
+          id: 1,
+          name: "psicología clínica",
+          description: "rama de la psicología que se enfoca en el diagnóstico, tratamiento y prevención de trastornos mentales y emocionales, y en la promoción del bienestar psicológico.",
+        },
       },
       {
         id: 2,
@@ -131,8 +133,13 @@ module.exports = function () {
         age: 37,
         rating: 3,
         UserStatus_Id: 2,
-        Speciality_id: 2,
         Gender_id: "Femenino",
+        specialty:
+        {
+          id: 1,
+          name: "psicología clínica",
+          description: "rama de la psicología que se enfoca en el diagnóstico, tratamiento y prevención de trastornos mentales y emocionales, y en la promoción del bienestar psicológico.",
+        },
       }
 
     ],
