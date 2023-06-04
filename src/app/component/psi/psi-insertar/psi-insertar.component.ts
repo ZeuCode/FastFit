@@ -18,7 +18,7 @@ export class PsiInsertarComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   psi: Psi = new Psi();
   listaSpecialty: specialty[] = [];
-  idSpecialtySeleccionado:number=0;
+  idSpecialtySeleccionado: number = 0;
   mensaje: string = '';
   maxFecha: Date = moment().add(-1, 'days').toDate();
 
@@ -27,7 +27,7 @@ export class PsiInsertarComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private sS: EspecialidadService,
-    ) {}
+  ) { }
 
   ngOnInit(): void {
     this.sS.list().subscribe(dataEsp => { this.listaSpecialty = dataEsp });
@@ -47,26 +47,31 @@ export class PsiInsertarComponent implements OnInit {
       emailAddress: new FormControl(),
       phoneNumber: new FormControl(),
       age: new FormControl(),
-      rating:new FormControl(),
+      rating: new FormControl(),
       UserStatus_Id: new FormControl(),
       Gender_id: new FormControl(),
-      specialty:new FormControl(),
+      specialty: new FormControl(),
     });
   }
+
   aceptar(): void {
 
-    this.psi.id= this.form.value['id'];
-    this.psi.userName= this.form.value['userName'];
-    this.psi.password= this.form.value['password'];
-    this.psi.names= this.form.value['namesPsi'];
-    this.psi.lastNames= this.form.value['lastNames'];
-    this.psi.emailAddress= this.form.value['emailAddress'];
-    this.psi.phoneNumber= this.form.value['phoneNumber'];
-    this.psi.age= this.form.value['age'];
-    this.psi.rating= this.form.value['rating'];
-    this.psi.UserStatus_Id= this.form.value['UserStatus_Id'];
-    this.psi.Gender_id= this.form.value['Gender_id'];
-    this.psi.specialty.name= this.form.value['specialty.name'];
+    console.log(this.psi.idPsi);
+
+    this.psi.idPsi = this.form.value['id'];
+    this.psi.userName = this.form.value['userName'];
+    this.psi.password = this.form.value['password'];
+    this.psi.names = this.form.value['namesPsi'];
+    this.psi.lastNames = this.form.value['lastNames'];
+    this.psi.emailAddress = this.form.value['emailAddress'];
+    this.psi.phoneNumber = this.form.value['phoneNumber'];
+    this.psi.age = this.form.value['age'];
+    this.psi.rating = this.form.value['rating'];
+    this.psi.UserStatus_Id = this.form.value['UserStatus_Id'];
+    this.psi.Gender_id = this.form.value['Gender_id'];
+    this.psi.specialty.name = this.form.value['specialty.name'];
+    console.log(this.psi.idPsi);
+
 
     if (this.form.value['userName'].length > 0) {
       if (this.edicion) {
@@ -77,7 +82,7 @@ export class PsiInsertarComponent implements OnInit {
         });
       } else {
         let spec = new specialty();
-        spec.id = this.idSpecialtySeleccionado;
+        spec.idSpecialty = this.idSpecialtySeleccionado;
         this.psi.specialty = spec;
         this.pS.insert(this.psi).subscribe((data) => {
           this.pS.list().subscribe((data) => {
@@ -93,11 +98,12 @@ export class PsiInsertarComponent implements OnInit {
 
   init() {
     if (this.edicion) {
-      this.pS.listarId(this.id).subscribe(data => {
+      console.log(this.id);
+      this.pS.listId(this.id).subscribe(data => {
         //this.propietario = data
 
         this.form = new FormGroup({
-          id: new FormControl(data.id),
+          id: new FormControl(data.idPsi),
           userName: new FormControl(data.userName),
           password: new FormControl(data.password),
           names: new FormControl(data.names),
@@ -108,11 +114,8 @@ export class PsiInsertarComponent implements OnInit {
           age: new FormControl(data.age),
           rating: new FormControl(data.rating),
           UserStatus_Id: new FormControl(data.UserStatus_Id),
-
-          specialty: new FormControl(data.specialty.name),
           Gender_id: new FormControl(data.Gender_id),
-
-
+          specialty: new FormControl(data.specialty.name)
         });
         console.log(data);
       });

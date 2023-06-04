@@ -25,30 +25,32 @@ export class PaymentService {
     return this.Http.post(this.url, payment);
   }
 
+  setList(listaNueva: payment[]) {
+    this.listaCambio.next(listaNueva);
+    //this.list();
+  }
+
   getList() {
     return this.listaCambio.asObservable();
   }
 
-  setList(listaNueva: payment[]) {
-    this.listaCambio.next(listaNueva);
-    this.list();
-
+  update(p:payment) {
+    //return this.Http.put(this.url + '/' + p.idPayment, p);
+    return this.Http.put(this.url, p);
   }
 
   listId(id:number) {
     return this.Http.get<payment>(`${this.url}/${id}`);
   }
 
-  update(p:payment) {
-    return this.Http.put(this.url + '/' + p.id, p);
-  }
-
   eliminar(id: number) {
     return this.Http.delete(`${this.url}/${id}`);
   }
+
   getConfirmaEliminacion() {
     return this.confirmaEliminacion.asObservable();
   }
+
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmaEliminacion.next(estado);
   }

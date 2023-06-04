@@ -23,13 +23,6 @@
 
             <div class="item">
               <mat-form-field class="example-full-width">
-                <mat-label>ID</mat-label>
-                <input matInput readonly placeholder="ID" formControlName="id">
-              </mat-form-field>
-            </div>
-
-            <div class="item">
-              <mat-form-field class="example-full-width">
                 <mat-label>Nro. Documento</mat-label>
                 <input matInput required placeholder="BV100-1746600" formControlName="paymentCode">
               </mat-form-field>
@@ -65,7 +58,14 @@
             <div class="item">
               <mat-form-field class="example-full-width">
                 <mat-label>Importe</mat-label>
-                <input matInput required placeholder="50" formControlName="import">
+                <input matInput required placeholder="50" formControlName="pago">
+              </mat-form-field>
+            </div>
+
+            <div class="item">
+              <mat-form-field class="example-full-width">
+                <mat-label>email</mat-label>
+                <input matInput required placeholder="juan123@gmail.com" formControlName="email">
               </mat-form-field>
             </div>
 
@@ -110,31 +110,22 @@
               </mat-form-field>
             </div>
 
-            <div class="item">
-              <mat-form-field class="example-full-width">
-                <mat-label>email</mat-label>
-                <input matInput required placeholder="juan123@gmail.com" formControlName="email">
-              </mat-form-field>
+            <div class="item1">
+              <br>
+              <mat-slide-toggle> Acepta la política de reembolsos </mat-slide-toggle>
             </div>
           </div>
         </div>
 
         <div class="imagen"> </div>
-
+        <div style="text-align: center">
+          <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
+          <button mat-raised-button routerLink="/payment" style="margin-left: 8px;">Cancelar</button>
+          <p>{{mensaje}}</p>
+        </div>
       </form>
     </div>
-    <div style="text-align: center">
-      <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
-      <button mat-raised-button routerLink="/payment" style="margin-left: 8px;">Cancelar</button>
-      <p>{{mensaje}}</p>
-    </div>
-
-
-
   </div>
-
-
-
 </body>
 
 </html>

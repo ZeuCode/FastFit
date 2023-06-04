@@ -25,19 +25,19 @@ export class PsiService {
   }
   setList(listaNueva: Psi[]) {
     this.listaCambio.next(listaNueva);
+    //this.list();
   }
+
   listId(id: number) {
     return this.http.get<Psi>(`${this.url}/${id}`);
   }
 
   update(p: Psi) {
-    return this.http.put(this.url + '/' + p.id, p);
+    //return this.http.put(this.url + '/' + p.idPsi, p);
+    return this.http.put(this.url, p);
   }
-  listarId(id: number) {
-    return this.http.get<Psi>(`${this.url}/${id}`);
-  }
-  eliminar(id: number) {
 
+  eliminar(id: number) {
     return this.http.delete(`${this.url}/${id}`);
   }
   getConfirmaEliminacion() {
