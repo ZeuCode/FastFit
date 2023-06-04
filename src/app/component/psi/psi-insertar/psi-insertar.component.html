@@ -100,7 +100,7 @@
               <mat-form-field appearance="fill">
                 <mat-label>Speciality</mat-label>
                 <mat-select formControlName="specialty" [(value)]="idSpecialtySeleccionado" required>
-                  <mat-option *ngFor="let p of listaSpecialty" [value]="p.id">
+                  <mat-option *ngFor="let p of listaSpecialty" [value]="p.idSpecialty">
                     {{p.name}}
                   </mat-option>
                 </mat-select>
@@ -120,15 +120,16 @@
         </div>
 
         <div class="imagen"> </div>
+        <div style="text-align: center;">
+          <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
+          <button mat-raised-button routerLink="/psis" style="margin-left: 8px;">Cancelar</button>
+          <br>
+          <p>{{ mensaje }}</p>
+        </div>
 
       </form>
     </div>
-    <div style="text-align: center;">
-      <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
-      <button mat-raised-button routerLink="/psis" style="margin-left: 8px;">Cancelar</button>
-      <br>
-      <p>{{ mensaje }}</p>
-    </div>
+
 
 
 

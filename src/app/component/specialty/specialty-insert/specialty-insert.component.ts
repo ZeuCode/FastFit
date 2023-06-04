@@ -36,7 +36,7 @@ export class SpecialtyInsertComponent implements OnInit{
 
   accept(): void {
 
-    this.specialty.id = this.form.value['id'];
+    this.specialty.idSpecialty = this.form.value['id'];
     this.specialty.name = this.form.value['name'];
     this.specialty.description = this.form.value['description'];
 
@@ -70,7 +70,7 @@ export class SpecialtyInsertComponent implements OnInit{
     if(this.edition){
       this.eS.listId(this.id).subscribe((data)=>{
         this.form=new FormGroup({
-          id:new FormControl(data.id),
+          id:new FormControl(data.idSpecialty),
           name:new FormControl(data.name),
           description:new FormControl(data.description),
         })

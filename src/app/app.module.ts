@@ -61,7 +61,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
-
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 //Angular cdk
 import { LayoutModule } from '@angular/cdk/layout';
 import { AppoDialogoComponent } from './component/appointment/appo-listar/appo-dialogo/appo-dialogo.component';
@@ -140,7 +140,9 @@ import { AppoStatusListarComponent } from './component/appointment-status/appo-s
     MatCardModule,
     MatMenuModule,
     MatDialogModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSlideToggleModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],

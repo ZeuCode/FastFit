@@ -43,11 +43,9 @@ const routes: Routes = [
       },
     ],
   },
-  //path para payment
+  //payment component
   {
-    path: 'payment',
-    component: PaymentComponent,
-    children: [
+    path: 'payment',component: PaymentComponent,children: [
       {
         path: 'paymentsinsertar',
         component: PaymentInsertarComponent,

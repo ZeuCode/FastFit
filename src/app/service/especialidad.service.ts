@@ -31,7 +31,7 @@ export class EspecialidadService {
 
   setList(listaNueva: specialty[]) {
     this.listaCambio.next(listaNueva);
-    this.list();
+    //this.list();
   }
 
   listId(id:number) {
@@ -39,7 +39,8 @@ export class EspecialidadService {
   }
 
   update(p:specialty) {
-    return this.Http.put(this.url + '/' + p.id, p);
+    //return this.Http.put(this.url + '/' + p.idSpecialty, p);
+    return this.Http.put(this.url, p);
   }
 
   eliminar(id: number) {
