@@ -51,7 +51,7 @@
       <ng-container matColumnDef="ceditar">
         <th mat-header-cell *matHeaderCellDef>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Acciones </th>
         <td mat-cell *matCellDef="let element">
-          <button mat-button id="editar" [routerLink]="['edition',element.id]">
+          <button mat-button id="editar" [routerLink]="['edition',element.idAppointment]">
             <mat-icon id="cedit" aria-hidden="false" color="primary">edit</mat-icon>
           </button>
           <button mat-button (click)="confirmar(element.id)">

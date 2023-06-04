@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <br>
+  <div class="container-fluid" style="text-align: center;">
+
+    <div style="text-align: center;">
+      <h1>Registrar Pago</h1>
+    </div>
+
+    <div class="ingreso">
+      <form [formGroup]="form" (submit)="accept()">
+        <div class="automaticos">
+          <!-- <mat-form-field class="example-full-width">
+            <mat-label>id</mat-label>
+            <input matInput required placeholder="ID" formControlName="id">
+          </mat-form-field>
+          <br> -->
+
+          <mat-form-field class="example-full-width">
+            <mat-label>gender</mat-label>
+            <input matInput required formControlName="gender">
+          </mat-form-field>
+          <br>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>abbreviation</mat-label>
+            <input matInput required formControlName="abbreviation">
+          </mat-form-field>
+          <br>
+
+          <div style="text-align: center">
+            <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
+            <button mat-raised-button routerLink="/gender" style="margin-left: 8px;">Cancelar</button>
+            <p>{{mensaje}}</p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</body>
+
+</html>

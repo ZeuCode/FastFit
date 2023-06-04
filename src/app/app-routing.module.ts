@@ -16,6 +16,9 @@ import { SpecialtyComponent } from './component/specialty/specialty.component';
 import { SpecialtyInsertComponent } from './component/specialty/specialty-insert/specialty-insert.component';
 import { AppoStatusIngresarComponent } from './component/appointment-status/appo-status-ingresar/appo-status-ingresar.component';
 import { AppointmentStatusComponent } from './component/appointment-status/appointment-status.component';
+import { GenderComponent } from './component/gender/gender.component';
+import { GenderListarComponent } from './component/gender/gender-listar/gender-listar.component';
+import { GenderEditarComponent } from './component/gender/gender-editar/gender-editar.component';
 
 const routes: Routes = [
   //path para el HOME
@@ -122,6 +125,21 @@ const routes: Routes = [
       },
       { path: 'edition/:id', component: AppoStatusIngresarComponent },
     ],
+
+  },
+  //path para gender
+
+  {
+    path: 'gender',
+    component: GenderComponent,
+    children: [
+      {
+        path: 'genderinsert',
+        component: GenderEditarComponent,
+      },
+      { path: 'edition/:id', component: GenderEditarComponent },
+    ],
+
   },
 ];
 

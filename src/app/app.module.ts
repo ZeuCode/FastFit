@@ -72,11 +72,16 @@ import { SpecialtyListarComponent } from './component/specialty/specialty-listar
 import { SpecialtyInsertComponent } from './component/specialty/specialty-insert/specialty-insert.component';
 import { SpecialtyDialogComponent } from './component/specialty/specialty-listar/specialty-dialog/specialty-dialog.component';
 
-
 //componente appointment Status
 import { AppointmentStatusComponent } from './component/appointment-status/appointment-status.component';
 import { AppoStatusIngresarComponent } from './component/appointment-status/appo-status-ingresar/appo-status-ingresar.component';
 import { AppoStatusListarComponent } from './component/appointment-status/appo-status-listar/appo-status-listar.component';
+
+//componente gender
+import { GenderComponent } from './component/gender/gender.component';
+import { GenderListarComponent } from './component/gender/gender-listar/gender-listar.component';
+import { GenderEditarComponent } from './component/gender/gender-editar/gender-editar.component';
+import { GenderDialogComponent } from './component/gender/gender-listar/gender-dialog/gender-dialog.component';
 
 @NgModule({
   declarations: [
@@ -115,7 +120,12 @@ import { AppoStatusListarComponent } from './component/appointment-status/appo-s
     SpecialtyInsertComponent,
     AppointmentStatusComponent,
     AppoStatusListarComponent,
-    AppoStatusIngresarComponent
+    AppoStatusIngresarComponent,
+    GenderComponent,
+    GenderListarComponent,
+    GenderEditarComponent,
+    GenderDialogComponent,
+    
 
   ],
   imports: [
