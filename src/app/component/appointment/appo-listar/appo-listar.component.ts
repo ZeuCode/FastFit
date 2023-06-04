@@ -17,12 +17,13 @@ export class AppoListarComponent implements OnInit{
   dataSource: MatTableDataSource<Appointment> = new MatTableDataSource();
   lista: Appointment[] = [];
 
+
   private idMayor: number = 0;
   @ViewChild('paginator') paginator!: MatPaginator;
   constructor(private pS: AppointmentService, private dialog:MatDialog) {
 
   }
-  displayedColumns: String[] = [
+  displayedColumns: string[] = [
     'idAppointment',
     'date',
     'client',

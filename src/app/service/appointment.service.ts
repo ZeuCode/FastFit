@@ -3,12 +3,12 @@ import { Appointment } from '../model/appointment';
 import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-const base_url = environment.base
+const base_url = environment.base;
 @Injectable({
   providedIn: 'root',
 })
 export class AppointmentService {
-  private url = `${base_url}/Appointments`;
+  private url = `${base_url}/appointments`;
   private listaCambio = new Subject<Appointment[]>();
   private confirmaEliminacion = new Subject<Boolean>();
 
@@ -31,7 +31,8 @@ export class AppointmentService {
   }
 
   update(c: Appointment) {
-    return this.Http.put(this.url + '/' + c.idAppointment, c);
+    //return this.Http.put(this.url + '/' + c.idAppointment, c);
+    return this.Http.put(this.url, c);
   }
   eliminar(id: number) {
     return this.Http.delete(`${this.url}/${id}`);

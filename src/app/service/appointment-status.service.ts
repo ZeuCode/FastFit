@@ -34,7 +34,9 @@ export class AppointmentStatusService {
   }
 
   update(c: AppointmentStatus) {
-    return this.http.put(this.url + '/' + c.id, c);
+    //return this.http.put(this.url + '/' + c.id, c);
+    return this.http.put(this.url, c);
+
   }
   eliminar(id: number) {
     return this.http.delete(`${this.url}/${id}`);

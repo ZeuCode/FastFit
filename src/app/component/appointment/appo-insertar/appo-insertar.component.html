@@ -21,7 +21,7 @@
 
       <mat-form-field class="example-full-width">
         <mat-label>id</mat-label>
-        <input matInput placeholder="ejm: 4" formControlName="idAppointment" id="inputid">
+        <input matInput placeholder="ejm: 4" formControlName="idAppointment" >
       </mat-form-field>
 
       <br>
@@ -32,16 +32,24 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
-      <!-- <br>
+      <br>
       <mat-form-field class="example-full-width">
         <mat-label>Cliente_ID</mat-label>
-        <input matInput required placeholder="ejm: 1" formControlName="client_id">
+        <mat-select formControlName="client" [(value)]="idclientSelected" required>
+          <mat-option *ngFor="let c of listaclient" [value]="c.id">
+            {{c.id}}
+        </mat-option>
+      </mat-select>
       </mat-form-field>
       <br>
       <mat-form-field appearance="fill">
         <mat-label>Psychologist_ID</mat-label>
-        <input matInput required placeholder="ejm: 2" formControlName="PsychologistID">
-      </mat-form-field> -->
+        <mat-select formControlName="psychologist" [(value)]="idpsySelected" required>
+          <mat-option *ngFor="let i of listapsi" [value]="i.idPsi">
+            {{i.idPsi}}
+        </mat-option>
+      </mat-select>
+      </mat-form-field>
 
       <br>
       <mat-form-field class="example-full-width">

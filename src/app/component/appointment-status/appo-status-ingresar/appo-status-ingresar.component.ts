@@ -59,7 +59,7 @@ export class AppoStatusIngresarComponent implements OnInit{
     this.appostat.status = this.form.value['status'];
     this.appostat.description = this.form.value['description'];
 
-    if (this.form.value['id'].length > 0|| this.form.value['status'] ) {
+    if (this.form.value['id'].length > 0|| this.form.value['status'].length>0 ) {
 
       if (this.edicion) {
         //guargadar los datos
@@ -92,6 +92,7 @@ export class AppoStatusIngresarComponent implements OnInit{
           description: new FormControl(data.description),
 
         });
+        console.log(data);
       });
     }
   }
