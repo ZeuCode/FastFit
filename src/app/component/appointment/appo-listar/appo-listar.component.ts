@@ -1,25 +1,25 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
-import { CitaService } from 'src/app/service/cita.service';
-import { Citas } from 'src/app/model/cita';
-import { MatDialog } from '@angular/material/dialog'
-import { CitaDialogoComponent } from './cita-dialogo/cita-dialogo.component';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { Appointment } from 'src/app/model/appointment';
+import { AppointmentService } from 'src/app/service/appointment.service';
+import { AppoDialogoComponent } from './appo-dialogo/appo-dialogo.component';
+
 @Component({
-  selector: 'app-cita-listar',
-  templateUrl: './cita-listar.component.html',
-  styleUrls: ['./cita-listar.component.css']
+  selector: 'app-appo-listar',
+  templateUrl: './appo-listar.component.html',
+  styleUrls: ['./appo-listar.component.css']
 })
+export class AppoListarComponent implements OnInit{
 
-export class CitaListarComponent implements OnInit {
 
-
-  dataSource: MatTableDataSource<Citas> = new MatTableDataSource();
-  lista: Citas[] = [];
+  dataSource: MatTableDataSource<Appointment> = new MatTableDataSource();
+  lista: Appointment[] = [];
 
   private idMayor: number = 0;
   @ViewChild('paginator') paginator!: MatPaginator;
-  constructor(private pS: CitaService, private dialog:MatDialog) {
+  constructor(private pS: AppointmentService, private dialog:MatDialog) {
 
   }
   displayedColumns: String[] = [
@@ -50,7 +50,7 @@ export class CitaListarComponent implements OnInit {
 
   confirmar(id: number) {
     this.idMayor = id;
-    this.dialog.open(CitaDialogoComponent);
+    this.dialog.open(AppoDialogoComponent);
   }
   eliminar(id: number) {
     this.pS.eliminar(id).subscribe(() => {

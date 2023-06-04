@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
 @Component({
-  selector: 'app-cita',
-  templateUrl: './cita.component.html',
-  styleUrls: ['./cita.component.css']
+  selector: 'app-appointment',
+  templateUrl: './appointment.component.html',
+  styleUrls: ['./appointment.component.css']
 })
-export class CitaComponent implements OnInit {
+export class AppointmentComponent implements OnInit{
   constructor(public route: ActivatedRoute) {
   }
   ngOnInit(): void {

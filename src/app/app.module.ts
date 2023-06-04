@@ -55,16 +55,20 @@ import { MatMenuModule } from '@angular/material/menu';
 //Angular cdk
 import { LayoutModule } from '@angular/cdk/layout';
 
-//componente Cita
-import { CitaComponent } from './component/cita/cita.component';
-import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
-import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-insertar.component';
+
+
 import { PsiDialogoComponent } from './component/psi/psi-listar/psi-dialogo/psi-dialogo.component';
 
-import { CitaDialogoComponent } from './component/cita/cita-listar/cita-dialogo/cita-dialogo.component';
+
+import { AppointmentComponent } from './component/appointment/appointment.component';
+import { AppoInsertarComponent } from './component/appointment/appo-insertar/appo-insertar.component';
+import { AppoListarComponent } from './component/appointment/appo-listar/appo-listar.component';
+//
 
 import { ReviewDialogComponent } from './component/review/review-list/review-dialog/review-dialog.component';
 import { ClientDialogoComponent } from './component/client/client-listar/client-dialogo/client-dialogo.component';
+import { AppoDialogoComponent } from './component/appointment/appo-listar/appo-dialogo/appo-dialogo.component';
+
 
 
 @NgModule({
@@ -84,13 +88,15 @@ import { ClientDialogoComponent } from './component/client/client-listar/client-
     ReviewComponent,
     ReviewListComponent,
     ReviewInsertComponent,
-    CitaComponent,
-    CitaListarComponent,
-    CitaInsertarComponent,
-    CitaDialogoComponent,
+
+
     ReviewDialogComponent,
     ClientDialogoComponent,
-    PsiDialogoComponent
+    PsiDialogoComponent,
+    AppointmentComponent,
+    AppoInsertarComponent,
+    AppoListarComponent,
+    AppoDialogoComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,12 +6,11 @@ import { ReviewComponent } from './component/review/review.component';
 import { ReviewInsertComponent } from './component/review/review-insert/review-insert.component';
 import { HomeComponent } from './component/home/home.component';
 import { ClientComponent } from './component/client/client.component';
-import { ClientListarComponent } from './component/client/client-listar/client-listar.component';
 import { ClientInsertarComponent } from './component/client/client-insertar/client-insertar.component';
 import { PaymentComponent } from './component/payment/payment.component';
 import { PaymentInsertarComponent } from './component/payment/payment-insertar/payment-insertar.component';
-import { CitaComponent } from './component/cita/cita.component';
-import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-insertar.component';
+import { AppoInsertarComponent } from './component/appointment/appo-insertar/appo-insertar.component';
+import { AppointmentComponent } from './component/appointment/appointment.component';
 
 const routes: Routes = [
   //path para el HOME
@@ -81,13 +80,13 @@ const routes: Routes = [
 
   //path para citas
   {
-    path: 'citas',
-    component: CitaComponent,
+    path: 'Appointments',
+    component: AppointmentComponent,
     children: [
       {
-        path: 'citainsertar', component: CitaInsertarComponent,
+        path: 'appoinsertar', component: AppoInsertarComponent,
       },
-      { path: 'edicion/:id', component: CitaInsertarComponent }
+      { path: 'edicion/:id', component: AppoInsertarComponent }
     ]
   },
 ];
