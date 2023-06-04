@@ -23,11 +23,11 @@ export class AppoListarComponent implements OnInit{
 
   }
   displayedColumns: String[] = [
-    'id',
+    'idAppointment',
     'date',
-    'client_id',
-    'PsychologistID',
-    'AppointStatusID',
+    'client',
+    'psychologist',
+    'appointmentStatus',
     'ceditar',
  ]
   ngOnInit(): void {
@@ -48,12 +48,12 @@ export class AppoListarComponent implements OnInit{
     this.dataSource.filter = e.target.value.trim();
   }
 
-  confirmar(id: number) {
-    this.idMayor = id;
+  confirmar(idAppointment: number) {
+    this.idMayor = idAppointment;
     this.dialog.open(AppoDialogoComponent);
   }
-  eliminar(id: number) {
-    this.pS.eliminar(id).subscribe(() => {
+  eliminar(idAppointment: number) {
+    this.pS.eliminar(idAppointment).subscribe(() => {
       this.pS.list().subscribe(data => {
         this.pS.setList(data);/* se ejecuta la línea 27 */
       });

@@ -1,8 +1,10 @@
+import { AppointmentStatus } from "./appointmentStatus"
+
 export class Appointment{
-  id: number=0
+  idAppointment: number=0
   date= new Date(Date.now())
-  client_id: number=0
-  PsychologistID: number=0
-  AppointStatusID: number=0
+  client: number=0
+  psychologist: number=0
+  appointmentStatus: AppointmentStatus=new AppointmentStatus();
 
 }

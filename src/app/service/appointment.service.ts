@@ -11,6 +11,7 @@ export class AppointmentService {
   private url = `${base_url}/Appointments`;
   private listaCambio = new Subject<Appointment[]>();
   private confirmaEliminacion = new Subject<Boolean>();
+
   constructor(private Http: HttpClient) {}
   list() {
     return this.Http.get<Appointment[]>(this.url);
@@ -30,7 +31,7 @@ export class AppointmentService {
   }
 
   update(c: Appointment) {
-    return this.Http.put(this.url + '/' + c.id, c);
+    return this.Http.put(this.url + '/' + c.idAppointment, c);
   }
   eliminar(id: number) {
     return this.Http.delete(`${this.url}/${id}`);

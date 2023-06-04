@@ -20,8 +20,8 @@
     <form [formGroup]="form" (submit)="aceptar()">
 
       <mat-form-field class="example-full-width">
-        <mat-label>Id</mat-label>
-        <input matInput placeholder="ejm: 4" formControlName="id" id="inputid">
+        <mat-label>id</mat-label>
+        <input matInput placeholder="ejm: 4" formControlName="idAppointment" id="inputid">
       </mat-form-field>
 
       <br>
@@ -32,7 +32,7 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
-      <br>
+      <!-- <br>
       <mat-form-field class="example-full-width">
         <mat-label>Cliente_ID</mat-label>
         <input matInput required placeholder="ejm: 1" formControlName="client_id">
@@ -41,12 +41,16 @@
       <mat-form-field appearance="fill">
         <mat-label>Psychologist_ID</mat-label>
         <input matInput required placeholder="ejm: 2" formControlName="PsychologistID">
-      </mat-form-field>
+      </mat-form-field> -->
 
       <br>
       <mat-form-field class="example-full-width">
-        <mat-label>AppointentStatus_ID</mat-label>
-        <input matInput required placeholder="ejm: 3" formControlName="appointment_id">
+        <mat-label>listastatus</mat-label>
+        <mat-select formControlName="appointmentStatus" [(value)]="idApStatSelected" required>
+          <mat-option *ngFor="let a of listastatus" [value]="a.id">
+            {{a.id}}
+        </mat-option>
+        </mat-select>
       </mat-form-field>
       <br>
 
