@@ -20,7 +20,7 @@ export class AppoStatusIngresarComponent implements OnInit{
   minFecha: Date = moment().add('days').toDate();
   variable_cambio: string = "";
   // lo ultimo agregado
-  lista_status:AppointmentStatus[]=[];
+
   idApStatSelected: number = 0;
   //agregando appointment service
   constructor(private pS: AppointmentStatusService, private router: Router, private route: ActivatedRoute) { }
@@ -30,7 +30,7 @@ export class AppoStatusIngresarComponent implements OnInit{
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
-      this.edicion = data['id'] != null
+      this.edicion = data['idAppointment'] != null
       this.init();
       this.modificar();
     });

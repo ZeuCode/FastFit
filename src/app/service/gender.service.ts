@@ -17,8 +17,8 @@ export class GenderService {
   list() {
     return this.http.get<Gender[]>(this.url);
   }
-  insert(appointment: Gender) {
-    return this.http.post(this.url, appointment);
+  insert(g: Gender) {
+    return this.http.post(this.url, g);
   }
   getList() {
     return this.listaCambio.asObservable();

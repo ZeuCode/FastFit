@@ -9,7 +9,7 @@ const base_url = environment.base;
   providedIn: 'root',
 })
 export class ClientService {
-  private url = `${base_url}/clients`;
+  private url = `${base_url}/client`;
   private listaCambio = new Subject<Client[]>();
   private confirmaEliminacion = new Subject<Boolean>()
   constructor(private http: HttpClient) {}
@@ -30,7 +30,9 @@ export class ClientService {
   }
 
   update(c: Client) {
-    return this.http.put(this.url + '/' + c.id, c);
+   // return this.http.put(this.url + '/' + c.id, c);
+   return this.http.put(this.url, c);
+
   }
   eliminar(id: number) {
     return this.http.delete(`${this.url}/${id}`);

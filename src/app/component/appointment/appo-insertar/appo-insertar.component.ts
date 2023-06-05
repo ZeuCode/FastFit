@@ -42,18 +42,19 @@ export class AppoInsertarComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
-      this.id = data['idAppointment'];
-      this.edicion = data['idAppointment'] != null;
+      this.id = data['id'];
+      this.edicion = data['id'] != null;
       this.init();
       this.modificar();
-      this.sS.list().subscribe((data) => {
-        this.listastatus = data;
+
+      this.sS.list().subscribe((datasta) => {
+        this.listastatus = datasta;
       });
-      this.cS.list().subscribe((data) => {
-        this.listaclient = data;
+      this.cS.list().subscribe((datacl) => {
+        this.listaclient = datacl;
       });
-      this.iS.list().subscribe((data) => {
-        this.listapsi = data;
+      this.iS.list().subscribe((datapsy) => {
+        this.listapsi = datapsy;
       });
     });
     this.form = new FormGroup({
@@ -73,41 +74,42 @@ export class AppoInsertarComponent implements OnInit {
   }
 
   aceptar(): void {
-    this.appo.idAppointment = this.form.value['idAppointment'];
+    this.appo.idAppointment = this.form.value['id'];
     this.appo.date = this.form.value['date'];
-    this.appo.client.id = this.form.value['client.id'];
-    this.appo.psychologist.idPsi = this.form.value['psychologist.idPsi'];
-    this.appo.appointmentStatus.id = this.form.value['AppointStatus.id'];
-
-    if (this.idApStatSelected > 0) {
-      let a = new AppointmentStatus();
-      a.id = this.idApStatSelected;
-      this.appo.appointmentStatus = a;
-
-      this.pS.insert(this.appo).subscribe(() => {
-        this.pS.list().subscribe((data) => {
-          this.pS.setList(data);
-        });
-      });
-    }
-
-    if (this.form.value['idAppointment'].length > 0) {
+    this.appo.client.id = this.form.value['client'];
+    this.appo.psychologist.idPsi = this.form.value['psychologist'];
+    this.appo.appointmentStatus.id = this.form.value['AppointStatus'];
+    if (this.form.value['client'] > 0) {
+      if (this.idApStatSelected > 0) {
+        let a = new AppointmentStatus();
+        a.id = this.idApStatSelected;
+        this.appo.appointmentStatus = a;
+      }
+      if (this.idclientSelected > 0) {
+        let c = new Client();
+        c.id = this.idclientSelected;
+        this.appo.client = c;
+      }
+      if (this.idpsySelected > 0) {
+        let i = new Psi();
+        i.idPsi = this.idpsySelected;
+        this.appo.psychologist = i;
+      }
       if (this.edicion) {
-        //guargadar los datos
         this.pS.update(this.appo).subscribe(() => {
           this.pS.list().subscribe((data) => {
             this.pS.setList(data);
           });
         });
+        this.router.navigate(['Appointments']);
       } else {
-        this.pS.insert(this.appo).subscribe((data) => {
+        this.pS.insert(this.appo).subscribe(() => {
           this.pS.list().subscribe((data) => {
             this.pS.setList(data);
           });
         });
+        this.router.navigate(['Appointments']);
       }
-      this.router.navigate(['Appointments']);
-    } else {
     }
   }
   init() {

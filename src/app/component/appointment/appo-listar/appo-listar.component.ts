@@ -9,38 +9,33 @@ import { AppoDialogoComponent } from './appo-dialogo/appo-dialogo.component';
 @Component({
   selector: 'app-appo-listar',
   templateUrl: './appo-listar.component.html',
-  styleUrls: ['./appo-listar.component.css']
+  styleUrls: ['./appo-listar.component.css'],
 })
-export class AppoListarComponent implements OnInit{
-
-
+export class AppoListarComponent implements OnInit {
   dataSource: MatTableDataSource<Appointment> = new MatTableDataSource();
   lista: Appointment[] = [];
 
-
   private idMayor: number = 0;
   @ViewChild('paginator') paginator!: MatPaginator;
-  constructor(private pS: AppointmentService, private dialog:MatDialog) {
-
-  }
-  displayedColumns: string[] = [
+  constructor(private pS: AppointmentService, private dialog: MatDialog) {}
+  displayedColumns: String[] = [
     'idAppointment',
     'date',
     'client',
     'psychologist',
     'appointmentStatus',
     'ceditar',
- ]
+  ];
   ngOnInit(): void {
-    this.pS.list().subscribe(data => {
-      this.dataSource = new MatTableDataSource(data);
-      this.dataSource.paginator = this.paginator;
-    })
-    this.pS.getList().subscribe(data => {
+    this.pS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     });
-    this.pS.getConfirmaEliminacion().subscribe(data => {
+    this.pS.getList().subscribe((data) => {
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
+    });
+    this.pS.getConfirmaEliminacion().subscribe((data) => {
       data == true ? this.eliminar(this.idMayor) : false;
     });
   }
@@ -49,14 +44,14 @@ export class AppoListarComponent implements OnInit{
     this.dataSource.filter = e.target.value.trim();
   }
 
-  confirmar(idAppointment: number) {
-    this.idMayor = idAppointment;
+  confirmar(id: number) {
+    this.idMayor = id;
     this.dialog.open(AppoDialogoComponent);
   }
-  eliminar(idAppointment: number) {
-    this.pS.eliminar(idAppointment).subscribe(() => {
-      this.pS.list().subscribe(data => {
-        this.pS.setList(data);/* se ejecuta la línea 27 */
+  eliminar(id: number) {
+    this.pS.eliminar(id).subscribe(() => {
+      this.pS.list().subscribe((data) => {
+        this.pS.setList(data); /* se ejecuta la línea 27 */
       });
     });
   }
