@@ -65,6 +65,10 @@ import { CitaDialogoComponent } from './component/cita/cita-listar/cita-dialogo/
 
 import { ReviewDialogComponent } from './component/review/review-list/review-dialog/review-dialog.component';
 import { ClientDialogoComponent } from './component/client/client-listar/client-dialogo/client-dialogo.component';
+import { UserstatusInsertarComponent } from './component/userstatus/userstatus-insertar/userstatus-insertar.component';
+import { UserstatusListarComponent } from './component/userstatus/userstatus-listar/userstatus-listar.component';
+import { UserstatusComponent } from './component/userstatus/userstatus.component';
+import { UserstatusDialogoComponent } from './component/userstatus/userstatus-listar/userstatus-dialogo/userstatus-dialogo.component';
 
 
 @NgModule({
@@ -90,7 +94,11 @@ import { ClientDialogoComponent } from './component/client/client-listar/client-
     CitaDialogoComponent,
     ReviewDialogComponent,
     ClientDialogoComponent,
-    PsiDialogoComponent
+    PsiDialogoComponent,
+    UserstatusInsertarComponent,
+    UserstatusListarComponent,
+    UserstatusComponent,
+    UserstatusDialogoComponent
   ],
   imports: [
     BrowserModule,
