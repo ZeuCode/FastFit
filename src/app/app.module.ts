@@ -82,6 +82,7 @@ import { GenderComponent } from './component/gender/gender.component';
 import { GenderListarComponent } from './component/gender/gender-listar/gender-listar.component';
 import { GenderEditarComponent } from './component/gender/gender-editar/gender-editar.component';
 import { GenderDialogComponent } from './component/gender/gender-listar/gender-dialog/gender-dialog.component';
+import { AppstaDialogComponent } from './component/appointment-status/appo-status-listar/appsta-dialog/appsta-dialog.component';
 
 @NgModule({
   declarations: [
@@ -125,6 +126,7 @@ import { GenderDialogComponent } from './component/gender/gender-listar/gender-d
     GenderListarComponent,
     GenderEditarComponent,
     GenderDialogComponent,
+    AppstaDialogComponent,
     
 
   ],

@@ -36,7 +36,7 @@ export class AppoStatusIngresarComponent implements OnInit{
     });
     this.form = new FormGroup({
 
-      id: new FormControl(),
+     // id: new FormControl(),
       status: new FormControl(),
       description: new FormControl(),
 
@@ -59,7 +59,7 @@ export class AppoStatusIngresarComponent implements OnInit{
     this.appostat.status = this.form.value['status'];
     this.appostat.description = this.form.value['description'];
 
-    if (this.form.value['id'].length > 0|| this.form.value['status'].length>0 ) {
+    if ( this.form.value['status'].length>0 ) {
 
       if (this.edicion) {
         //guargadar los datos

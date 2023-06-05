@@ -9,40 +9,38 @@
 </head>
 
 <body>
-  <div class="top">
 
-    <h1 class="titulo"> {{variable_cambio}}</h1>
-
-  </div>
   <br>
+  <div class="container-fluid" style="text-align: center;">
 
-  <div class="ingreso">
-    <form [formGroup]="form" (submit)="aceptar()">
+    <div style="text-align: center;">
+      <h1>Registrar Pago</h1>
+    </div>
 
-      <mat-form-field class="example-full-width">
-        <mat-label>id</mat-label>
-        <input matInput placeholder="ejm: 4" formControlName="id" id="inputid">
-      </mat-form-field>
+    <div class="ingreso">
+      <form [formGroup]="form" (submit)="aceptar()">
+        <div class="automaticos">
+          <mat-form-field class="example-full-width">
+            <mat-label>Status</mat-label>
+            <input matInput required formControlName="status">
+          </mat-form-field>
+          <br>
 
-      <br>
-      <mat-form-field class="example-full-width">
-        <mat-label>status</mat-label>
-        <input matInput required  placeholder="3/04/2022" formControlName="status">
+          <mat-form-field class="example-full-width">
+            <mat-label>description</mat-label>
+            <input matInput required formControlName="description">
+          </mat-form-field>
+          <br>
 
-      </mat-form-field>
+          <div style="text-align: center">
+            <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
+            <button mat-raised-button routerLink="/AppointmentStatus" style="margin-left: 8px;">Cancelar</button>
 
-      <br>
-      <mat-form-field class="example-full-width">
-        <mat-label>description</mat-label>
-        <input matInput required placeholder="ejm: 1" formControlName="description">
-      </mat-form-field>
-      <br>
-      <div style="text-align: center;">
-        <button mat-raised-button color="primary" id="miBoton" style="margin-right: 8px;">Aceptar</button>
-        <button mat-raised-button routerLink="/AppointmentStatus" style="margin-left: 8px;">Cancelar</button>
-      </div>
+          </div>
+        </div>
+      </form>
+    </div>
 
-    </form>
   </div>
 </body>
 

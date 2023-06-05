@@ -5,7 +5,8 @@ import { AppointmentStatus } from 'src/app/model/appointmentStatus';
 import { AppointmentStatusComponent } from '../appointment-status.component';
 import { MatDialog } from '@angular/material/dialog';
 import { AppointmentStatusService } from 'src/app/service/appointment-status.service';
-import { AppoDialogoComponent } from './appo-dialogo/appo-dialogo.component';
+import { AppstaDialogComponent } from './appsta-dialog/appsta-dialog.component';
+
 
 @Component({
   selector: 'app-appo-status-listar',
@@ -42,7 +43,7 @@ export class AppoStatusListarComponent implements OnInit {
 
   confirmar(id: number) {
     this.idMayor = id;
-    this.dialog.open(AppoDialogoComponent);
+    this.dialog.open(AppstaDialogComponent);
   }
   eliminar(id: number) {
     this.pS.eliminar(id).subscribe(() => {
