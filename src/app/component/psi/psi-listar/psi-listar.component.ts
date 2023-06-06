@@ -15,10 +15,12 @@ import { MatPaginator } from '@angular/material/paginator';
 export class PsiListarComponent implements OnInit {
   dataSource: MatTableDataSource<Psi> = new MatTableDataSource();
   lista: Psi[] = [];
-  displayedColumns: string[] = ['id', 'userName', 'password', 'names', 'lastNames', 'emailAddress', 'phoneNumber', 'age', 'rating','UserStatus_Id','Speciality_id','Gender_id','ceditar',];
+  displayedColumns: string[] = ['id', 'userName','names', 'lastNames', 'emailAddress', 'phoneNumber', 'age', 'rating','UserStatus_Id','Gender_id','Specialty','ceditar'];
   private idMayor: number = 0;
+
   @ViewChild('paginator') paginator!: MatPaginator;
   constructor(private pS: PsiService, private dialog: MatDialog) {}
+
   ngOnInit(): void {
     this.pS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
@@ -32,13 +34,16 @@ export class PsiListarComponent implements OnInit {
       data == true ? this.eliminar(this.idMayor) : false;
     });
   }
+
   filtrar(e: any) {
     this.dataSource.filter = e.target.value.trim();
   }
+
   confirmar(id: number) {
     this.idMayor = id;
     this.dialog.open(PsiDialogoComponent);
   }
+
   eliminar(id: number) {
     this.pS.eliminar(id).subscribe(() => {
       this.pS.list().subscribe(data => {
@@ -46,7 +51,5 @@ export class PsiListarComponent implements OnInit {
       });
     });
   }
-
-
 
 }

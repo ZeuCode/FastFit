@@ -12,7 +12,7 @@ import { PaymentDialogoComponent } from './payment-dialogo/payment-dialogo.compo
   styleUrls: ['./payment-listar.component.css'],
 })
 
-export class PaymentListarComponent {
+export class PaymentListarComponent implements OnInit{
 
   dataSource: MatTableDataSource<payment> = new MatTableDataSource();
   lista: payment[] = [];
@@ -67,7 +67,5 @@ export class PaymentListarComponent {
       });
     });
   }
-
-
 
 }

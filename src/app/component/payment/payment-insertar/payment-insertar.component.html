@@ -2,133 +2,129 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
 </head>
 
 <body>
 
-  <br>
-  <div class="container-fluid" style="text-align: center;">
+  <div class="registro">
 
-    <div style="text-align: center;">
-      <h1>Registrar Pago</h1>
+    <div class="titulo">
+      Registrar Pago
     </div>
 
-    <div class="ingreso">
-      <form [formGroup]="form" (submit)="aceptar()">
-        <div class="automaticos">
-          <mat-form-field class="example-full-width">
-            <mat-label>ID</mat-label>
-            <input matInput required placeholder="ID" formControlName="id">
-          </mat-form-field>
-          <br>
+    <div>
+      <form [formGroup]="form" (submit)="aceptar()" class="ingreso">
+        <div class="camposFormulario">
+          <div class="column">
 
-          <mat-form-field class="example-full-width">
-            <mat-label>Nro. Documento</mat-label>
-            <input matInput required placeholder="BV100-1746600" formControlName="paymentCode">
-          </mat-form-field>
-          <br>
+            <div class="item">
+              <mat-form-field class="example-full-width">
+                <mat-label>Nro. Documento</mat-label>
+                <input matInput required placeholder="BV100-1746600" formControlName="paymentCode">
+              </mat-form-field>
+            </div>
 
-          <mat-form-field class="example-full-width">
-            <mat-label>ID Cita</mat-label>
-            <input matInput required placeholder="5" formControlName="idAppointment">
-          </mat-form-field>
-          <br>
+            <div class="item">
+              <mat-form-field class="example-full-width">
+                <mat-label>ID Cita</mat-label>
+                <input matInput required placeholder="5" formControlName="idAppointment">
+              </mat-form-field>
+            </div>
 
-          <mat-form-field appearance="fill">
-            <mat-label>Fecha de Pago</mat-label>
-            <input matInput required [matDatepicker]="picker1" placeholder="Choose a date" formControlName="date"
-              [min]="minFecha" [max]="maxFecha">
-            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-            <mat-datepicker #picker1></mat-datepicker>
-          </mat-form-field>
-          <br>
+            <div class="item">
+              <mat-form-field appearance="fill">
+                <mat-label>Fecha de Pago</mat-label>
+                <input matInput required [matDatepicker]="picker1" placeholder="Choose a date" formControlName="date"
+                  [min]="minFecha" [max]="maxFecha">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+              </mat-form-field>
+            </div>
 
-          <mat-form-field appearance="fill">
-            <mat-label>Moneda</mat-label>
-            <mat-select required placeholder="Elija Moneda" formControlName="currency">
-              <mat-option value="Soles">Soles</mat-option>
-              <mat-option value="USD Dólares">USD Dólares</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <br>
+            <div class="item">
+              <mat-form-field appearance="fill">
+                <mat-label>Moneda</mat-label>
+                <mat-select required placeholder="Elija Moneda" formControlName="currency">
+                  <mat-option value="Soles">Soles</mat-option>
+                  <mat-option value="USD Dólares">USD Dólares</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
 
-          <mat-form-field class="example-full-width">
-            <mat-label>Importe</mat-label>
-            <input matInput required placeholder="50" formControlName="import">
-          </mat-form-field>
+            <div class="item">
+              <mat-form-field class="example-full-width">
+                <mat-label>Importe</mat-label>
+                <input matInput required placeholder="50" formControlName="pago">
+              </mat-form-field>
+            </div>
+
+            <div class="item">
+              <mat-form-field class="example-full-width">
+                <mat-label>email</mat-label>
+                <input matInput required placeholder="juan123@gmail.com" formControlName="email">
+              </mat-form-field>
+            </div>
+
+          </div>
+
+          <div class="column">
+
+            <div class="item">
+              <mat-form-field class="example-full-width">
+                <mat-label>Tarjeta</mat-label>
+                <input matInput required placeholder="4236178832453567" formControlName="cardNumber">
+              </mat-form-field>
+            </div>
+
+            <div class="item">
+              <mat-form-field class="example-full-width">
+                <mat-label>CVV</mat-label>
+                <input matInput required placeholder="857" formControlName="cvv">
+              </mat-form-field>
+            </div>
+
+            <div class="item">
+              <mat-form-field appearance="fill">
+                <mat-label>Fecha de Vencimiento</mat-label>
+                <input matInput [matDatepicker]="picker2" required placeholder="MM/AA" formControlName="expiration">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker startView="year" #picker2></mat-datepicker>
+              </mat-form-field>
+            </div>
+
+            <div class="item">
+              <mat-form-field class="example-full-width">
+                <mat-label>Nombre</mat-label>
+                <input matInput required placeholder="Juan Jose" formControlName="name">
+              </mat-form-field>
+            </div>
+
+            <div class="item">
+              <mat-form-field class="example-full-width">
+                <mat-label>Apellido</mat-label>
+                <input matInput required placeholder="Lopez Cano" formControlName="lastname">
+              </mat-form-field>
+            </div>
+
+            <div class="item1">
+              <br>
+              <mat-slide-toggle> Acepta la política de reembolsos </mat-slide-toggle>
+            </div>
+          </div>
         </div>
-        <div class="obligatorios">
-          <mat-form-field class="example-full-width">
-            <mat-label>Tarjeta</mat-label>
-            <input matInput required placeholder="4236178832453567" formControlName="cardNumber">
-          </mat-form-field>
-          <br>
-          <mat-form-field class="example-full-width">
-            <mat-label>CVV</mat-label>
-            <input matInput required placeholder="857" formControlName="cvv">
-          </mat-form-field>
-          <br>
 
-          <mat-form-field appearance="fill">
-            <mat-label>Fecha de Vencimiento</mat-label>
-            <input matInput [matDatepicker]="picker2" required placeholder="MM/AA" formControlName="expiration">
-            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-            <mat-datepicker startView="year" #picker2></mat-datepicker>
-          </mat-form-field>
-          <br>
-
-          <mat-form-field class="example-full-width">
-            <mat-label>Nombre</mat-label>
-            <input matInput required placeholder="Juan Jose" formControlName="name">
-          </mat-form-field>
-          <br>
-
-          <mat-form-field class="example-full-width">
-            <mat-label>Apellido</mat-label>
-            <input matInput required placeholder="Lopez Cano" formControlName="lastname">
-          </mat-form-field>
-          <br>
-
-          <mat-form-field class="example-full-width">
-            <mat-label>email</mat-label>
-            <input matInput required placeholder="juan123@gmail.com" formControlName="email">
-          </mat-form-field>
-          <br>
-        </div>
-        <!--
-        <mat-form-field appearance="fill">
-          <mat-label>Estado</mat-label>
-          <mat-select required placeholder="Elija Estado" formControlName="active">
-            <mat-option value="1">Activo</mat-option>
-            <mat-option value="0">Inactivo</mat-option>
-          </mat-select>
-        </mat-form-field>
-        <br>
-
-
-      <mat-form-field appearance="fill">
-        <mat-label>Género</mat-label>
-        <mat-select placeholder="Elija género" formControlName="genderPet">
-          <mat-option value="Macho">Macho</mat-option>
-          <mat-option value="Hembra">Hembra</mat-option>
-        </mat-select>
-
-      </mat-form-field>
-  -->
-
+        <div class="imagen"> </div>
         <div style="text-align: center">
           <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
           <button mat-raised-button routerLink="/payment" style="margin-left: 8px;">Cancelar</button>
           <p>{{mensaje}}</p>
         </div>
-
       </form>
     </div>
-
   </div>
 </body>
 

@@ -86,7 +86,7 @@ export class ReviewInsertComponent implements OnInit{
           content:new FormControl(data.content),
           date:new FormControl(data.date),
           likes:new FormControl(data.likes),
-          Client_id:new FormControl(data.likes),
+          Client_id:new FormControl(data.Client_id),
           Psychologist_id:new FormControl(data.Psychologist_id),
         })
         console.log(data);

@@ -11,15 +11,17 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
   templateUrl: './payment-insertar.component.html',
   styleUrls: ['./payment-insertar.component.css']
 })
-export class PaymentInsertarComponent implements OnInit {
-  id: number = 0;
-  edicion: boolean = false;
 
+export class PaymentInsertarComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   payment: payment = new payment();
   mensaje: string = "";
+  id: number = 0;
+  edicion: boolean = false;
+
   maxFecha: Date = new Date();
   minFecha: Date = new Date();
+
   constructor(
     private pS: PaymentService,
     private router: Router,
@@ -27,44 +29,46 @@ export class PaymentInsertarComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
       this.edicion = data['id'] != null;
       this.init();
+      console.log(this.id);
+      console.log(this.edicion);
     });
 
     this.form = new FormGroup({
       id: new FormControl(),
       paymentCode: new FormControl(),
-      idAppointment:new FormControl(),
+      idAppointment: new FormControl(),
       cardNumber: new FormControl(),
       date: new FormControl(),
-      currency:new FormControl(),
-      import: new FormControl(),
-      name:new FormControl(),
+      currency: new FormControl(),
+      pago: new FormControl(),
+      name: new FormControl(),
       lastname: new FormControl(),
-      cvv:new FormControl(),
+      cvv: new FormControl(),
       expiration: new FormControl(),
-      email:new FormControl(),
-
+      email: new FormControl()
     })
+    console.log(this.id);
   }
 
   aceptar(): void {
 
-    this.payment.id = this.form.value['id'];
+    this.payment.idPayment = this.form.value['id'];
     this.payment.paymentCode = this.form.value['paymentCode'];
-    this.payment.idAppointment=this.form.value['idAppointment'];
+    this.payment.idAppointment = this.form.value['idAppointment'];
     this.payment.cardNumber = this.form.value['cardNumber'];
     this.payment.date = this.form.value['date'];
     this.payment.currency = this.form.value['currency'];
-    this.payment.import = this.form.value['import'];
+    this.payment.pago = this.form.value['pago'];
     this.payment.name = this.form.value['name'];
     this.payment.lastname = this.form.value['lastname'];
     this.payment.cvv = this.form.value['cvv'];
     this.payment.expiration = this.form.value['expiration'];
     this.payment.email = this.form.value['email'];
-
     if (this.form.value['paymentCode'].length > 0) {
       if (this.edicion) {
         this.pS.update(this.payment).subscribe(() => {
@@ -79,30 +83,33 @@ export class PaymentInsertarComponent implements OnInit {
           })
         })
       }
-
       this.router.navigate(['payment']);
-    } else {
-      this.mensaje = 'Ingrese el código del pago'
+    }
+    else {
+      console.log("error");
     }
   }
 
+
   init() {
     if (this.edicion) {
+
       this.pS.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({
-          id: new FormControl(data.id),
+          id: new FormControl(data.idPayment),
           paymentCode: new FormControl(data.paymentCode),
           idAppointment: new FormControl(data.idAppointment),
           cardNumber: new FormControl(data.cardNumber),
           date: new FormControl(data.date),
-          currency:new FormControl(data.currency),
-          import: new FormControl(data.import),
-          name:new FormControl(data.name),
+          currency: new FormControl(data.currency),
+          pago: new FormControl(data.pago),
+          name: new FormControl(data.name),
           lastname: new FormControl(data.lastname),
-          cvv:new FormControl(data.cvv),
+          cvv: new FormControl(data.cvv),
           expiration: new FormControl(data.expiration),
-          email:new FormControl(data.email),
+          email: new FormControl(data.email),
         });
+        console.log(data);
       });
     }
   }
