@@ -71,11 +71,17 @@ import { SpecialtyListarComponent } from './component/specialty/specialty-listar
 import { SpecialtyInsertComponent } from './component/specialty/specialty-insert/specialty-insert.component';
 import { SpecialtyDialogComponent } from './component/specialty/specialty-listar/specialty-dialog/specialty-dialog.component';
 
+//componenete userstatus
+import { UserstatusInsertarComponent } from './component/userstatus/userstatus-insertar/userstatus-insertar.component';
+import { UserstatusListarComponent } from './component/userstatus/userstatus-listar/userstatus-listar.component';
+import { UserstatusComponent } from './component/userstatus/userstatus.component';
+import { UserstatusDialogoComponent } from './component/userstatus/userstatus-listar/userstatus-dialogo/userstatus-dialogo.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-
     ClientComponent,
     ClientListarComponent,
     ClientInsertarComponent,
@@ -104,7 +110,13 @@ import { SpecialtyDialogComponent } from './component/specialty/specialty-listar
     SpecialtyComponent,
     SpecialtyListarComponent,
     SpecialtyDialogComponent,
-    SpecialtyInsertComponent
+    SpecialtyInsertComponent,
+
+    UserstatusInsertarComponent,
+    UserstatusListarComponent,
+    UserstatusComponent,
+    UserstatusDialogoComponent,
+
   ],
   imports: [
     BrowserModule,

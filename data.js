@@ -302,6 +302,25 @@ module.exports = function () {
         description: "rama de la psicología que se enfoca en el diagnóstico, tratamiento y prevención de trastornos mentales y emocionales, y en la promoción del bienestar psicológico.",
       },
     ],
+    UserStatuss:[
+      { id:1,
+       Status:"libre",
+       Description: "cocina",
+
+
+      },
+      { id:2,
+        Status:"laasre",
+        Description: "caaana",
+
+      },
+      { id:3,
+        Status:"lifse",
+        Description: "cdfsina",
+
+      },
+
+     ],
   };
   return data;
 };

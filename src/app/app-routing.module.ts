@@ -12,8 +12,14 @@ import { PaymentComponent } from './component/payment/payment.component';
 import { PaymentInsertarComponent } from './component/payment/payment-insertar/payment-insertar.component';
 import { CitaComponent } from './component/cita/cita.component';
 import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-insertar.component';
+
+
 import { SpecialtyComponent } from './component/specialty/specialty.component';
 import { SpecialtyInsertComponent } from './component/specialty/specialty-insert/specialty-insert.component';
+
+import { UserstatusInsertarComponent } from './component/userstatus/userstatus-insertar/userstatus-insertar.component';
+import { UserstatusComponent } from './component/userstatus/userstatus.component';
+
 
 const routes: Routes = [
   //path para el HOME
@@ -103,6 +109,18 @@ const routes: Routes = [
       { path: 'edicion/:id', component: CitaInsertarComponent }
     ]
   },
+    //path para userstatus
+    {
+      path: 'UserStatus',
+      component: UserstatusComponent,
+      children: [
+        {
+          path: 'userstatusinsertar',
+          component: UserstatusInsertarComponent,
+        },
+        { path:'edicion/:id',component:  UserstatusInsertarComponent},
+      ],
+    },
 ];
 
 @NgModule({
