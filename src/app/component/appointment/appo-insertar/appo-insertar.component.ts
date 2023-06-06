@@ -80,7 +80,7 @@ export class AppoInsertarComponent implements OnInit {
     this.appointment.date = this.form.value['date'];
     this.appointment.client.id = this.form.value['client.id'];
     this.appointment.psychologist.idPsi = this.form.value['psychologist.idPsi'];
-    this.appointment.appointmentStatus.id = this.form.value['AppointStatus.id'];
+    this.appointment.appointmentStatus.status = this.form.value['AppointStatus.status'];
     if (this.form.value['client'] > 0) {
       if (this.idApStatSelected > 0) {
         let a = new AppointmentStatus();
@@ -121,7 +121,7 @@ export class AppoInsertarComponent implements OnInit {
           date: new FormControl(data.date),
           client: new FormControl(data.client.id),
           psychologist: new FormControl(data.psychologist.idPsi),
-          appointmentStatus: new FormControl(data.appointmentStatus.id),
+          appointmentStatus: new FormControl(data.appointmentStatus.status),
         });
         console.log(data);
       });

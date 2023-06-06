@@ -55,8 +55,8 @@
       <mat-form-field class="example-full-width">
         <mat-label>Lista-Status</mat-label>
         <mat-select formControlName="appointmentStatus" [(value)]="idApStatSelected" required>
-          <mat-option *ngFor="let a of listastatus" [value]="a.id">
-            {{a.id}}
+          <mat-option *ngFor="let a of listastatus" [value]="a.status">
+            {{a.status}}
         </mat-option>
         </mat-select>
       </mat-form-field>

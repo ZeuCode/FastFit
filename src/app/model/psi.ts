@@ -1,4 +1,6 @@
+import { UserStatus } from "./UserStatus";
 import { specialty } from "./especialidad";
+import { Gender } from "./gender";
 export class Psi {
   idPsi: number = 0;
   userName: string = "";
@@ -9,7 +11,7 @@ export class Psi {
   phoneNumber: string = "";
   age: number = 0;
   rating: number = 0;
-  UserStatus_Id: number = 0;
-  Gender_id: string = "";
+  userStatus:UserStatus=new UserStatus();
+  Gender:Gender=new Gender();
   specialty: specialty = new specialty();
 }
