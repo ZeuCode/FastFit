@@ -72,6 +72,7 @@ import { SpecialtyListarComponent } from './component/specialty/specialty-listar
 import { SpecialtyInsertComponent } from './component/specialty/specialty-insert/specialty-insert.component';
 import { SpecialtyDialogComponent } from './component/specialty/specialty-listar/specialty-dialog/specialty-dialog.component';
 
+
 //componente appointment Status
 import { AppointmentStatusComponent } from './component/appointment-status/appointment-status.component';
 import { AppoStatusIngresarComponent } from './component/appointment-status/appo-status-ingresar/appo-status-ingresar.component';
@@ -84,11 +85,17 @@ import { GenderEditarComponent } from './component/gender/gender-editar/gender-e
 import { GenderDialogComponent } from './component/gender/gender-listar/gender-dialog/gender-dialog.component';
 import { AppstaDialogComponent } from './component/appointment-status/appo-status-listar/appsta-dialog/appsta-dialog.component';
 
+//componenete userstatus
+import { UserstatusInsertarComponent } from './component/userstatus/userstatus-insertar/userstatus-insertar.component';
+import { UserstatusListarComponent } from './component/userstatus/userstatus-listar/userstatus-listar.component';
+import { UserstatusComponent } from './component/userstatus/userstatus.component';
+import { UserstatusDialogoComponent } from './component/userstatus/userstatus-listar/userstatus-dialogo/userstatus-dialogo.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-
     ClientComponent,
     ClientListarComponent,
     ClientInsertarComponent,
@@ -119,6 +126,7 @@ import { AppstaDialogComponent } from './component/appointment-status/appo-statu
     SpecialtyListarComponent,
     SpecialtyDialogComponent,
     SpecialtyInsertComponent,
+
     AppointmentStatusComponent,
     AppoStatusListarComponent,
     AppoStatusIngresarComponent,
@@ -127,7 +135,13 @@ import { AppstaDialogComponent } from './component/appointment-status/appo-statu
     GenderEditarComponent,
     GenderDialogComponent,
     AppstaDialogComponent,
-    
+
+
+
+    UserstatusInsertarComponent,
+    UserstatusListarComponent,
+    UserstatusComponent,
+    UserstatusDialogoComponent,
 
   ],
   imports: [

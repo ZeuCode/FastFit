@@ -12,6 +12,7 @@ import { PaymentInsertarComponent } from './component/payment/payment-insertar/p
 
 import { AppoInsertarComponent } from './component/appointment/appo-insertar/appo-insertar.component';
 import { AppointmentComponent } from './component/appointment/appointment.component';
+
 import { SpecialtyComponent } from './component/specialty/specialty.component';
 import { SpecialtyInsertComponent } from './component/specialty/specialty-insert/specialty-insert.component';
 import { AppoStatusIngresarComponent } from './component/appointment-status/appo-status-ingresar/appo-status-ingresar.component';
@@ -19,6 +20,9 @@ import { AppointmentStatusComponent } from './component/appointment-status/appoi
 import { GenderComponent } from './component/gender/gender.component';
 import { GenderListarComponent } from './component/gender/gender-listar/gender-listar.component';
 import { GenderEditarComponent } from './component/gender/gender-editar/gender-editar.component';
+
+import { UserstatusInsertarComponent } from './component/userstatus/userstatus-insertar/userstatus-insertar.component';
+import { UserstatusComponent } from './component/userstatus/userstatus.component';
 
 const routes: Routes = [
   //path para el HOME
@@ -48,7 +52,9 @@ const routes: Routes = [
   },
   //payment component
   {
-    path: 'payment',component: PaymentComponent,children: [
+    path: 'payment',
+    component: PaymentComponent,
+    children: [
       {
         path: 'paymentsinsertar',
         component: PaymentInsertarComponent,
@@ -125,7 +131,6 @@ const routes: Routes = [
       },
       { path: 'edition/:id', component: AppoStatusIngresarComponent },
     ],
-
   },
   //path para gender
 
@@ -139,7 +144,18 @@ const routes: Routes = [
       },
       { path: 'edition/:id', component: GenderEditarComponent },
     ],
-
+  },
+  //path para userstatus
+  {
+    path: 'UserStatus',
+    component: UserstatusComponent,
+    children: [
+      {
+        path: 'userstatusinsertar',
+        component: UserstatusInsertarComponent,
+      },
+      { path: 'edicion/:id', component: UserstatusInsertarComponent },
+    ],
   },
 ];
 
