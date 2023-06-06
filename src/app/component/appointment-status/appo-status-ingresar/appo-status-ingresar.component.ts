@@ -30,7 +30,7 @@ export class AppoStatusIngresarComponent implements OnInit{
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
-      this.edicion = data['idAppointment'] != null
+      this.edicion = data['id'] != null
       this.init();
       this.modificar();
     });

@@ -45,7 +45,7 @@ export class AppoStatusListarComponent implements OnInit {
     this.idMayor = id;
     this.dialog.open(AppstaDialogComponent);
   }
-  eliminar(id: number) {
+  eliminar(id: number): void {
     this.pS.eliminar(id).subscribe(() => {
       this.pS.list().subscribe((data) => {
         this.pS.setList(data); /* se ejecuta la línea 27 */

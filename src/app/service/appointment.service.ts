@@ -31,8 +31,8 @@ export class AppointmentService {
   }
 
   update(c: Appointment) {
-   //  return this.Http.put(this.url + '/' + c.idAppointment, c);
-    return this.Http.put(this.url, c);
+     //return this.Http.put(this.url + '/' + c.idAppointment, c);
+   return this.Http.put(this.url, c);
   }
   eliminar(id: number) {
     return this.Http.delete(`${this.url}/${id}`);

@@ -19,10 +19,12 @@ import { PsiService } from 'src/app/service/psi.service';
 export class AppoInsertarComponent implements OnInit {
   id: number = 0;
   form: FormGroup = new FormGroup({});
-  appo: Appointment = new Appointment();
+  appointment: Appointment = new Appointment()
   mensaje: string = 'Agregado';
   edicion: boolean = false;
-  minFecha: Date = moment().add('days').toDate();
+
+  minFecha: Date = moment().add(-1, 'days').toDate();
+
   variable_cambio: string = '';
   // lo ultimo agregado
   listastatus: AppointmentStatus[] = [];
@@ -40,25 +42,25 @@ export class AppoInsertarComponent implements OnInit {
     private cS: ClientService,
     private iS: PsiService
   ) {}
+
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
       this.edicion = data['id'] != null;
       this.init();
       this.modificar();
-
-      this.sS.list().subscribe((datasta) => {
-        this.listastatus = datasta;
-      });
-      this.cS.list().subscribe((datacl) => {
-        this.listaclient = datacl;
-      });
-      this.iS.list().subscribe((datapsy) => {
-        this.listapsi = datapsy;
-      });
+    });
+    this.sS.list().subscribe((datasta) => {
+      this.listastatus = datasta;
+    });
+    this.cS.list().subscribe((datacl) => {
+      this.listaclient = datacl;
+    });
+    this.iS.list().subscribe((datapsy) => {
+      this.listapsi = datapsy;
     });
     this.form = new FormGroup({
-      idAppointment: new FormControl(),
+      // idAppointment: new FormControl(),
       date: new FormControl(),
       client: new FormControl(),
       psychologist: new FormControl(),
@@ -74,49 +76,48 @@ export class AppoInsertarComponent implements OnInit {
   }
 
   aceptar(): void {
-    this.appo.idAppointment = this.form.value['id'];
-    this.appo.date = this.form.value['date'];
-    this.appo.client.id = this.form.value['client'];
-    this.appo.psychologist.idPsi = this.form.value['psychologist'];
-    this.appo.appointmentStatus.id = this.form.value['AppointStatus'];
+    // this.appo.idAppointment = this.form.value['id'];
+    this.appointment.date = this.form.value['date'];
+    this.appointment.client.id = this.form.value['client.id'];
+    this.appointment.psychologist.idPsi = this.form.value['psychologist.idPsi'];
+    this.appointment.appointmentStatus.id = this.form.value['AppointStatus.id'];
     if (this.form.value['client'] > 0) {
       if (this.idApStatSelected > 0) {
         let a = new AppointmentStatus();
         a.id = this.idApStatSelected;
-        this.appo.appointmentStatus = a;
+        this.appointment.appointmentStatus = a;
       }
       if (this.idclientSelected > 0) {
         let c = new Client();
         c.id = this.idclientSelected;
-        this.appo.client = c;
+        this.appointment.client = c;
       }
       if (this.idpsySelected > 0) {
         let i = new Psi();
         i.idPsi = this.idpsySelected;
-        this.appo.psychologist = i;
+        this.appointment.psychologist = i;
       }
       if (this.edicion) {
-        this.pS.update(this.appo).subscribe(() => {
-          this.pS.list().subscribe((data) => {
+        this.pS.update(this.appointment).subscribe(() => {
+          this.pS.list().subscribe(data => {
             this.pS.setList(data);
           });
         });
-        this.router.navigate(['Appointments']);
       } else {
-        this.pS.insert(this.appo).subscribe(() => {
+        this.pS.insert(this.appointment).subscribe(() => {
           this.pS.list().subscribe((data) => {
             this.pS.setList(data);
           });
         });
-        this.router.navigate(['Appointments']);
       }
+      this.router.navigate(['Appointments']);
     }
   }
   init() {
     if (this.edicion) {
       this.pS.listid(this.id).subscribe((data) => {
         this.form = new FormGroup({
-          idAppointment: new FormControl(data.idAppointment),
+          //idAppointment: new FormControl(data.idAppointment),
           date: new FormControl(data.date),
           client: new FormControl(data.client.id),
           psychologist: new FormControl(data.psychologist.idPsi),
