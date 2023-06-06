@@ -45,12 +45,14 @@ const routes: Routes = [
     component: PaymentComponent,
     children: [
       {
-        path: 'paymentsinsertar', component: PaymentInsertarComponent,
+        path: 'paymentsinsertar',
+        component: PaymentInsertarComponent,
       },
       {
-        path:'edicion/:id',component:PaymentInsertarComponent
-      }
-    ]
+        path: 'edicion/:id',
+        component: PaymentInsertarComponent,
+      },
+    ],
   },
   //path para psicologos
   {
@@ -61,7 +63,7 @@ const routes: Routes = [
         path: 'psisinsertar',
         component: PsiInsertarComponent,
       },
-      { path:'edicion/:id',component: PsiInsertarComponent},
+      { path: 'edicion/:id', component: PsiInsertarComponent },
     ],
   },
   //path para reviews
@@ -74,8 +76,9 @@ const routes: Routes = [
         component: ReviewInsertComponent,
       },
       {
-        path:'edition/:id',component:ReviewInsertComponent,
-      }
+        path: 'edition/:id',
+        component: ReviewInsertComponent,
+      },
     ],
   },
 
@@ -85,10 +88,11 @@ const routes: Routes = [
     component: CitaComponent,
     children: [
       {
-        path: 'citainsertar', component: CitaInsertarComponent,
+        path: 'citainsertar',
+        component: CitaInsertarComponent,
       },
-      { path: 'edicion/:id', component: CitaInsertarComponent }
-    ]
+      { path: 'edicion/:id', component: CitaInsertarComponent },
+    ],
   },
 ];
 
