@@ -19,6 +19,8 @@ import { SpecialtyInsertComponent } from './component/specialty/specialty-insert
 
 import { UserstatusInsertarComponent } from './component/userstatus/userstatus-insertar/userstatus-insertar.component';
 import { UserstatusComponent } from './component/userstatus/userstatus.component';
+import { TurnComponent } from './component/turn/turn.component';
+import { TurnInsertComponent } from './component/turn/turn-insert/turn-insert.component';
 
 
 const routes: Routes = [
@@ -123,6 +125,18 @@ const routes: Routes = [
           component: UserstatusInsertarComponent,
         },
         { path:'edicion/:id',component:  UserstatusInsertarComponent},
+      ],
+    },
+    //path para turnstatus
+    {
+      path: 'turns',
+      component: TurnComponent,
+      children: [
+        {
+          path: 'turninsert',
+          component: TurnInsertComponent,
+        },
+        { path:'edition/:id',component:  TurnInsertComponent},
       ],
     },
 ];

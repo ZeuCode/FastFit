@@ -9,7 +9,7 @@ const base_url = environment.base;
 @Injectable({
   providedIn: 'root',
 })
-export class ReviewService {
+export class TurnService {
 
   private url = `${base_url}/turns`;
   private listChange = new Subject<Turn[]>();
@@ -20,8 +20,8 @@ export class ReviewService {
   list() {
     return this.http.get<Turn[]>(this.url);
   }
-  insert(Turn: Turn) {
-    return this.http.post(this.url, Turn);
+  insert(turn: Turn) {
+    return this.http.post(this.url, turn);
   }
   getList() {
     return this.listChange.asObservable();
@@ -33,7 +33,7 @@ export class ReviewService {
     return this.http.get<Turn>(`${this.url}/${Id}`);
   }
   update(r:Turn){
-    return this.http.put(this.url+'/'+r.id,r)
+    return this.http.put(this.url,r)
   }
   delete(id: number) {
 
