@@ -133,8 +133,8 @@ const routes: Routes = [
     component: AppointmentstatusComponent,
     children: [
       {
-        path: 'userstatusinsertar',
-        component: UserstatusInsertarComponent,
+        path: 'appstatusinsertar',
+        component: AppointmentstatusInsertComponent,
       },
       { path: 'edicion/:id', component: AppointmentstatusInsertComponent },
     ],

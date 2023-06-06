@@ -1,1 +1,50 @@
-<p>appointmentstatus-insert works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <br>
+
+  <div class="container-fluid" style="text-align: center">
+
+    <div style="text-align: center">
+      <h1>Registrar Estado de Cita</h1>
+    </div>
+
+    <form [formGroup]="form" (submit)="aceptar()">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Código</mat-label>
+        <input required matInput placeholder="Código" formControlName="id" />
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Estado</mat-label>
+        <input required matInput placeholder="Estado" formControlName="status" />
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Descripcion</mat-label>
+        <input required matInput placeholder="Descripcion" formControlName="description" type="password" />
+      </mat-form-field>
+      <br>
+
+      <div style="text-align: center">
+        <button mat-raised-button color="primary" style="margin-right: 8px;"> Aceptar </button>
+        <button mat-raised-button routerLink="/clients" style="margin-left: 8px;"> Cancelar </button>
+        <p>{{ mensaje }}</p>
+      </div>
+
+    </form>
+  </div>
+</body>
+
+</html>
