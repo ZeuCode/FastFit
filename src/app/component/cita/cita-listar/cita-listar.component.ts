@@ -27,7 +27,6 @@ export class CitaListarComponent implements OnInit {
     'date',
     'client_id',
     'PsychologistID',
-    'AppointStatusID',
     'ceditar',
  ]
   ngOnInit(): void {

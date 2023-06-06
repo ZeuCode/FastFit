@@ -11,7 +11,7 @@ const base_url = environment.base
   providedIn: 'root'
 })
 export class CitaService {
-  private url = `${base_url}/citas`
+  private url = `${base_url}/appointments`
   private listaCambio = new Subject<Citas[]>
   private confirmaEliminacion = new Subject<Boolean>()
   constructor(private Http: HttpClient) { }

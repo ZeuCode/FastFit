@@ -76,6 +76,9 @@ import { UserstatusInsertarComponent } from './component/userstatus/userstatus-i
 import { UserstatusListarComponent } from './component/userstatus/userstatus-listar/userstatus-listar.component';
 import { UserstatusComponent } from './component/userstatus/userstatus.component';
 import { UserstatusDialogoComponent } from './component/userstatus/userstatus-listar/userstatus-dialogo/userstatus-dialogo.component';
+import { AppointmentstatusComponent } from './component/appointmentstatus/appointmentstatus.component';
+import { AppointmentstatusListComponent } from './component/appointmentstatus/appointmentstatus-list/appointmentstatus-list.component';
+import { AppointmentstatusInsertComponent } from './component/appointmentstatus/appointmentstatus-insert/appointmentstatus-insert.component';
 
 
 @NgModule({
@@ -116,6 +119,9 @@ import { UserstatusDialogoComponent } from './component/userstatus/userstatus-li
     UserstatusListarComponent,
     UserstatusComponent,
     UserstatusDialogoComponent,
+    AppointmentstatusComponent,
+    AppointmentstatusListComponent,
+    AppointmentstatusInsertComponent,
 
   ],
   imports: [

@@ -13,13 +13,13 @@ import { PaymentInsertarComponent } from './component/payment/payment-insertar/p
 import { CitaComponent } from './component/cita/cita.component';
 import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-insertar.component';
 
-
 import { SpecialtyComponent } from './component/specialty/specialty.component';
 import { SpecialtyInsertComponent } from './component/specialty/specialty-insert/specialty-insert.component';
 
 import { UserstatusInsertarComponent } from './component/userstatus/userstatus-insertar/userstatus-insertar.component';
 import { UserstatusComponent } from './component/userstatus/userstatus.component';
-
+import { AppointmentstatusComponent } from './component/appointmentstatus/appointmentstatus.component';
+import { AppointmentstatusInsertComponent } from './component/appointmentstatus/appointmentstatus-insert/appointmentstatus-insert.component';
 
 const routes: Routes = [
   //path para el HOME
@@ -49,14 +49,18 @@ const routes: Routes = [
   },
   //payment component
   {
-    path: 'payment',component: PaymentComponent,children: [
+    path: 'payment',
+    component: PaymentComponent,
+    children: [
       {
-        path: 'paymentsinsertar', component: PaymentInsertarComponent,
+        path: 'paymentsinsertar',
+        component: PaymentInsertarComponent,
       },
       {
-        path:'edicion/:id',component:PaymentInsertarComponent
-      }
-    ]
+        path: 'edicion/:id',
+        component: PaymentInsertarComponent,
+      },
+    ],
   },
 
   {
@@ -64,12 +68,14 @@ const routes: Routes = [
     component: SpecialtyComponent,
     children: [
       {
-        path: 'specialtyinsertar', component: SpecialtyInsertComponent,
+        path: 'specialtyinsertar',
+        component: SpecialtyInsertComponent,
       },
       {
-        path:'edicion/:id',component:SpecialtyInsertComponent
-      }
-    ]
+        path: 'edicion/:id',
+        component: SpecialtyInsertComponent,
+      },
+    ],
   },
   //path para psicologos
   {
@@ -80,7 +86,7 @@ const routes: Routes = [
         path: 'psisinsertar',
         component: PsiInsertarComponent,
       },
-      { path:'edicion/:id',component: PsiInsertarComponent},
+      { path: 'edicion/:id', component: PsiInsertarComponent },
     ],
   },
   //path para reviews
@@ -93,8 +99,9 @@ const routes: Routes = [
         component: ReviewInsertComponent,
       },
       {
-        path:'edition/:id',component:ReviewInsertComponent,
-      }
+        path: 'edition/:id',
+        component: ReviewInsertComponent,
+      },
     ],
   },
 
@@ -104,23 +111,36 @@ const routes: Routes = [
     component: CitaComponent,
     children: [
       {
-        path: 'citainsertar', component: CitaInsertarComponent,
+        path: 'citainsertar',
+        component: CitaInsertarComponent,
       },
-      { path: 'edicion/:id', component: CitaInsertarComponent }
-    ]
+      { path: 'edicion/:id', component: CitaInsertarComponent },
+    ],
   },
-    //path para userstatus
-    {
-      path: 'UserStatus',
-      component: UserstatusComponent,
-      children: [
-        {
-          path: 'userstatusinsertar',
-          component: UserstatusInsertarComponent,
-        },
-        { path:'edicion/:id',component:  UserstatusInsertarComponent},
-      ],
-    },
+  //path para userstatus
+  {
+    path: 'UserStatus',
+    component: UserstatusComponent,
+    children: [
+      {
+        path: 'userstatusinsertar',
+        component: UserstatusInsertarComponent,
+      },
+      { path: 'edicion/:id', component: UserstatusInsertarComponent },
+    ],
+  },
+  //path para appointmentStatus
+  {
+    path: 'appointmentstatus',
+    component: AppointmentstatusComponent,
+    children: [
+      {
+        path: 'userstatusinsertar',
+        component: UserstatusInsertarComponent,
+      },
+      { path: 'edicion/:id', component: AppointmentstatusInsertComponent },
+    ],
+  },
 ];
 
 @NgModule({

@@ -41,7 +41,7 @@ export class CitaInsertarComponent implements OnInit {
   modificar(): void {
     if (this.id > 0) {
       this.variable_cambio = "Editar cita";
-      
+
     } else {
       this.variable_cambio = "Agregar nueva cita";
     }
@@ -54,7 +54,7 @@ export class CitaInsertarComponent implements OnInit {
     this.cita.date = this.form.value['date'];
     this.cita.client_id = this.form.value['client_id'];
     this.cita.PsychologistID = this.form.value['PsychologistID'];
-    this.cita.AppointStatusID = this.form.value['appointment_id'];
+    //this.cita.AppointStatusID = this.form.value['appointment_id'];
 
     if (this.form.value['id'].length > 0 || this.form.value['date'].length > 0) {
 
@@ -88,7 +88,7 @@ export class CitaInsertarComponent implements OnInit {
           date: new FormControl(data.date),
           client_id: new FormControl(data.client_id),
           PsychologistID: new FormControl(data.PsychologistID),
-          appointment_id: new FormControl(data.AppointStatusID),
+          //appointment_id: new FormControl(data.AppointStatusID),
         });
       });
     }
