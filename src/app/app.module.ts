@@ -76,6 +76,10 @@ import { UserstatusInsertarComponent } from './component/userstatus/userstatus-i
 import { UserstatusListarComponent } from './component/userstatus/userstatus-listar/userstatus-listar.component';
 import { UserstatusComponent } from './component/userstatus/userstatus.component';
 import { UserstatusDialogoComponent } from './component/userstatus/userstatus-listar/userstatus-dialogo/userstatus-dialogo.component';
+import { TurnComponent } from './component/turn/turn.component';
+import { TurnInsertComponent } from './component/turn/turn-insert/turn-insert.component';
+import { TurnListComponent } from './component/turn/turn-list/turn-list.component';
+import { TurnDialogComponent } from './component/turn/turn-list/turn-dialog/turn-dialog.component';
 
 
 @NgModule({
@@ -116,6 +120,10 @@ import { UserstatusDialogoComponent } from './component/userstatus/userstatus-li
     UserstatusListarComponent,
     UserstatusComponent,
     UserstatusDialogoComponent,
+    TurnComponent,
+    TurnInsertComponent,
+    TurnListComponent,
+    TurnDialogComponent,
 
   ],
   imports: [
