@@ -94,7 +94,7 @@ const routes: Routes = [
   },
     //path para userstatus
     {
-      path: 'UserStatuss',
+      path: 'UserStatus',
       component: UserstatusComponent,
       children: [
         {

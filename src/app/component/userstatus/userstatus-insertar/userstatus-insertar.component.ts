@@ -46,7 +46,7 @@ export class UserstatusInsertarComponent implements OnInit{
           this.pS.setList(data);
         });
       });
-      this.router.navigate(['Userstatuss']);
+      this.router.navigate(['UserStatus']);
     } else {
       this.mensaje = 'Ingrese el nombre del estado de usuario!!';
     }

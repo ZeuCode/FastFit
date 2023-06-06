@@ -7,7 +7,7 @@ import { MatDialogRef } from '@angular/material/dialog';
   templateUrl: './userstatus-dialogo.component.html',
   styleUrls: ['./userstatus-dialogo.component.css']
 })
-export class UserstatusDialogoComponent {
+export class UserstatusDialogoComponent implements OnInit {
 
   constructor(private pS: UserStatusService,
     private dialogRef: MatDialogRef<UserstatusDialogoComponent>){  }

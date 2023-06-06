@@ -15,7 +15,7 @@ export class UserstatusListarComponent implements OnInit {
 
   dataSource: MatTableDataSource<UserStatus> = new MatTableDataSource();
   lista: UserStatus[] = [];
-  displayedColumns: string[] = ['id', 'Status', 'Description'];
+  displayedColumns: string[] = ['id', 'Status', 'Description','ceditar'];
   private idMayor: number = 0;
   @ViewChild('paginator') paginator!: MatPaginator;
   constructor(private pS: UserStatusService, private dialog: MatDialog) {}

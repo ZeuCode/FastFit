@@ -275,6 +275,25 @@ module.exports = function () {
         email:"ferale2000@gmail.com",
       },
     ],
+    UserStatuss:[
+      { id:1,
+       Status:"libre",
+       Description: "cocina",
+
+
+      },
+      { id:2,
+        Status:"laasre",
+        Description: "caaana",
+
+      },
+      { id:3,
+        Status:"lifse",
+        Description: "cdfsina",
+
+      },
+
+     ],
   };
   return data;
 };
