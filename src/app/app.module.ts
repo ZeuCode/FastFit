@@ -79,6 +79,10 @@ import { UserstatusDialogoComponent } from './component/userstatus/userstatus-li
 import { AppointmentstatusComponent } from './component/appointmentstatus/appointmentstatus.component';
 import { AppointmentstatusListComponent } from './component/appointmentstatus/appointmentstatus-list/appointmentstatus-list.component';
 import { AppointmentstatusInsertComponent } from './component/appointmentstatus/appointmentstatus-insert/appointmentstatus-insert.component';
+import { TurnComponent } from './component/turn/turn.component';
+import { TurnInsertComponent } from './component/turn/turn-insert/turn-insert.component';
+import { TurnListComponent } from './component/turn/turn-list/turn-list.component';
+import { TurnDialogComponent } from './component/turn/turn-list/turn-dialog/turn-dialog.component';
 
 
 @NgModule({
@@ -122,6 +126,10 @@ import { AppointmentstatusInsertComponent } from './component/appointmentstatus/
     AppointmentstatusComponent,
     AppointmentstatusListComponent,
     AppointmentstatusInsertComponent,
+    TurnComponent,
+    TurnInsertComponent,
+    TurnListComponent,
+    TurnDialogComponent,
 
   ],
   imports: [
