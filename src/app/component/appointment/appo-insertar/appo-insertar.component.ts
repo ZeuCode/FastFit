@@ -19,7 +19,7 @@ import { PsiService } from 'src/app/service/psi.service';
 export class AppoInsertarComponent implements OnInit {
   id: number = 0;
   form: FormGroup = new FormGroup({});
-  appointment: Appointment = new Appointment()
+  appointment: Appointment = new Appointment();
   mensaje: string = 'Agregado';
   edicion: boolean = false;
 
@@ -76,52 +76,55 @@ export class AppoInsertarComponent implements OnInit {
   }
 
   aceptar(): void {
-    // this.appo.idAppointment = this.form.value['id'];
+    this.appointment.idAppointment = this.form.value['id'];
     this.appointment.date = this.form.value['date'];
     this.appointment.client.id = this.form.value['client.id'];
-    this.appointment.psychologist.idPsi = this.form.value['psychologist.idPsi'];
-    this.appointment.appointmentStatus.status = this.form.value['AppointStatus.status'];
-    if (this.form.value['client'] > 0) {
-      if (this.idApStatSelected > 0) {
-        let a = new AppointmentStatus();
-        a.id = this.idApStatSelected;
-        this.appointment.appointmentStatus = a;
-      }
-      if (this.idclientSelected > 0) {
-        let c = new Client();
-        c.id = this.idclientSelected;
-        this.appointment.client = c;
-      }
-      if (this.idpsySelected > 0) {
-        let i = new Psi();
-        i.idPsi = this.idpsySelected;
-        this.appointment.psychologist = i;
-      }
-      if (this.edicion) {
-        this.pS.update(this.appointment).subscribe(() => {
-          this.pS.list().subscribe(data => {
-            this.pS.setList(data);
-          });
-        });
-      } else {
-        this.pS.insert(this.appointment).subscribe(() => {
-          this.pS.list().subscribe((data) => {
-            this.pS.setList(data);
-          });
-        });
-      }
-      this.router.navigate(['Appointments']);
+    this.appointment.psychologist.idPsi = this.form.value['psychologist.idPsy'];
+    this.appointment.appointmentStatus.id =
+      this.form.value['appointmentStatus.id'];
+
+    if (this.idApStatSelected > 0) {
+      let a = new AppointmentStatus();
+      a.id = this.idApStatSelected;
+      this.appointment.appointmentStatus = a;
     }
+    if (this.idclientSelected > 0) {
+      let c = new Client();
+      c.id = this.idclientSelected;
+      this.appointment.client = c;
+    }
+    if (this.idpsySelected > 0) {
+      let i = new Psi();
+      i.idPsi = this.idpsySelected;
+      this.appointment.psychologist = i;
+    }
+    if (this.edicion) {
+      //guardar pS
+      this.pS.update(this.appointment).subscribe(() => {
+        this.pS.list().subscribe((data) => {
+          ////actualizar la lista
+          this.pS.setList(data);
+        });
+      });
+    } else {
+      //metodo insertar
+      this.pS.insert(this.appointment).subscribe((data) => {
+        this.pS.list().subscribe((data) => {
+          this.pS.setList(data);
+        });
+      });
+    }
+    this.router.navigate(['Appointments']);
   }
   init() {
     if (this.edicion) {
       this.pS.listid(this.id).subscribe((data) => {
         this.form = new FormGroup({
-          //idAppointment: new FormControl(data.idAppointment),
+          idAppointment: new FormControl(data.idAppointment),
           date: new FormControl(data.date),
           client: new FormControl(data.client.id),
           psychologist: new FormControl(data.psychologist.idPsi),
-          appointmentStatus: new FormControl(data.appointmentStatus.status),
+          appointmentStatus: new FormControl(data.appointmentStatus.id),
         });
         console.log(data);
       });
