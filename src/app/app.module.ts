@@ -41,10 +41,6 @@ import { ReviewDialogComponent } from './component/review/review-list/review-dia
 
 
 //componente Cita
-import { CitaComponent } from './component/cita/cita.component';
-import { CitaListarComponent } from './component/cita/cita-listar/cita-listar.component';
-import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-insertar.component';
-import { CitaDialogoComponent } from './component/cita/cita-listar/cita-dialogo/cita-dialogo.component';
 
 //Angular Material
 import { MatButtonModule } from '@angular/material/button';
@@ -110,11 +106,7 @@ import { AppointmentstatusDialogoComponent } from './component/appointmentstatus
     ReviewInsertComponent,
     ReviewDialogComponent,
 
-    CitaComponent,
-    CitaListarComponent,
-    CitaInsertarComponent,
-    CitaDialogoComponent,
-
+   
     SpecialtyComponent,
     SpecialtyListarComponent,
     SpecialtyDialogComponent,

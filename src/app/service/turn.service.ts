@@ -33,7 +33,8 @@ export class ReviewService {
     return this.http.get<Turn>(`${this.url}/${Id}`);
   }
   update(r:Turn){
-    return this.http.put(this.url+'/'+r.id,r)
+    //return this.http.put(this.url+'/'+r.id,r)
+    return this.http.put(this.url,r);
   }
   delete(id: number) {
 
