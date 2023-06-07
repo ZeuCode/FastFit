@@ -42,6 +42,12 @@ import { ReviewDialogComponent } from './component/review/review-list/review-dia
 
 //componente Cita
 
+
+import { AppointmentComponent } from './component/appointment/appointment.component';
+import { AppoInsertarComponent } from './component/appointment/appo-insertar/appo-insertar.component';
+import { AppoListarComponent } from './component/appointment/appo-listar/appo-listar.component';
+
+
 //Angular Material
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
@@ -60,6 +66,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 //Angular cdk
 import { LayoutModule } from '@angular/cdk/layout';
+import { AppoDialogoComponent } from './component/appointment/appo-listar/appo-dialogo/appo-dialogo.component';
 
 //componenete Especialidad
 import { SpecialtyComponent } from './component/specialty/specialty.component';
@@ -67,19 +74,31 @@ import { SpecialtyListarComponent } from './component/specialty/specialty-listar
 import { SpecialtyInsertComponent } from './component/specialty/specialty-insert/specialty-insert.component';
 import { SpecialtyDialogComponent } from './component/specialty/specialty-listar/specialty-dialog/specialty-dialog.component';
 
+
+//componente appointment Status
+import { AppointmentStatusComponent } from './component/appointment-status/appointment-status.component';
+import { AppoStatusIngresarComponent } from './component/appointment-status/appo-status-ingresar/appo-status-ingresar.component';
+import { AppoStatusListarComponent } from './component/appointment-status/appo-status-listar/appo-status-listar.component';
+
+//componente gender
+import { GenderComponent } from './component/gender/gender.component';
+import { GenderListarComponent } from './component/gender/gender-listar/gender-listar.component';
+import { GenderEditarComponent } from './component/gender/gender-editar/gender-editar.component';
+import { GenderDialogComponent } from './component/gender/gender-listar/gender-dialog/gender-dialog.component';
+import { AppstaDialogComponent } from './component/appointment-status/appo-status-listar/appsta-dialog/appsta-dialog.component';
+
 //componenete userstatus
 import { UserstatusInsertarComponent } from './component/userstatus/userstatus-insertar/userstatus-insertar.component';
 import { UserstatusListarComponent } from './component/userstatus/userstatus-listar/userstatus-listar.component';
 import { UserstatusComponent } from './component/userstatus/userstatus.component';
 import { UserstatusDialogoComponent } from './component/userstatus/userstatus-listar/userstatus-dialogo/userstatus-dialogo.component';
-import { AppointmentstatusComponent } from './component/appointmentstatus/appointmentstatus.component';
-import { AppointmentstatusListComponent } from './component/appointmentstatus/appointmentstatus-list/appointmentstatus-list.component';
-import { AppointmentstatusInsertComponent } from './component/appointmentstatus/appointmentstatus-insert/appointmentstatus-insert.component';
+
+//componet turn
 import { TurnComponent } from './component/turn/turn.component';
 import { TurnInsertComponent } from './component/turn/turn-insert/turn-insert.component';
 import { TurnListComponent } from './component/turn/turn-list/turn-list.component';
 import { TurnDialogComponent } from './component/turn/turn-list/turn-dialog/turn-dialog.component';
-import { AppointmentstatusDialogoComponent } from './component/appointmentstatus/appointmentstatus-list/appointmentstatus-dialogo/appointmentstatus-dialogo.component';
+
 
 
 @NgModule({
@@ -106,24 +125,39 @@ import { AppointmentstatusDialogoComponent } from './component/appointmentstatus
     ReviewInsertComponent,
     ReviewDialogComponent,
 
-   
+
+
+    AppointmentComponent,
+    AppoInsertarComponent,
+    AppoListarComponent,
+    AppoDialogoComponent,
+
+
     SpecialtyComponent,
     SpecialtyListarComponent,
     SpecialtyDialogComponent,
     SpecialtyInsertComponent,
 
+    AppointmentStatusComponent,
+    AppoStatusListarComponent,
+    AppoStatusIngresarComponent,
+    AppstaDialogComponent,
+
+    GenderComponent,
+    GenderListarComponent,
+    GenderEditarComponent,
+    GenderDialogComponent,
+
     UserstatusInsertarComponent,
     UserstatusListarComponent,
     UserstatusComponent,
     UserstatusDialogoComponent,
-    AppointmentstatusComponent,
-    AppointmentstatusListComponent,
-    AppointmentstatusInsertComponent,
+
     TurnComponent,
     TurnInsertComponent,
     TurnListComponent,
     TurnDialogComponent,
-    AppointmentstatusDialogoComponent,
+
 
   ],
   imports: [

@@ -79,19 +79,19 @@
       </ng-container>
 
 
-      <ng-container matColumnDef="UserStatus_Id">
+      <ng-container matColumnDef="userStatus">
         <th mat-header-cell *matHeaderCellDef> User Status_ID </th>
-        <td mat-cell *matCellDef="let element"> {{element.UserStatus_Id}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.userStatus.idUS}} </td>
       </ng-container>
 
 
-      <ng-container matColumnDef="Gender_id">
+      <ng-container matColumnDef="gender">
         <th mat-header-cell *matHeaderCellDef> Gender </th>
-        <td mat-cell *matCellDef="let element"> {{element.Gender_id}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.gender.abbreviation}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="Specialty">
-        <th mat-header-cell *matHeaderCellDef> Specialty</th>
+      <ng-container matColumnDef="specialty">
+        <th mat-header-cell *matHeaderCellDef> specialty</th>
         <td mat-cell *matCellDef="let element"> {{element.specialty.name}} </td>
       </ng-container>
 

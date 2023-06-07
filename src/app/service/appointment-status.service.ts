@@ -1,22 +1,26 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { AppointmentStatus } from '../model/appointmentStatus';
-import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Subject } from 'rxjs';
+
 const base_url = environment.base;
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class AppointmentstatusService {
+export class AppointmentStatusService {
   private url = `${base_url}/appointmentstatus`;
   private listaCambio = new Subject<AppointmentStatus[]>();
-  private confirmaEliminacion = new Subject<Boolean>()
+  private confirmaEliminacion = new Subject<Boolean>();
+
   constructor(private http: HttpClient) {}
+
   list() {
     return this.http.get<AppointmentStatus[]>(this.url);
   }
-  insert(appStatus: AppointmentStatus) {
-    return this.http.post(this.url, appStatus);
+  insert(appointment: AppointmentStatus) {
+    return this.http.post(this.url, appointment);
   }
   getList() {
     return this.listaCambio.asObservable();
@@ -24,12 +28,15 @@ export class AppointmentstatusService {
   setList(listaNueva: AppointmentStatus[]) {
     this.listaCambio.next(listaNueva);
   }
-  listId(id: number) {
+
+  listid(id: number) {
     return this.http.get<AppointmentStatus>(`${this.url}/${id}`);
   }
 
-  update(a: AppointmentStatus) {
-    return this.http.put(this.url + '/' + a.id, a);
+  update(c: AppointmentStatus) {
+    //return this.http.put(this.url + '/' + c.id, c);
+    return this.http.put(this.url, c);
+
   }
   eliminar(id: number) {
     return this.http.delete(`${this.url}/${id}`);

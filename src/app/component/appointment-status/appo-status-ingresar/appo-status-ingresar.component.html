@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <br>
+  <div class="container-fluid" style="text-align: center;">
+
+    <div style="text-align: center;">
+      <h1>Registrar Estado de cita</h1>
+    </div>
+
+    <div class="ingreso">
+      <form [formGroup]="form" (submit)="aceptar()">
+        <div class="automaticos">
+          <mat-form-field class="example-full-width">
+            <mat-label>Status</mat-label>
+            <input matInput required formControlName="status">
+          </mat-form-field>
+          <br>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>description</mat-label>
+            <input matInput required formControlName="description">
+          </mat-form-field>
+          <br>
+
+          <div style="text-align: center">
+            <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
+            <button mat-raised-button routerLink="/AppointmentStatus" style="margin-left: 8px;">Cancelar</button>
+
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</body>
+
+</html>

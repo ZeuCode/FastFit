@@ -48,8 +48,8 @@ export class PsiInsertarComponent implements OnInit {
       phoneNumber: new FormControl(),
       age: new FormControl(),
       rating: new FormControl(),
-      UserStatus_Id: new FormControl(),
-      Gender_id: new FormControl(),
+      userStatus: new FormControl(),
+      Gender: new FormControl(),
       specialty: new FormControl(),
     });
   }
@@ -67,8 +67,8 @@ export class PsiInsertarComponent implements OnInit {
     this.psi.phoneNumber = this.form.value['phoneNumber'];
     this.psi.age = this.form.value['age'];
     this.psi.rating = this.form.value['rating'];
-    this.psi.UserStatus_Id = this.form.value['UserStatus_Id'];
-    this.psi.Gender_id = this.form.value['Gender_id'];
+    this.psi.userStatus.idUS = this.form.value['userStatus.idUS'];
+    this.psi.Gender.id = this.form.value['Gender.id'];
     this.psi.specialty.name = this.form.value['specialty.name'];
     console.log(this.psi.idPsi);
 
@@ -113,8 +113,8 @@ export class PsiInsertarComponent implements OnInit {
           phoneNumber: new FormControl(data.phoneNumber),
           age: new FormControl(data.age),
           rating: new FormControl(data.rating),
-          UserStatus_Id: new FormControl(data.UserStatus_Id),
-          Gender_id: new FormControl(data.Gender_id),
+          userStatus: new FormControl(data.userStatus.idUS),
+          Gender: new FormControl(data.Gender.id),
           specialty: new FormControl(data.specialty.name)
         });
         console.log(data);

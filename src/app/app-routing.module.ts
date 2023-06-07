@@ -6,18 +6,24 @@ import { ReviewComponent } from './component/review/review.component';
 import { ReviewInsertComponent } from './component/review/review-insert/review-insert.component';
 import { HomeComponent } from './component/home/home.component';
 import { ClientComponent } from './component/client/client.component';
-import { ClientListarComponent } from './component/client/client-listar/client-listar.component';
 import { ClientInsertarComponent } from './component/client/client-insertar/client-insertar.component';
 import { PaymentComponent } from './component/payment/payment.component';
 import { PaymentInsertarComponent } from './component/payment/payment-insertar/payment-insertar.component';
 
+import { AppoInsertarComponent } from './component/appointment/appo-insertar/appo-insertar.component';
+import { AppointmentComponent } from './component/appointment/appointment.component';
+
 import { SpecialtyComponent } from './component/specialty/specialty.component';
 import { SpecialtyInsertComponent } from './component/specialty/specialty-insert/specialty-insert.component';
+import { AppoStatusIngresarComponent } from './component/appointment-status/appo-status-ingresar/appo-status-ingresar.component';
+import { AppointmentStatusComponent } from './component/appointment-status/appointment-status.component';
+import { GenderComponent } from './component/gender/gender.component';
+import { GenderListarComponent } from './component/gender/gender-listar/gender-listar.component';
+import { GenderEditarComponent } from './component/gender/gender-editar/gender-editar.component';
 
 import { UserstatusInsertarComponent } from './component/userstatus/userstatus-insertar/userstatus-insertar.component';
 import { UserstatusComponent } from './component/userstatus/userstatus.component';
-import { AppointmentstatusComponent } from './component/appointmentstatus/appointmentstatus.component';
-import { AppointmentstatusInsertComponent } from './component/appointmentstatus/appointmentstatus-insert/appointmentstatus-insert.component';
+
 
 const routes: Routes = [
   //path para el HOME
@@ -100,8 +106,43 @@ const routes: Routes = [
       },
     ],
   },
+  //path para appointmet
+  {
+    path: 'Appointments',
+    component: AppointmentComponent,
+    children: [
+      {
+        path: 'appoinsertar',
+        component: AppoInsertarComponent,
+      },
+      { path: 'edition/:id', component: AppoInsertarComponent },
+    ],
+  },
+  //path para appointment statuss
+  {
+    path: 'AppointmentStatus',
+    component: AppointmentStatusComponent,
+    children: [
+      {
+        path: 'appoStatusinsertar',
+        component: AppoStatusIngresarComponent,
+      },
+      { path: 'edition/:id', component: AppoStatusIngresarComponent },
+    ],
+  },
+  //path para gender
 
-
+  {
+    path: 'gender',
+    component: GenderComponent,
+    children: [
+      {
+        path: 'genderinsert',
+        component: GenderEditarComponent,
+      },
+      { path: 'edition/:id', component: GenderEditarComponent },
+    ],
+  },
   //path para userstatus
   {
     path: 'UserStatus',
@@ -112,18 +153,7 @@ const routes: Routes = [
         component: UserstatusInsertarComponent,
       },
       { path: 'edicion/:id', component: UserstatusInsertarComponent },
-    ],
-  },
-  //path para appointmentStatus
-  {
-    path: 'appointmentstatus',
-    component: AppointmentstatusComponent,
-    children: [
-      {
-        path: 'appstatusinsertar',
-        component: AppointmentstatusInsertComponent,
-      },
-      { path: 'edicion/:id', component: AppointmentstatusInsertComponent },
+
     ],
   },
 ];

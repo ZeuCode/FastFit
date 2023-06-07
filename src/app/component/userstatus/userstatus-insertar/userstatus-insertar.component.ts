@@ -36,7 +36,7 @@ export class UserstatusInsertarComponent implements OnInit{
   }
   aceptar(): void {
 
-    this.Userstatus.id= this.form.value['id'];
+    this.Userstatus.idUS= this.form.value['id'];
     this.Userstatus.Status= this.form.value['Status'];
     this.Userstatus.Description= this.form.value['Description'];
 
@@ -57,7 +57,7 @@ export class UserstatusInsertarComponent implements OnInit{
         //this.propietario = data
 
         this.form = new FormGroup({
-          id: new FormControl(data.id),
+          idUS: new FormControl(data.idUS),
           Status: new FormControl(data.Status),
           Description: new FormControl(data.Description),
 
