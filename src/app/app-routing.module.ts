@@ -81,7 +81,7 @@ const routes: Routes = [
   },
   //path para psicologos
   {
-    path: 'psis',
+    path: 'Psychologists',
     component: PsiComponent,
     children: [
       {

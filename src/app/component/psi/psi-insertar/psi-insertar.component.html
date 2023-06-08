@@ -89,12 +89,18 @@
               </mat-form-field>
             </div>
 
+
             <div class="item">
-              <mat-form-field class="example-full-width">
+              <mat-form-field appearance="fill">
                 <mat-label>UserStatus_Id</mat-label>
-                <input matInput required placeholder="UserStatus_Id" formControlName="userStatus" />
+                <mat-select formControlName="userStatus" [(value)]=" idUserStatusSeleccionado" required>
+                  <mat-option *ngFor="let p of listaUserStatus" [value]="p.idUS">
+                    {{p.status}}
+                  </mat-option>
+                </mat-select>
               </mat-form-field>
             </div>
+        
 
             <div class="item">
               <mat-form-field appearance="fill">
@@ -107,22 +113,26 @@
               </mat-form-field>
             </div>
 
+            
             <div class="item">
               <mat-form-field appearance="fill">
                 <mat-label>Gender</mat-label>
-                <mat-select placeholder="genero" formControlName="Gender">
-                  <mat-option value="Masculino">Masculino</mat-option>
-                  <mat-option value="Femenino">Femenino</mat-option>
+                <mat-select formControlName="gender" [(value)]="idGenderSeleccionado" required>
+                  <mat-option *ngFor="let p of listaGender" [value]="p.id">
+                    {{p.gender}}
+                  </mat-option>
                 </mat-select>
               </mat-form-field>
             </div>
+            
+
           </div>
         </div>
 
         <div class="imagen"> </div>
         <div style="text-align: center;">
           <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
-          <button mat-raised-button routerLink="/psis" style="margin-left: 8px;">Cancelar</button>
+          <button mat-raised-button routerLink="/Psychologists" style="margin-left: 8px;">Cancelar</button>
           <br>
           <p>{{ mensaje }}</p>
         </div>

@@ -12,6 +12,6 @@ export class Psi {
   age: number = 0;
   rating: number = 0;
   userStatus:UserStatus=new UserStatus();
-  Gender:Gender=new Gender();
+  gender:Gender=new Gender();
   specialty: specialty = new specialty();
 }
