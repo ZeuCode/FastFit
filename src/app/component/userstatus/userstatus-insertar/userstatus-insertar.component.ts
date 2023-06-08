@@ -18,7 +18,7 @@ export class UserstatusInsertarComponent implements OnInit{
   form: FormGroup = new FormGroup({});
   Userstatus:  UserStatus = new  UserStatus();
   mensaje: string = '';
-  maxFecha: Date = moment().add(-1, 'days').toDate();
+
   constructor(private pS:  UserStatusService, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -60,6 +60,7 @@ export class UserstatusInsertarComponent implements OnInit{
           idUS: new FormControl(data.idUS),
           status: new FormControl(data.status),
           description: new FormControl(data.description),
+
 
         });
         console.log(data);

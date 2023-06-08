@@ -35,8 +35,8 @@ export class ReviewInsertComponent implements OnInit{
       content:new FormControl(),
       date:new FormControl(),
       likes:new FormControl(),
-      Client_id:new FormControl(),
-      Psychologist_id:new FormControl()
+      client_id:new FormControl(),
+      psychologist_id:new FormControl()
     })
   }
   //Init() {
@@ -44,20 +44,20 @@ export class ReviewInsertComponent implements OnInit{
   //}
   accept(): void {
 
-    this.review.id = this.form.value['id'];
+    this.review.idReview = this.form.value['id'];
     this.review.content = this.form.value['content'];
     //this.review.date = this.form.value['date'];
     this.review.date = date;
     this.review.likes = this.form.value['likes'];
-    this.review.Client_id = this.form.value['Client_id'];
-    this.review.Psychologist_id = this.form.value['Psychologist_id'];
+    this.review.client_id = this.form.value['client_id'];
+    this.review.psychologist_id = this.form.value['psychologist_id'];
 
     if (this.form.value['content'].length > 0) {
 
       if (this.edition) {
         //guardar pS
         this.revS.update(this.review).subscribe(()=>{
-          this.revS.list().subscribe((data) => { ////actualizar la lista
+          this.revS.list().subscribe((data) => {
             this.revS.setList(data);
           });
         });
@@ -81,13 +81,14 @@ export class ReviewInsertComponent implements OnInit{
   Init(){
     if(this.edition){
       this.revS.listId(this.id).subscribe((data)=>{
+
         this.form=new FormGroup({
-          id:new FormControl(data.id),
+          id:new FormControl(data.idReview),
           content:new FormControl(data.content),
           date:new FormControl(data.date),
           likes:new FormControl(data.likes),
-          Client_id:new FormControl(data.Client_id),
-          Psychologist_id:new FormControl(data.Psychologist_id),
+          client_id:new FormControl(data.client_id),
+          psychologist_id:new FormControl(data.psychologist_id),
         })
         console.log(data);
       })

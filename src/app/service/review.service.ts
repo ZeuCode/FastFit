@@ -32,8 +32,8 @@ export class ReviewService {
   listId(Id:number){
     return this.http.get<Review>(`${this.url}/${Id}`);
   }
-  update(r:Review){
-    return this.http.put(this.url+'/'+r.id,r)
+  update(review:Review){
+    return this.http.put(this.url,review)
   }
   delete(id: number) {
 

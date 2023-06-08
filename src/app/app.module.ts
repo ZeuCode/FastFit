@@ -98,6 +98,10 @@ import { TurnComponent } from './component/turn/turn.component';
 import { TurnInsertComponent } from './component/turn/turn-insert/turn-insert.component';
 import { TurnListComponent } from './component/turn/turn-list/turn-list.component';
 import { TurnDialogComponent } from './component/turn/turn-list/turn-dialog/turn-dialog.component';
+import { TurnstatusComponent } from './component/turnstatus/turnstatus.component';
+import { TurnstatusInsertComponent } from './component/turnstatus/turnstatus-insert/turnstatus-insert.component';
+import { TurnstatusListComponent } from './component/turnstatus/turnstatus-list/turnstatus-list.component';
+import { TurnstatusdialogComponent } from './component/turnstatus/turnstatus-list/turnstatusdialog/turnstatusdialog.component';
 
 
 
@@ -157,6 +161,10 @@ import { TurnDialogComponent } from './component/turn/turn-list/turn-dialog/turn
     TurnInsertComponent,
     TurnListComponent,
     TurnDialogComponent,
+    TurnstatusComponent,
+    TurnstatusInsertComponent,
+    TurnstatusListComponent,
+    TurnstatusdialogComponent,
 
 
   ],

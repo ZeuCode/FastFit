@@ -23,6 +23,10 @@ import { GenderEditarComponent } from './component/gender/gender-editar/gender-e
 
 import { UserstatusInsertarComponent } from './component/userstatus/userstatus-insertar/userstatus-insertar.component';
 import { UserstatusComponent } from './component/userstatus/userstatus.component';
+import { TurnComponent } from './component/turn/turn.component';
+import { TurnInsertComponent } from './component/turn/turn-insert/turn-insert.component';
+import { TurnstatusComponent } from './component/turnstatus/turnstatus.component';
+import { TurnstatusInsertComponent } from './component/turnstatus/turnstatus-insert/turnstatus-insert.component';
 
 
 const routes: Routes = [
@@ -143,19 +147,42 @@ const routes: Routes = [
       { path: 'edition/:id', component: GenderEditarComponent },
     ],
   },
-  //path para userstatus
-  {
-    path: 'UserStatus',
-    component: UserstatusComponent,
-    children: [
-      {
-        path: 'userstatusinsertar',
-        component: UserstatusInsertarComponent,
-      },
-      { path: 'edicion/:id', component: UserstatusInsertarComponent },
-
-    ],
-  },
+    //path para userstatus
+    {
+      path: 'UserStatus',
+      component: UserstatusComponent,
+      children: [
+        {
+          path: 'userstatusinsertar',
+          component: UserstatusInsertarComponent,
+        },
+        { path:'edicion/:id',component:  UserstatusInsertarComponent},
+      ],
+    },
+    //path para turns
+    {
+      path: 'turns',
+      component: TurnComponent,
+      children: [
+        {
+          path: 'turninsert',
+          component: TurnInsertComponent,
+        },
+        { path:'edition/:id',component:  TurnInsertComponent},
+      ],
+    },
+    //path para turnstatus
+    {
+      path: 'turnstatus',
+      component: TurnstatusComponent,
+      children: [
+        {
+          path: 'turnstatusinsert',
+          component: TurnstatusInsertComponent,
+        },
+        { path:'edition/:id',component:  TurnstatusInsertComponent},
+      ],
+    },
 ];
 
 @NgModule({
