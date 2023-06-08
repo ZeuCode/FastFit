@@ -29,7 +29,7 @@
         <div class="item">
           <mat-form-field appearance="fill">
             <mat-label>Fecha</mat-label>
-            <input matInput [matDatepicker]="picker2" required placeholder="MM/DD/AAAA" formControlName="date">
+            <input matInput [matDatepicker]="picker2" required placeholder="DD/MM/AAAA" formControlName="date">
             <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
             <mat-datepicker startView="year" #picker2></mat-datepicker>
           </mat-form-field>
@@ -47,14 +47,14 @@
         <br>
 
         <mat-form-field class="example-full-width">
-          <mat-label>Turn Status</mat-label>
-          <input matInput required placeholder="TurnStatus_id" formControlName="TurnStatus_id">
+          <mat-label>Turn Status Id</mat-label>
+          <input matInput required placeholder="TurnStatus_id" formControlName="turnStatus_id">
         </mat-form-field>
         <br>
 
         <mat-form-field class="example-full-width">
-          <mat-label>Psychologist</mat-label>
-          <input matInput required placeholder="Psychologist_id" formControlName="Psychologist_id">
+          <mat-label>Psychologist Id</mat-label>
+          <input matInput required placeholder="Psychologist_id" formControlName="psychologist_id">
         </mat-form-field>
         <br>
 

@@ -1,39 +1,37 @@
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
-import { Turn } from '../model/turn';
-
+import { environment } from 'src/environments/environment';
+import { Turnstatus } from '../model/turnstatus';
+import { HttpClient } from '@angular/common/http';
 const base_url = environment.base;
-
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class TurnService {
+export class TurnstatusService {
 
-  private url = `${base_url}/turns`;
-  private listChange = new Subject<Turn[]>();
+  private url = `${base_url}/turnstatus`;
+  private listChange = new Subject<Turnstatus[]>();
   private confirmDelete = new Subject<Boolean>()
 
   constructor(private http: HttpClient) {}
 
   list() {
-    return this.http.get<Turn[]>(this.url);
+    return this.http.get<Turnstatus[]>(this.url);
   }
-  insert(turn: Turn) {
-    return this.http.post(this.url, turn);
+  insert(turnst: Turnstatus) {
+    return this.http.post(this.url, turnst);
   }
   getList() {
     return this.listChange.asObservable();
   }
-  setList(NewList: Turn[]) {
+  setList(NewList: Turnstatus[]) {
     this.listChange.next(NewList);
   }
   listId(Id:number){
-    return this.http.get<Turn>(`${this.url}/${Id}`);
+    return this.http.get<Turnstatus>(`${this.url}/${Id}`);
   }
-  update(turn:Turn){
-    return this.http.put(this.url,turn)
+  update(turnst:Turnstatus){
+    return this.http.put(this.url,turnst)
   }
   delete(id: number) {
 
