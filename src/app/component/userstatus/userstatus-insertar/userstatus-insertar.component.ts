@@ -18,7 +18,7 @@ export class UserstatusInsertarComponent implements OnInit{
   form: FormGroup = new FormGroup({});
   Userstatus:  UserStatus = new  UserStatus();
   mensaje: string = '';
-  maxFecha: Date = moment().add(-1, 'days').toDate();
+
   constructor(private pS:  UserStatusService, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -36,9 +36,9 @@ export class UserstatusInsertarComponent implements OnInit{
   }
   aceptar(): void {
 
-    this.Userstatus.id= this.form.value['id'];
-    this.Userstatus.Status= this.form.value['Status'];
-    this.Userstatus.Description= this.form.value['Description'];
+    this.Userstatus.idUS= this.form.value['id'];
+    this.Userstatus.status= this.form.value['Status'];
+    this.Userstatus.description= this.form.value['Description'];
 
     if (this.form.value['Status'].length > 0) {
       this.pS.insert(this.Userstatus).subscribe((data) => {
@@ -57,9 +57,9 @@ export class UserstatusInsertarComponent implements OnInit{
         //this.propietario = data
 
         this.form = new FormGroup({
-          id: new FormControl(data.id),
-          Status: new FormControl(data.Status),
-          Description: new FormControl(data.Description),
+          id: new FormControl(data.idUS),
+          Status: new FormControl(data.status),
+          Description: new FormControl(data.description),
 
         });
         console.log(data);
