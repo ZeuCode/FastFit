@@ -108,7 +108,6 @@ export class PsiInsertarComponent implements OnInit {
           password: new FormControl(data.password),
           names: new FormControl(data.names),
           lastNames: new FormControl(data.lastNames),
-
           emailAddress: new FormControl(data.emailAddress),
           phoneNumber: new FormControl(data.phoneNumber),
           age: new FormControl(data.age),

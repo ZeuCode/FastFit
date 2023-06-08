@@ -80,8 +80,7 @@ export class AppoInsertarComponent implements OnInit {
     this.appointment.date = this.form.value['date'];
     this.appointment.client.id = this.form.value['client.id'];
     this.appointment.psychologist.idPsi = this.form.value['psychologist.idPsy'];
-    this.appointment.appointmentStatus.id =
-      this.form.value['appointmentStatus.id'];
+    this.appointment.appointmentStatus.id =this.form.value['appointmentStatus.id'];
 
     if (this.idApStatSelected > 0) {
       let a = new AppointmentStatus();
@@ -111,8 +110,8 @@ export class AppoInsertarComponent implements OnInit {
       this.pS.insert(this.appointment).subscribe((data) => {
         this.pS.list().subscribe((data) => {
           this.pS.setList(data);
-        });
-      });
+        })
+      })
     }
     this.router.navigate(['Appointments']);
   }
