@@ -14,7 +14,7 @@ import { MatPaginator } from '@angular/material/paginator';
 export class ReviewListComponent implements OnInit{
   dataSource: MatTableDataSource  <Review> = new MatTableDataSource();
   list: Review[] = [];
-  displayedColumns: string[] = ['id', 'content', 'date', 'likes', 'Client_id', 'Psychologist_id', 'actions'];
+  displayedColumns: string[] = ['id', 'content', 'date', 'likes', 'client_id', 'psychologist_id', 'actions'];
 
   private idMayor: number = 0;
   @ViewChild('paginator') paginator!: MatPaginator;
