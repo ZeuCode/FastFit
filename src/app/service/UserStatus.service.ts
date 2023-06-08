@@ -31,7 +31,10 @@ export class UserStatusService {
   }
 
   update(p: UserStatus) {
-    return this.http.put(this.url + '/' + p.idUS, p);
+
+    //return this.http.put(this.url + '/' + p.idUS, p);
+    return this.http.put(this.url, UserStatus);
+
   }
   listarId(id: number) {
     return this.http.get<UserStatus>(`${this.url}/${id}`);
