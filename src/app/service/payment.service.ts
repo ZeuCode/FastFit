@@ -11,7 +11,7 @@ const base_url = environment.base;
 })
 
 export class PaymentService {
-  private url = `${base_url}/payments`;
+  private url = "http://localhost:8080/payment";
   private listaCambio = new Subject<payment[]>();
   private confirmaEliminacion = new Subject<Boolean>()
 
@@ -21,26 +21,17 @@ export class PaymentService {
     return this.Http.get<payment[]>(this.url);
   }
 
-  insert(payment: payment) {
-    return this.Http.post(this.url, payment);
+  insert(pay: payment) {
+    return this.Http.post(this.url, pay);
   }
 
-  setList(listaNueva: payment[]) {
-    this.listaCambio.next(listaNueva);
-    //this.list();
-  }
-
-  getList() {
-    return this.listaCambio.asObservable();
+  listId(id:number) {
+    return this.Http.get<payment>(`${this.url}/${id}`);
   }
 
   update(p:payment) {
     //return this.Http.put(this.url + '/' + p.idPayment, p);
     return this.Http.put(this.url, p);
-  }
-
-  listId(id:number) {
-    return this.Http.get<payment>(`${this.url}/${id}`);
   }
 
   eliminar(id: number) {
@@ -53,5 +44,14 @@ export class PaymentService {
 
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmaEliminacion.next(estado);
+  }
+
+  setList(listaNueva: payment[]) {
+    this.listaCambio.next(listaNueva);
+    //this.list();
+  }
+
+  getList() {
+    return this.listaCambio.asObservable();
   }
 }

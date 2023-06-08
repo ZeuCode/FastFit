@@ -28,19 +28,19 @@ export class UserstatusInsertarComponent implements OnInit{
       this.init();
     });
     this.form = new FormGroup({
-      id: new FormControl(),
-      Status: new FormControl(),
-      Description: new FormControl(),
+      idUS: new FormControl(),
+      status: new FormControl(),
+      description: new FormControl(),
 
     });
   }
   aceptar(): void {
 
-    this.Userstatus.idUS= this.form.value['id'];
-    this.Userstatus.Status= this.form.value['Status'];
-    this.Userstatus.Description= this.form.value['Description'];
+    this.Userstatus.idUS= this.form.value['idUS'];
+    this.Userstatus.status= this.form.value['status'];
+    this.Userstatus.description= this.form.value['description'];
 
-    if (this.form.value['Status'].length > 0) {
+    if (this.form.value['status'].length > 0) {
       this.pS.insert(this.Userstatus).subscribe((data) => {
         this.pS.list().subscribe((data) => {
           this.pS.setList(data);
@@ -58,8 +58,8 @@ export class UserstatusInsertarComponent implements OnInit{
 
         this.form = new FormGroup({
           idUS: new FormControl(data.idUS),
-          Status: new FormControl(data.Status),
-          Description: new FormControl(data.Description),
+          status: new FormControl(data.status),
+          description: new FormControl(data.description),
 
         });
         console.log(data);

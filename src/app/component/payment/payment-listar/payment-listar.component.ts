@@ -15,7 +15,6 @@ import { PaymentDialogoComponent } from './payment-dialogo/payment-dialogo.compo
 export class PaymentListarComponent implements OnInit{
 
   dataSource: MatTableDataSource<payment> = new MatTableDataSource();
-  lista: payment[] = [];
   private idMayor: number = 0;
 
   constructor(private pS: PaymentService, private dialog: MatDialog) { }

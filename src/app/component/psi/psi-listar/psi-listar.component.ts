@@ -15,13 +15,14 @@ import { MatPaginator } from '@angular/material/paginator';
 export class PsiListarComponent implements OnInit {
   dataSource: MatTableDataSource<Psi> = new MatTableDataSource();
   lista: Psi[] = [];
-  displayedColumns: string[] = ['id', 'userName','names', 'lastNames', 'emailAddress', 'phoneNumber', 'age', 'rating','userStatus','gender','specialty','ceditar'];
+  displayedColumns: string[] = ['id', 'userName','names', 'lastNames', 'emailAddress', 'phoneNumber', 'age', 'rating','userStatus','genero','specialty','ceditar'];
   private idMayor: number = 0;
 
   @ViewChild('paginator') paginator!: MatPaginator;
   constructor(private pS: PsiService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
+
     this.pS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;

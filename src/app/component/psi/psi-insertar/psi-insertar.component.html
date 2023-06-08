@@ -23,8 +23,8 @@
 
             <div class="item">
               <mat-form-field class="example-full-width">
-                <mat-label>Código</mat-label>
-                <input matInput placeholder="numero" formControlName="id" />
+                <mat-label>ID Psicólogo</mat-label>
+                <input matInput readonly placeholder="numero" formControlName="id" />
               </mat-form-field>
             </div>
 
@@ -38,7 +38,7 @@
             <div class="item">
               <mat-form-field class="example-full-width">
                 <mat-label>Password</mat-label>
-                <input matInput required placeholder="contraseña" formControlName="password" />
+                <input matInput required placeholder="contraseña" formControlName="password" type="password" />
               </mat-form-field>
             </div>
 
@@ -90,18 +90,11 @@
             </div>
 
             <div class="item">
-              <mat-form-field class="example-full-width">
-                <mat-label>UserStatus_Id</mat-label>
-                <input matInput required placeholder="UserStatus_Id" formControlName="userStatus" />
-              </mat-form-field>
-            </div>
-
-            <div class="item">
               <mat-form-field appearance="fill">
-                <mat-label>Speciality</mat-label>
-                <mat-select formControlName="specialty" [(value)]="idSpecialtySeleccionado" required>
-                  <mat-option *ngFor="let p of listaSpecialty" [value]="p.idSpecialty">
-                    {{p.name}}
+                <mat-label>User Status</mat-label>
+                <mat-select formControlName="userStatus" [(value)]="idUserStatusSeleccionado" required>
+                  <mat-option *ngFor="let a of listarUserStatus" [value]="a.idUS">
+                    {{a.status}}
                   </mat-option>
                 </mat-select>
               </mat-form-field>
@@ -110,12 +103,25 @@
             <div class="item">
               <mat-form-field appearance="fill">
                 <mat-label>Gender</mat-label>
-                <mat-select placeholder="genero" formControlName="Gender">
-                  <mat-option value="Masculino">Masculino</mat-option>
-                  <mat-option value="Femenino">Femenino</mat-option>
+                <mat-select formControlName="gender" [(value)]="idGenderSeleccionado" required>
+                  <mat-option *ngFor="let g of listaGender" [value]="g.id">
+                    {{g.gender}}
+                  </mat-option>
                 </mat-select>
               </mat-form-field>
             </div>
+
+            <div class="item">
+              <mat-form-field appearance="fill">
+                <mat-label>Specialty</mat-label>
+                <mat-select formControlName="specialty" [(value)]="idSpecialtySeleccionado" required>
+                  <mat-option *ngFor="let p of listaSpecialty" [value]="p.idSpecialty">
+                    {{p.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
           </div>
         </div>
 

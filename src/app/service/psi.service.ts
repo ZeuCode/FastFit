@@ -8,21 +8,24 @@ const base_url = environment.base;
   providedIn: 'root',
 })
 export class PsiService {
-  private url = `${base_url}/Psychologists`;
+  private url = "http://localhost:8080/Psychologists";
   private listaCambio = new Subject<Psi[]>();
   private confirmaEliminacion = new Subject<Boolean>()
 
   constructor(private http: HttpClient) {}
+
   list() {
     return this.http.get<Psi[]>(this.url);
   }
-  insert(Psi: Psi) {
-    return this.http.post(this.url, Psi);
+
+  insert(psico: Psi) {
+    return this.http.post(this.url, psico);
   }
 
   getList() {
     return this.listaCambio.asObservable();
   }
+
   setList(listaNueva: Psi[]) {
     this.listaCambio.next(listaNueva);
     //this.list();

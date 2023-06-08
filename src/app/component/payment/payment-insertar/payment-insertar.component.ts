@@ -5,6 +5,7 @@ import * as moment from 'moment';
 import { PaymentService } from 'src/app/service/payment.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
+let dateToday: Date = new Date();
 
 @Component({
   selector: 'app-payment-insertar',
@@ -34,8 +35,6 @@ export class PaymentInsertarComponent implements OnInit {
       this.id = data['id'];
       this.edicion = data['id'] != null;
       this.init();
-      console.log(this.id);
-      console.log(this.edicion);
     });
 
     this.form = new FormGroup({
@@ -61,7 +60,8 @@ export class PaymentInsertarComponent implements OnInit {
     this.payment.paymentCode = this.form.value['paymentCode'];
     this.payment.idAppointment = this.form.value['idAppointment'];
     this.payment.cardNumber = this.form.value['cardNumber'];
-    this.payment.date = this.form.value['date'];
+    //this.payment.date = this.form.value['date'];
+    this.payment.date = dateToday;
     this.payment.currency = this.form.value['currency'];
     this.payment.pago = this.form.value['pago'];
     this.payment.name = this.form.value['name'];
@@ -69,6 +69,7 @@ export class PaymentInsertarComponent implements OnInit {
     this.payment.cvv = this.form.value['cvv'];
     this.payment.expiration = this.form.value['expiration'];
     this.payment.email = this.form.value['email'];
+
     if (this.form.value['paymentCode'].length > 0) {
       if (this.edicion) {
         this.pS.update(this.payment).subscribe(() => {
