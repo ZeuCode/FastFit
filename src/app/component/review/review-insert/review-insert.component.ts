@@ -57,7 +57,7 @@ export class ReviewInsertComponent implements OnInit{
       if (this.edition) {
         //guardar pS
         this.revS.update(this.review).subscribe(()=>{
-          this.revS.list().subscribe((data) => { ////actualizar la lista
+          this.revS.list().subscribe((data) => {
             this.revS.setList(data);
           });
         });

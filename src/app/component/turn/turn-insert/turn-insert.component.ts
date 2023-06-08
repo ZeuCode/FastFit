@@ -32,8 +32,8 @@ export class TurnInsertComponent implements OnInit{
       id:new FormControl(),
       date:new FormControl(),
       duration:new FormControl(),
-      TurnStatus_id:new FormControl(),
-      Psychologist_id:new FormControl()
+      turnStatus_id:new FormControl(),
+      psychologist_id:new FormControl()
     })
   }
   //Init() {
@@ -46,15 +46,15 @@ export class TurnInsertComponent implements OnInit{
     this.turn.idTurn = this.form.value['id'];
     this.turn.date = this.form.value['date'];
     this.turn.duration = this.form.value['duration'];
-    this.turn.TurnStatus_id = this.form.value['TurnStatus_id'];
-    this.turn.Psychologist_id = this.form.value['Psychologist_id'];
+    this.turn.turnStatus_id = this.form.value['turnStatus_id'];
+    this.turn.psychologist_id = this.form.value['psychologist_id'];
 
-    if (this.form.value['date'].length > 0) {
+    if (this.form.value['duration'].length > 0) {
 
       if (this.edition) {
         //guardar pS
         this.turS.update(this.turn).subscribe(()=>{
-          this.turS.list().subscribe((data) => { ////actualizar la lista
+          this.turS.list().subscribe((data) => {
             this.turS.setList(data);
           });
         });
@@ -70,8 +70,7 @@ export class TurnInsertComponent implements OnInit{
       this.router.navigate(['turns']);
 
     }else{
-
-      this.mensaje='!!'
+      this.mensaje='!write comment!'
     }
   }
 
@@ -82,8 +81,8 @@ export class TurnInsertComponent implements OnInit{
           id:new FormControl(data.idTurn),
           date:new FormControl(data.date),
           duration:new FormControl(data.duration),
-          TurnStatus_id:new FormControl(data.TurnStatus_id),
-          Psychologist_id:new FormControl(data.Psychologist_id),
+          turnStatus_id:new FormControl(data.turnStatus_id),
+          psychologist_id:new FormControl(data.psychologist_id),
         })
         console.log(data);
       })
