@@ -28,29 +28,29 @@
       <!-- Position Column -->
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.idUS}} </td>
       </ng-container>
 
       <!-- Name Column -->
       <ng-container matColumnDef="Status">
         <th mat-header-cell *matHeaderCellDef> Status </th>
-        <td mat-cell *matCellDef="let element"> {{element.Status}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
       </ng-container>
 
       <!-- Weight Column -->
       <ng-container matColumnDef="Description">
         <th mat-header-cell *matHeaderCellDef> Description </th>
-        <td mat-cell *matCellDef="let element"> {{element.Description}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
       </ng-container>
 
 
       <ng-container matColumnDef="ceditar">
         <th mat-header-cell *matHeaderCellDef>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Acciones </th>
         <td mat-cell *matCellDef="let element">
-          <button mat-button id="editar" [routerLink]="['edicion',element.id]">
+          <button mat-button id="editar" [routerLink]="['edicion',element.idUS]">
             <mat-icon aria-hidden="false" color="primary">edit</mat-icon>
           </button>
-          <button mat-button (click)="confirmar(element.id)">
+          <button mat-button (click)="confirmar(element.idUS)">
             <mat-icon aria-hidden="false" color="primary">delete</mat-icon>
           </button>
 

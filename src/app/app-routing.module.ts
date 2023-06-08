@@ -6,16 +6,20 @@ import { ReviewComponent } from './component/review/review.component';
 import { ReviewInsertComponent } from './component/review/review-insert/review-insert.component';
 import { HomeComponent } from './component/home/home.component';
 import { ClientComponent } from './component/client/client.component';
-import { ClientListarComponent } from './component/client/client-listar/client-listar.component';
 import { ClientInsertarComponent } from './component/client/client-insertar/client-insertar.component';
 import { PaymentComponent } from './component/payment/payment.component';
 import { PaymentInsertarComponent } from './component/payment/payment-insertar/payment-insertar.component';
-import { CitaComponent } from './component/cita/cita.component';
-import { CitaInsertarComponent } from './component/cita/cita-insertar/cita-insertar.component';
 
+import { AppoInsertarComponent } from './component/appointment/appo-insertar/appo-insertar.component';
+import { AppointmentComponent } from './component/appointment/appointment.component';
 
 import { SpecialtyComponent } from './component/specialty/specialty.component';
 import { SpecialtyInsertComponent } from './component/specialty/specialty-insert/specialty-insert.component';
+import { AppoStatusIngresarComponent } from './component/appointment-status/appo-status-ingresar/appo-status-ingresar.component';
+import { AppointmentStatusComponent } from './component/appointment-status/appointment-status.component';
+import { GenderComponent } from './component/gender/gender.component';
+import { GenderListarComponent } from './component/gender/gender-listar/gender-listar.component';
+import { GenderEditarComponent } from './component/gender/gender-editar/gender-editar.component';
 
 import { UserstatusInsertarComponent } from './component/userstatus/userstatus-insertar/userstatus-insertar.component';
 import { UserstatusComponent } from './component/userstatus/userstatus.component';
@@ -51,14 +55,14 @@ const routes: Routes = [
   },
   //payment component
   {
-    path: 'payment',component: PaymentComponent,children: [
+    path: 'payment',
+    component: PaymentComponent,
+    children: [
       {
-        path: 'paymentsinsertar',
-        component: PaymentInsertarComponent,
+        path: 'paymentsinsertar', component: PaymentInsertarComponent,
       },
       {
-        path: 'edicion/:id',
-        component: PaymentInsertarComponent,
+        path:'edicion/:id',component:PaymentInsertarComponent,
       },
     ],
   },
@@ -68,12 +72,14 @@ const routes: Routes = [
     component: SpecialtyComponent,
     children: [
       {
-        path: 'specialtyinsertar', component: SpecialtyInsertComponent,
+        path: 'specialtyinsertar',
+        component: SpecialtyInsertComponent,
       },
       {
-        path:'edicion/:id',component:SpecialtyInsertComponent
-      }
-    ]
+        path: 'edicion/:id',
+        component: SpecialtyInsertComponent,
+      },
+    ],
   },
   //path para psicologos
   {
@@ -102,31 +108,56 @@ const routes: Routes = [
       },
     ],
   },
-
-  //path para citas
+  //path para appointmet
   {
-    path: 'citas',
-    component: CitaComponent,
+    path: 'Appointments',
+    component: AppointmentComponent,
     children: [
       {
-        path: 'citainsertar',
-        component: CitaInsertarComponent,
+        path: 'appoinsertar',
+        component: AppoInsertarComponent,
       },
-      { path: 'edicion/:id', component: CitaInsertarComponent },
+      { path: 'edition/:id', component: AppoInsertarComponent },
     ],
   },
-    //path para userstatus
-    {
-      path: 'UserStatus',
-      component: UserstatusComponent,
-      children: [
-        {
-          path: 'userstatusinsertar',
-          component: UserstatusInsertarComponent,
-        },
-        { path:'edicion/:id',component:  UserstatusInsertarComponent},
-      ],
-    },
+  //path para appointment statuss
+  {
+    path: 'AppointmentStatus',
+    component: AppointmentStatusComponent,
+    children: [
+      {
+        path: 'appoStatusinsertar',
+        component: AppoStatusIngresarComponent,
+      },
+      { path: 'edition/:id', component: AppoStatusIngresarComponent },
+    ],
+  },
+  //path para gender
+
+  {
+    path: 'gender',
+    component: GenderComponent,
+    children: [
+      {
+        path: 'genderinsert',
+        component: GenderEditarComponent,
+      },
+      { path: 'edition/:id', component: GenderEditarComponent },
+    ],
+  },
+  //path para userstatus
+  {
+    path: 'UserStatus',
+    component: UserstatusComponent,
+    children: [
+      {
+        path: 'userstatusinsertar',
+        component: UserstatusInsertarComponent,
+      },
+      { path: 'edicion/:id', component: UserstatusInsertarComponent },
+
+    ],
+  },
     //path para turnstatus
     {
       path: 'turns',

@@ -29,30 +29,32 @@
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
       <!--- Note that these columns can be defined in any order.The actual rendered columns are set as a property on the row definition" --><!-- Position Column -->
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      <ng-container matColumnDef="idAppointment">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> No. </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.idAppointment}} </td>
       </ng-container><!-- Name Column --><ng-container matColumnDef="date">
-        <th mat-header-cell *matHeaderCellDef> fecha </th>
-        <td mat-cell *matCellDef="let element"> {{element.date|date:'dd/MM/yyyy'}} </td>
-      </ng-container><!-- Weight Column --><ng-container matColumnDef="client_id">
-        <th mat-header-cell *matHeaderCellDef> client_ID </th>
-        <td mat-cell *matCellDef="let element"> {{element.client_id}} </td>
-      </ng-container><!-- Symbol Column --><ng-container matColumnDef="PsychologistID">
-        <th mat-header-cell *matHeaderCellDef> Psychologist_ID </th>
-        <td mat-cell *matCellDef="let element"> {{element.PsychologistID}} </td>
-      </ng-container><!-- Symbol Column --><ng-container matColumnDef="AppointStatusID">
-        <th mat-header-cell *matHeaderCellDef> Appointment_ID </th>
-        <td mat-cell *matCellDef="let element"> {{element.AppointStatusID}} </td>
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Date </th>
+        <td mat-cell *matCellDef="let element"style="text-align: center;"> {{element.date|date:'dd-MM-yyyy'}} </td>
+      </ng-container><!-- Weight Column -->
+      <ng-container matColumnDef="client">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Client </th>
+        <td mat-cell *matCellDef="let element"style="text-align: center;"> {{element.client.userName}} </td>
+      </ng-container><ng-container matColumnDef="psychologist">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Psychologist </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.psychologist.userName}} </td>
+      </ng-container>
+      <ng-container matColumnDef="appointmentStatus">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Appointment-Status </th>
+        <td mat-cell *matCellDef="let element"style="text-align: center;" > {{element.appointmentStatus.status}} </td>
       </ng-container>
 
       <ng-container matColumnDef="ceditar">
         <th mat-header-cell *matHeaderCellDef>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Acciones </th>
         <td mat-cell *matCellDef="let element">
-          <button mat-button id="editar" [routerLink]="['edicion',element.id]">
+          <button mat-button id="editar" [routerLink]="['edition',element.idAppointment]">
             <mat-icon id="cedit" aria-hidden="false" color="primary">edit</mat-icon>
           </button>
-          <button mat-button (click)="confirmar(element.id)">
+          <button mat-button (click)="confirmar(element.idAppointment)">
             <mat-icon id="cedit" aria-hidden="false" color="primary">delete</mat-icon>
           </button>
 
@@ -70,7 +72,7 @@
       ></mat-paginator>
     <br>
     <div style="text-align: center;">
-      <button mat-raised-button color="primary" routerLink="citainsertar" style="margin: 10px; ">Agregar Cita</button>
+      <button mat-raised-button color="primary" routerLink="appoinsertar" style="margin: 10px; ">Agregar Cita</button>
     </div>
 
   </div>

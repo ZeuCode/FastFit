@@ -33,7 +33,7 @@ export class TurnService {
     return this.http.get<Turn>(`${this.url}/${Id}`);
   }
   update(r:Turn){
-    return this.http.put(this.url,r)
+    return this.http.put(this.url,r);
   }
   delete(id: number) {
 

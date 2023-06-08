@@ -1,7 +1,6 @@
 export class UserStatus{
 
-    id:number=0;
-    Status: string="";
-    Description: string="";
-
+    idUS:number=0;
+    status: string="";
+    description: string="";
 }

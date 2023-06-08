@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <div style=" text-align: center;">
+      <h1>Lista de Estados de Citas</h1>
+    </div>
+
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> No. </th>
+        <td mat-cell *matCellDef="let element"style="text-align: center;"> {{element.id}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="status" >
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> status </th>
+        <td mat-cell *matCellDef="let element"style="text-align: center;"> {{element.status}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> description </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.description}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-button id="editar" [routerLink]="['edition',element.id]">
+            <mat-icon id="cedit" aria-hidden="false" color="primary">edit</mat-icon>
+          </button>
+          <button mat-button (click)="confirmar(element.id)">
+            <mat-icon id="cedit" aria-hidden="false" color="primary">delete</mat-icon>
+          </button>
+
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <div style="text-align: center">
+      <button mat-raised-button color="primary" routerLink="/AppointmentStatus/appoStatusinsertar" style="margin: 10px">
+        Agregar Estatus de Cita
+      </button>
+    </div>
+  </div>
+</body>
+
+</html>
