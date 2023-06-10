@@ -23,7 +23,6 @@
   background-repeat: no-repeat;
 }
 
-
 .toolbar-title {
   font-size: 48px; /* Cambia el tamaño de fuente a tu preferencia */
   margin: 0; /* Elimina el margen por defecto del título */
@@ -32,19 +31,26 @@
 
 }
 
-mat-nav-list {
+.listaLink {
+  height: 80%;
+  display: grid;
+  grid-template-rows: 8% 8% 8% 8% 8% 8% 8% 8% 8% 8% 8% 8%;
   flex: 1 1 0%;
   box-sizing: border-box;
 }
 
-
+.item{
+  display: grid;
+  grid-template-rows: 10% 80% 10% ;
+  padding: 1em;
+}
 
 .sidenav-container {
   height: 100%;
 }
 
 .sidenav {
-  width: 220px;
+  width: 240px;
 }
 
 .sidenav .mat-toolbar {
