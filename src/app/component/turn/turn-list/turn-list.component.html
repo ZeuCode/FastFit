@@ -1,88 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-</head>
-<body>
 
-  <div class="container-fluid">
-    <div style="text-align: center">
-      <h1>Lista de Turnos</h1>
+<div class="diseno">
+
+  <app-toolbar-rol-cliente></app-toolbar-rol-cliente>
+
+  <div class="sidenav-container">
+    <div class="menu">
+      <app-menu-rol-cliente></app-menu-rol-cliente>
     </div>
 
-    <div class="row">
-      <mat-form-field appearance="outline" class="filtro">
-        <input matInput (keyup)="filter($event)" placeholder="Buscar"/>
-      </mat-form-field>
-    </div>
+    <div class="contenido">
+      <body>
+        <div class="container-fluid">
+          <div style="text-align: center">
+            <h1>Lista de Turnos</h1>
+          </div>
 
-    <br>
-    <br>
+          <div class="row">
+            <mat-form-field appearance="outline" class="filtro">
+              <input matInput (keyup)="filter($event)" placeholder="Buscar" />
+            </mat-form-field>
+          </div>
 
-    <table class="mat-elevation-z8" mat-table [dataSource]="dataSource">
-      <!--  Column -->
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef> Id  </th>
-        <td mat-cell *matCellDef="let element"> {{element.idTurn}} </td>
-      </ng-container>
+          <br>
+          <br>
 
-      <!--  Column -->
-      <ng-container matColumnDef="date">
-        <th mat-header-cell *matHeaderCellDef> Fecha </th>
-        <td mat-cell *matCellDef="let element"> {{element.date | date : "dd/MM/yyyy"}} </td>
-      </ng-container>
+          <table class="mat-elevation-z8" mat-table [dataSource]="dataSource">
+            <!--  Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> Id </th>
+              <td mat-cell *matCellDef="let element"> {{element.idTurn}} </td>
+            </ng-container>
 
-      <!--  Column -->
-      <ng-container matColumnDef="duration">
-        <th mat-header-cell *matHeaderCellDef> Duracion (horas) </th>
-        <td mat-cell *matCellDef="let element"> {{element.duration}} </td>
-      </ng-container>
+            <!--  Column -->
+            <ng-container matColumnDef="date">
+              <th mat-header-cell *matHeaderCellDef> Fecha </th>
+              <td mat-cell *matCellDef="let element"> {{element.date | date : "dd/MM/yyyy"}} </td>
+            </ng-container>
 
-      <!--  Column -->
-      <ng-container matColumnDef="TurnStatus_id">
-        <th mat-header-cell *matHeaderCellDef> Estado Turno Id </th>
-        <td mat-cell *matCellDef="let element"> {{element.turnStatus_id}} </td>
-      </ng-container>
+            <!--  Column -->
+            <ng-container matColumnDef="duration">
+              <th mat-header-cell *matHeaderCellDef> Duracion (horas) </th>
+              <td mat-cell *matCellDef="let element"> {{element.duration}} </td>
+            </ng-container>
 
-      <!--  Column -->
-      <ng-container matColumnDef="Psychologist_id">
-        <th mat-header-cell *matHeaderCellDef> Psicologo Id </th>
-        <td mat-cell *matCellDef="let element"> {{element.psychologist_id}} </td>
-      </ng-container>
+            <!--  Column -->
+            <ng-container matColumnDef="TurnStatus_id">
+              <th mat-header-cell *matHeaderCellDef> Estado Turno Id </th>
+              <td mat-cell *matCellDef="let element"> {{element.turnStatus_id}} </td>
+            </ng-container>
 
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Acciones </th>
-        <td mat-cell *matCellDef="let element">
-          <button mat-button id="edit"[routerLink]="['edition',element.idTurn]">
-            <mat-icon aria-hidden="false" color="primary" >edit</mat-icon>
-          </button>
-          <button mat-button (click)="confirm(element.idTurn)">
-            <mat-icon aria-hidden="false" color="primary" >delete</mat-icon>
-          </button>
+            <!--  Column -->
+            <ng-container matColumnDef="Psychologist_id">
+              <th mat-header-cell *matHeaderCellDef> Psicologo Id </th>
+              <td mat-cell *matCellDef="let element"> {{element.psychologist_id}} </td>
+            </ng-container>
 
-        </td>
-      </ng-container>
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Acciones </th>
+              <td mat-cell *matCellDef="let element">
+                <button mat-button id="edit" [routerLink]="['edition',element.idTurn]">
+                  <mat-icon aria-hidden="false" color="primary">edit</mat-icon>
+                </button>
+                <button mat-button (click)="confirm(element.idTurn)">
+                  <mat-icon aria-hidden="false" color="primary">delete</mat-icon>
+                </button>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-    <br>
-    <mat-paginator
-        #paginator
-        [pageSizeOptions]="[5, 10, 100]"
-        showFirstLastButtons
-      ></mat-paginator>
-    <br>
+              </td>
+            </ng-container>
 
-    <div style="text-align: center;">
-      <button mat-raised-button color="primary" routerLink="turninsert" style="margin: 10px;">Agregar Turno</button>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          <br>
+          <mat-paginator #paginator [pageSizeOptions]="[5, 10, 100]" showFirstLastButtons></mat-paginator>
+          <br>
+
+          <div style="text-align: center;">
+            <button mat-raised-button color="primary" routerLink="turninsert" style="margin: 10px;">Agregar Turno</button>
+          </div>
+
+        </div>
+      </body>
     </div>
 
   </div>
-</body>
-</html>
+
+</div>
+

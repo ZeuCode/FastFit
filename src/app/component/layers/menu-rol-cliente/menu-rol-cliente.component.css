@@ -39,14 +39,14 @@
   background-color: #3F51B5;
   color: white;
   border: 1px solid;
-  border-radius: 0.625rem;
+  border-radius: 0.3rem;
 }
 
 .botonItem.active {
   background-color: #3F51B5;
   color: white;
   border: 1px solid;
-  border-radius: 0.625rem;
+  border-radius: 0.35rem;
 }
 
 /* Agrega margen derecho a "icono" para separarlo del "nombre_icono" */

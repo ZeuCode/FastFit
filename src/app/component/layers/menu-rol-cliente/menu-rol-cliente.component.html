@@ -3,7 +3,7 @@
     <!-- Dashboard -->
     <div class="item">
       <div routerLink="/home" class="botonItem" [class.active]="activeButton === 11" (click)="setActiveButton(11)">
-        <mat-icon aria-label="Home" class="icono">home</mat-icon>
+        <mat-icon aria-label="Home" class="icono">dashboard</mat-icon>
         <span class="nombre_icono">Dashboard</span>
       </div>
     </div>
@@ -19,7 +19,7 @@
     <!-- Psicólogos -->
     <div class="item">
       <div routerLink="/psis" class="botonItem" [class.active]="activeButton === 1" (click)="setActiveButton(1)">
-        <mat-icon aria-label="Psychologists" class="icono">psychology</mat-icon>
+        <mat-icon aria-label="Psychologists" class="icono">psychology_alt</mat-icon>
         <span class="nombre_icono">Psicólogos</span>
       </div>
     </div>
@@ -35,72 +35,78 @@
     <!-- Reseñas -->
     <div class="item">
       <div routerLink="/reviews" class="botonItem" [class.active]="activeButton === 3" (click)="setActiveButton(3)">
-        <mat-icon aria-label="Reviews" class="icono">more</mat-icon>
+        <mat-icon aria-label="Reviews" class="icono">forum</mat-icon>
         <span class="nombre_icono">Reseñas</span>
       </div>
     </div>
 
     <!-- Citas -->
     <div class="item">
-      <div routerLink="/Appointments" class="botonItem" [class.active]="activeButton === 4" (click)="setActiveButton(4)">
-        <mat-icon aria-label="Appointment" class="icono">calendar_today</mat-icon>
+      <div routerLink="/Appointments" class="botonItem" [class.active]="activeButton === 4"
+        (click)="setActiveButton(4)">
+        <mat-icon aria-label="Appointment" class="icono">edit_calendar</mat-icon>
         <span class="nombre_icono">Citas</span>
-      </div>
-    </div>
-
-    <!-- Especialidad -->
-    <div class="item">
-      <div routerLink="/specialty" class="botonItem" [class.active]="activeButton === 5" (click)="setActiveButton(5)">
-        <mat-icon aria-label="Especialidad" class="icono">insert_drive_file</mat-icon>
-        <span class="nombre_icono">Especialidad</span>
-      </div>
-    </div>
-
-    <!-- Estatus de Usuario -->
-    <div class="item">
-      <div routerLink="/UserStatus" class="botonItem" [class.active]="activeButton === 6" (click)="setActiveButton(6)">
-        <mat-icon aria-label="UserStatus" class="icono">poll</mat-icon>
-        <span class="nombre_icono">Estado Usuario</span>
-      </div>
-    </div>
-
-    <!-- Cita Estatus -->
-    <div class="item">
-      <div routerLink="/AppointmentStatus" class="botonItem" [class.active]="activeButton === 7" (click)="setActiveButton(7)">
-        <mat-icon aria-label="Cita Estatus" class="icono">poll</mat-icon>
-        <span class="nombre_icono">Cita Estatus</span>
-      </div>
-    </div>
-
-    <!-- Género -->
-    <div class="item">
-      <div routerLink="/gender" class="botonItem" [class.active]="activeButton === 8" (click)="setActiveButton(8)">
-        <mat-icon aria-label="Gender" class="icono">insert_drive_file</mat-icon>
-        <span class="nombre_icono">Género</span>
       </div>
     </div>
 
     <!-- Turnos -->
     <div class="item">
       <div routerLink="/turns" class="botonItem" [class.active]="activeButton === 9" (click)="setActiveButton(9)">
-        <mat-icon aria-label="Turnos" class="icono">insert_drive_file</mat-icon>
+        <mat-icon aria-label="Turnos" class="icono">calendar_month</mat-icon>
         <span class="nombre_icono">Turnos</span>
+      </div>
+    </div>
+
+    <!-- Especialidad -->
+    <div class="item">
+      <div routerLink="/specialty" class="botonItem" [class.active]="activeButton === 5" (click)="setActiveButton(5)">
+        <mat-icon aria-label="Especialidad" class="icono">text_snippet</mat-icon>
+        <span class="nombre_icono">Especialidad</span>
+      </div>
+    </div>
+
+    <!-- Género -->
+    <div class="item">
+      <div routerLink="/gender" class="botonItem" [class.active]="activeButton === 8" (click)="setActiveButton(8)">
+        <mat-icon aria-label="Gender" class="icono">text_snippet</mat-icon>
+        <span class="nombre_icono">Género</span>
+      </div>
+    </div>
+
+    <!-- Estatus de Usuario -->
+    <div class="item">
+      <div routerLink="/UserStatus" class="botonItem" [class.active]="activeButton === 6" (click)="setActiveButton(6)">
+        <mat-icon aria-label="UserStatus" class="icono">analytics</mat-icon>
+        <span class="nombre_icono">Estado Usuario</span>
+      </div>
+    </div>
+
+    <!-- Cita Estatus -->
+    <div class="item">
+      <div routerLink="/AppointmentStatus" class="botonItem" [class.active]="activeButton === 7"
+        (click)="setActiveButton(7)">
+        <mat-icon aria-label="Cita Estatus" class="icono">analytics</mat-icon>
+        <span class="nombre_icono">Cita Estatus</span>
       </div>
     </div>
 
     <!-- Turno Estatus -->
     <div class="item">
-      <div routerLink="/turnstatus" class="botonItem" [class.active]="activeButton === 10" (click)="setActiveButton(10)">
-        <mat-icon aria-label="TurnoEstatus" class="icono">insert_drive_file</mat-icon>
+      <div routerLink="/turnstatus" class="botonItem" [class.active]="activeButton === 10"
+        (click)="setActiveButton(10)">
+        <mat-icon aria-label="TurnoEstatus" class="icono">analytics</mat-icon>
         <span class="nombre_icono">Turno Estatus</span>
       </div>
     </div>
 
-    <div></div>
+
+    <div>
+      <!-- <button mat-raised-button color="primary" style="width: 100%;">Turno Estatus</button> -->
+    </div>
     <!-- perfil -->
     <div class="item">
-      <div class="botonItem"  [class.active]="activeButton === 12" (click)="setActiveButton(12)">
-        <mat-icon aria-label="settings" class="icono">settings</mat-icon>
+      <div class="botonItem" [class.active]="activeButton === 12" (click)="setActiveButton(12)">
+        <mat-icon aria-label="settings" class="icono">manage_accounts</mat-icon>
         <span class="nombre_icono">Configuración</span>
       </div>
     </div>

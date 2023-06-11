@@ -1,26 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-</head>
-
 <body>
-
   <div class="registro">
-
     <div class="titulo">
       Registrar Psicólogo
     </div>
-
     <div>
       <form [formGroup]="form" (submit)="aceptar()" class="ingreso">
         <div class="camposFormulario">
           <div class="column">
-
             <div class="item">
               <mat-form-field class="example-full-width">
                 <mat-label>ID Psicólogo</mat-label>
@@ -62,8 +48,6 @@
                 <input matInput required placeholder="email" formControlName="emailAddress" />
               </mat-form-field>
             </div>
-
-
           </div>
 
           <div class="column">
@@ -135,14 +119,6 @@
 
       </form>
     </div>
-
-
-
-
   </div>
 
-
-
 </body>
-
-</html>
