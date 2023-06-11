@@ -102,6 +102,9 @@ import { TurnstatusComponent } from './component/turnstatus/turnstatus.component
 import { TurnstatusInsertComponent } from './component/turnstatus/turnstatus-insert/turnstatus-insert.component';
 import { TurnstatusListComponent } from './component/turnstatus/turnstatus-list/turnstatus-list.component';
 import { TurnstatusdialogComponent } from './component/turnstatus/turnstatus-list/turnstatusdialog/turnstatusdialog.component';
+import { ToolbarRolClienteComponent } from './component/layers/toolbar-rol-cliente/toolbar-rol-cliente.component';
+import { MenuRolClienteComponent } from './component/layers/menu-rol-cliente/menu-rol-cliente.component';
+
 
 
 
@@ -165,6 +168,8 @@ import { TurnstatusdialogComponent } from './component/turnstatus/turnstatus-lis
     TurnstatusInsertComponent,
     TurnstatusListComponent,
     TurnstatusdialogComponent,
+    ToolbarRolClienteComponent,
+    MenuRolClienteComponent,
 
 
 

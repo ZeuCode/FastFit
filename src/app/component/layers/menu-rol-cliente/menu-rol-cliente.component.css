@@ -1,0 +1,73 @@
+
+.sidenav {
+  height: 100%;
+  width: auto;
+  background-color: rgb(255, 255, 255);
+
+}
+
+.listaLink {
+  height: 100%;
+  display: grid;
+  grid-template-rows:  7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7%;
+}
+
+.item{
+  display: grid;
+  align-items:center; /* Centra verticalmente */
+  justify-items: center; /* Centra horizontalmente */
+}
+
+.botonItem{
+  width: 100%;
+  height: 65%;
+
+  border-bottom: 1px solid #ededed;
+  /* border-radius: 0.625rem; */
+  box-sizing: border-box;
+  background-color: white;
+  color: #3F51B5;
+
+  display: grid;
+  grid-template-columns: 25% 75% ;
+  place-content: center;
+  place-items: center;
+  cursor: pointer;
+}
+
+.botonItem:hover{
+  background-color: #3F51B5;
+  color: white;
+  border: 1px solid;
+  border-radius: 0.625rem;
+}
+
+.botonItem.active {
+  background-color: #3F51B5;
+  color: white;
+  border: 1px solid;
+  border-radius: 0.625rem;
+}
+
+/* Agrega margen derecho a "icono" para separarlo del "nombre_icono" */
+.icono{
+  width: 100%;
+  height: 100%;
+  font-size: 2em;
+  display: grid;
+  place-content: center;
+  place-items: center;
+}
+
+/* Agrega margen izquierdo a "nombre_icono" para separarlo del "icono" */
+.nombre_icono {
+  width: 100%;
+  height: 100%;
+  font-size: 1.1em; /* Cambia el tamaño de fuente del texto a tu preferencia */
+  font-weight: 500;
+  text-decoration: none;
+  color: inherit;
+  display: grid;
+  align-items: center; /* Centra verticalmente */
+  justify-items: start; /* Alinea a la izquierda */
+}
