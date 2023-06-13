@@ -11,6 +11,13 @@
   padding: 0.2%;
 }
 
+.boton{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+}
+
 .logo {
   width: 100%;
   height: 100%;

@@ -21,7 +21,7 @@ export class AppoListarComponent implements OnInit {
   displayedColumns: String[] = [
     'idAppointment',
     'date',
-    'client',
+    // 'client',
     'psychologist',
     'appointmentStatus',
     'ceditar',

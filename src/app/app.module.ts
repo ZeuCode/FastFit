@@ -104,6 +104,12 @@ import { TurnstatusListComponent } from './component/turnstatus/turnstatus-list/
 import { TurnstatusdialogComponent } from './component/turnstatus/turnstatus-list/turnstatusdialog/turnstatusdialog.component';
 import { ToolbarRolClienteComponent } from './component/layers/toolbar-rol-cliente/toolbar-rol-cliente.component';
 import { MenuRolClienteComponent } from './component/layers/menu-rol-cliente/menu-rol-cliente.component';
+import { MenuRolPsiComponent } from './component/layers/menu-rol-psi/menu-rol-psi.component';
+import { MenuRolAdminComponent } from './component/layers/menu-rol-admin/menu-rol-admin.component';
+import { DashboardRolClientComponent } from './component/dashboards/dashboard-rol-client/dashboard-rol-client.component';
+import { DashboardRolAdminComponent } from './component/dashboards/dashboard-rol-admin/dashboard-rol-admin.component';
+import { DashboardRolPsiComponent } from './component/dashboards/dashboard-rol-psi/dashboard-rol-psi.component';
+import { TempRolSelectComponent } from './component/temp-rol-select/temp-rol-select.component';
 
 
 
@@ -170,6 +176,12 @@ import { MenuRolClienteComponent } from './component/layers/menu-rol-cliente/men
     TurnstatusdialogComponent,
     ToolbarRolClienteComponent,
     MenuRolClienteComponent,
+    MenuRolPsiComponent,
+    MenuRolAdminComponent,
+    DashboardRolClientComponent,
+    DashboardRolAdminComponent,
+    DashboardRolPsiComponent,
+    TempRolSelectComponent,
 
 
 

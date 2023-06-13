@@ -1,0 +1,63 @@
+<div class="sidenav">
+  <div class="listaLink">
+    <!-- Dashboard -->
+    <div class="item">
+      <div routerLink="/dashboardPsi" class="botonItem" [class.active]="activeButton === 11"
+        (click)="setActiveButton(11)">
+        <mat-icon aria-label="Home" class="icono">dashboard</mat-icon>
+        <span class="nombre_icono">Dashboard</span>
+      </div>
+    </div>
+
+    <!-- Turnos -->
+    <div class="item">
+      <div routerLink="/turns" class="botonItem" [class.active]="activeButton === 9" (click)="setActiveButton(9)">
+        <mat-icon aria-label="Turnos" class="icono">calendar_month</mat-icon>
+        <span class="nombre_icono">Turnos</span>
+      </div>
+    </div>
+
+    <!-- Pacientes -->
+    <div class="item">
+      <div class="botonItem" [class.active]="activeButton === 0" (click)="setActiveButton(0)">
+        <mat-icon aria-label="Clients" class="icono">person</mat-icon>
+        <span class="nombre_icono">Pacientes</span>
+      </div>
+    </div>
+
+    <!-- Recaudación -->
+    <div class="item">
+      <div class="botonItem" [class.active]="activeButton === 2" (click)="setActiveButton(2)">
+        <mat-icon aria-label="Payments" class="icono">payment</mat-icon>
+        <span class="nombre_icono">Recaudación</span>
+      </div>
+    </div>
+
+    <!-- Mi Puntuación -->
+    <div class="item">
+      <div class="botonItem" [class.active]="activeButton === 3" (click)="setActiveButton(3)">
+        <mat-icon aria-label="Reviews" class="icono">forum</mat-icon>
+        <span class="nombre_icono">Mi Puntuación</span>
+      </div>
+    </div>
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div>
+      <!-- <button mat-raised-button color="primary" style="width: 100%;">Turno Estatus</button> -->
+    </div>
+    <!-- perfil -->
+    <div class="item">
+      <div class="botonItem" [class.active]="activeButton === 12" (click)="setActiveButton(12)">
+        <mat-icon aria-label="settings" class="icono">manage_accounts</mat-icon>
+        <span class="nombre_icono">Configuración</span>
+      </div>
+    </div>
+
+  </div>
+</div>

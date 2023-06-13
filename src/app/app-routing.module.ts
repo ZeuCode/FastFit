@@ -27,19 +27,41 @@ import { TurnComponent } from './component/turn/turn.component';
 import { TurnInsertComponent } from './component/turn/turn-insert/turn-insert.component';
 import { TurnstatusComponent } from './component/turnstatus/turnstatus.component';
 import { TurnstatusInsertComponent } from './component/turnstatus/turnstatus-insert/turnstatus-insert.component';
+import { TempRolSelectComponent } from './component/temp-rol-select/temp-rol-select.component';
+import { DashboardRolClientComponent } from './component/dashboards/dashboard-rol-client/dashboard-rol-client.component';
+import { DashboardRolAdminComponent } from './component/dashboards/dashboard-rol-admin/dashboard-rol-admin.component';
+import { DashboardRolPsiComponent } from './component/dashboards/dashboard-rol-psi/dashboard-rol-psi.component';
 
 
 const routes: Routes = [
-  //path para el HOME
+
+  //path para elección de rol
   {
     path: '',
-    component: HomeComponent,
+    component: TempRolSelectComponent,
+  },
+
+  //path para Dasboards
+  {
+    path: 'dashboardClient',
+    component: DashboardRolClientComponent,
+  },
+
+  {
+    path: 'dashboardAdmin',
+    component: DashboardRolAdminComponent,
+  },
+
+  {
+    path: 'dashboardPsi',
+    component: DashboardRolPsiComponent,
   },
 
   {
     path: 'home',
     component: HomeComponent,
   },
+
   //path para clients
   {
     path: 'clients',
@@ -55,6 +77,7 @@ const routes: Routes = [
       },
     ],
   },
+
   //payment component
   {
     path: 'payment',
@@ -64,7 +87,7 @@ const routes: Routes = [
         path: 'paymentsinsertar', component: PaymentInsertarComponent,
       },
       {
-        path:'edicion/:id',component:PaymentInsertarComponent,
+        path: 'edicion/:id', component: PaymentInsertarComponent,
       },
     ],
   },
@@ -83,6 +106,7 @@ const routes: Routes = [
       },
     ],
   },
+
   //path para psicologos
   {
     path: 'psis',
@@ -147,46 +171,46 @@ const routes: Routes = [
       { path: 'edition/:id', component: GenderEditarComponent },
     ],
   },
-    //path para userstatus
-    {
-      path: 'UserStatus',
-      component: UserstatusComponent,
-      children: [
-        {
-          path: 'userstatusinsertar',
-          component: UserstatusInsertarComponent,
-        },
-        { path:'edicion/:id',component:  UserstatusInsertarComponent},
-      ],
-    },
-    //path para turns
-    {
-      path: 'turns',
-      component: TurnComponent,
-      children: [
-        {
-          path: 'turninsert',
-          component: TurnInsertComponent,
-        },
-        { path:'edition/:id',component:  TurnInsertComponent},
-      ],
-    },
-    //path para turnstatus
-    {
-      path: 'turnstatus',
-      component: TurnstatusComponent,
-      children: [
-        {
-          path: 'turnstatusinsert',
-          component: TurnstatusInsertComponent,
-        },
-        { path:'edition/:id',component:  TurnstatusInsertComponent},
-      ],
-    },
+  //path para userstatus
+  {
+    path: 'UserStatus',
+    component: UserstatusComponent,
+    children: [
+      {
+        path: 'userstatusinsertar',
+        component: UserstatusInsertarComponent,
+      },
+      { path: 'edicion/:id', component: UserstatusInsertarComponent },
+    ],
+  },
+  //path para turns
+  {
+    path: 'turns',
+    component: TurnComponent,
+    children: [
+      {
+        path: 'turninsert',
+        component: TurnInsertComponent,
+      },
+      { path: 'edition/:id', component: TurnInsertComponent },
+    ],
+  },
+  //path para turnstatus
+  {
+    path: 'turnstatus',
+    component: TurnstatusComponent,
+    children: [
+      {
+        path: 'turnstatusinsert',
+        component: TurnstatusInsertComponent,
+      },
+      { path: 'edition/:id', component: TurnstatusInsertComponent },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
