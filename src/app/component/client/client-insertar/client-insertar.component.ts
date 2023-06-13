@@ -44,7 +44,7 @@ export class ClientInsertarComponent implements OnInit {
 
   aceptar(): void {
 
-    this.client.id = this.form.value['id'];
+    this.client.idClient = this.form.value['id'];
     this.client.userName = this.form.value['userName'];
     this.client.password = this.form.value['password'];
     this.client.names = this.form.value['names'];
@@ -92,7 +92,7 @@ export class ClientInsertarComponent implements OnInit {
     if (this.edicion) {
       this.pC.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({
-          id: new FormControl(data.id),
+          id: new FormControl(data.idClient),
           userName: new FormControl(data.userName),
           password: new FormControl(data.password),
           names: new FormControl(data.names),
