@@ -20,7 +20,7 @@
 
             <ng-container matColumnDef="id">
               <th mat-header-cell *matHeaderCellDef style="text-align: center;">ID</th>
-              <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.id }}</td>
+              <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.idGender }}</td>
             </ng-container>
 
             <ng-container matColumnDef="gender">
@@ -36,10 +36,10 @@
             <ng-container matColumnDef="ceditar">
               <th mat-header-cell *matHeaderCellDef> Acciones </th>
               <td mat-cell *matCellDef="let element">
-                <button mat-button id="editar" [routerLink]="['edition',element.id]">
+                <button mat-button id="editar" [routerLink]="['edition',element.idGender]">
                   <mat-icon id="cedit" aria-hidden="false" color="primary">edit</mat-icon>
                 </button>
-                <button mat-button (click)="confirmar(element.id)">
+                <button mat-button (click)="confirmar(element.idGender)">
                   <mat-icon id="cedit" aria-hidden="false" color="primary">delete</mat-icon>
                 </button>
 

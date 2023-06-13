@@ -33,6 +33,8 @@ export class AppoInsertarComponent implements OnInit {
   idApStatSelected: number = 0;
   idclientSelected: number = 0;
   idpsySelected: number = 0;
+
+
   //agregando appointment service
   constructor(
     private pS: AppointmentService,
@@ -115,6 +117,7 @@ export class AppoInsertarComponent implements OnInit {
     }
     this.router.navigate(['Appointments']);
   }
+
   init() {
     if (this.edicion) {
       this.pS.listid(this.id).subscribe((data) => {

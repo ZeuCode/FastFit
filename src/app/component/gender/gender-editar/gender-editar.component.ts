@@ -38,7 +38,7 @@ export class GenderEditarComponent implements OnInit {
   }
 
   accept(): void {
-    this.gender.id = this.form.value['id'];
+    this.gender.idGender = this.form.value['id'];
     this.gender.gender = this.form.value['gender'];
     this.gender.abbreviation = this.form.value['abbreviation'];
 
@@ -47,7 +47,6 @@ export class GenderEditarComponent implements OnInit {
         //guardar pS
         this.gS.update(this.gender).subscribe(() => {
           this.gS.list().subscribe((data) => {
-            ////actualizar la lista
             this.gS.setList(data);
           });
         });
@@ -59,7 +58,7 @@ export class GenderEditarComponent implements OnInit {
           });
         });
       }
-      this.router.navigate(['gender']);
+      this.router.navigate(['genders']);
     } else {
       this.mensaje = 'write name!!';
     }
@@ -69,7 +68,7 @@ export class GenderEditarComponent implements OnInit {
     if (this.edition) {
       this.gS.listid(this.id).subscribe((data) => {
         this.form = new FormGroup({
-          id: new FormControl(data.id),
+          id: new FormControl(data.idGender),
           gender: new FormControl(data.gender),
           abbreviation: new FormControl(data.abbreviation),
         });
