@@ -43,16 +43,24 @@
                 </mat-select>
               </mat-form-field>
               <br>
-
-              <mat-form-field class="example-full-width">
+              <br>
+              <mat-form-field appearance="fill">
                 <mat-label>Client</mat-label>
-                <input matInput required placeholder="Client_id" formControlName="client_id">
+                <mat-select formControlName="client" [(value)]="idCliSelec" required>
+                  <mat-option *ngFor="let c of listcli" [value]="c.idClient">
+                    {{c.names}}
+                </mat-option>
+                </mat-select>
               </mat-form-field>
               <br>
-
-              <mat-form-field class="example-full-width">
+              <br>
+              <mat-form-field appearance="fill">
                 <mat-label>Psychologist</mat-label>
-                <input matInput required placeholder="Psychologist_id" formControlName="psychologist_id">
+                <mat-select formControlName="psychologist" [(value)]="idPsysSelec" required>
+                  <mat-option *ngFor="let p of listpsi" [value]="p.idPsi">
+                    {{p.names}}
+                </mat-option>
+                </mat-select>
               </mat-form-field>
               <br>
 

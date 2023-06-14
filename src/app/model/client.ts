@@ -1,5 +1,5 @@
 export class Client{
-  id:number= 0
+  idClient:number= 0
   userName:string= ""
   password:string= ""
   names:string= ""

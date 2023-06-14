@@ -29,3 +29,13 @@
   z-index: 0; /* Establece una posición por encima de otros elementos */
 
 }
+
+.row{
+  display: flex;
+  gap: 10px;
+}
+
+.filtro{
+  width :20%;
+  height: 30px;
+}

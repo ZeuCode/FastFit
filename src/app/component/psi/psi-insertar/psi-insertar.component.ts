@@ -94,7 +94,7 @@ export class PsiInsertarComponent implements OnInit {
       this.psi.specialty = spec;
 
       let gen = new Gender();
-      gen.id = this.idGenderSeleccionado;
+      gen.idGender = this.idGenderSeleccionado;
       this.psi.gender = gen;
 
       let ustatus = new UserStatus();
@@ -142,7 +142,7 @@ export class PsiInsertarComponent implements OnInit {
         });
 
         this.idSpecialtySeleccionado = data.specialty.idSpecialty;
-        this.idGenderSeleccionado = data.gender.id;
+        this.idGenderSeleccionado = data.gender.idGender;
         this.idUserStatusSeleccionado = data.userStatus.idUS;
         console.log(data);
       });

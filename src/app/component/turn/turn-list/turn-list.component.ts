@@ -17,8 +17,10 @@ export class TurnListComponent implements OnInit{
   displayedColumns: string[] = ['id', 'date', 'duration', 'TurnStatus_id','Psychologist_id', 'actions'];
 
   private idMayor: number = 0;
+
   @ViewChild('paginator') paginator!: MatPaginator;
   constructor(private turS: TurnService, private dialog: MatDialog) {}
+
   ngOnInit(): void {
     this.turS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);

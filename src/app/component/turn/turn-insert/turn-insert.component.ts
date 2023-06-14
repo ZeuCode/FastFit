@@ -3,6 +3,10 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Turn } from 'src/app/model/turn';
 import { TurnService } from 'src/app/service/turn.service';
+import { Turnstatus } from 'src/app/model/turnstatus';
+import { TurnstatusService } from 'src/app/service/turnstatus.service';
+import { Psi } from 'src/app/model/psi';
+import { PsiService } from 'src/app/service/psi.service';
 
 @Component({
   selector: 'app-turn-insert',
@@ -16,11 +20,23 @@ export class TurnInsertComponent implements OnInit{
 
   form:FormGroup=new FormGroup({});
   turn:Turn=new Turn();
-  mensaje: string = '';
+  listturnstatus:Turnstatus[]=[];
+  listpsi:Psi[]=[];
+  idTurnstatSelec:number=0;
+  idPsysSelec:number=0;
+  mensaje: string = ""
 
-  constructor(private turS: TurnService, private router:Router, private route:ActivatedRoute) { }
+  constructor(
+    private turS: TurnService,
+    private router:Router,
+    private route:ActivatedRoute,
+    private tstatService:TurnstatusService,
+    private psiService:PsiService) { }
 
   ngOnInit():void {
+
+    this.tstatService.list().subscribe(data => { this.listturnstatus = data });
+    this.psiService.list().subscribe(data => { this.listpsi = data });
 
     this.route.params.subscribe((data:Params)=>{ //update
       this.id=data['id'];
@@ -28,29 +44,33 @@ export class TurnInsertComponent implements OnInit{
       this.Init();
     })
 
-    this.form=new FormGroup({
+    this.form = new FormGroup({
       id:new FormControl(),
       date:new FormControl(),
       duration:new FormControl(),
-      turnStatus_id:new FormControl(),
-      psychologist_id:new FormControl()
+      turnstatus:new FormControl(),
+      psychologist:new FormControl()
     })
   }
-  //Init() {
 
-
-  //  throw new Error('Method not implemented.');
-  //}
   accept(): void {
 
     this.turn.idTurn = this.form.value['id'];
     this.turn.date = this.form.value['date'];
     this.turn.duration = this.form.value['duration'];
-    this.turn.turnStatus_id = this.form.value['turnStatus_id'];
-    this.turn.psychologist_id = this.form.value['psychologist_id'];
+    this.turn.turnstatus.status = this.form.value['turnstatus.status'];
+    this.turn.psychologist.names = this.form.value['psychologist.names'];
 
-    if (this.form.value['duration'].length > 0) {
-
+    if (this.idTurnstatSelec > 0) {
+      let t = new Turnstatus();
+      t.idTurnstatus = this.idTurnstatSelec;
+      this.turn.turnstatus=t;
+    }
+    if (this.idPsysSelec > 0) {
+      let p = new Psi();
+      p.idPsi= this.idPsysSelec;
+      this.turn.psychologist=p;
+    }
       if (this.edition) {
         //guardar pS
         this.turS.update(this.turn).subscribe(()=>{
@@ -69,9 +89,7 @@ export class TurnInsertComponent implements OnInit{
       }
       this.router.navigate(['turns']);
 
-    }else{
-      this.mensaje='!write comment!'
-    }
+
   }
 
   Init(){
@@ -81,8 +99,8 @@ export class TurnInsertComponent implements OnInit{
           id:new FormControl(data.idTurn),
           date:new FormControl(data.date),
           duration:new FormControl(data.duration),
-          turnStatus_id:new FormControl(data.turnStatus_id),
-          psychologist_id:new FormControl(data.psychologist_id),
+          turnstatus:new FormControl(data.turnstatus.status),
+          psychologist:new FormControl(data.psychologist.names),
         })
         console.log(data);
       })
