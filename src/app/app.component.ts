@@ -9,8 +9,10 @@ import { LoginService } from './service/login.service';
 export class AppComponent {
   title = 'FastFit';
   activeButton: number = -1;
-  role: string = 'ADMIN';
-  constructor(private loginService: LoginService) {}
+
+  role:string="ADMIN";
+  constructor(private loginService: LoginService) {
+  }
 
   cerrar() {
     this.role = '';
