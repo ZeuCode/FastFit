@@ -65,17 +65,6 @@
                 <div class="column">
 
                   <div class="item">
-                    <mat-form-field appearance="fill">
-                      <mat-label>Gender</mat-label>
-                      <mat-select formControlName="gender" [(value)]="idGenderSeleccionado" required>
-                        <mat-option *ngFor="let g of listaGender" [value]="g.idGender">
-                          {{g.gender}}
-                        </mat-option>
-                      </mat-select>
-                    </mat-form-field>
-                  </div>
-
-                  <div class="item">
                     <mat-form-field class="example-full-width">
                       <mat-label>Phone</mat-label>
                       <input matInput required placeholder="telefono" formControlName="phoneNumber" />
@@ -100,8 +89,8 @@
                     <mat-form-field appearance="fill">
                       <mat-label>User Status</mat-label>
                       <mat-select formControlName="userStatus" [(value)]="idUserStatusSeleccionado" required>
-                        <mat-option *ngFor="let a of listarUserStatus" [value]="a.idUS">
-                          {{a.status}}
+                        <mat-option *ngFor="let ustatus of listarUserStatus" [value]="ustatus.idUS">
+                          {{ustatus.status}}
                         </mat-option>
                       </mat-select>
                     </mat-form-field>
@@ -111,8 +100,8 @@
                     <mat-form-field appearance="fill">
                       <mat-label>Gender</mat-label>
                       <mat-select formControlName="gender" [(value)]="idGenderSeleccionado" required>
-                        <mat-option *ngFor="let g of listaGender" [value]="g.idGender">
-                          {{g.gender}}
+                        <mat-option *ngFor="let gen of listaGender" [value]="gen.idGender">
+                          {{gen.gender}}
                         </mat-option>
                       </mat-select>
                     </mat-form-field>
@@ -122,8 +111,8 @@
                     <mat-form-field appearance="fill">
                       <mat-label>Specialty</mat-label>
                       <mat-select formControlName="specialty" [(value)]="idSpecialtySeleccionado" required>
-                        <mat-option *ngFor="let p of listaSpecialty" [value]="p.idSpecialty">
-                          {{p.name}}
+                        <mat-option *ngFor="let spec of listaSpecialty" [value]="spec.idSpecialty">
+                          {{spec.name}}
                         </mat-option>
                       </mat-select>
                     </mat-form-field>
@@ -135,7 +124,7 @@
               <div class="imagen"> </div>
               <div style="text-align: center;">
                 <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
-                <button mat-raised-button routerLink="/psis" style="margin-left: 8px;">Cancelar</button>
+                <button mat-raised-button routerLink="/Psychologists" style="margin-left: 8px;">Cancelar</button>
                 <br>
                 <p>{{ mensaje }}</p>
               </div>

@@ -28,7 +28,11 @@ export class ReviewInsertComponent implements OnInit{
   idCliSelec:number=0;
   idPsysSelec:number=0;
 
-  constructor(private revS: ReviewService, private router:Router, private route:ActivatedRoute,private clientService:ClientService,private psiService:PsiService) { }
+  constructor(private revS: ReviewService, 
+    private router:Router, 
+    private route:ActivatedRoute,
+    private clientService:ClientService,
+    private psiService:PsiService) { }
 
   ngOnInit():void {
     this.clientService.list().subscribe(data => { this.listcli = data });

@@ -56,7 +56,7 @@
             <mat-form-field class="example-full-width">
               <mat-label>Lista-Status</mat-label>
               <mat-select formControlName="appointmentStatus" [(value)]="idApStatSelected" required>
-                <mat-option *ngFor="let a of listastatus" [value]="a.id">
+                <mat-option *ngFor="let a of listastatus" [value]="a.idAppStatus">
                   {{a.status}}
                 </mat-option>
               </mat-select>
@@ -65,7 +65,7 @@
 
             <div style="text-align: center;">
               <button mat-raised-button color="primary" id="miBoton" style="margin-right: 8px;">Aceptar</button>
-              <button mat-raised-button routerLink="/Appointments" style="margin-left: 8px;">Cancelar</button>
+              <button mat-raised-button routerLink="/appointments" style="margin-left: 8px;">Cancelar</button>
             </div>
 
           </form>

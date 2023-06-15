@@ -109,7 +109,7 @@ const routes: Routes = [
 
   //path para psicologos
   {
-    path: 'psis',
+    path: 'Psychologists',
     component: PsiComponent,
     children: [
       {
@@ -136,7 +136,7 @@ const routes: Routes = [
   },
   //path para appointmet
   {
-    path: 'Appointments',
+    path: 'appointments',
     component: AppointmentComponent,
     children: [
       {
@@ -161,7 +161,7 @@ const routes: Routes = [
   //path para gender
 
   {
-    path: 'gender',
+    path: 'genders',
     component: GenderComponent,
     children: [
       {

@@ -8,7 +8,7 @@ const base_url = environment.base;
   providedIn: 'root',
 })
 export class PsiService {
-  private url = "http://localhost:8080/Psychologists";
+  private url = `${base_url}/Psychologists`;
   private listaCambio = new Subject<Psi[]>();
   private confirmaEliminacion = new Subject<Boolean>()
 

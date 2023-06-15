@@ -62,7 +62,7 @@ export class AppoInsertarComponent implements OnInit {
       this.listapsi = datapsy;
     });
     this.form = new FormGroup({
-      // idAppointment: new FormControl(),
+      id: new FormControl(),
       date: new FormControl(),
       client: new FormControl(),
       psychologist: new FormControl(),
@@ -81,12 +81,12 @@ export class AppoInsertarComponent implements OnInit {
     this.appointment.idAppointment = this.form.value['id'];
     this.appointment.date = this.form.value['date'];
     this.appointment.client.idClient = this.form.value['client.id'];
-    this.appointment.psychologist.idPsi = this.form.value['psychologist.idPsy'];
-    this.appointment.appointmentStatus.id =this.form.value['appointmentStatus.id'];
+    this.appointment.psychologist.names = this.form.value['psychologist.names'];
+    this.appointment.appointmentStatus.status =this.form.value['appointmentStatus.status'];
 
     if (this.idApStatSelected > 0) {
       let a = new AppointmentStatus();
-      a.id = this.idApStatSelected;
+      a.idAppStatus = this.idApStatSelected;
       this.appointment.appointmentStatus = a;
     }
     if (this.idclientSelected > 0) {
@@ -115,18 +115,18 @@ export class AppoInsertarComponent implements OnInit {
         })
       })
     }
-    this.router.navigate(['Appointments']);
+    this.router.navigate(['appointments']);
   }
 
   init() {
     if (this.edicion) {
       this.pS.listid(this.id).subscribe((data) => {
         this.form = new FormGroup({
-          idAppointment: new FormControl(data.idAppointment),
+          id: new FormControl(data.idAppointment),
           date: new FormControl(data.date),
           client: new FormControl(data.client.idClient),
-          psychologist: new FormControl(data.psychologist.idPsi),
-          appointmentStatus: new FormControl(data.appointmentStatus.id),
+          psychologist: new FormControl(data.psychologist.names),
+          appointmentStatus: new FormControl(data.appointmentStatus.status),
         });
         console.log(data);
       });

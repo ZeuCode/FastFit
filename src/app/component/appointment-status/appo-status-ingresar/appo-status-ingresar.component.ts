@@ -55,7 +55,7 @@ export class AppoStatusIngresarComponent implements OnInit{
 
   aceptar(): void {
 
-    this.appostat.id = this.form.value['id'];
+    this.appostat.idAppStatus = this.form.value['id'];
     this.appostat.status = this.form.value['status'];
     this.appostat.description = this.form.value['description'];
 
@@ -87,7 +87,7 @@ export class AppoStatusIngresarComponent implements OnInit{
 
       this.pS.listid(this.id).subscribe((data) => {
         this.form = new FormGroup({
-          id: new FormControl(data.id),
+          id: new FormControl(data.idAppStatus),
           status: new FormControl(data.status),
           description: new FormControl(data.description),
 
