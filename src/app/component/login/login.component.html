@@ -1,0 +1,32 @@
+<div class="cuadroLogin">
+  <div class="contenido">
+    <div></div>
+
+    <div class="logo"></div>
+
+    <div></div>
+
+    <div class="formulario">
+      <mat-form-field appearance="outline" class="loginInput">
+        <mat-label>Usuario</mat-label>
+        <input matInput placeholder="User" [(ngModel)]="username">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="outline" class="loginInput">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput placeholder="123" [(ngModel)]="password">
+      </mat-form-field>
+      <br>
+      <button mat-raised-button style="width: 100%;" color="primary" (click)="login()">Ingresar</button>
+      <br>
+
+
+    </div>
+
+    <div class="LinkRegistro">
+      <span class="nota"> ¿No tienes una cuenta? </span>
+      <a routerLink="/clients/clientsinsertar" class="register">Regístrate aquí</a>
+    </div>
+  </div>
+</div>
+

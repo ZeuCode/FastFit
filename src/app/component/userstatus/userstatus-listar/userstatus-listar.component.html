@@ -1,80 +1,63 @@
-<div class="diseno">
+<body>
+  <div class="container-fluid">
 
-  <app-toolbar-rol-cliente></app-toolbar-rol-cliente>
+    <div style="text-align: center;">
+      <h1>Lista de UserStatus</h1>
 
-  <div class="sidenav-container">
-    <div class="menu">
-      <app-menu-rol-admin></app-menu-rol-admin>
     </div>
 
-    <div class="contenido">
+    <mat-form-field appearance="outline">
+      <input matInput type="text" (keyup)="filtrar($event)" placeholder="Buscar" />
+    </mat-form-field>
+    <table mat-table class="mat-elevation-z8" mat-table [dataSource]="dataSource">
 
-      <body>
-        <div class="container-fluid">
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.idUS}} </td>
+      </ng-container>
 
-          <div style="text-align: center;">
-            <h1>Lista de UserStatus</h1>
+      <!-- Name Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+      </ng-container>
 
-          </div>
-
-          <mat-form-field appearance="outline">
-            <input matInput type="text" (keyup)="filtrar($event)" placeholder="Buscar" />
-          </mat-form-field>
-          <table mat-table class="mat-elevation-z8" mat-table [dataSource]="dataSource">
-
-            <!-- Position Column -->
-            <ng-container matColumnDef="id">
-              <th mat-header-cell *matHeaderCellDef> No. </th>
-              <td mat-cell *matCellDef="let element"> {{element.idUS}} </td>
-            </ng-container>
-
-            <!-- Name Column -->
-            <ng-container matColumnDef="status">
-              <th mat-header-cell *matHeaderCellDef> Status </th>
-              <td mat-cell *matCellDef="let element"> {{element.status}} </td>
-            </ng-container>
-
-            <!-- Weight Column -->
-            <ng-container matColumnDef="description">
-              <th mat-header-cell *matHeaderCellDef> Description </th>
-              <td mat-cell *matCellDef="let element"> {{element.description}} </td>
-            </ng-container>
+      <!-- Weight Column -->
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Description </th>
+        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+      </ng-container>
 
 
-            <ng-container matColumnDef="ceditar">
-              <th mat-header-cell *matHeaderCellDef>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Acciones </th>
-              <td mat-cell *matCellDef="let element">
-                <button mat-button id="editar" [routerLink]="['edicion',element.idUS]">
-                  <mat-icon aria-hidden="false" color="primary">edit</mat-icon>
-                </button>
-                <button mat-button (click)="confirmar(element.idUS)">
-                  <mat-icon aria-hidden="false" color="primary">delete</mat-icon>
-                </button>
+      <ng-container matColumnDef="ceditar">
+        <th mat-header-cell *matHeaderCellDef>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Acciones </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-button id="editar" [routerLink]="['edicion',element.idUS]">
+            <mat-icon aria-hidden="false" color="primary">edit</mat-icon>
+          </button>
+          <button mat-button (click)="confirmar(element.idUS)">
+            <mat-icon aria-hidden="false" color="primary">delete</mat-icon>
+          </button>
 
-              </td>
-            </ng-container>
+        </td>
+      </ng-container>
 
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-          </table>
-          <br>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <br>
 
-          <mat-paginator #paginator [pageSizeOptions]="[5, 10, 100]" showFirstLastButtons></mat-paginator>
+    <mat-paginator #paginator [pageSizeOptions]="[5, 10, 100]" showFirstLastButtons></mat-paginator>
 
-          <br>
-          <div style="text-align: center;">
-            <section>
-              <button style="margin-right: 10px ;" mat-raised-button color="primary"
-                routerLink="/UserStatus/userstatusinsertar">Registrar
-                userStatus</button>
-            </section>
-          </div>
-
-        </div>
-      </body>
-
+    <br>
+    <div style="text-align: center;">
+      <section>
+        <button style="margin-right: 10px ;" mat-raised-button color="primary"
+          routerLink="/UserStatus/userstatusinsertar">Registrar
+          userStatus</button>
+      </section>
     </div>
 
   </div>
-
-</div>
+</body>

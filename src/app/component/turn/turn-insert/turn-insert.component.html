@@ -1,49 +1,40 @@
-<div class="diseno">
-  <app-toolbar-rol-cliente></app-toolbar-rol-cliente>
-  <div class="sidenav-container">
-    <div class="menu">
-      <app-menu-rol-psi></app-menu-rol-psi>
+<body>
+  <div class="container-fluid" style="text-align: center;">
+
+    <div style="text-align: center;">
+      <h1>Registrar Turno</h1>
     </div>
 
-    <div class="contenido">
+    <br>
 
-      <body>
-        <div class="container-fluid" style="text-align: center;">
+    <div class="ingreso">
+      <form [formGroup]="form" (submit)="accept()">
 
-          <div style="text-align: center;">
-            <h1>Registrar Turno</h1>
-          </div>
+        <mat-form-field class="example-full-width">
+          <mat-label>id</mat-label>
+          <input matInput placeholder="id" formControlName="id">
+        </mat-form-field>
+        <br>
 
-          <br>
+        <div class="item">
+          <mat-form-field appearance="fill">
+            <mat-label>Fecha</mat-label>
+            <input matInput [matDatepicker]="picker2" required placeholder="DD/MM/AAAA" formControlName="date">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker startView="year" #picker2></mat-datepicker>
+          </mat-form-field>
+        </div>
 
-          <div class="ingreso">
-            <form [formGroup]="form" (submit)="accept()">
-
-              <mat-form-field class="example-full-width">
-                <mat-label>id</mat-label>
-                <input matInput placeholder="id" formControlName="id">
-              </mat-form-field>
-              <br>
-
-              <div class="item">
-                <mat-form-field appearance="fill">
-                  <mat-label>Fecha</mat-label>
-                  <input matInput [matDatepicker]="picker2" required placeholder="DD/MM/AAAA" formControlName="date">
-                  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                  <mat-datepicker startView="year" #picker2></mat-datepicker>
-                </mat-form-field>
-              </div>
-
-              <mat-form-field appearance="fill">
-                <mat-label>Duracion</mat-label>
-                <mat-select required placeholder="duration" formControlName="duration" required>
-                  <mat-option value="1">1</mat-option>
-                  <mat-option value="2">2</mat-option>
-                  <mat-option value="3">3</mat-option>
-                  <mat-option value="4">4</mat-option>
-                </mat-select>
-              </mat-form-field>
-              <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Duracion</mat-label>
+          <mat-select required placeholder="duration" formControlName="duration" required>
+            <mat-option value="1">1</mat-option>
+            <mat-option value="2">2</mat-option>
+            <mat-option value="3">3</mat-option>
+            <mat-option value="4">4</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
 
               <br>
               <mat-form-field appearance="fill">
@@ -66,18 +57,13 @@
               </mat-form-field>
               <br>
 
-              <div style="text-align: center;">
-                <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
-                <button mat-raised-button routerLink="/turns" style="margin-left: 8px;">Cancelar</button>
-                <p>{{mensaje}}</p>
-              </div>
-            </form>
-          </div>
-
+        <div style="text-align: center;">
+          <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
+          <button mat-raised-button routerLink="/turns" style="margin-left: 8px;">Cancelar</button>
+          <p>{{mensaje}}</p>
         </div>
-      </body>
+      </form>
     </div>
 
   </div>
-
-</div>
+</body>

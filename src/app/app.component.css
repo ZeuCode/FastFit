@@ -1,3 +1,67 @@
+.diseno{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: grid;
+  grid-template-rows: 8% 92%;
+}
+
+.sidenav-container {
+  display: grid;
+  grid-template-columns: 12% 88%;
+  height: 100%;
+}
+
+.menu{
+  height: 100%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 3px 0px 5px  #c2c0c0; /* Agrega una sombra ligera */
+  z-index: 1; /* Establece una posición por encima de otros elementos */
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+.contenido{
+  width: 100%;
+  background-color: #FCFCFC;
+  z-index: 0; /* Establece una posición por encima de otros elementos */
+
+}
+
+
+
+.mat-toolbar {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  color: rgba(0,0,0,.87);
+  position: relative; /*Asegurarse que el elemento tenga una posición relativa */
+  display: grid;
+  /* place-content: center; */
+  grid-template-columns: 12% 76% 4% 7% 1%;
+  box-shadow: 0px 1px #d9d8d8; /* Agrega una sombra ligera */
+  z-index: 2; /* Establece una posición por encima de otros elementos */
+  padding: 0.2%;
+}
+
+.boton{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  background-image: url("src/assets/logoFastFit2.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 0% 50%;
+  z-index: 2;
+}
+
 .cuerpo {
   width: 100%;
   height: 100%;

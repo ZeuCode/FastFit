@@ -1,64 +1,47 @@
-<div class="diseno">
+<body>
+  <div class="container-fluid">
 
-  <app-toolbar-rol-cliente></app-toolbar-rol-cliente>
-
-  <div class="sidenav-container">
-    <div class="menu">
-      <app-menu-rol-admin></app-menu-rol-admin>
+    <div style="text-align: center;">
+      <h1>Registrar un nuevo Estado de usuario</h1>
     </div>
 
-    <div class="contenido">
+    <div class="ingreso">
 
-      <body>
-        <div class="container-fluid">
-
-          <div style="text-align: center;">
-            <h1>Registrar un nuevo Estado de usuario</h1>
-          </div>
-
-          <div class="ingreso">
-
-            <form [formGroup]="form" (submit)="aceptar()">
-              <mat-form-field class="example-full-width">
-                <mat-label>Código</mat-label>
-                <input matInput placeholder="numero" formControlName="idUS" />
-              </mat-form-field>
-              <br>
+      <form [formGroup]="form" (submit)="aceptar()">
+        <mat-form-field class="example-full-width">
+          <mat-label>Código</mat-label>
+          <input matInput placeholder="numero" formControlName="idUS" />
+        </mat-form-field>
+        <br>
 
 
-              <mat-form-field class="example-full-width">
+        <mat-form-field class="example-full-width">
 
-                <mat-label>Status</mat-label>
+          <mat-label>Status</mat-label>
 
-                <input required matInput placeholder="Status" formControlName="status" />
-              </mat-form-field>
-              <br>
-
-
-              <mat-form-field class="example-full-width">
-
-                <mat-label>Description</mat-label>
-
-                <input matInput required placeholder="Description" formControlName="description" />
-              </mat-form-field>
-              <br>
-
-              <div style="text-align: center;">
-                <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
-                <button mat-raised-button routerLink="/UserStatus" style="margin-left: 8px;">Cancelar</button>
+          <input required matInput placeholder="Status" formControlName="status" />
+        </mat-form-field>
+        <br>
 
 
-              </div>
-              <br>
-              <p>{{ mensaje }}</p>
-            </form>
-          </div>
+        <mat-form-field class="example-full-width">
+
+          <mat-label>Description</mat-label>
+
+          <input matInput required placeholder="Description" formControlName="description" />
+        </mat-form-field>
+        <br>
+
+        <div style="text-align: center;">
+          <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
+          <button mat-raised-button routerLink="/UserStatus" style="margin-left: 8px;">Cancelar</button>
+
+
         </div>
-
-      </body>
-
+        <br>
+        <p>{{ mensaje }}</p>
+      </form>
     </div>
-
   </div>
 
-</div>
+</body>

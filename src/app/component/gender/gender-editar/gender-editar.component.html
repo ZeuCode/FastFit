@@ -1,19 +1,10 @@
+<body>
+  <br>
+  <div class="container-fluid" style="text-align: center;">
 
-<div class="diseno">
-  <app-toolbar-rol-cliente></app-toolbar-rol-cliente>
-  <div class="sidenav-container">
-    <div class="menu">
-      <app-menu-rol-admin></app-menu-rol-admin>
+    <div style="text-align: center;">
+      <h1>Registrar de Género</h1>
     </div>
-    <div class="contenido">
-
-      <body>
-        <br>
-        <div class="container-fluid" style="text-align: center;">
-
-          <div style="text-align: center;">
-            <h1>Registrar de Género</h1>
-          </div>
 
           <div class="ingreso">
             <form [formGroup]="form" (submit)="accept()">
@@ -24,34 +15,26 @@
                 </mat-form-field>
                 <br>
 
-                <mat-form-field class="example-full-width">
-                  <mat-label>gender</mat-label>
-                  <input matInput required formControlName="gender">
-                </mat-form-field>
-                <br>
+          <mat-form-field class="example-full-width">
+            <mat-label>gender</mat-label>
+            <input matInput required formControlName="gender">
+          </mat-form-field>
+          <br>
 
-                <mat-form-field class="example-full-width">
-                  <mat-label>abbreviation</mat-label>
-                  <input matInput required formControlName="abbreviation">
-                </mat-form-field>
-                <br>
+          <mat-form-field class="example-full-width">
+            <mat-label>abbreviation</mat-label>
+            <input matInput required formControlName="abbreviation">
+          </mat-form-field>
+          <br>
 
-                <div style="text-align: center">
-                  <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
-                  <button mat-raised-button routerLink="/genders" style="margin-left: 8px;">Cancelar</button>
-                  <p>{{mensaje}}</p>
-                </div>
-              </div>
-            </form>
+          <div style="text-align: center">
+            <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
+            <button mat-raised-button routerLink="/gender" style="margin-left: 8px;">Cancelar</button>
+            <p>{{mensaje}}</p>
           </div>
-
         </div>
-      </body>
-
+      </form>
     </div>
 
   </div>
-
-</div>
-
-
+</body>

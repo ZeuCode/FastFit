@@ -1,1 +1,30 @@
-<router-outlet></router-outlet>
+
+<div class="diseno" *ngIf="validarRol()">
+
+  <div class="mat-toolbar">
+    <div class="logo"></div>
+    <div> </div>
+    <div> </div>
+    <div class="boton">
+      <button mat-raised-button routerLink="/login" (click)="cerrar()" color="primary">Cerrar Sesión</button>
+    </div>
+    <div> </div>
+  </div>
+
+  <div class="sidenav-container">
+
+    <div class="menu">
+      <app-menu-rol-cliente *ngIf="role=='USER'"></app-menu-rol-cliente>
+      <app-menu-rol-admin *ngIf="role=='ADMIN'"></app-menu-rol-admin>
+      <app-menu-rol-psi *ngIf="role=='PSICO'"></app-menu-rol-psi>
+    </div>
+
+    <div class="contenido">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+
+</div>
+
+<app-login *ngIf="!validarRol()"></app-login>

@@ -1,24 +1,20 @@
-<div class="diseno">
+<body>
+  <div class="container-fluid" style="text-align: center;">
 
-  <app-toolbar-rol-cliente></app-toolbar-rol-cliente>
-
-  <div class="sidenav-container">
-    <div class="menu">
-      <app-menu-rol-cliente></app-menu-rol-cliente>
+    <div style="text-align: center;">
+      <h1>Registrar Reseña</h1>
     </div>
 
-    <div class="contenido">
-      <body>
-        <div class="container-fluid" style="text-align: center;">
+    <br>
 
-          <div style="text-align: center;">
-            <h1>Registrar Reseña</h1>
-          </div>
+    <div class="ingreso">
+      <form [formGroup]="form" (submit)="accept()">
 
-          <br>
-
-          <div class="ingreso">
-            <form [formGroup]="form" (submit)="accept()">
+        <mat-form-field class="example-full-width">
+          <mat-label>Id</mat-label>
+          <input matInput required placeholder="Id" formControlName="id">
+        </mat-form-field>
+        <br>
 
               <mat-form-field class="example-full-width">
                 <mat-label>Id</mat-label>
@@ -31,6 +27,7 @@
                 <input matInput required placeholder="content" formControlName="content">
               </mat-form-field>
               <br>
+
 
               <mat-form-field appearance="fill">
                 <mat-label>Likes</mat-label>
@@ -64,18 +61,13 @@
               </mat-form-field>
               <br>
 
-              <div style="text-align: center;">
-                <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
-                <button mat-raised-button routerLink="/reviews" style="margin-left: 8px;">Cancelar</button>
-                <p>{{mensaje}}</p>
-              </div>
-            </form>
-          </div>
-
+        <div style="text-align: center;">
+          <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
+          <button mat-raised-button routerLink="/reviews" style="margin-left: 8px;">Cancelar</button>
+          <p>{{mensaje}}</p>
         </div>
-      </body>
+      </form>
     </div>
 
   </div>
-
-</div>
+</body>

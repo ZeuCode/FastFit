@@ -1,54 +1,38 @@
-<div class="diseno">
+<body>
 
-  <app-toolbar-rol-cliente></app-toolbar-rol-cliente>
+  <br>
+  <div class="container-fluid" style="text-align: center;">
 
-  <div class="sidenav-container">
-    <div class="menu">
-      <app-menu-rol-admin></app-menu-rol-admin>
+    <div style="text-align: center;">
+      <h1>Registrar Estado de cita</h1>
     </div>
 
-    <div class="contenido">
-      <body>
+    <div class="ingreso">
+      <form [formGroup]="form" (submit)="aceptar()">
+        <div class="automaticos">
+          <mat-form-field class="example-full-width">
+            <mat-label>Status</mat-label>
+            <input matInput required formControlName="status">
+          </mat-form-field>
+          <br>
 
-        <br>
-        <div class="container-fluid" style="text-align: center;">
+          <mat-form-field class="example-full-width">
+            <mat-label>description</mat-label>
+            <input matInput required formControlName="description">
+          </mat-form-field>
+          <br>
 
-          <div style="text-align: center;">
-            <h1>Registrar Estado de cita</h1>
+          <div style="text-align: center">
+            <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
+            <button mat-raised-button routerLink="/AppointmentStatus" style="margin-left: 8px;">Cancelar</button>
+
           </div>
-
-          <div class="ingreso">
-            <form [formGroup]="form" (submit)="aceptar()">
-              <div class="automaticos">
-                <mat-form-field class="example-full-width">
-                  <mat-label>Status</mat-label>
-                  <input matInput required formControlName="status">
-                </mat-form-field>
-                <br>
-
-                <mat-form-field class="example-full-width">
-                  <mat-label>description</mat-label>
-                  <input matInput required formControlName="description">
-                </mat-form-field>
-                <br>
-
-                <div style="text-align: center">
-                  <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
-                  <button mat-raised-button routerLink="/AppointmentStatus" style="margin-left: 8px;">Cancelar</button>
-
-                </div>
-              </div>
-            </form>
-          </div>
-
         </div>
-      </body>
+      </form>
     </div>
 
   </div>
-
-</div>
-
+</body>
 
 
 

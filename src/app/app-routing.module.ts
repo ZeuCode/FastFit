@@ -27,10 +27,8 @@ import { TurnComponent } from './component/turn/turn.component';
 import { TurnInsertComponent } from './component/turn/turn-insert/turn-insert.component';
 import { TurnstatusComponent } from './component/turnstatus/turnstatus.component';
 import { TurnstatusInsertComponent } from './component/turnstatus/turnstatus-insert/turnstatus-insert.component';
-import { TempRolSelectComponent } from './component/temp-rol-select/temp-rol-select.component';
-import { DashboardRolClientComponent } from './component/dashboards/dashboard-rol-client/dashboard-rol-client.component';
-import { DashboardRolAdminComponent } from './component/dashboards/dashboard-rol-admin/dashboard-rol-admin.component';
-import { DashboardRolPsiComponent } from './component/dashboards/dashboard-rol-psi/dashboard-rol-psi.component';
+import { LoginComponent } from './component/login/login.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -38,23 +36,19 @@ const routes: Routes = [
   //path para elección de rol
   {
     path: '',
-    component: TempRolSelectComponent,
+    component: DashboardComponent,
   },
+
+  {
+    path:'login',
+    component: LoginComponent,
+  },
+
 
   //path para Dasboards
   {
-    path: 'dashboardClient',
-    component: DashboardRolClientComponent,
-  },
-
-  {
-    path: 'dashboardAdmin',
-    component: DashboardRolAdminComponent,
-  },
-
-  {
-    path: 'dashboardPsi',
-    component: DashboardRolPsiComponent,
+    path: 'dashboard',
+    component: DashboardComponent,
   },
 
   {

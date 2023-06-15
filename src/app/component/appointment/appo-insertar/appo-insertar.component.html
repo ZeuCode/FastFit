@@ -1,56 +1,43 @@
-<div class="diseno">
+<body>
+  <div class="top">
+    <h1 class="titulo"> {{variable_cambio}}</h1>
+  </div>
+  <br>
 
-  <app-toolbar-rol-cliente></app-toolbar-rol-cliente>
+  <div class="ingreso">
+    <form [formGroup]="form" (submit)="aceptar()">
 
-  <div class="sidenav-container">
-    <div class="menu">
-      <app-menu-rol-cliente></app-menu-rol-cliente>
-    </div>
+      <!-- <mat-form-field class="example-full-width">
+        <mat-label>id</mat-label>
+        <input matInput placeholder="ejm: 4" formControlName="idAppointment" >
+      </mat-form-field> -->
 
-    <div class="contenido">
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>Date</mat-label>
+        <input matInput required [matDatepicker]="picker" placeholder="2021/04/12" formControlName="date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
 
-      <body>
-        <div class="top">
-
-          <h1 class="titulo"> {{variable_cambio}}</h1>
-
-        </div>
-        <br>
-
-        <div class="ingreso">
-          <form [formGroup]="form" (submit)="aceptar()">
-
-            <!-- <mat-form-field class="example-full-width">
-              <mat-label>id</mat-label>
-              <input matInput placeholder="ejm: 4" formControlName="idAppointment" >
-            </mat-form-field> -->
-
-            <br>
-            <mat-form-field class="example-full-width">
-              <mat-label>Date</mat-label>
-              <input matInput required [matDatepicker]="picker" placeholder="2021/04/12" formControlName="date">
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
-
-            <br>
-            <mat-form-field class="example-full-width">
-              <mat-label>Cliente_ID</mat-label>
-              <mat-select formControlName="client" [(value)]="idclientSelected" required>
-                <mat-option *ngFor="let c of listaclient" [value]="c.idClient">
-                  {{c.userName}}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-            <br>
-            <mat-form-field appearance="fill">
-              <mat-label>Psychologist_ID</mat-label>
-              <mat-select formControlName="psychologist" [(value)]="idpsySelected" required>
-                <mat-option *ngFor="let i of listapsi" [value]="i.idPsi">
-                  {{i.idPsi}}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>Cliente_ID</mat-label>
+        <mat-select formControlName="client" [(value)]="idclientSelected" required>
+          <mat-option *ngFor="let c of listaclient" [value]="c.idClient">
+            {{c.userName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Psychologist_ID</mat-label>
+        <mat-select formControlName="psychologist" [(value)]="idpsySelected" required>
+          <mat-option *ngFor="let i of listapsi" [value]="i.idPsi">
+            {{i.idPsi}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
             <br>
             <mat-form-field class="example-full-width">
@@ -65,15 +52,9 @@
 
             <div style="text-align: center;">
               <button mat-raised-button color="primary" id="miBoton" style="margin-right: 8px;">Aceptar</button>
-              <button mat-raised-button routerLink="/appointments" style="margin-left: 8px;">Cancelar</button>
+              <button mat-raised-button routerLink="/Appointments" style="margin-left: 8px;">Cancelar</button>
             </div>
 
-          </form>
-        </div>
-      </body>
-
-    </div>
-
+    </form>
   </div>
-
-</div>
+</body>

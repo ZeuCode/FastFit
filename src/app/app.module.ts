@@ -11,9 +11,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 
 
-//componenete HOME
-import { HomeComponent } from './component/home/home.component';
-
 //componente Client
 import { ClientComponent } from './component/client/client.component';
 import { ClientListarComponent } from './component/client/client-listar/client-listar.component';
@@ -64,6 +61,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 //Angular cdk
 import { LayoutModule } from '@angular/cdk/layout';
 import { AppoDialogoComponent } from './component/appointment/appo-listar/appo-dialogo/appo-dialogo.component';
@@ -102,14 +101,15 @@ import { TurnstatusComponent } from './component/turnstatus/turnstatus.component
 import { TurnstatusInsertComponent } from './component/turnstatus/turnstatus-insert/turnstatus-insert.component';
 import { TurnstatusListComponent } from './component/turnstatus/turnstatus-list/turnstatus-list.component';
 import { TurnstatusdialogComponent } from './component/turnstatus/turnstatus-list/turnstatusdialog/turnstatusdialog.component';
-import { ToolbarRolClienteComponent } from './component/layers/toolbar-rol-cliente/toolbar-rol-cliente.component';
+
 import { MenuRolClienteComponent } from './component/layers/menu-rol-cliente/menu-rol-cliente.component';
 import { MenuRolPsiComponent } from './component/layers/menu-rol-psi/menu-rol-psi.component';
 import { MenuRolAdminComponent } from './component/layers/menu-rol-admin/menu-rol-admin.component';
-import { DashboardRolClientComponent } from './component/dashboards/dashboard-rol-client/dashboard-rol-client.component';
-import { DashboardRolAdminComponent } from './component/dashboards/dashboard-rol-admin/dashboard-rol-admin.component';
-import { DashboardRolPsiComponent } from './component/dashboards/dashboard-rol-psi/dashboard-rol-psi.component';
-import { TempRolSelectComponent } from './component/temp-rol-select/temp-rol-select.component';
+
+
+
+import { LoginComponent } from './component/login/login.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
 
 
 
@@ -117,7 +117,6 @@ import { TempRolSelectComponent } from './component/temp-rol-select/temp-rol-sel
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     ClientComponent,
     ClientListarComponent,
     ClientInsertarComponent,
@@ -174,16 +173,11 @@ import { TempRolSelectComponent } from './component/temp-rol-select/temp-rol-sel
     TurnstatusInsertComponent,
     TurnstatusListComponent,
     TurnstatusdialogComponent,
-    ToolbarRolClienteComponent,
     MenuRolClienteComponent,
     MenuRolPsiComponent,
     MenuRolAdminComponent,
-    DashboardRolClientComponent,
-    DashboardRolAdminComponent,
-    DashboardRolPsiComponent,
-    TempRolSelectComponent,
-
-
+    LoginComponent,
+    DashboardComponent,
 
   ],
   imports: [
@@ -209,7 +203,8 @@ import { TempRolSelectComponent } from './component/temp-rol-select/temp-rol-sel
     MatMenuModule,
     MatDialogModule,
     MatPaginatorModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatSnackBarModule
 
   ],
   providers: [],

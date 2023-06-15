@@ -5,6 +5,7 @@ import { PaymentService } from 'src/app/service/payment.service';
 import { MatDialog } from '@angular/material/dialog'
 import { MatPaginator } from '@angular/material/paginator';
 import { PaymentDialogoComponent } from './payment-dialogo/payment-dialogo.component';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-payment-listar',
@@ -14,10 +15,16 @@ import { PaymentDialogoComponent } from './payment-dialogo/payment-dialogo.compo
 
 export class PaymentListarComponent implements OnInit{
 
+  role:string="";
   dataSource: MatTableDataSource<payment> = new MatTableDataSource();
   private idMayor: number = 0;
 
-  constructor(private pS: PaymentService, private dialog: MatDialog) { }
+  constructor(
+    private pS: PaymentService,
+    private dialog: MatDialog,
+    private ls:LoginService
+    ) { }
+
   @ViewChild('paginator') paginator!: MatPaginator;
   displayedColumns: String[] = [
     'id',
@@ -32,6 +39,8 @@ export class PaymentListarComponent implements OnInit{
   ];
 
   ngOnInit(): void {
+    this.role=this.ls.showRole();
+    console.log(this.role);
 
     this.pS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
