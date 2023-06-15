@@ -33,6 +33,8 @@ export class AppoInsertarComponent implements OnInit {
   idApStatSelected: number = 0;
   idclientSelected: number = 0;
   idpsySelected: number = 0;
+
+
   //agregando appointment service
   constructor(
     private pS: AppointmentService,
@@ -78,7 +80,7 @@ export class AppoInsertarComponent implements OnInit {
   aceptar(): void {
     this.appointment.idAppointment = this.form.value['id'];
     this.appointment.date = this.form.value['date'];
-    this.appointment.client.id = this.form.value['client.id'];
+    this.appointment.client.idClient = this.form.value['client.id'];
     this.appointment.psychologist.idPsi = this.form.value['psychologist.idPsy'];
     this.appointment.appointmentStatus.id =this.form.value['appointmentStatus.id'];
 
@@ -89,7 +91,7 @@ export class AppoInsertarComponent implements OnInit {
     }
     if (this.idclientSelected > 0) {
       let c = new Client();
-      c.id = this.idclientSelected;
+      c.idClient = this.idclientSelected;
       this.appointment.client = c;
     }
     if (this.idpsySelected > 0) {
@@ -115,13 +117,14 @@ export class AppoInsertarComponent implements OnInit {
     }
     this.router.navigate(['Appointments']);
   }
+
   init() {
     if (this.edicion) {
       this.pS.listid(this.id).subscribe((data) => {
         this.form = new FormGroup({
           idAppointment: new FormControl(data.idAppointment),
           date: new FormControl(data.date),
-          client: new FormControl(data.client.id),
+          client: new FormControl(data.client.idClient),
           psychologist: new FormControl(data.psychologist.idPsi),
           appointmentStatus: new FormControl(data.appointmentStatus.id),
         });

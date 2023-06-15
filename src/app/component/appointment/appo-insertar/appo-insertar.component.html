@@ -24,7 +24,7 @@
       <mat-form-field class="example-full-width">
         <mat-label>Cliente_ID</mat-label>
         <mat-select formControlName="client" [(value)]="idclientSelected" required>
-          <mat-option *ngFor="let c of listaclient" [value]="c.id">
+          <mat-option *ngFor="let c of listaclient" [value]="c.idClient">
             {{c.userName}}
           </mat-option>
         </mat-select>

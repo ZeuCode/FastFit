@@ -3,6 +3,10 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { Review } from 'src/app/model/review';
 import { ReviewService } from 'src/app/service/review.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Client } from 'src/app/model/client';
+import { Psi } from 'src/app/model/psi';
+import { ClientService } from 'src/app/service/client.service';
+import { PsiService } from 'src/app/service/psi.service';
 
 let date: Date = new Date();//para asignar la fecha de manera automatica
 
@@ -19,10 +23,16 @@ export class ReviewInsertComponent implements OnInit{
   form:FormGroup=new FormGroup({});
   review:Review=new Review();
   mensaje: string = '';
+  listcli:Client[]=[];
+  listpsi:Psi[]=[];
+  idCliSelec:number=0;
+  idPsysSelec:number=0;
 
-  constructor(private revS: ReviewService, private router:Router, private route:ActivatedRoute) { }
+  constructor(private revS: ReviewService, private router:Router, private route:ActivatedRoute,private clientService:ClientService,private psiService:PsiService) { }
 
   ngOnInit():void {
+    this.clientService.list().subscribe(data => { this.listcli = data });
+    this.psiService.list().subscribe(data => { this.listpsi = data });
 
     this.route.params.subscribe((data:Params)=>{ //update
       this.id=data['id'];
@@ -35,13 +45,10 @@ export class ReviewInsertComponent implements OnInit{
       content:new FormControl(),
       date:new FormControl(),
       likes:new FormControl(),
-      client_id:new FormControl(),
-      psychologist_id:new FormControl()
+      client:new FormControl(),
+      psychologist:new FormControl()
     })
   }
-  //Init() {
-  //  throw new Error('Method not implemented.');
-  //}
   accept(): void {
 
     this.review.idReview = this.form.value['id'];
@@ -49,10 +56,19 @@ export class ReviewInsertComponent implements OnInit{
     //this.review.date = this.form.value['date'];
     this.review.date = date;
     this.review.likes = this.form.value['likes'];
-    this.review.client_id = this.form.value['client_id'];
-    this.review.psychologist_id = this.form.value['psychologist_id'];
+    this.review.client.names = this.form.value['client.names'];
+    this.review.psychologist.names = this.form.value['psychologist.names'];
 
-    if (this.form.value['content'].length > 0) {
+    if (this.idCliSelec > 0) {
+      let c = new Client();
+      c.idClient = this.idCliSelec;
+      this.review.client=c;
+    }
+    if (this.idPsysSelec > 0) {
+      let p = new Psi();
+      p.idPsi= this.idPsysSelec;
+      this.review.psychologist=p;
+    }
 
       if (this.edition) {
         //guardar pS
@@ -72,10 +88,7 @@ export class ReviewInsertComponent implements OnInit{
       }
       this.router.navigate(['reviews']);
 
-    }else{
 
-      this.mensaje='write comment!!'
-    }
   }
 
   Init(){
@@ -87,8 +100,8 @@ export class ReviewInsertComponent implements OnInit{
           content:new FormControl(data.content),
           date:new FormControl(data.date),
           likes:new FormControl(data.likes),
-          client_id:new FormControl(data.client_id),
-          psychologist_id:new FormControl(data.psychologist_id),
+          client:new FormControl(data.client.names),
+          psychologist:new FormControl(data.psychologist.names),
         })
         console.log(data);
       })

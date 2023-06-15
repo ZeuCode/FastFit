@@ -1,5 +1,5 @@
 export class Gender{
-  id:number= 0
+  idGender:number= 0
   gender:string =""
   abbreviation:string=""
 }

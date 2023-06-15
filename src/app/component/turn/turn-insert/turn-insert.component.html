@@ -36,17 +36,26 @@
         </mat-form-field>
         <br>
 
-        <mat-form-field class="example-full-width">
-          <mat-label>Turn Status Id</mat-label>
-          <input matInput required placeholder="TurnStatus_id" formControlName="turnStatus_id">
-        </mat-form-field>
-        <br>
-
-        <mat-form-field class="example-full-width">
-          <mat-label>Psychologist Id</mat-label>
-          <input matInput required placeholder="Psychologist_id" formControlName="psychologist_id">
-        </mat-form-field>
-        <br>
+              <br>
+              <mat-form-field appearance="fill">
+                <mat-label>Turn Status</mat-label>
+                <mat-select formControlName="turnstatus" [(value)]="idTurnstatSelec" required>
+                  <mat-option *ngFor="let t of listturnstatus" [value]="t.idTurnstatus">
+                    {{t.status}}
+                </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <br>
+              <br>
+              <mat-form-field appearance="fill">
+                <mat-label>Psychologist</mat-label>
+                <mat-select formControlName="psychologist" [(value)]="idPsysSelec" required>
+                  <mat-option *ngFor="let p of listpsi" [value]="p.idPsi">
+                    {{p.names}}
+                </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <br>
 
         <div style="text-align: center;">
           <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>

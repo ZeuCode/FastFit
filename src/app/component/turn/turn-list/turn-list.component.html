@@ -32,17 +32,17 @@
         <td mat-cell *matCellDef="let element"> {{element.duration}} </td>
       </ng-container>
 
-      <!--  Column -->
-      <ng-container matColumnDef="TurnStatus_id">
-        <th mat-header-cell *matHeaderCellDef> Estado Turno Id </th>
-        <td mat-cell *matCellDef="let element"> {{element.turnStatus_id}} </td>
-      </ng-container>
+            <!--  Column -->
+            <ng-container matColumnDef="TurnStatus_id">
+              <th mat-header-cell *matHeaderCellDef> Estado Turno Id </th>
+              <td mat-cell *matCellDef="let element"> {{element.turnstatus.status}} </td>
+            </ng-container>
 
-      <!--  Column -->
-      <ng-container matColumnDef="Psychologist_id">
-        <th mat-header-cell *matHeaderCellDef> Psicologo Id </th>
-        <td mat-cell *matCellDef="let element"> {{element.psychologist_id}} </td>
-      </ng-container>
+            <!--  Column -->
+            <ng-container matColumnDef="Psychologist_id">
+              <th mat-header-cell *matHeaderCellDef> Psicologo Id </th>
+              <td mat-cell *matCellDef="let element"> {{element.psychologist.names}} </td>
+            </ng-container>
 
       <!-- Symbol Column -->
       <ng-container matColumnDef="actions">

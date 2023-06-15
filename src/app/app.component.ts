@@ -9,7 +9,7 @@ import { LoginService } from './service/login.service';
 export class AppComponent {
   title = 'FastFit';
   activeButton: number = -1;
-  role:string="ADMIN";
+  role:string="USER";
   constructor(private loginService: LoginService) {
   }
 
