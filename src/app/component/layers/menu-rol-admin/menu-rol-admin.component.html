@@ -2,7 +2,7 @@
   <div class="listaLink">
     <!-- Dashboard -->
     <div class="item">
-      <div routerLink="/dashboardAdmin" class="botonItem" [class.active]="activeButton === 11"
+      <div routerLink="/dashboard" class="botonItem" [class.active]="activeButton === 11"
         (click)="setActiveButton(11)">
         <mat-icon aria-label="dashboardAdmin" class="icono">dashboard</mat-icon>
         <span class="nombre_icono">Dashboard</span>
@@ -27,7 +27,7 @@
 
     <!-- Transacciones -->
     <div class="item">
-      <div  class="botonItem" [class.active]="activeButton === 2" (click)="setActiveButton(2)">
+      <div  class="botonItem" routerLink="/payment" [class.active]="activeButton === 2" (click)="setActiveButton(2)">
         <mat-icon aria-label="Payments" class="icono">payment</mat-icon>
         <span class="nombre_icono"> Transacciones </span>
       </div>

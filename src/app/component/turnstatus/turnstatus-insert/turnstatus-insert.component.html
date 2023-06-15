@@ -1,57 +1,40 @@
-<div class="diseno">
+<body>
+  <div class="container-fluid" style="text-align: center;">
 
-  <app-toolbar-rol-cliente></app-toolbar-rol-cliente>
-
-  <div class="sidenav-container">
-    <div class="menu">
-      <app-menu-rol-admin></app-menu-rol-admin>
+    <div style="text-align: center;">
+      <h1>Registrar Estado de Turno</h1>
     </div>
 
-    <div class="contenido">
+    <br>
 
-      <body>
-        <div class="container-fluid" style="text-align: center;">
+    <div class="ingreso">
+      <form [formGroup]="form" (submit)="accept()">
 
-          <div style="text-align: center;">
-            <h1>Registrar Estado de Turno</h1>
-          </div>
+        <mat-form-field class="example-full-width">
+          <mat-label>id</mat-label>
+          <input matInput placeholder="id" formControlName="id">
+        </mat-form-field>
+        <br>
 
-          <br>
+        <mat-form-field class="example-full-width">
+          <mat-label>Estado</mat-label>
+          <input matInput required placeholder="content" formControlName="status">
+        </mat-form-field>
+        <br>
 
-          <div class="ingreso">
-            <form [formGroup]="form" (submit)="accept()">
+        <mat-form-field class="example-full-width">
+          <mat-label>Description</mat-label>
+          <input matInput required placeholder="content" formControlName="description">
+        </mat-form-field>
+        <br>
 
-              <mat-form-field class="example-full-width">
-                <mat-label>id</mat-label>
-                <input matInput placeholder="id" formControlName="id">
-              </mat-form-field>
-              <br>
-
-              <mat-form-field class="example-full-width">
-                <mat-label>Estado</mat-label>
-                <input matInput required placeholder="content" formControlName="status">
-              </mat-form-field>
-              <br>
-
-              <mat-form-field class="example-full-width">
-                <mat-label>Description</mat-label>
-                <input matInput required placeholder="content" formControlName="description">
-              </mat-form-field>
-              <br>
-
-              <div style="text-align: center;">
-                <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
-                <button mat-raised-button routerLink="/turnstatus" style="margin-left: 8px;">Cancelar</button>
-                <p>{{mensaje}}</p>
-              </div>
-            </form>
-          </div>
-
+        <div style="text-align: center;">
+          <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
+          <button mat-raised-button routerLink="/turnstatus" style="margin-left: 8px;">Cancelar</button>
+          <p>{{mensaje}}</p>
         </div>
-      </body>
-
+      </form>
     </div>
 
   </div>
-
-</div>
+</body>

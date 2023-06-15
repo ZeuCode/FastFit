@@ -1,63 +1,53 @@
-<body>
+<body class="cuadroLogin">
 
-  <div class="container-fluid" style="text-align: center">
+  <div class="contenido" style="text-align: center">
 
-    <div style="text-align: center">
-      <h1>Registrar Cliente</h1>
+    <div class="titulo">
+      Bienvenido a FastFit
     </div>
 
-    <form [formGroup]="form" (submit)="aceptar()">
+    <form [formGroup]="form" (submit)="aceptar()" class="ingreso">
 
-      <mat-form-field class="example-full-width">
-        <mat-label>Código</mat-label>
-        <input required matInput placeholder="Código" formControlName="id" />
-      </mat-form-field>
-      <br>
+      <!-- <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Código</mat-label>
+          <input required matInput placeholder="Código" formControlName="id" />
+        </mat-form-field> -->
 
-      <mat-form-field class="example-full-width">
+      <mat-form-field appearance="outline" class="example-full-width">
         <mat-label>Username</mat-label>
         <input required matInput placeholder="Username" formControlName="userName" />
       </mat-form-field>
       <br>
-
-      <mat-form-field class="example-full-width">
+      <mat-form-field appearance="outline" class="example-full-width">
         <mat-label>Password</mat-label>
         <input required matInput placeholder="Password" formControlName="password" type="password" />
       </mat-form-field>
       <br>
-
-      <mat-form-field class="example-full-width">
+      <mat-form-field appearance="outline" appearance="outline" class="example-full-width">
         <mat-label>Names</mat-label>
         <input required matInput placeholder="Names" formControlName="names" />
       </mat-form-field>
       <br>
-
-      <mat-form-field class="example-full-width">
+      <mat-form-field appearance="outline" class="example-full-width">
         <mat-label>Last names</mat-label>
         <input required matInput placeholder="Last names" formControlName="lastNames" />
       </mat-form-field>
       <br>
-
-      <mat-form-field class="example-full-width">
+      <mat-form-field appearance="outline" class="example-full-width">
         <mat-label>Email address</mat-label>
         <input required matInput placeholder="Email address" formControlName="emailAddress" />
       </mat-form-field>
-
       <br>
-
-      <mat-form-field class="example-full-width">
+      <mat-form-field appearance="outline" class="example-full-width">
         <mat-label>Phone number</mat-label>
         <input required matInput placeholder="Phone number" formControlName="phoneNumber" />
       </mat-form-field>
-
       <br>
-
-      <mat-form-field class="example-full-width">
+      <mat-form-field appearance="outline" class="example-full-width">
         <mat-label>Age</mat-label>
         <input required matInput placeholder="Age" formControlName="age">
       </mat-form-field>
       <br>
-
       <div style="text-align: center">
         <button mat-raised-button color="primary" style="margin-right: 8px;"> Aceptar </button>
         <button mat-raised-button routerLink="/clients" style="margin-left: 8px;"> Cancelar </button>
@@ -65,5 +55,6 @@
       </div>
 
     </form>
+
   </div>
 </body>
