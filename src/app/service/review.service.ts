@@ -45,4 +45,8 @@ export class ReviewService {
   setConfirmDelete(estat: Boolean) {
     this.confirmDelete.next(estat);
   }
+
+  byPsi(idPsi:number){
+    return this.http.get<Review[]>(`${this.url}/${idPsi}`);
+  }
 }
