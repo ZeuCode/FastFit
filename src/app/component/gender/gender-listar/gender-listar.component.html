@@ -1,62 +1,51 @@
-<div class="diseno">
-
-  <!-- <app-toolbar-rol-cliente></app-toolbar-rol-cliente>-->
-
-  <div class="sidenav-container">
-    <div class="menu">
-      <app-menu-rol-admin></app-menu-rol-admin>
+<body>
+  <div class="container-fluid">
+    <div style="text-align: center">
+      <h1>Lista de Géneros</h1>
     </div>
+    <br>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 pagotable">
 
-    <div class="contenido">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">ID</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.idGender }}</td>
+      </ng-container>
 
-      <body>
-        <div class="container-fluid">
-          <div style="text-align: center">
-            <h1>Lista de Géneros</h1>
-          </div>
-          <br>
-          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 pagotable">
+      <ng-container matColumnDef="gender">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">Genero</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.gender }}</td>
+      </ng-container>
 
-            <ng-container matColumnDef="id">
-              <th mat-header-cell *matHeaderCellDef style="text-align: center;">ID</th>
-              <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.idGender }}</td>
-            </ng-container>
+      <ng-container matColumnDef="abbreviation">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">Abbreviation</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.abbreviation }}</td>
+      </ng-container>
 
-            <ng-container matColumnDef="gender">
-              <th mat-header-cell *matHeaderCellDef style="text-align: center;">Genero</th>
-              <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.gender }}</td>
-            </ng-container>
+      <ng-container matColumnDef="ceditar">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-button id="editar" [routerLink]="['edition',element.idGender]">
+            <mat-icon id="cedit" aria-hidden="false" color="primary">edit</mat-icon>
+          </button>
+          <button mat-button (click)="confirmar(element.idGender)">
+            <mat-icon id="cedit" aria-hidden="false" color="primary">delete</mat-icon>
+          </button>
 
-            <ng-container matColumnDef="abbreviation">
-              <th mat-header-cell *matHeaderCellDef style="text-align: center;">Abbreviation</th>
-              <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.abbreviation }}</td>
-            </ng-container>
+        </td>
+      </ng-container>
 
-            <ng-container matColumnDef="ceditar">
-              <th mat-header-cell *matHeaderCellDef> Acciones </th>
-              <td mat-cell *matCellDef="let element">
-                <button mat-button id="editar" [routerLink]="['edition',element.idGender]">
-                  <mat-icon id="cedit" aria-hidden="false" color="primary">edit</mat-icon>
-                </button>
-                <button mat-button (click)="confirmar(element.idGender)">
-                  <mat-icon id="cedit" aria-hidden="false" color="primary">delete</mat-icon>
-                </button>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <br>
+    <mat-paginator #paginator [pageSizeOptions]="[5, 10, 100]" showFirstLastButtons></mat-paginator>
 
-              </td>
-            </ng-container>
+    <br>
 
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-          </table>
-          <br>
-          <mat-paginator #paginator [pageSizeOptions]="[5, 10, 100]" showFirstLastButtons></mat-paginator>
-
-          <br>
-
-          <div style="text-align: center">
-            <button mat-raised-button color="primary" routerLink="genderinsert" style="margin: 10px">
-              Agregar Género
-            </button>
-          </div>
-        </div>
-      </body>
+    <div style="text-align: center">
+      <button mat-raised-button color="primary" routerLink="genderinsert" style="margin: 10px">
+        Agregar Género
+      </button>
+    </div>
+  </div>
+</body>
