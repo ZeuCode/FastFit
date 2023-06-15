@@ -140,9 +140,9 @@ export class PsiInsertarComponent implements OnInit {
           specialty: new FormControl(data.specialty.name)
         });
 
-        //this.idSpecialtySeleccionado = data.specialty.idSpecialty;
-        //this.idGenderSeleccionado = data.gender.idGender;
-        //this.idUserStatusSeleccionado = data.userStatus.idUS;
+        this.idSpecialtySeleccionado = data.specialty.idSpecialty;
+        this.idGenderSeleccionado = data.gender.idGender;
+        this.idUserStatusSeleccionado = data.userStatus.idUS;
         
         console.log(data);
       });

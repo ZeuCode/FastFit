@@ -27,4 +27,4 @@
 
 </div>
 
-<app-login *ngIf="!validarRol()"></app-login>
+<router-outlet *ngIf="role!='USER'" ></router-outlet>

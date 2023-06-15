@@ -32,11 +32,11 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 
 const routes: Routes = [
 
-  //path para elección de rol
-  {
-    path: '',
-    component: DashboardComponent,
-  },
+//  path para elección de rol
+   {
+     path: '',
+     component: DashboardComponent,
+ },
 
   {
     path:'login',
