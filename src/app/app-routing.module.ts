@@ -4,7 +4,6 @@ import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ReviewComponent } from './component/review/review.component';
 import { ReviewInsertComponent } from './component/review/review-insert/review-insert.component';
-import { HomeComponent } from './component/home/home.component';
 import { ClientComponent } from './component/client/client.component';
 import { ClientInsertarComponent } from './component/client/client-insertar/client-insertar.component';
 import { PaymentComponent } from './component/payment/payment.component';
@@ -51,10 +50,6 @@ const routes: Routes = [
     component: DashboardComponent,
   },
 
-  {
-    path: 'home',
-    component: HomeComponent,
-  },
 
   //path para clients
   {

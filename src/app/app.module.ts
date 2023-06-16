@@ -106,8 +106,6 @@ import { MenuRolClienteComponent } from './component/layers/menu-rol-cliente/men
 import { MenuRolPsiComponent } from './component/layers/menu-rol-psi/menu-rol-psi.component';
 import { MenuRolAdminComponent } from './component/layers/menu-rol-admin/menu-rol-admin.component';
 
-
-
 import { LoginComponent } from './component/login/login.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 
