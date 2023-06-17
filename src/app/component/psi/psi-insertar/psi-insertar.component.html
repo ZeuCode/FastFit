@@ -1,8 +1,6 @@
 <body>
   <div class="registro">
-    <div class="titulo">
-      Registrar Psicólogo
-    </div>
+    <div class="titulo">Registrar Psicólogo</div>
     <div>
       <form [formGroup]="form" (submit)="aceptar()" class="ingreso">
         <div class="camposFormulario">
@@ -10,75 +8,149 @@
             <div class="item">
               <mat-form-field class="example-full-width">
                 <mat-label>ID Psicólogo</mat-label>
-                <input matInput readonly placeholder="numero" formControlName="id" />
+                <input
+                  matInput
+                  readonly
+                  placeholder="numero"
+                  formControlName="id"
+                />
               </mat-form-field>
             </div>
 
             <div class="item">
               <mat-form-field class="example-full-width">
                 <mat-label>User</mat-label>
-                <input required matInput placeholder="usuario" formControlName="userName" />
+                <input
+                  required
+                  matInput
+                  placeholder="usuario"
+                  formControlName="userName"
+                />
               </mat-form-field>
             </div>
 
             <div class="item">
               <mat-form-field class="example-full-width">
                 <mat-label>Password</mat-label>
-                <input matInput required placeholder="contraseña" formControlName="password" type="password" />
+                <input
+                  matInput
+                  required
+                  placeholder="contraseña"
+                  formControlName="password"
+                  type="password"
+                />
               </mat-form-field>
             </div>
 
             <div class="item">
               <mat-form-field class="example-full-width">
                 <mat-label>Names</mat-label>
-                <input matInput required placeholder="nombres" formControlName="names" />
+                <input
+                  matInput
+                  required
+                  placeholder="nombres"
+                  formControlName="names"
+                />
               </mat-form-field>
             </div>
 
             <div class="item">
               <mat-form-field class="example-full-width">
                 <mat-label>LastNames</mat-label>
-                <input matInput required placeholder="apellidos" formControlName="lastNames" />
+                <input
+                  matInput
+                  required
+                  placeholder="apellidos"
+                  formControlName="lastNames"
+                />
               </mat-form-field>
             </div>
 
             <div class="item">
               <mat-form-field class="example-full-width">
                 <mat-label>Email</mat-label>
-                <input matInput required placeholder="email" formControlName="emailAddress" />
+                <input
+                  matInput
+                  required
+                  placeholder="email"
+                  formControlName="emailAddress"
+                />
               </mat-form-field>
             </div>
           </div>
 
           <div class="column">
+            <!--
+            <div class="item">
+              <mat-form-field appearance="fill">
+                <mat-label>Gender</mat-label>
+                <mat-select
+                  formControlName="gender"
+                  [(value)]="idGenderSeleccionado"
+                  required
+                >
+                  <mat-option
+                    *ngFor="let g of listaGender"
+                    [value]="g.idGender"
+                  >
+                    {{ g.gender }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+             
+            </div>
+ -->
+
 
             <div class="item">
               <mat-form-field class="example-full-width">
                 <mat-label>Phone</mat-label>
-                <input matInput required placeholder="telefono" formControlName="phoneNumber" />
+                <input
+                  matInput
+                  required
+                  placeholder="telefono"
+                  formControlName="phoneNumber"
+                />
               </mat-form-field>
             </div>
 
             <div class="item">
               <mat-form-field class="example-full-width">
                 <mat-label>Edad</mat-label>
-                <input matInput required placeholder="edad" formControlName="age" />
+                <input
+                  matInput
+                  required
+                  placeholder="edad"
+                  formControlName="age"
+                />
               </mat-form-field>
             </div>
 
             <div class="item">
               <mat-form-field class="example-full-width">
                 <mat-label>Rating</mat-label>
-                <input matInput required placeholder="rating" formControlName="rating" />
+                <input
+                  matInput
+                  required
+                  placeholder="rating"
+                  formControlName="rating"
+                />
               </mat-form-field>
             </div>
 
             <div class="item">
               <mat-form-field appearance="fill">
                 <mat-label>User Status</mat-label>
-                <mat-select formControlName="userStatus" [(value)]="idUserStatusSeleccionado" required>
-                  <mat-option *ngFor="let a of listarUserStatus" [value]="a.idUS">
-                    {{a.status}}
+                <mat-select
+                  formControlName="userStatus"
+                  [(value)]="idUserStatusSeleccionado"
+                  required
+                >
+                  <mat-option
+                    *ngFor="let a of listarUserStatus"
+                    [value]="a.idUS"
+                  >
+                    {{ a.status }}
                   </mat-option>
                 </mat-select>
               </mat-form-field>
@@ -87,9 +159,16 @@
             <div class="item">
               <mat-form-field appearance="fill">
                 <mat-label>Gender</mat-label>
-                <mat-select formControlName="gender" [(value)]="idGenderSeleccionado" required>
-                  <mat-option *ngFor="let g of listaGender" [value]="g.idGender">
-                    {{g.gender}}
+                <mat-select
+                  formControlName="gender"
+                  [(value)]="idGenderSeleccionado"
+                  required
+                >
+                  <mat-option
+                    *ngFor="let g of listaGender"
+                    [value]="g.idGender"
+                  >
+                    {{ g.gender }}
                   </mat-option>
                 </mat-select>
               </mat-form-field>
@@ -98,27 +177,35 @@
             <div class="item">
               <mat-form-field appearance="fill">
                 <mat-label>Specialty</mat-label>
-                <mat-select formControlName="specialty" [(value)]="idSpecialtySeleccionado" required>
-                  <mat-option *ngFor="let p of listaSpecialty" [value]="p.idSpecialty">
-                    {{p.name}}
+                <mat-select
+                  formControlName="specialty"
+                  [(value)]="idSpecialtySeleccionado"
+                  required
+                >
+                  <mat-option
+                    *ngFor="let p of listaSpecialty"
+                    [value]="p.idSpecialty"
+                  >
+                    {{ p.name }}
                   </mat-option>
                 </mat-select>
               </mat-form-field>
             </div>
-
           </div>
         </div>
 
-        <div class="imagen"> </div>
-        <div style="text-align: center;">
-          <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
-          <button mat-raised-button routerLink="/psis" style="margin-left: 8px;">Cancelar</button>
-          <br>
+        <div class="imagen"></div>
+        <div style="text-align: center">
+          <button mat-raised-button color="primary" style="margin-right: 8px">
+            Aceptar
+          </button>
+          <button mat-raised-button routerLink="/psis" style="margin-left: 8px">
+            Cancelar
+          </button>
+          <br />
           <p>{{ mensaje }}</p>
         </div>
-
       </form>
     </div>
   </div>
-
 </body>

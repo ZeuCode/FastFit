@@ -18,7 +18,6 @@ import { UserStatusService } from 'src/app/service/UserStatus.service';
   styleUrls: ['./psi-insertar.component.css'],
 })
 export class PsiInsertarComponent implements OnInit {
-
   id: number = 0;
   edicion: boolean = false;
   form: FormGroup = new FormGroup({});
@@ -42,12 +41,18 @@ export class PsiInsertarComponent implements OnInit {
     private sS: EspecialidadService,
     private gS: GenderService,
     private uS: UserStatusService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-    this.sS.list().subscribe((dataEsp) => { this.listaSpecialty = dataEsp });
-    this.gS.list().subscribe((dataGender) => { this.listaGender = dataGender });
-    this.uS.list().subscribe((dataUserStatus) => { this.listarUserStatus = dataUserStatus });
+    this.sS.list().subscribe((dataEsp) => {
+      this.listaSpecialty = dataEsp;
+    });
+    this.gS.list().subscribe((dataGender) => {
+      this.listaGender = dataGender;
+    });
+    this.uS.list().subscribe((dataUserStatus) => {
+      this.listarUserStatus = dataUserStatus;
+    });
 
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
@@ -72,7 +77,6 @@ export class PsiInsertarComponent implements OnInit {
   }
 
   aceptar(): void {
-
     //console.log(this.psi.idPsi);
 
     this.psi.idPsi = this.form.value['id'];
@@ -88,44 +92,41 @@ export class PsiInsertarComponent implements OnInit {
     this.psi.gender.gender = this.form.value['gender.gender'];
     this.psi.specialty.name = this.form.value['specialty.name'];
 
-    if (this.form.value['userName'].length > 0) {
+    if (this.idSpecialtySeleccionado > 0) {
       let spec = new specialty();
       spec.idSpecialty = this.idSpecialtySeleccionado;
       this.psi.specialty = spec;
-
+    }
+    if (this.idGenderSeleccionado > 0) {
       let gen = new Gender();
       gen.idGender = this.idGenderSeleccionado;
       this.psi.gender = gen;
-
+    }
+    if (this.idUserStatusSeleccionado > 0) {
       let ustatus = new UserStatus();
       ustatus.idUS = this.idUserStatusSeleccionado;
       this.psi.userStatus = ustatus;
-
-      if (this.edicion) {
-        this.pS.update(this.psi).subscribe(() => {
-          this.pS.list().subscribe((data) => {
-            this.pS.setList(data);
-          });
-        });
-      } else {
-        this.pS.insert(this.psi).subscribe((data) => {
-          this.pS.list().subscribe((data) => {
-            this.pS.setList(data);
-          })
-        })
-      }
-      this.router.navigate(['psis']);
-    } else {
-      this.mensaje = 'Ingrese el nombre del psicólogo!!'
     }
+
+    if (this.edicion) {
+      this.pS.update(this.psi).subscribe(() => {
+        this.pS.list().subscribe((data) => {
+          this.pS.setList(data);
+        });
+      });
+    } else {
+      this.pS.insert(this.psi).subscribe((data) => {
+        this.pS.list().subscribe((data) => {
+          this.pS.setList(data);
+        });
+      });
+    }
+    this.router.navigate(['Psychologists']);
   }
 
   init() {
     if (this.edicion) {
-      console.log(this.id);
-      this.pS.listId(this.id).subscribe(data => {
-        //this.propietario = data
-
+      this.pS.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({
           id: new FormControl(data.idPsi),
           userName: new FormControl(data.userName),
@@ -138,18 +139,15 @@ export class PsiInsertarComponent implements OnInit {
           rating: new FormControl(data.rating),
           userStatus: new FormControl(data.userStatus.status),
           gender: new FormControl(data.gender.gender),
-          specialty: new FormControl(data.specialty.name)
+          specialty: new FormControl(data.specialty.name),
         });
 
         this.idSpecialtySeleccionado = data.specialty.idSpecialty;
         this.idGenderSeleccionado = data.gender.idGender;
         this.idUserStatusSeleccionado = data.userStatus.idUS;
+
         console.log(data);
       });
     }
   }
 }
-
-
-
-

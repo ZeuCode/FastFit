@@ -1,4 +1,4 @@
-<div class="sidenav">
+<div class="sidenav" >
   <div class="listaLink">
     <!-- Dashboard -->
     <div class="item">
@@ -35,7 +35,7 @@
 
     <!-- Mi Puntuación -->
     <div class="item">
-      <div class="botonItem" [class.active]="activeButton === 3" (click)="setActiveButton(3)">
+      <div routerLink="/reviews" class="botonItem" [class.active]="activeButton === 3" (click)="setActiveButton(3)">
         <mat-icon aria-label="Reviews" class="icono">forum</mat-icon>
         <span class="nombre_icono">Mi Puntuación</span>
       </div>

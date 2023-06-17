@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit{
   username: string = ""
   password: string = ""
   mensaje: string = ""
+  role: string=""
 
   constructor(
     private router: Router,
@@ -34,14 +35,27 @@ export class LoginComponent implements OnInit{
 
     this.loginService.login(request).subscribe((data:any) =>{
       sessionStorage.setItem("token",data.jwttoken);
-      this.router.navigate(['/Dashboard']);
+      this.router.navigate(['/pages/dashboard']);
     })
+  }
+
+  verificarRol() {
+    this.role = this.loginService.showRole();
+    return this.loginService.verificar();
   }
 
   verificar(){
     let token = sessionStorage.getItem("token");
     return token!=null;
   }
+
+  // validarRol() {
+  //   if (this.role == 'ADMIN' || this.role == 'USER' || this.role == 'PSICO') {
+  //     return false;
+  //   } else {
+  //     return true;
+  //   }
+  // }
 
   showRole(){
     let token = sessionStorage.getItem("token");
