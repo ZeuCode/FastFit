@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit{
   password: string = ""
   mensaje: string = ""
   role: string=""
-
+  activeButton: number = -1;
   constructor(
     private router: Router,
     private snackBar: MatSnackBar,
@@ -62,6 +62,11 @@ export class LoginComponent implements OnInit{
     const helper = new JwtHelperService();
     const decodedToken = helper.decodeToken(token);
     return decodedToken?.role;
+  }
+
+
+  setActiveButton(index: number): void {
+    this.activeButton = index;
   }
 
 

@@ -83,7 +83,7 @@ export class ClientInsertarComponent implements OnInit {
         });
       }
 
-      this.router.navigate(['clients']);
+      this.router.navigate(['login']);
     } else {
       this.mensaje = 'Ingrese el nombre del cliente!!!!';
     } //Todo: soucionar el error que aparece cuando se da aceptar con los input vacios
