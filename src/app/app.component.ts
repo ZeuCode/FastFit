@@ -15,7 +15,6 @@ export class AppComponent {
   }
 
   cerrar() {
-    this.role = '';
     sessionStorage.clear();
   }
 
