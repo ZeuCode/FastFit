@@ -115,7 +115,7 @@ export class AppoInsertarComponent implements OnInit {
         })
       })
     }
-    this.router.navigate(['appointments']);
+    this.router.navigate(['pages/appointments']);
   }
 
   init() {

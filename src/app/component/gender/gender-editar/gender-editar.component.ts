@@ -58,7 +58,7 @@ export class GenderEditarComponent implements OnInit {
           });
         });
       }
-      this.router.navigate(['genders']);
+      this.router.navigate(['pages/genders']);
     } else {
       this.mensaje = 'write name!!';
     }

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Subject } from 'rxjs';
@@ -18,24 +18,39 @@ export class PaymentService {
   constructor(private Http: HttpClient) {}
 
   list() {
-    return this.Http.get<payment[]>(this.url);
+    let token = sessionStorage.getItem("token");
+    return this.Http.get<payment[]>(this.url,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   insert(pay: payment) {
-    return this.Http.post(this.url, pay);
+    let token = sessionStorage.getItem("token");
+    return this.Http.post(this.url, pay,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   listId(id:number) {
-    return this.Http.get<payment>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.Http.get<payment>(`${this.url}/${id}`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   update(p:payment) {
+    let token = sessionStorage.getItem("token");
     //return this.Http.put(this.url + '/' + p.idPayment, p);
-    return this.Http.put(this.url, p);
+    return this.Http.put(this.url, p,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   eliminar(id: number) {
-    return this.Http.delete(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.Http.delete(`${this.url}/${id}`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   getConfirmaEliminacion() {

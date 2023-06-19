@@ -79,7 +79,7 @@ export class AppoStatusIngresarComponent implements OnInit{
         });
 
       }
-      this.router.navigate(['AppointmentStatus']);
+      this.router.navigate(['pages/AppointmentStatus']);
     } else { }
   }
   init() {

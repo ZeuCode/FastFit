@@ -84,7 +84,7 @@ export class PaymentInsertarComponent implements OnInit {
           })
         })
       }
-      this.router.navigate(['payment']);
+      this.router.navigate(['pages/payment']);
     }
     else {
       console.log("error");

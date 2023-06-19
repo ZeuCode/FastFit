@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -15,11 +15,17 @@ export class PsiService {
   constructor(private http: HttpClient) {}
 
   list() {
-    return this.http.get<Psi[]>(this.url);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Psi[]>(this.url,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   insert(psico: Psi) {
-    return this.http.post(this.url, psico);
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, psico,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   getList() {
@@ -32,17 +38,27 @@ export class PsiService {
   }
 
   listId(id: number) {
-    return this.http.get<Psi>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<Psi>(`${this.url}/${id}`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   update(p: Psi) {
+    let token = sessionStorage.getItem("token");
     //return this.http.put(this.url + '/' + p.idPsi, p);
-    return this.http.put(this.url, p);
+    return this.http.put(this.url, p,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   eliminar(id: number) {
-    return this.http.delete(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.delete(`${this.url}/${id}`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
+
   getConfirmaEliminacion() {
     return this.confirmaEliminacion.asObservable();
   }

@@ -58,7 +58,7 @@ export class TurnstatusInsertComponent implements OnInit{
           });
         });
       }
-      this.router.navigate(['turnstatus']);
+      this.router.navigate(['pages/turnstatus']);
 
     }else{
       this.mensaje='!write comment!'

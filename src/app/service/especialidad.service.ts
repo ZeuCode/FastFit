@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { specialty } from '../model/especialidad';
 
@@ -18,11 +18,17 @@ export class EspecialidadService {
   constructor(private Http: HttpClient) { }
 
   list() {
-    return this.Http.get<specialty[]>(this.url);
+    let token = sessionStorage.getItem("token");
+    return this.Http.get<specialty[]>(this.url,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   insert(specialty: specialty) {
-    return this.Http.post(this.url, specialty);
+    let token = sessionStorage.getItem("token");
+    return this.Http.post(this.url, specialty,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   getList() {
@@ -35,16 +41,25 @@ export class EspecialidadService {
   }
 
   listId(id:number) {
-    return this.Http.get<specialty>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.Http.get<specialty>(`${this.url}/${id}`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   update(p:specialty) {
+    let token = sessionStorage.getItem("token");
     //return this.Http.put(this.url + '/' + p.idSpecialty, p);
-    return this.Http.put(this.url, p);
+    return this.Http.put(this.url, p,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   eliminar(id: number) {
-    return this.Http.delete(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.Http.delete(`${this.url}/${id}`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   getConfirmaEliminacion() {

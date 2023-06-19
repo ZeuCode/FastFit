@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { AppointmentStatus } from '../model/appointmentStatus';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'rxjs';
 
 const base_url = environment.base;
@@ -17,11 +17,19 @@ export class AppointmentStatusService {
   constructor(private http: HttpClient) {}
 
   list() {
-    return this.http.get<AppointmentStatus[]>(this.url);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<AppointmentStatus[]>(this.url,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
+
   insert(appointment: AppointmentStatus) {
-    return this.http.post(this.url, appointment);
+    let token = sessionStorage.getItem("token");
+    return this.http.post(this.url, appointment, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
+
   getList() {
     return this.listaCambio.asObservable();
   }
@@ -30,12 +38,18 @@ export class AppointmentStatusService {
   }
 
   listid(id: number) {
-    return this.http.get<AppointmentStatus>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem("token");
+    return this.http.get<AppointmentStatus>(`${this.url}/${id}`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
 
   update(c: AppointmentStatus) {
+    let token = sessionStorage.getItem("token");
     //return this.http.put(this.url + '/' + c.id, c);
-    return this.http.put(this.url, c);
+    return this.http.put(this.url, c,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
 
   }
   eliminar(id: number) {

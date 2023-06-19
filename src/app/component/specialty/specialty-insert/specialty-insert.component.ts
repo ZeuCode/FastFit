@@ -58,7 +58,7 @@ export class SpecialtyInsertComponent implements OnInit{
           });
         });
       }
-      this.router.navigate(['specialty']);
+      this.router.navigate(['pages/specialty']);
 
     }else{
 
