@@ -14,7 +14,7 @@ import { TurnDialogComponent } from './turn-dialog/turn-dialog.component';
 export class TurnListComponent implements OnInit{
   dataSource: MatTableDataSource  <Turn> = new MatTableDataSource();
   list: Turn[] = [];
-  displayedColumns: string[] = ['id', 'date', 'duration', 'TurnStatus_id','Psychologist_id', 'actions'];
+  displayedColumns: string[] = ['id', 'date', 'duration', 'TurnStatus','Psychologist_id', 'actions'];
 
   private idMayor: number = 0;
 

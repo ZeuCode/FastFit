@@ -83,12 +83,6 @@ import { TurnInsertComponent } from './turn/turn-insert/turn-insert.component';
 import { TurnListComponent } from './turn/turn-list/turn-list.component';
 import { TurnDialogComponent } from './turn/turn-list/turn-dialog/turn-dialog.component';
 
-//componet turn status
-import { TurnstatusComponent } from './turnstatus/turnstatus.component';
-import { TurnstatusInsertComponent } from './turnstatus/turnstatus-insert/turnstatus-insert.component';
-import { TurnstatusListComponent } from './turnstatus/turnstatus-list/turnstatus-list.component';
-import { TurnstatusdialogComponent } from './turnstatus/turnstatus-list/turnstatusdialog/turnstatusdialog.component';
-
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 
@@ -143,10 +137,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     TurnInsertComponent,
     TurnListComponent,
     TurnDialogComponent,
-    TurnstatusComponent,
-    TurnstatusInsertComponent,
-    TurnstatusListComponent,
-    TurnstatusdialogComponent,
 
     DashboardComponent
   ],

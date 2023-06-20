@@ -35,17 +35,16 @@
           </mat-select>
         </mat-form-field>
         <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Estado</mat-label>
+          <mat-select required placeholder="status" formControlName="status">
+            <mat-option value="Reservado">Reservado</mat-option>
+            <mat-option value="No reservado">No reservado</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
 
-              <br>
-              <mat-form-field appearance="fill">
-                <mat-label>Turn Status</mat-label>
-                <mat-select formControlName="turnstatus" [(value)]="idTurnstatSelec" required>
-                  <mat-option *ngFor="let t of listturnstatus" [value]="t.idTurnstatus">
-                    {{t.status}}
-                </mat-option>
-                </mat-select>
-              </mat-form-field>
-              <br>
+
               <br>
               <mat-form-field appearance="fill">
                 <mat-label>Psychologist</mat-label>

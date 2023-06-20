@@ -34,9 +34,6 @@ import { UserstatusInsertarComponent } from './userstatus/userstatus-insertar/us
 import { TurnComponent } from './turn/turn.component';
 import { TurnInsertComponent } from './turn/turn-insert/turn-insert.component';
 
-import { TurnstatusComponent } from './turnstatus/turnstatus.component';
-import { TurnstatusInsertComponent } from './turnstatus/turnstatus-insert/turnstatus-insert.component';
-
 
 const routes: Routes = [
 
@@ -181,18 +178,6 @@ const routes: Routes = [
     ],
   },
 
-  //path para turnstatus
-  {
-    path: 'turnstatus',
-    component: TurnstatusComponent,
-    children: [
-      {
-        path: 'turnstatusinsert',
-        component: TurnstatusInsertComponent,
-      },
-      { path: 'edition/:id', component: TurnstatusInsertComponent },
-    ],
-  },
 
 ]
 
