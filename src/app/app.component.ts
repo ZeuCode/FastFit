@@ -9,7 +9,6 @@ import { LoginService } from './service/login.service';
 export class AppComponent {
   title = 'FastFit';
   activeButton: number = -1;
-
   role:string="";
   constructor(private loginService: LoginService) {
   }
@@ -34,5 +33,4 @@ export class AppComponent {
   setActiveButton(index: number): void {
     this.activeButton = index;
   }
-
 }
