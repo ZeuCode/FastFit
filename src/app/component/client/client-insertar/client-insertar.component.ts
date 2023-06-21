@@ -53,20 +53,7 @@ export class ClientInsertarComponent implements OnInit {
     this.client.phoneNumber = this.form.value['phoneNumber'];
     this.client.age = this.form.value['age'];
 
-    if (
-
-
-
-      // this.form.value['id'].length *
-      //   this.form.value['userName'].length *
-      //   this.form.value['password'].length *
-      //   this.form.value['names'].length *
-      //   this.form.value['lastNames'].length *
-      //   this.form.value['emailAddress'].length *
-      //   this.form.value['phoneNumber'].length *
-      //   this.form.value['age'].length > 0
-      this.form.value['userName'].length > 0
-    ) {
+    if (this.form.value['userName'].length > 0) {
       //guardar lo actualizado
       if (this.edicion) {
         //

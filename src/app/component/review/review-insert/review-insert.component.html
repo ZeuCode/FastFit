@@ -12,58 +12,52 @@
 
         <mat-form-field class="example-full-width">
           <mat-label>Id</mat-label>
-          <input matInput required placeholder="Id" formControlName="id">
+          <input matInput placeholder="id" formControlName="id">
         </mat-form-field>
         <br>
 
-              <mat-form-field class="example-full-width">
-                <mat-label>Id</mat-label>
-                <input matInput placeholder="id" formControlName="id">
-              </mat-form-field>
-              <br>
-
-              <mat-form-field class="example-full-width">
-                <mat-label>Comment</mat-label>
-                <input matInput required placeholder="content" formControlName="content">
-              </mat-form-field>
-              <br>
+        <mat-form-field class="example-full-width">
+          <mat-label>Comment</mat-label>
+          <input matInput required placeholder="content" formControlName="content">
+        </mat-form-field>
+        <br>
 
 
-              <mat-form-field appearance="fill">
-                <mat-label>Likes</mat-label>
-                <mat-select required placeholder="likes" formControlName="likes" required>
-                  <mat-option value="1">1</mat-option>
-                  <mat-option value="2">2</mat-option>
-                  <mat-option value="3">3</mat-option>
-                  <mat-option value="4">4</mat-option>
-                  <mat-option value="5">5</mat-option>
-                </mat-select>
-              </mat-form-field>
-              <br>
-              <br>
-              <mat-form-field appearance="fill">
-                <mat-label>Client</mat-label>
-                <mat-select formControlName="client" [(value)]="idCliSelec" required>
-                  <mat-option *ngFor="let c of listcli" [value]="c.idClient">
-                    {{c.names}}
-                </mat-option>
-                </mat-select>
-              </mat-form-field>
-              <br>
-              <br>
-              <mat-form-field appearance="fill">
-                <mat-label>Psychologist</mat-label>
-                <mat-select formControlName="psychologist" [(value)]="idPsysSelec" required>
-                  <mat-option *ngFor="let p of listpsi" [value]="p.idPsi">
-                    {{p.names}}
-                </mat-option>
-                </mat-select>
-              </mat-form-field>
-              <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Likes</mat-label>
+          <mat-select required placeholder="likes" formControlName="likes">
+            <mat-option value="1">1</mat-option>
+            <mat-option value="2">2</mat-option>
+            <mat-option value="3">3</mat-option>
+            <mat-option value="4">4</mat-option>
+            <mat-option value="5">5</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Client</mat-label>
+          <mat-select formControlName="client" [(value)]="idCliSelec" required>
+            <mat-option *ngFor="let c of listcli" [value]="c.idClient">
+              {{c.names}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Psychologist</mat-label>
+          <mat-select formControlName="psychologist" [(value)]="idPsysSelec" required>
+            <mat-option *ngFor="let p of listpsi" [value]="p.idPsi">
+              {{p.names}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
 
         <div style="text-align: center;">
           <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
-          <button mat-raised-button routerLink="/reviews" style="margin-left: 8px;">Cancelar</button>
+          <button mat-raised-button routerLink="/pages/reviews" style="margin-left: 8px;">Cancelar</button>
           <p>{{mensaje}}</p>
         </div>
       </form>

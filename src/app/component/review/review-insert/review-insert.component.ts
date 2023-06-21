@@ -90,7 +90,7 @@ export class ReviewInsertComponent implements OnInit{
           });
         });
       }
-      this.router.navigate(['paes/reviews']);
+      this.router.navigate(['pages/reviews']);
 
 
   }
@@ -107,6 +107,10 @@ export class ReviewInsertComponent implements OnInit{
           client:new FormControl(data.client.names),
           psychologist:new FormControl(data.psychologist.names),
         })
+
+        this.idCliSelec = data.client.idClient;
+        this.idPsysSelec = data.psychologist.idPsi;
+
         console.log(data);
       })
     }

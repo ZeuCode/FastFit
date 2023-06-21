@@ -10,6 +10,13 @@
     <div class="ingreso">
       <form [formGroup]="form" (submit)="aceptar()">
         <div class="automaticos">
+
+          <mat-form-field class="example-full-width">
+            <mat-label>id</mat-label>
+            <input matInput formControlName="id">
+          </mat-form-field>
+          <br>
+
           <mat-form-field class="example-full-width">
             <mat-label>Status</mat-label>
             <input matInput required formControlName="status">
@@ -24,7 +31,7 @@
 
           <div style="text-align: center">
             <button mat-raised-button color="primary" style="margin-right: 8px;">Aceptar</button>
-            <button mat-raised-button routerLink="/pages/AppointmentStatus" style="margin-left: 8px;">Cancelar</button>
+            <button mat-raised-button routerLink="/pages/appointmentstatus" style="margin-left: 8px;">Cancelar</button>
 
           </div>
         </div>

@@ -76,7 +76,7 @@ export class TurnInsertComponent implements OnInit{
           });
         });
       }
-      this.router.navigate(['turns']);
+      this.router.navigate(['pages/turns']);
 
 
   }
@@ -85,6 +85,7 @@ export class TurnInsertComponent implements OnInit{
     if(this.edition){
       this.turS.listId(this.id).subscribe((data)=>{
         this.form=new FormGroup({
+
           id:new FormControl(data.idTurn),
           date:new FormControl(data.date),
           duration:new FormControl(data.duration),
@@ -92,6 +93,9 @@ export class TurnInsertComponent implements OnInit{
           psychologist:new FormControl(data.psychologist.names),
         })
         console.log(data);
+
+        this.idPsysSelec = data.psychologist.idPsi;
+
       })
     }
 

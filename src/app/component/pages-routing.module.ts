@@ -128,11 +128,11 @@ const routes: Routes = [
 
   //path para appointment statuss
   {
-    path: 'AppointmentStatus',
+    path: 'appointmentstatus',
     component: AppointmentStatusComponent,
     children: [
       {
-        path: 'appoStatusinsertar',
+        path: 'appostatusinsertar',
         component: AppoStatusIngresarComponent,
       },
       { path: 'edition/:id', component: AppoStatusIngresarComponent },

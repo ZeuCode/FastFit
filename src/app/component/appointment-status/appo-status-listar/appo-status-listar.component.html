@@ -5,11 +5,11 @@
     </div>
 
 
-          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-            <ng-container matColumnDef="id">
-              <th mat-header-cell *matHeaderCellDef style="text-align: center;"> No. </th>
-              <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.idAppStatus}} </td>
-            </ng-container>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;"> No. </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.idAppStatus}} </td>
+      </ng-container>
 
       <!-- Name Column -->
       <ng-container matColumnDef="status">
@@ -22,15 +22,15 @@
         <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.description}} </td>
       </ng-container>
 
-            <ng-container matColumnDef="acciones">
-              <th mat-header-cell *matHeaderCellDef> Acciones </th>
-              <td mat-cell *matCellDef="let element">
-                <button mat-button id="editar" [routerLink]="['edition',element.idAppStatus]">
-                  <mat-icon id="cedit" aria-hidden="false" color="primary">edit</mat-icon>
-                </button>
-                <button mat-button (click)="confirmar(element.idAppStatus)">
-                  <mat-icon id="cedit" aria-hidden="false" color="primary">delete</mat-icon>
-                </button>
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-button id="editar" [routerLink]="['edition',element.idAppStatus]">
+            <mat-icon id="cedit" aria-hidden="false" color="primary">edit</mat-icon>
+          </button>
+          <button mat-button (click)="confirmar(element.idAppStatus)">
+            <mat-icon id="cedit" aria-hidden="false" color="primary">delete</mat-icon>
+          </button>
 
         </td>
       </ng-container>
@@ -40,7 +40,7 @@
     </table>
 
     <div style="text-align: center">
-      <button mat-raised-button color="primary" routerLink="appoStatusinsertar" style="margin: 10px">
+      <button mat-raised-button color="primary" routerLink="appostatusinsertar" style="margin: 10px">
         Agregar Estatus de Cita
       </button>
     </div>

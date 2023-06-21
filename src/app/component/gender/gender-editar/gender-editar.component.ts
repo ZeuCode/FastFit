@@ -52,6 +52,7 @@ export class GenderEditarComponent implements OnInit {
         });
       } else {
         //metodo insertar
+        console.log(this.gender);
         this.gS.insert(this.gender).subscribe((data) => {
           this.gS.list().subscribe((data) => {
             this.gS.setList(data);
@@ -60,7 +61,7 @@ export class GenderEditarComponent implements OnInit {
       }
       this.router.navigate(['pages/genders']);
     } else {
-      this.mensaje = 'write name!!';
+      this.mensaje = 'write gender!!';
     }
   }
 
