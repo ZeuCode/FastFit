@@ -35,7 +35,7 @@ export class PaymentListarComponent implements OnInit{
     'moneda',
     'importe',
     'usuario',
-    'ceditar',
+    // 'ceditar',
   ];
 
   ngOnInit(): void {

@@ -19,12 +19,19 @@
 .mat-column-codigoPago {
   width: 10%;
 }
-.mat-column-tarjeta {
+
+.mat-column-idAppointment{
   width: 10%;
 }
+
 .mat-column-fecha {
   width: 10%;
 }
+
+.mat-column-tarjeta {
+  width: 10%;
+}
+
 .mat-column-moneda {
   width: 10%;
 }
@@ -37,6 +44,3 @@
   width: 20%;
 }
 
-.mat-column-ceditar {
-  width: 10%;
-}

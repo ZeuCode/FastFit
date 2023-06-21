@@ -94,10 +94,11 @@
           <div *ngIf="role=='ADMIN'"></div>
           <div *ngIf="role=='ADMIN'"></div>
           <div *ngIf="role=='ADMIN'"></div>
+          <div *ngIf="role=='ADMIN'"></div>
 
           <!-- Psicólogos MATCARD -->
           <div class="item" *ngIf="role=='USER'">
-            <div class="botonItem" [class.active]="activeButton === 1" (click)="setActiveButton(1)">
+            <div class="botonItem" routerLink="pages/Psychologists" [class.active]="activeButton === 1" (click)="setActiveButton(1)">
               <mat-icon aria-label="Psychologists" class="icono">psychology_alt</mat-icon>
               <span class="nombre_icono">Psicólogos</span>
             </div>
