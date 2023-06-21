@@ -7,10 +7,10 @@
   <div class="ingreso">
     <form [formGroup]="form" (submit)="aceptar()">
 
-      <!-- <mat-form-field class="example-full-width">
+      <mat-form-field class="example-full-width">
         <mat-label>id</mat-label>
-        <input matInput placeholder="ejm: 4" formControlName="idAppointment" >
-      </mat-form-field> -->
+        <input matInput placeholder="ejm: 4" formControlName="id">
+      </mat-form-field>
 
       <br>
       <mat-form-field class="example-full-width">
@@ -25,7 +25,7 @@
         <mat-label>Cliente_ID</mat-label>
         <mat-select formControlName="client" [(value)]="idclientSelected" required>
           <mat-option *ngFor="let c of listaclient" [value]="c.idClient">
-            {{c.userName}}
+            {{c.names}}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -34,26 +34,26 @@
         <mat-label>Psychologist_ID</mat-label>
         <mat-select formControlName="psychologist" [(value)]="idpsySelected" required>
           <mat-option *ngFor="let i of listapsi" [value]="i.idPsi">
-            {{i.idPsi}}
+            {{i.names}}
           </mat-option>
         </mat-select>
       </mat-form-field>
 
-            <br>
-            <mat-form-field class="example-full-width">
-              <mat-label>Lista-Status</mat-label>
-              <mat-select formControlName="appointmentStatus" [(value)]="idApStatSelected" required>
-                <mat-option *ngFor="let a of listastatus" [value]="a.idAppStatus">
-                  {{a.status}}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-            <br>
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>Cita-Status</mat-label>
+        <mat-select formControlName="appointmentStatus" [(value)]="idApStatSelected" required>
+          <mat-option *ngFor="let a of listastatus" [value]="a.idAppStatus">
+            {{a.status}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
 
-            <div style="text-align: center;">
-              <button mat-raised-button color="primary" id="miBoton" style="margin-right: 8px;">Aceptar</button>
-              <button mat-raised-button routerLink="pages/Appointments" style="margin-left: 8px;">Cancelar</button>
-            </div>
+      <div style="text-align: center;">
+        <button mat-raised-button color="primary" id="miBoton" style="margin-right: 8px;">Aceptar</button>
+        <button mat-raised-button routerLink="pages/Appointments" style="margin-left: 8px;">Cancelar</button>
+      </div>
 
     </form>
   </div>

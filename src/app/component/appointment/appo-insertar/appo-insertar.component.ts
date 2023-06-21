@@ -80,7 +80,7 @@ export class AppoInsertarComponent implements OnInit {
   aceptar(): void {
     this.appointment.idAppointment = this.form.value['id'];
     this.appointment.date = this.form.value['date'];
-    this.appointment.client.idClient = this.form.value['client.id'];
+    this.appointment.client.names = this.form.value['client.names'];
     this.appointment.psychologist.names = this.form.value['psychologist.names'];
     this.appointment.appointmentStatus.status =this.form.value['appointmentStatus.status'];
 
@@ -99,11 +99,11 @@ export class AppoInsertarComponent implements OnInit {
       i.idPsi = this.idpsySelected;
       this.appointment.psychologist = i;
     }
+
     if (this.edicion) {
       //guardar pS
       this.pS.update(this.appointment).subscribe(() => {
         this.pS.list().subscribe((data) => {
-          ////actualizar la lista
           this.pS.setList(data);
         });
       });
@@ -125,7 +125,7 @@ export class AppoInsertarComponent implements OnInit {
         this.form = new FormGroup({
           id: new FormControl(data.idAppointment),
           date: new FormControl(data.date),
-          client: new FormControl(data.client.idClient),
+          client: new FormControl(data.client.names),
           psychologist: new FormControl(data.psychologist.names),
           appointmentStatus: new FormControl(data.appointmentStatus.status),
         });
