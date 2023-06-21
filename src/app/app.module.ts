@@ -18,6 +18,12 @@ import { FormsModule } from '@angular/forms';
 //Angular cdk
 import { LayoutModule } from '@angular/cdk/layout';
 import { LoginComponent } from './component/login/login.component';
+import { RegistroclientComponent } from './component/registroclient/registroclient.component';
+
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+
 
 
 
@@ -26,6 +32,7 @@ import { LoginComponent } from './component/login/login.component';
   declarations: [
     AppComponent,
     LoginComponent,
+    RegistroclientComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +47,8 @@ import { LoginComponent } from './component/login/login.component';
     MatFormFieldModule,
     MatSnackBarModule,
     LayoutModule,
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],

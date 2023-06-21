@@ -2,13 +2,11 @@
 
   <div class="contenido" style="text-align: center">
 
+    <div class="titulo">
+      Bienvenido a FastFit
+    </div>
+
     <form [formGroup]="form" (submit)="aceptar()" class="ingreso">
-
-
-      <mat-form-field  appearance="outline" class="example-full-width">
-        <mat-label>Código</mat-label>
-        <input required matInput placeholder="Código" formControlName="id" />
-      </mat-form-field>
 
       <mat-form-field appearance="outline" class="example-full-width">
         <mat-label>Username</mat-label>
@@ -45,31 +43,18 @@
         <input required matInput placeholder="Age" formControlName="age">
       </mat-form-field>
       <br>
-      <div class="item">
-        <mat-form-field appearance="outline" class="example-full-width">
-          <mat-label>User Status</mat-label>
-          <mat-select formControlName="userStatus" [(value)]="idUserStatusSeleccionado" required>
-            <mat-option *ngFor="let a of listarUserStatus" [value]="a.idUS">
-              {{ a.status }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
 
-      <div class="item">
-        <mat-form-field appearance="outline" class="example-full-width">
-          <mat-label>Gender</mat-label>
-          <mat-select formControlName="gender" [(value)]="idGenderSeleccionado" required>
-            <mat-option *ngFor="let g of listaGender" [value]="g.idGender">
-              {{ g.gender }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
+      <mat-form-field appearance="outline" class="example-full-width">
+        <mat-label>Genero</mat-label>
+        <mat-select required placeholder="genero" formControlName="gender">
+          <mat-option value="1">Masculino</mat-option>
+          <mat-option value="2">Femenino</mat-option>
+        </mat-select>
+      </mat-form-field>
 
       <div style="text-align: center">
         <button mat-raised-button color="primary" style="margin-right: 8px;"> Aceptar </button>
-        <button mat-raised-button routerLink="/pages/clients" style="margin-left: 8px;"> Cancelar </button>
+        <button mat-raised-button [routerLink]="'/login'" style="margin-left: 8px;"> Cancelar </button>
         <p>{{ mensaje }}</p>
       </div>
 

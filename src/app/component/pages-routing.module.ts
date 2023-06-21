@@ -34,12 +34,11 @@ import { UserstatusInsertarComponent } from './userstatus/userstatus-insertar/us
 import { TurnComponent } from './turn/turn.component';
 import { TurnInsertComponent } from './turn/turn-insert/turn-insert.component';
 
-
 const routes: Routes = [
-
   {
     path: 'dashboard',
-    component: DashboardComponent, canActivate: [GuardService]
+    component: DashboardComponent,
+    canActivate: [GuardService],
   },
 
   //path para clients
@@ -48,10 +47,15 @@ const routes: Routes = [
     component: ClientComponent,
     children: [
       {
+        path: 'clientsinsertar',
+        component: ClientInsertarComponent,
+      },
+      {
         path: 'edicion/:id',
         component: ClientInsertarComponent,
       },
-    ], canActivate: [GuardService]
+    ],
+    canActivate: [GuardService],
   },
 
   //path para psicologos
@@ -64,7 +68,8 @@ const routes: Routes = [
         component: PsiInsertarComponent,
       },
       { path: 'edicion/:id', component: PsiInsertarComponent },
-    ], canActivate: [GuardService]
+    ],
+    canActivate: [GuardService],
   },
 
   //payment component
@@ -73,12 +78,15 @@ const routes: Routes = [
     component: PaymentComponent,
     children: [
       {
-        path: 'paymentsinsertar', component: PaymentInsertarComponent,
+        path: 'paymentsinsertar',
+        component: PaymentInsertarComponent,
       },
       {
-        path: 'edicion/:id', component: PaymentInsertarComponent,
+        path: 'edicion/:id',
+        component: PaymentInsertarComponent,
       },
-    ], canActivate: [GuardService]
+    ],
+    canActivate: [GuardService],
   },
 
   //spceialty component
@@ -94,7 +102,8 @@ const routes: Routes = [
         path: 'edicion/:id',
         component: SpecialtyInsertComponent,
       },
-    ], canActivate: [GuardService]
+    ],
+    canActivate: [GuardService],
   },
 
   //path para reviews
@@ -110,7 +119,8 @@ const routes: Routes = [
         path: 'edition/:id',
         component: ReviewInsertComponent,
       },
-    ], canActivate: [GuardService]
+    ],
+    canActivate: [GuardService],
   },
 
   //path para appointmet
@@ -123,7 +133,8 @@ const routes: Routes = [
         component: AppoInsertarComponent,
       },
       { path: 'edition/:id', component: AppoInsertarComponent },
-    ], canActivate: [GuardService]
+    ],
+    canActivate: [GuardService],
   },
 
   //path para appointment statuss
@@ -136,7 +147,8 @@ const routes: Routes = [
         component: AppoStatusIngresarComponent,
       },
       { path: 'edition/:id', component: AppoStatusIngresarComponent },
-    ], canActivate: [GuardService]
+    ],
+    canActivate: [GuardService],
   },
 
   //path para gender
@@ -149,7 +161,8 @@ const routes: Routes = [
         component: GenderEditarComponent,
       },
       { path: 'edition/:id', component: GenderEditarComponent },
-    ], canActivate: [GuardService]
+    ],
+    canActivate: [GuardService],
   },
 
   //path para userstatus
@@ -162,7 +175,8 @@ const routes: Routes = [
         component: UserstatusInsertarComponent,
       },
       { path: 'edicion/:id', component: UserstatusInsertarComponent },
-    ], canActivate: [GuardService]
+    ],
+    canActivate: [GuardService],
   },
 
   //path para turns
@@ -177,12 +191,10 @@ const routes: Routes = [
       { path: 'edition/:id', component: TurnInsertComponent },
     ],
   },
-
-
-]
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class PagesRoutingModule { }
+export class PagesRoutingModule {}

@@ -122,7 +122,6 @@ export class PsiInsertarComponent implements OnInit {
       });
     }
     this.router.navigate(['pages/Psychologists']);
-
   }
 
   init() {

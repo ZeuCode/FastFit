@@ -1,3 +1,6 @@
+import { UserStatus } from "./UserStatus"
+import { Gender } from "./gender"
+
 export class Client{
   idClient:number= 0
   userName:string= ""
@@ -7,6 +10,6 @@ export class Client{
   emailAddress:string= ""
   phoneNumber:string= ""
   age:number= 0
-  UserStatus_id:number= 0
-  Gender_id:number= 0
+  userStatus:UserStatus=new UserStatus()
+  gender:Gender=new Gender()
 }

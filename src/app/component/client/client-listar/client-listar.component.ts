@@ -16,7 +16,7 @@ export class ClientListarComponent implements OnInit {
   dataSource: MatTableDataSource<Client> = new MatTableDataSource();
   lista: Client[] = [];
   displayedColumns: string[] = [
-    'numero',
+    'id',
     'username',
     'password',
     'names',
@@ -24,6 +24,8 @@ export class ClientListarComponent implements OnInit {
     'edad',
     'emailAddress',
     'phoneNumber',
+    'userStatus',
+    'genero',
     'ceditar',
   ];
   private idMayor: number = 0;

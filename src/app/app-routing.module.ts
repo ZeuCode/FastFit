@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './component/login/login.component';
-import { ClientInsertarComponent } from './component/client/client-insertar/client-insertar.component';
+import { RegistroclientComponent } from './component/registroclient/registroclient.component';
 
 
 const routes: Routes = [
@@ -10,14 +10,13 @@ const routes: Routes = [
     path: '',
     redirectTo: 'login', pathMatch: 'full'
   },
-
   {
     path: 'login',
     component: LoginComponent,
     children: [
       {
-        path: 'clientsinsertar',
-        component: ClientInsertarComponent
+        path: 'clientregister',
+        component: RegistroclientComponent
       },
     ],
   },

@@ -20,6 +20,9 @@ export class GenderService {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
     });
   }
+  listr() {
+    return this.http.get<Gender[]>(this.url);
+  }
 
   insert(g: Gender) {
     let token = sessionStorage.getItem("token");
