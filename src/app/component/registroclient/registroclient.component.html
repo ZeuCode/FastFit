@@ -43,14 +43,16 @@
         <input required matInput placeholder="Age" formControlName="age">
       </mat-form-field>
       <br>
-
-      <mat-form-field appearance="outline" class="example-full-width">
-        <mat-label>Genero</mat-label>
-        <mat-select required placeholder="genero" formControlName="gender">
-          <mat-option value="1">Masculino</mat-option>
-          <mat-option value="2">Femenino</mat-option>
-        </mat-select>
-      </mat-form-field>
+      <div class="item">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Gender</mat-label>
+          <mat-select formControlName="gender" [(value)]="idGenderSeleccionado" required>
+            <mat-option *ngFor="let g of listaGender" [value]="g.idGender">
+              {{ g.gender }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
 
       <div style="text-align: center">
         <button mat-raised-button color="primary" style="margin-right: 8px;"> Aceptar </button>

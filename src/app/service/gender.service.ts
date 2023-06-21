@@ -20,8 +20,8 @@ export class GenderService {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
     });
   }
-  listr() {
-    return this.http.get<Gender[]>(this.url);
+  listg() {
+    return this.http.get<Gender[]>(`${base_url}/public/genders`,);
   }
 
   insert(g: Gender) {

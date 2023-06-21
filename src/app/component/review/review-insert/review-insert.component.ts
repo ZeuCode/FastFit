@@ -88,6 +88,7 @@ export class ReviewInsertComponent implements OnInit {
       });
     } else {
       //metodo insertar
+      console.log(this.review);
       this.revS.insert(this.review).subscribe((data) => {
         this.revS.list().subscribe((data) => {
           this.revS.setList(data);

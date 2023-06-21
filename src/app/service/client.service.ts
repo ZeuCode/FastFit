@@ -29,6 +29,14 @@ export class ClientService {
     });
   }
 
+  listc() {
+    return this.http.get<Client[]>(`${base_url}/public/client`);
+  }
+
+  insertc(client: Client) {
+    return this.http.post(`${base_url}/public/client`, client);
+  }
+
   getList() {
     return this.listaCambio.asObservable();
   }

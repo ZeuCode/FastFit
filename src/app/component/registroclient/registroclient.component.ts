@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { UserStatus } from 'src/app/model/UserStatus';
 import { Client } from 'src/app/model/client';
+import { Gender } from 'src/app/model/gender';
 import { ClientService } from 'src/app/service/client.service';
 import { GenderService } from 'src/app/service/gender.service';
 
@@ -17,6 +19,10 @@ export class RegistroclientComponent implements OnInit {
   client: Client = new Client();
   mensaje: string = '';
 
+  listaGender: Gender[] = [];
+
+  idGenderSeleccionado: number = 0;
+
   constructor(
     private pC: ClientService,
     private router: Router,
@@ -25,6 +31,10 @@ export class RegistroclientComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.gS.listg().subscribe((dataGender) => {
+      this.listaGender = dataGender;
+    });
+
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
       this.init();
@@ -52,15 +62,24 @@ export class RegistroclientComponent implements OnInit {
     this.client.emailAddress = this.form.value['emailAddress'];
     this.client.phoneNumber = this.form.value['phoneNumber'];
     this.client.age = this.form.value['age'];
-    this.client.userStatus.idUS = 1;
-    this.client.gender.gender = this.form.value['gender'];
+    this.client.gender.gender = this.form.value['gender.gender'];
 
-    this.pC.insert(this.client).subscribe((data) => {
-      this.pC.list().subscribe((data) => {
-        this.pC.setList(data);
+    if (this.idGenderSeleccionado > 0) {
+
+      let gen = new Gender();
+      gen.idGender = this.idGenderSeleccionado;
+      this.client.gender = gen;
+
+      let ustatus = new UserStatus();
+      ustatus.idUS = 1;
+      this.client.userStatus = ustatus;
+
+      this.pC.insertc(this.client).subscribe((data) => {
+        this.pC.listc().subscribe((data) => {
+          this.pC.setList(data);
+        });
       });
-    });
-
+    }
     this.router.navigate(['login']);
   }
   init() {}
