@@ -32,7 +32,9 @@ export class PsiInsertarComponent implements OnInit {
   idUserStatusSeleccionado: number = 0;
 
   mensaje: string = '';
-  maxFecha: Date = moment().add(-1, 'days').toDate();
+  
+  maxFecha: Date = new Date();
+  minFecha: Date = new Date();
 
   constructor(
     private pS: PsiService,

@@ -9,7 +9,7 @@ export class Psi {
   lastNames: string = "";
   emailAddress: string = "";
   phoneNumber: string = "";
-  age: number = 0;
+  age: Date= new Date(Date.now());
   rating: number = 0;
   userStatus:UserStatus=new UserStatus();
   gender:Gender=new Gender();
