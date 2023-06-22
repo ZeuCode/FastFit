@@ -150,7 +150,7 @@
 
           <!-- Pacientes -->
           <div class="item" *ngIf="role=='PSICO'">
-            <div class="botonItem" [class.active]="activeButton === 0" (click)="setActiveButton(0)">
+            <div routerLink="/pages/payment"  class="botonItem" [class.active]="activeButton === 0" (click)="setActiveButton(0)">
               <mat-icon aria-label="Clients" class="icono">person</mat-icon>
               <span class="nombre_icono">Pacientes</span>
             </div>
@@ -158,7 +158,7 @@
 
           <!-- Recaudación -->
           <div class="item" *ngIf="role=='PSICO'">
-            <div class="botonItem" [class.active]="activeButton === 2" (click)="setActiveButton(2)">
+            <div routerLink="/pages/payment" class="botonItem" [class.active]="activeButton === 2" (click)="setActiveButton(2)">
               <mat-icon aria-label="Payments" class="icono">payment</mat-icon>
               <span class="nombre_icono">Recaudación</span>
             </div>
@@ -166,7 +166,7 @@
 
           <!-- Mi Puntuación -->
           <div class="item" *ngIf="role=='PSICO'">
-            <div routerLink="/reviews" class="botonItem" [class.active]="activeButton === 3"
+            <div routerLink="/pages/reviews" class="botonItem" [class.active]="activeButton === 3"
               (click)="setActiveButton(3)">
               <mat-icon aria-label="Reviews" class="icono">forum</mat-icon>
               <span class="nombre_icono">Mi Puntuación</span>
