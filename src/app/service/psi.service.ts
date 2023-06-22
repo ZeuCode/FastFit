@@ -1,8 +1,9 @@
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Psi } from '../model/psi';
+import { PsiSpecialtyDTO } from '../model/PsiSpecialtyDTO';
 const base_url = environment.base;
 @Injectable({
   providedIn: 'root',
@@ -64,6 +65,11 @@ export class PsiService {
   }
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmaEliminacion.next(estado);
+  }
+
+  getPetCountByVaccine(): Observable<PsiSpecialtyDTO[]> {
+    return this.http.get<PsiSpecialtyDTO[]>(`${this.url}/vaccine-count`);
+
   }
 }
 

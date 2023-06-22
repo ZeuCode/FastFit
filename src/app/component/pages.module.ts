@@ -84,6 +84,9 @@ import { TurnListComponent } from './turn/turn-list/turn-list.component';
 import { TurnDialogComponent } from './turn/turn-list/turn-dialog/turn-dialog.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
+//
+import { Reportes1Component } from './reportes/reportes1/reportes1.component';
+import { ReportesComponent } from './reportes/reportes.component';
 
 @NgModule({
   declarations: [
@@ -138,6 +141,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     TurnDialogComponent,
 
     DashboardComponent,
+
   ],
   imports: [
     CommonModule,
