@@ -34,6 +34,7 @@ import { UserstatusInsertarComponent } from './userstatus/userstatus-insertar/us
 import { TurnComponent } from './turn/turn.component';
 import { TurnInsertComponent } from './turn/turn-insert/turn-insert.component';
 
+
 const routes: Routes = [
   {
     path: 'dashboard',

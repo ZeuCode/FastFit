@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Appointment } from '../model/appointment';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 const base_url = environment.base;
@@ -9,6 +9,7 @@ const base_url = environment.base;
 })
 
 export class AppointmentService {
+
   private url = `${base_url}/appointments`;
   private listaCambio = new Subject<Appointment[]>();
   private confirmaEliminacion = new Subject<Boolean>();
@@ -65,5 +66,9 @@ export class AppointmentService {
 
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmaEliminacion.next(estado);
+  }
+  
+  get_LIST_Fecha_filtro():Observable<Appointment[]>{
+    return this.Http.get<Appointment[]>(`${this.url}/buscarfecha`);
   }
 }

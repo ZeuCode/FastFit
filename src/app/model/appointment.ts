@@ -1,12 +1,10 @@
-import { AppointmentStatus } from "./appointmentStatus"
-import { Client } from "./client"
-import { Psi } from "./psi";
+import { AppointmentStatus } from './appointmentStatus';
+import { Client } from './client';
+import { Turn } from './turn';
 
-export class Appointment{
-  idAppointment: number=0;
-  date: Date= new Date(Date.now());
-  client: Client=new Client();
-  psychologist: Psi=new Psi();
-  appointmentStatus: AppointmentStatus=new AppointmentStatus();
-
+export class Appointment {
+  idAppointment: number = 0;
+  client: Client = new Client();
+  appointmentStatus: AppointmentStatus = new AppointmentStatus();
+  turn: Turn = new Turn();
 }

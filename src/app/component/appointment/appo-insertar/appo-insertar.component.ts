@@ -6,10 +6,12 @@ import { Appointment } from 'src/app/model/appointment';
 import { AppointmentStatus } from 'src/app/model/appointmentStatus';
 import { Client } from 'src/app/model/client';
 import { Psi } from 'src/app/model/psi';
+import { Turn } from 'src/app/model/turn';
 import { AppointmentStatusService } from 'src/app/service/appointment-status.service';
 import { AppointmentService } from 'src/app/service/appointment.service';
 import { ClientService } from 'src/app/service/client.service';
-import { PsiService } from 'src/app/service/psi.service';
+
+import { TurnService } from 'src/app/service/turn.service';
 
 @Component({
   selector: 'app-appo-insertar',
@@ -23,17 +25,14 @@ export class AppoInsertarComponent implements OnInit {
   mensaje: string = 'Agregado';
   edicion: boolean = false;
 
-  minFecha: Date = moment().add(-1, 'days').toDate();
-
   variable_cambio: string = '';
   // lo ultimo agregado
   listastatus: AppointmentStatus[] = [];
   listaclient: Client[] = [];
-  listapsi: Psi[] = [];
+  listaturn: Turn[] = [];
   idApStatSelected: number = 0;
   idclientSelected: number = 0;
-  idpsySelected: number = 0;
-
+  idturnSelected: number = 0;
 
   //agregando appointment service
   constructor(
@@ -42,7 +41,7 @@ export class AppoInsertarComponent implements OnInit {
     private route: ActivatedRoute,
     private sS: AppointmentStatusService,
     private cS: ClientService,
-    private iS: PsiService
+    private ts: TurnService
   ) {}
 
   ngOnInit(): void {
@@ -58,15 +57,16 @@ export class AppoInsertarComponent implements OnInit {
     this.cS.list().subscribe((datacl) => {
       this.listaclient = datacl;
     });
-    this.iS.list().subscribe((datapsy) => {
-      this.listapsi = datapsy;
+    this.ts.list().subscribe((datturn) => {
+      this.listaturn = datturn;
     });
+    console.log(this.listastatus);
     this.form = new FormGroup({
       id: new FormControl(),
-      date: new FormControl(),
       client: new FormControl(),
       psychologist: new FormControl(),
       appointmentStatus: new FormControl(),
+      turn: new FormControl(),
     });
   }
   modificar(): void {
@@ -79,10 +79,10 @@ export class AppoInsertarComponent implements OnInit {
 
   aceptar(): void {
     this.appointment.idAppointment = this.form.value['id'];
-    this.appointment.date = this.form.value['date'];
     this.appointment.client.names = this.form.value['client.names'];
-    this.appointment.psychologist.names = this.form.value['psychologist.names'];
-    this.appointment.appointmentStatus.status =this.form.value['appointmentStatus.status'];
+    this.appointment.appointmentStatus.status =
+      this.form.value['appointmentStatus.status'];
+    this.appointment.turn.idTurn = this.form.value['turn.idTurn'];
 
     if (this.idApStatSelected > 0) {
       let a = new AppointmentStatus();
@@ -94,10 +94,10 @@ export class AppoInsertarComponent implements OnInit {
       c.idClient = this.idclientSelected;
       this.appointment.client = c;
     }
-    if (this.idpsySelected > 0) {
-      let i = new Psi();
-      i.idPsi = this.idpsySelected;
-      this.appointment.psychologist = i;
+    if (this.idturnSelected > 0) {
+      let i = new Turn();
+      i.idTurn = this.idturnSelected;
+      this.appointment.turn = i;
     }
 
     if (this.edicion) {
@@ -112,11 +112,10 @@ export class AppoInsertarComponent implements OnInit {
       this.pS.insert(this.appointment).subscribe((data) => {
         this.pS.list().subscribe((data) => {
           this.pS.setList(data);
-        })
-      })
+        });
+      });
     }
     this.router.navigate(['pages/appointments']);
-
   }
 
   init() {
@@ -124,12 +123,15 @@ export class AppoInsertarComponent implements OnInit {
       this.pS.listid(this.id).subscribe((data) => {
         this.form = new FormGroup({
           id: new FormControl(data.idAppointment),
-          date: new FormControl(data.date),
           client: new FormControl(data.client.names),
-          psychologist: new FormControl(data.psychologist.names),
-          appointmentStatus: new FormControl(data.appointmentStatus.status),
+          appointmentStatus: new FormControl(
+            data.appointmentStatus.idAppStatus),
+          turn: new FormControl(data.turn.idTurn),
         });
         console.log(data);
+        this.idApStatSelected = data.appointmentStatus.idAppStatus;
+        this.idclientSelected = data.client.idClient;
+        this.idturnSelected = data.turn.idTurn;
       });
     }
   }

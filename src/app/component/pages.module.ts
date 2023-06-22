@@ -85,6 +85,7 @@ import { TurnDialogComponent } from './turn/turn-list/turn-dialog/turn-dialog.co
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 
+
 @NgModule({
   declarations: [
     ClientComponent,
@@ -138,6 +139,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     TurnDialogComponent,
 
     DashboardComponent,
+   
   ],
   imports: [
     CommonModule,

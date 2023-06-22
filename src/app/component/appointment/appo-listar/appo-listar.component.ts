@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Appointment } from 'src/app/model/appointment';
 import { AppointmentService } from 'src/app/service/appointment.service';
 import { AppoDialogoComponent } from './appo-dialogo/appo-dialogo.component';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-appo-listar',
@@ -12,22 +13,29 @@ import { AppoDialogoComponent } from './appo-dialogo/appo-dialogo.component';
   styleUrls: ['./appo-listar.component.css'],
 })
 export class AppoListarComponent implements OnInit {
+  role: string = '';
   dataSource: MatTableDataSource<Appointment> = new MatTableDataSource();
   lista: Appointment[] = [];
 
   private idMayor: number = 0;
   @ViewChild('paginator') paginator!: MatPaginator;
-  constructor(private pS: AppointmentService, private dialog: MatDialog) {}
+  constructor(
+    private pS: AppointmentService,
+    private dialog: MatDialog,
+    private ls: LoginService
+  ) {}
   displayedColumns: String[] = [
     'idAppointment',
-    'date',
-    // 'client',
-    'psychologist',
+    'client',
     'appointmentStatus',
+    'turn',
     'ceditar',
   ];
   ngOnInit(): void {
+    this.role = this.ls.showRole();
+    console.log(this.role);
     this.pS.list().subscribe((data) => {
+
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     });
@@ -53,6 +61,13 @@ export class AppoListarComponent implements OnInit {
       this.pS.list().subscribe((data) => {
         this.pS.setList(data); /* se ejecuta la línea 27 */
       });
+    });
+  }
+  getAppointmentsByFecha() {
+    this.pS.get_LIST_Fecha_filtro().subscribe((appointments) => {
+      // Process the appointments received from the service
+      // For example, you can assign the appointments to a property in your component:
+      this.lista = appointments;
     });
   }
 }
