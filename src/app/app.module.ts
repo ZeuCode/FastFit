@@ -23,7 +23,6 @@ import { RegistroclientComponent } from './component/registroclient/registroclie
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
-import { ReportepsireviewComponent } from './component/reportepsireview/reportepsireview.component';
 import { MatTableModule } from '@angular/material/table';
 
 
@@ -34,8 +33,7 @@ import { MatTableModule } from '@angular/material/table';
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistroclientComponent,
-    ReportepsireviewComponent
+    RegistroclientComponent
   ],
   imports: [
     BrowserModule,

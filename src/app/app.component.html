@@ -98,7 +98,8 @@
 
           <!-- Psicólogos MATCARD -->
           <div class="item" *ngIf="role=='USER'">
-            <div class="botonItem" routerLink="pages/Psychologists" [class.active]="activeButton === 1" (click)="setActiveButton(1)">
+            <div class="botonItem" routerLink="pages/Psychologists" [class.active]="activeButton === 1"
+              (click)="setActiveButton(1)">
               <mat-icon aria-label="Psychologists" class="icono">psychology_alt</mat-icon>
               <span class="nombre_icono">Psicólogos</span>
             </div>
@@ -142,7 +143,8 @@
 
           <!-- Turnos -->
           <div class="item" *ngIf="role=='PSICO'">
-            <div routerLink="pages/turns" class="botonItem" [class.active]="activeButton === 9" (click)="setActiveButton(9)">
+            <div routerLink="pages/turns" class="botonItem" [class.active]="activeButton === 9"
+              (click)="setActiveButton(9)">
               <mat-icon aria-label="Turnos" class="icono">calendar_month</mat-icon>
               <span class="nombre_icono">Turnos</span>
             </div>
@@ -150,7 +152,8 @@
 
           <!-- Pacientes -->
           <div class="item" *ngIf="role=='PSICO'">
-            <div routerLink="/pages/payment"  class="botonItem" [class.active]="activeButton === 0" (click)="setActiveButton(0)">
+            <div routerLink="/pages/payment" class="botonItem" [class.active]="activeButton === 0"
+              (click)="setActiveButton(0)">
               <mat-icon aria-label="Clients" class="icono">person</mat-icon>
               <span class="nombre_icono">Pacientes</span>
             </div>
@@ -158,7 +161,8 @@
 
           <!-- Recaudación -->
           <div class="item" *ngIf="role=='PSICO'">
-            <div routerLink="/pages/payment" class="botonItem" [class.active]="activeButton === 2" (click)="setActiveButton(2)">
+            <div routerLink="/pages/payment" class="botonItem" [class.active]="activeButton === 2"
+              (click)="setActiveButton(2)">
               <mat-icon aria-label="Payments" class="icono">payment</mat-icon>
               <span class="nombre_icono">Recaudación</span>
             </div>
@@ -166,7 +170,7 @@
 
           <!-- Mi Puntuación -->
           <div class="item" *ngIf="role=='PSICO'">
-            <div routerLink="/pages/reviews" class="botonItem" [class.active]="activeButton === 3"
+            <div routerLink="/pages/reviewspsi" class="botonItem" [class.active]="activeButton === 3"
               (click)="setActiveButton(3)">
               <mat-icon aria-label="Reviews" class="icono">forum</mat-icon>
               <span class="nombre_icono">Mi Puntuación</span>
@@ -201,4 +205,3 @@
   </div>
 </div>
 <router-outlet *ngIf="!validarRol()"></router-outlet>
-

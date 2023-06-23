@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Review } from 'src/app/model/review';
 import { LoginService } from 'src/app/service/login.service';
@@ -16,10 +15,12 @@ export class ReportepsireviewComponent implements OnInit{
 
   dataSource: MatTableDataSource  <Review> = new MatTableDataSource();
   list: Review[] = [];
-  displayedColumns: string[] = ['nombrecli', 'content', 'points', 'date'];
+  displayedColumns: string[] = ['content', 'date', 'likes', 'client_id', 'psychologist_id'];
 
-  private idMayor: number = 0;
-  constructor(private RevS: ReviewService, private dialog: MatDialog, private ls:LoginService) {}
+  constructor(
+    private RevS: ReviewService,
+    private ls:LoginService) {}
+
   ngOnInit(): void {
 
     this.role=this.ls.showRole();

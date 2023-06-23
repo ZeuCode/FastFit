@@ -80,8 +80,7 @@ export class AppoInsertarComponent implements OnInit {
   aceptar(): void {
     this.appointment.idAppointment = this.form.value['id'];
     this.appointment.client.names = this.form.value['client.names'];
-    this.appointment.appointmentStatus.status =
-      this.form.value['appointmentStatus.status'];
+    this.appointment.appointmentStatus.status = this.form.value['appointmentStatus.status'];
     this.appointment.turn.idTurn = this.form.value['turn.idTurn'];
 
     if (this.idApStatSelected > 0) {
@@ -125,7 +124,8 @@ export class AppoInsertarComponent implements OnInit {
           id: new FormControl(data.idAppointment),
           client: new FormControl(data.client.names),
           appointmentStatus: new FormControl(
-            data.appointmentStatus.idAppStatus),
+            data.appointmentStatus.idAppStatus
+          ),
           turn: new FormControl(data.turn.idTurn),
         });
         console.log(data);

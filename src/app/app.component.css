@@ -18,8 +18,8 @@
   background-color: rgb(255, 255, 255);
   box-shadow: 3px 0px 5px  #c2c0c0; /* Agrega una sombra ligera */
   z-index: 1; /* Establece una posición por encima de otros elementos */
-  padding-left: 7%;
-  padding-right: 7%;
+  border-left: 7%;
+  border-right: 7%;
 }
 
 .contenido{
