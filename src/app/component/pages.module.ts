@@ -85,7 +85,6 @@ import { TurnDialogComponent } from './turn/turn-list/turn-dialog/turn-dialog.co
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Repore1Component } from './dashboard/repore1/repore1.component';
-import { ReportepsireviewComponent } from './reportepsireview/reportepsireview.component';
 
 
 
@@ -144,7 +143,6 @@ import { ReportepsireviewComponent } from './reportepsireview/reportepsireview.c
     DashboardComponent,
 
     Repore1Component,
-      ReportepsireviewComponent,
 
   ],
   imports: [

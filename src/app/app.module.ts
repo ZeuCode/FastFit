@@ -23,7 +23,8 @@ import { RegistroclientComponent } from './component/registroclient/registroclie
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
-import { ReportepsireviewComponent } from './componet/reportepsireview/reportepsireview.component';
+import { ReportepsireviewComponent } from './component/reportepsireview/reportepsireview.component';
+import { MatTableModule } from '@angular/material/table';
 
 
 
@@ -50,7 +51,8 @@ import { ReportepsireviewComponent } from './componet/reportepsireview/reporteps
     MatSnackBarModule,
     LayoutModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent],

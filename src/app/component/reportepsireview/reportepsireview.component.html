@@ -41,9 +41,6 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-    <br>
-    <mat-paginator #paginator [pageSizeOptions]="[5, 10, 100]" showFirstLastButtons></mat-paginator>
-    <br>
 
     <div style="text-align: center;">
       <button mat-raised-button color="primary" routerLink="reviewinsert" style="margin: 10px;">Agregar
