@@ -34,6 +34,7 @@ import { UserstatusInsertarComponent } from './userstatus/userstatus-insertar/us
 import { TurnComponent } from './turn/turn.component';
 import { TurnInsertComponent } from './turn/turn-insert/turn-insert.component';
 import { ReportepsireviewComponent } from './reportepsireview/reportepsireview.component';
+import { ReportreviewpsiComponent } from './reportreviewpsi/reportreviewpsi.component';
 
 
 const routes: Routes = [
@@ -125,10 +126,16 @@ const routes: Routes = [
     canActivate: [GuardService],
   },
 
-  //path reviews psi
+  //path reviews  psicologo
   {
     path: 'reviewspsi',
     component: ReportepsireviewComponent
+  },
+
+  //path reviews  psicologo para ADMIN
+  {
+    path: 'reportreviewpsi',
+    component: ReportreviewpsiComponent
   },
 
   //path para appointmet

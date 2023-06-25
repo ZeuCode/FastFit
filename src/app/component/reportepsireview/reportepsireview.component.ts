@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Review } from 'src/app/model/review';
+import { ReviewpsiDTO } from 'src/app/model/reviewpsiDTO';
 import { LoginService } from 'src/app/service/login.service';
 import { ReviewService } from 'src/app/service/review.service';
 
@@ -14,7 +15,7 @@ export class ReportepsireviewComponent implements OnInit{
   role:string="";
 
   dataSource: MatTableDataSource  <Review> = new MatTableDataSource();
-  list: Review[] = [];
+  list: ReviewpsiDTO[] = [];
   displayedColumns: string[] = ['content', 'date', 'likes', 'client_id', 'psychologist_id'];
 
   constructor(
@@ -32,6 +33,7 @@ export class ReportepsireviewComponent implements OnInit{
     this.RevS.getList().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
     });
+
   }
   filter(e:any){
     this.dataSource.filter=e.target.value.trim();

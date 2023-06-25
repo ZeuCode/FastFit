@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Review } from '../model/review';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { ReviewpsiDTO } from '../model/reviewpsiDTO';
 
 const base_url = environment.base;
 
@@ -67,9 +68,10 @@ export class ReviewService {
     this.confirmDelete.next(estat);
   }
 
-  byPsi(idPsi: number) {
+  byPsi():Observable<ReviewpsiDTO[]> {
     let token = sessionStorage.getItem("token");
-    return this.http.get<Review[]>(`${this.url}/${idPsi}`,{
+
+    return this.http.get<ReviewpsiDTO[]>(`${this.url}/bypsi`,{
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
     });
   }

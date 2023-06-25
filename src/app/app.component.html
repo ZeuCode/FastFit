@@ -5,7 +5,7 @@
     <div> </div>
     <div> </div>
     <div class="boton" *ngIf="validarRol()">
-      <button mat-raised-button routerLink="/login" (click)="cerrar()" color="primary">Cerrar Sesión</button>
+      <button mat-raised-button routerLink="/login" (click)="cerrar()" color="primary">Logout</button>
     </div>
     <div> </div>
   </div>
@@ -87,6 +87,15 @@
               (click)="setActiveButton(7)">
               <mat-icon aria-label="Cita Estatus" class="icono">analytics</mat-icon>
               <span class="nombre_icono">Cita Estatus</span>
+            </div>
+          </div>
+
+          <!-- reporte de reseñas -->
+          <div class="item" *ngIf="role=='ADMIN'">
+            <div routerLink="pages/reportreviewpsi" class="botonItem" [class.active]="activeButton === 9"
+              (click)="setActiveButton(9)">
+              <mat-icon aria-label="Reporte Reseñas" class="icono">analytics</mat-icon>
+              <span class="nombre_icono">Reporte Reseñas</span>
             </div>
           </div>
 
