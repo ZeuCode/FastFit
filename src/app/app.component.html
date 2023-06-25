@@ -89,6 +89,14 @@
               <span class="nombre_icono">Cita Estatus</span>
             </div>
           </div>
+                    <!-- reporte de reseñas -->
+          <div class="item" *ngIf="role=='ADMIN'">
+            <div routerLink="pages/reportspecpsi" class="botonItem" [class.active]="activeButton === 10"
+              (click)="setActiveButton(10)">
+              <mat-icon aria-label="Reporte Specialty" class="icono">report</mat-icon>
+              <span class="nombre_icono">Report Specialty</span>
+            </div>
+          </div>
 
           <!-- reporte de reseñas -->
           <div class="item" *ngIf="role=='ADMIN'">
@@ -99,6 +107,7 @@
             </div>
           </div>
 
+          <div *ngIf="role=='ADMIN'"></div>
           <div *ngIf="role=='ADMIN'"></div>
           <div *ngIf="role=='ADMIN'"></div>
           <div *ngIf="role=='ADMIN'"></div>

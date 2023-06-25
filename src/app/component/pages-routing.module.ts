@@ -36,6 +36,8 @@ import { TurnInsertComponent } from './turn/turn-insert/turn-insert.component';
 import { ReportepsireviewComponent } from './reportepsireview/reportepsireview.component';
 import { ReportreviewpsiComponent } from './reportreviewpsi/reportreviewpsi.component';
 
+import { ReportpsispecComponent } from './reportpsispec/reportpsispec.component';
+
 
 const routes: Routes = [
   {
@@ -136,6 +138,12 @@ const routes: Routes = [
   {
     path: 'reportreviewpsi',
     component: ReportreviewpsiComponent
+  },
+  
+  //path specialty  psicologo para ADMIN
+  {
+    path: 'reportspecpsi',
+    component: ReportpsispecComponent
   },
 
   //path para appointmet
