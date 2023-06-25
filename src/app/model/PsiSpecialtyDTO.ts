@@ -1,4 +1,4 @@
 export interface PsiSpecialtyDTO{
     specialtyName: string;
-    dogCount: number;
+    speCount: number;
 }

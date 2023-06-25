@@ -141,7 +141,8 @@ import { ReportesComponent } from './reportes/reportes.component';
     TurnDialogComponent,
 
     DashboardComponent,
-
+    Reportes1Component,
+    ReportesComponent
   ],
   imports: [
     CommonModule,

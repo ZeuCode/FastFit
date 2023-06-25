@@ -33,6 +33,8 @@ import { UserstatusInsertarComponent } from './userstatus/userstatus-insertar/us
 
 import { TurnComponent } from './turn/turn.component';
 import { TurnInsertComponent } from './turn/turn-insert/turn-insert.component';
+import { ReportesComponent } from './reportes/reportes.component';
+import { Reportes1Component } from './reportes/reportes1/reportes1.component';
 
 const routes: Routes = [
   {
@@ -70,6 +72,13 @@ const routes: Routes = [
       { path: 'edicion/:id', component: PsiInsertarComponent },
     ],
     canActivate: [GuardService],
+  },
+  //reportes
+  {
+    path:'reportes',component:ReportesComponent,children:[
+
+    { path: 'report1', component: Reportes1Component },
+  ]
   },
 
   //payment component
