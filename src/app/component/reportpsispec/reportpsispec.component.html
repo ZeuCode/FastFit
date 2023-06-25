@@ -16,13 +16,13 @@
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
       <ng-container matColumnDef="specialidad">
         <th mat-header-cell *matHeaderCellDef> Specialidad </th>
-        <td mat-cell *matCellDef="let element of petCounts"> {{element.specialtyName}} </td>
+        <td mat-cell *matCellDef="let element of psiCounts"> {{element.specialtyName}} </td>
       </ng-container>
 
       <!-- Name Column -->
       <ng-container matColumnDef="cantidad">
         <th mat-header-cell *matHeaderCellDef> Cantidad </th>
-        <td mat-cell *matCellDef="let element of petCounts"> {{element.speCount}} </td>
+        <td mat-cell *matCellDef="let element of psiCounts"> {{element.speCount}} </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

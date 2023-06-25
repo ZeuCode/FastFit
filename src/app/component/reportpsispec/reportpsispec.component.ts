@@ -10,7 +10,7 @@ import { PsiService } from 'src/app/service/psi.service';
 })
 export class ReportpsispecComponent  implements OnInit{
 
-  petCounts: psispecialtyDTO[] = [];
+  psiCounts: psispecialtyDTO[] = [];
   dataSource: MatTableDataSource<psispecialtyDTO> = new MatTableDataSource();
 
   displayedColumns: string[] = ['specialidad','cantidad']
@@ -23,10 +23,10 @@ export class ReportpsispecComponent  implements OnInit{
     })
   }
 
-  getPetCountByVaccine(): void {
+  getSpecCountByPsi(): void {
     this.pS.getSpecCountByPsi()
       .subscribe((data: psispecialtyDTO[]) => {
-        this.petCounts = data;
+        this.psiCounts = data;
       });
   }
 
