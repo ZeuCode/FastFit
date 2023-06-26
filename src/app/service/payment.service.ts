@@ -1,8 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { payment } from '../model/payment';
+import { paymentRep1DTO } from '../model/reporte1DTO';
+
 
 const base_url = environment.base;
 
@@ -69,4 +71,13 @@ export class PaymentService {
   getList() {
     return this.listaCambio.asObservable();
   }
+
+  bycurrency():Observable<paymentRep1DTO[]> {
+    let token = sessionStorage.getItem("token");
+
+    return this.Http.get<paymentRep1DTO[]>(`${this.url}/rep1payment`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
+  }
+
 }

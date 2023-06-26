@@ -1,8 +1,9 @@
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { environment } from '../../../src/environments/environment';
 import { Client } from '../model/client';
+import { ClientStatsDTO } from '../model/clientStatsDTO';
 
 const base_url = environment.base;
 @Injectable({
@@ -74,5 +75,15 @@ export class ClientService {
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmaEliminacion.next(estado);
   }
+
+  clientStats():Observable<ClientStatsDTO[]> {
+    let token = sessionStorage.getItem("token");
+
+    return this.http.get<ClientStatsDTO[]>(`${this.url}/clientStats`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
+  }
+
+
 
 }

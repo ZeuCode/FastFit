@@ -13,15 +13,13 @@ export class ReportreviewpsiComponent implements OnInit {
   dataSource: MatTableDataSource<ReviewpsiDTO> = new MatTableDataSource();
 
   displayedColumns: string[] = ['psicologo','promedio','suma','max','min']
-
   constructor(private pS: ReviewService) { }
-
   ngOnInit(): void {
     this.pS.byPsi().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
+      console.log(data)
     })
   }
-
   filter(e:any){
     this.dataSource.filter=e.target.value.trim();
 

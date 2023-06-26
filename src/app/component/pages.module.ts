@@ -84,10 +84,13 @@ import { TurnListComponent } from './turn/turn-list/turn-list.component';
 import { TurnDialogComponent } from './turn/turn-list/turn-dialog/turn-dialog.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { Repore1Component } from './dashboard/repore1/repore1.component';
 import { ReportepsireviewComponent } from './reportepsireview/reportepsireview.component';
 import { ReportreviewpsiComponent } from './reportreviewpsi/reportreviewpsi.component';
+
 import { ReportpsispecComponent } from './reportpsispec/reportpsispec.component';
+import { ReportclientstatsComponent } from './reportclientstats/reportclientstats.component';
+import { ReportepaymentComponent } from './reportepayment/reportepayment.component';
+
 
 
 
@@ -145,12 +148,11 @@ import { ReportpsispecComponent } from './reportpsispec/reportpsispec.component'
 
     DashboardComponent,
 
-    Repore1Component,
-
     ReportepsireviewComponent,
-      ReportreviewpsiComponent,
-      ReportpsispecComponent
-
+    ReportclientstatsComponent,
+    ReportreviewpsiComponent,
+    ReportepaymentComponent,
+    ReportpsispecComponent
   ],
   imports: [
     CommonModule,
