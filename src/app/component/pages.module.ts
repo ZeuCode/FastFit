@@ -88,6 +88,7 @@ import { Repore1Component } from './dashboard/repore1/repore1.component';
 import { ReportepsireviewComponent } from './reportepsireview/reportepsireview.component';
 import { ReportreviewpsiComponent } from './reportreviewpsi/reportreviewpsi.component';
 import { ReportpsispecComponent } from './reportpsispec/reportpsispec.component';
+import { ReportclientstatsComponent } from './reportclientstats/reportclientstats.component';
 
 
 
@@ -149,7 +150,8 @@ import { ReportpsispecComponent } from './reportpsispec/reportpsispec.component'
 
     ReportepsireviewComponent,
       ReportreviewpsiComponent,
-      ReportpsispecComponent
+      ReportpsispecComponent,
+      ReportclientstatsComponent
 
   ],
   imports: [

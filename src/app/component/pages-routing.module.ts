@@ -37,6 +37,7 @@ import { ReportepsireviewComponent } from './reportepsireview/reportepsireview.c
 import { ReportreviewpsiComponent } from './reportreviewpsi/reportreviewpsi.component';
 
 import { ReportpsispecComponent } from './reportpsispec/reportpsispec.component';
+import { ReportclientstatsComponent } from './reportclientstats/reportclientstats.component';
 
 
 const routes: Routes = [
@@ -134,12 +135,17 @@ const routes: Routes = [
     component: ReportepsireviewComponent
   },
 
+{
+  path:'reportclientstats',
+  component:ReportclientstatsComponent
+}
+,
   //path reviews  psicologo para ADMIN
   {
     path: 'reportreviewpsi',
     component: ReportreviewpsiComponent
   },
-  
+
   //path specialty  psicologo para ADMIN
   {
     path: 'reportspecpsi',
