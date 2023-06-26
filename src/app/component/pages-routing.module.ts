@@ -37,6 +37,9 @@ import { ReportepsireviewComponent } from './reportepsireview/reportepsireview.c
 import { ReportreviewpsiComponent } from './reportreviewpsi/reportreviewpsi.component';
 import { ReportepaymentComponent } from './reportepayment/reportepayment.component';
 
+import { ReportpsispecComponent } from './reportpsispec/reportpsispec.component';
+import { ReportclientstatsComponent } from './reportclientstats/reportclientstats.component';
+
 
 const routes: Routes = [
   {
@@ -133,6 +136,11 @@ const routes: Routes = [
     component: ReportepsireviewComponent
   },
 
+{
+  path:'reportclientstats',
+  component:ReportclientstatsComponent
+}
+,
   //path reviews  psicologo para ADMIN
   {
     path: 'reportreviewpsi',
@@ -144,6 +152,12 @@ const routes: Routes = [
     path: 'reportpayment',
     component: ReportepaymentComponent,
     canActivate: [GuardService],
+  },
+
+  //path specialty  psicologo para ADMIN
+  {
+    path: 'reportspecpsi',
+    component: ReportpsispecComponent
   },
 
   //path para appointmet

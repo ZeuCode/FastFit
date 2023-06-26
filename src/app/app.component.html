@@ -1,22 +1,20 @@
 <div class="diseno" *ngIf="verificar()">
-
   <div class="mat-toolbar">
     <div class="logo"></div>
-    <div> </div>
-    <div> </div>
+    <div></div>
+    <div></div>
     <div class="boton" *ngIf="validarRol()">
-      <button mat-raised-button routerLink="/login" (click)="cerrar()" color="primary">Logout</button>
+      <button mat-raised-button routerLink="/login" (click)="cerrar()" color="primary">
+        Logout
+      </button>
     </div>
-    <div> </div>
+    <div></div>
   </div>
 
   <div class="sidenav-container">
-
     <!-- MENÚ GENERAL -->
     <div class="menu">
-
       <div class="sidenav">
-
         <div class="listaLink">
           <!-- Dashboard -->
           <div class="item" *ngIf="validarRol()">
@@ -28,7 +26,7 @@
           </div>
 
           <!-- Clientes -->
-          <div class="item" *ngIf="role=='ADMIN'">
+          <div class="item" *ngIf="role == 'ADMIN'">
             <div routerLink="pages/clients" class="botonItem" [class.active]="activeButton === 0"
               (click)="setActiveButton(0)">
               <mat-icon aria-label="Clients" class="icono">person</mat-icon>
@@ -37,7 +35,7 @@
           </div>
 
           <!-- Psicólogos LISTA -->
-          <div class="item" *ngIf="role=='ADMIN'">
+          <div class="item" *ngIf="role == 'ADMIN'">
             <div routerLink="pages/Psychologists" class="botonItem" [class.active]="activeButton === 1"
               (click)="setActiveButton(1)">
               <mat-icon aria-label="Psychologists" class="icono">psychology_alt</mat-icon>
@@ -46,7 +44,7 @@
           </div>
 
           <!-- Transacciones -->
-          <div class="item" *ngIf="role=='ADMIN'">
+          <div class="item" *ngIf="role == 'ADMIN'">
             <div class="botonItem" routerLink="pages/payment" [class.active]="activeButton === 2"
               (click)="setActiveButton(2)">
               <mat-icon aria-label="Payments" class="icono">payment</mat-icon>
@@ -55,7 +53,7 @@
           </div>
 
           <!-- Especialidad -->
-          <div class="item" *ngIf="role=='ADMIN'">
+          <div class="item" *ngIf="role == 'ADMIN'">
             <div routerLink="pages/specialty" class="botonItem" [class.active]="activeButton === 5"
               (click)="setActiveButton(5)">
               <mat-icon aria-label="Especialidad" class="icono">text_snippet</mat-icon>
@@ -64,7 +62,7 @@
           </div>
 
           <!-- Género -->
-          <div class="item" *ngIf="role=='ADMIN'">
+          <div class="item" *ngIf="role == 'ADMIN'">
             <div routerLink="pages/genders" class="botonItem" [class.active]="activeButton === 8"
               (click)="setActiveButton(8)">
               <mat-icon aria-label="Gender" class="icono">text_snippet</mat-icon>
@@ -73,7 +71,7 @@
           </div>
 
           <!-- Usuario Estatus -->
-          <div class="item" *ngIf="role=='ADMIN'">
+          <div class="item" *ngIf="role == 'ADMIN'">
             <div routerLink="pages/UserStatus" class="botonItem" [class.active]="activeButton === 6"
               (click)="setActiveButton(6)">
               <mat-icon aria-label="UserStatus" class="icono">analytics</mat-icon>
@@ -82,16 +80,24 @@
           </div>
 
           <!-- Cita Estatus -->
-          <div class="item" *ngIf="role=='ADMIN'">
+          <div class="item" *ngIf="role == 'ADMIN'">
             <div routerLink="pages/appointmentstatus" class="botonItem" [class.active]="activeButton === 7"
               (click)="setActiveButton(7)">
               <mat-icon aria-label="Cita Estatus" class="icono">analytics</mat-icon>
               <span class="nombre_icono">Cita Estatus</span>
             </div>
           </div>
+          <!-- reporte de reseñas -->
+          <div class="item" *ngIf="role == 'ADMIN'">
+            <div routerLink="pages/reportspecpsi" class="botonItem" [class.active]="activeButton === 10"
+              (click)="setActiveButton(10)">
+              <mat-icon aria-label="Reporte Specialty" class="icono">report</mat-icon>
+              <span class="nombre_icono">Report Specialty</span>
+            </div>
+          </div>
 
           <!-- reporte de reseñas -->
-          <div class="item" *ngIf="role=='ADMIN'">
+          <div class="item" *ngIf="role == 'ADMIN'">
             <div routerLink="pages/reportreviewpsi" class="botonItem" [class.active]="activeButton === 9"
               (click)="setActiveButton(9)">
               <mat-icon aria-label="Reporte Reseñas" class="icono">analytics</mat-icon>
@@ -99,9 +105,17 @@
             </div>
           </div>
 
+          <div class="item" *ngIf="role == 'ADMIN'">
+            <div routerLink="pages/reportclientstats" class="botonItem" [class.active]="activeButton === 14"
+              (click)="setActiveButton(14)">
+              <mat-icon aria-label="Reporte Estadisticas de Clientes" class="icono">analytics</mat-icon>
+              <span class="nombre_icono">Reporte clientes</span>
+            </div>
+          </div>
+
           <div *ngIf="role=='ADMIN'">
-            <div routerLink="pages/reportpayment" class="botonItem" [class.active]="activeButton === 10"
-              (click)="setActiveButton(10)">
+            <div routerLink="pages/reportpayment" class="botonItem" [class.active]="activeButton === 16"
+              (click)="setActiveButton(16)">
               <mat-icon aria-label="Reporte Reseñas" class="icono">analytics</mat-icon>
               <span class="nombre_icono">Reporte Pagos</span>
             </div>
@@ -113,7 +127,7 @@
           <div *ngIf="role=='ADMIN'"></div>
 
           <!-- Psicólogos MATCARD -->
-          <div class="item" *ngIf="role=='USER'">
+          <div class="item" *ngIf="role == 'USER'">
             <div class="botonItem" routerLink="pages/Psychologists" [class.active]="activeButton === 1"
               (click)="setActiveButton(1)">
               <mat-icon aria-label="Psychologists" class="icono">psychology_alt</mat-icon>
@@ -122,7 +136,7 @@
           </div>
 
           <!-- Mis Pagos -->
-          <div class="item" *ngIf="role=='USER'">
+          <div class="item" *ngIf="role == 'USER'">
             <div routerLink="pages/payment" class="botonItem" [class.active]="activeButton === 2"
               (click)="setActiveButton(2)">
               <mat-icon aria-label="Payments" class="icono">payment</mat-icon>
@@ -131,7 +145,7 @@
           </div>
 
           <!-- Reseñas -->
-          <div class="item" *ngIf="role=='USER'">
+          <div class="item" *ngIf="role == 'USER'">
             <div routerLink="pages/reviews" class="botonItem" [class.active]="activeButton === 3"
               (click)="setActiveButton(3)">
               <mat-icon aria-label="Reviews" class="icono">forum</mat-icon>
@@ -140,7 +154,7 @@
           </div>
 
           <!-- Citas -->
-          <div class="item" *ngIf="role=='USER'">
+          <div class="item" *ngIf="role == 'USER'">
             <div routerLink="pages/appointments" class="botonItem" [class.active]="activeButton === 4"
               (click)="setActiveButton(4)">
               <mat-icon aria-label="Appointment" class="icono">edit_calendar</mat-icon>
@@ -148,17 +162,17 @@
             </div>
           </div>
 
-          <div *ngIf="role=='USER'"></div>
-          <div *ngIf="role=='USER'"></div>
-          <div *ngIf="role=='USER'"></div>
-          <div *ngIf="role=='USER'"></div>
-          <div *ngIf="role=='USER'"></div>
-          <div *ngIf="role=='USER'"></div>
-          <div *ngIf="role=='USER'"></div>
-          <div *ngIf="role=='USER'"></div>
+          <div *ngIf="role == 'USER'"></div>
+          <div *ngIf="role == 'USER'"></div>
+          <div *ngIf="role == 'USER'"></div>
+          <div *ngIf="role == 'USER'"></div>
+          <div *ngIf="role == 'USER'"></div>
+          <div *ngIf="role == 'USER'"></div>
+          <div *ngIf="role == 'USER'"></div>
+          <div *ngIf="role == 'USER'"></div>
 
           <!-- Turnos -->
-          <div class="item" *ngIf="role=='PSICO'">
+          <div class="item" *ngIf="role == 'PSICO'">
             <div routerLink="pages/turns" class="botonItem" [class.active]="activeButton === 9"
               (click)="setActiveButton(9)">
               <mat-icon aria-label="Turnos" class="icono">calendar_month</mat-icon>
@@ -167,7 +181,7 @@
           </div>
 
           <!-- Pacientes -->
-          <div class="item" *ngIf="role=='PSICO'">
+          <div class="item" *ngIf="role == 'PSICO'">
             <div routerLink="/pages/payment" class="botonItem" [class.active]="activeButton === 0"
               (click)="setActiveButton(0)">
               <mat-icon aria-label="Clients" class="icono">person</mat-icon>
@@ -176,7 +190,7 @@
           </div>
 
           <!-- Recaudación -->
-          <div class="item" *ngIf="role=='PSICO'">
+          <div class="item" *ngIf="role == 'PSICO'">
             <div routerLink="/pages/payment" class="botonItem" [class.active]="activeButton === 2"
               (click)="setActiveButton(2)">
               <mat-icon aria-label="Payments" class="icono">payment</mat-icon>
@@ -185,7 +199,7 @@
           </div>
 
           <!-- Mi Puntuación -->
-          <div class="item" *ngIf="role=='PSICO'">
+          <div class="item" *ngIf="role == 'PSICO'">
             <div routerLink="/pages/reviewspsi" class="botonItem" [class.active]="activeButton === 3"
               (click)="setActiveButton(3)">
               <mat-icon aria-label="Reviews" class="icono">forum</mat-icon>
@@ -193,14 +207,14 @@
             </div>
           </div>
 
-          <div *ngIf="role=='PSICO'"></div>
-          <div *ngIf="role=='PSICO'"></div>
-          <div *ngIf="role=='PSICO'"></div>
-          <div *ngIf="role=='PSICO'"></div>
-          <div *ngIf="role=='PSICO'"></div>
-          <div *ngIf="role=='PSICO'"></div>
-          <div *ngIf="role=='PSICO'"></div>
-          <div *ngIf="role=='PSICO'"></div>
+          <div *ngIf="role == 'PSICO'"></div>
+          <div *ngIf="role == 'PSICO'"></div>
+          <div *ngIf="role == 'PSICO'"></div>
+          <div *ngIf="role == 'PSICO'"></div>
+          <div *ngIf="role == 'PSICO'"></div>
+          <div *ngIf="role == 'PSICO'"></div>
+          <div *ngIf="role == 'PSICO'"></div>
+          <div *ngIf="role == 'PSICO'"></div>
 
           <!-- perfil -->
           <div class="item" *ngIf="validarRol()">
@@ -212,7 +226,6 @@
           <div></div>
         </div>
       </div>
-
     </div>
 
     <div class="contenido">
