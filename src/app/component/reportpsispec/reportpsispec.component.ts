@@ -29,5 +29,10 @@ export class ReportpsispecComponent  implements OnInit{
         this.psiCounts = data;
       });
   }
+  filter(e:any){
+    this.dataSource.filter=e.target.value.trim();
+
+  }
+
 
 }

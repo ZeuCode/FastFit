@@ -67,11 +67,14 @@ export class PsiService {
     this.confirmaEliminacion.next(estado);
   }
 
-  getSpecCountByPsi(): Observable<psispecialtyDTO[]> {
-    return this.http.get<psispecialtyDTO[]>(`${this.url}/psi-count`);
+ 
+  getSpecCountByPsi():Observable<psispecialtyDTO[]> {
+    let token = sessionStorage.getItem("token");
 
+    return this.http.get<psispecialtyDTO[]>(`${this.url}/psi-count`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
   }
-
 
 }
 
