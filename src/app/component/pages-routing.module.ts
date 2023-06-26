@@ -35,6 +35,7 @@ import { TurnComponent } from './turn/turn.component';
 import { TurnInsertComponent } from './turn/turn-insert/turn-insert.component';
 import { ReportepsireviewComponent } from './reportepsireview/reportepsireview.component';
 import { ReportreviewpsiComponent } from './reportreviewpsi/reportreviewpsi.component';
+import { ReportepaymentComponent } from './reportepayment/reportepayment.component';
 
 
 const routes: Routes = [
@@ -136,6 +137,13 @@ const routes: Routes = [
   {
     path: 'reportreviewpsi',
     component: ReportreviewpsiComponent
+  },
+
+  //path reporte pagos para ADMIN
+  {
+    path: 'reportpayment',
+    component: ReportepaymentComponent,
+    canActivate: [GuardService],
   },
 
   //path para appointmet

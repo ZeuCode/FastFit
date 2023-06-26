@@ -19,6 +19,7 @@ export class ReportreviewpsiComponent implements OnInit {
   ngOnInit(): void {
     this.pS.byPsi().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
+      console.log(data)
     })
   }
 
