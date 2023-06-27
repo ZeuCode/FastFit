@@ -9,6 +9,10 @@ import { Gender } from 'src/app/model/gender';
 import { UserStatus } from 'src/app/model/UserStatus';
 import { GenderService } from 'src/app/service/gender.service';
 import { UserStatusService } from 'src/app/service/UserStatus.service';
+import { RoleService } from 'src/app/service/role.service';
+import { UserService } from 'src/app/service/user.service';
+import { User } from 'src/app/model/user';
+import { Role } from 'src/app/model/role';
 @Component({
   selector: 'app-client-insertar',
   templateUrl: './client-insertar.component.html',
@@ -20,6 +24,8 @@ export class ClientInsertarComponent implements OnInit {
 
   form: FormGroup = new FormGroup({});
   client: Client = new Client();
+  user: User = new User();
+  role: Role = new Role();
   mensaje: string = '';
 
   listaGender: Gender[] = [];
@@ -30,6 +36,8 @@ export class ClientInsertarComponent implements OnInit {
 
   constructor(
     private pC: ClientService,
+    private rC: RoleService,
+    private uC: UserService,
     private router: Router,
     private route: ActivatedRoute,
     private gS: GenderService,
@@ -67,6 +75,10 @@ export class ClientInsertarComponent implements OnInit {
   aceptar(): void {
     this.client.idClient = this.form.value['id'];
     this.client.userName = this.form.value['userName'];
+
+    this.user.username = this.form.value['userName'];
+    this.user.password = this.form.value['password'];
+
     this.client.password = this.form.value['password'];
     this.client.names = this.form.value['names'];
     this.client.lastNames = this.form.value['lastNames'];
@@ -97,6 +109,16 @@ export class ClientInsertarComponent implements OnInit {
       this.pC.insert(this.client).subscribe((data) => {
         this.pC.list().subscribe((data) => {
           this.pC.setList(data);
+        });
+      });
+      this.rC.insert(this.role).subscribe((data) => {
+        this.rC.list().subscribe((data) => {
+          this.rC.setList(data);
+        });
+      });
+      this.uC.insert(this.user).subscribe((data) => {
+        this.uC.list().subscribe((data) => {
+          this.uC.setList(data);
         });
       });
     }
