@@ -1,8 +1,9 @@
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject,Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Psi } from '../model/psi';
+import { psispecialtyDTO } from '../model/psispecialtyDTO';
 const base_url = environment.base;
 @Injectable({
   providedIn: 'root',
@@ -65,5 +66,15 @@ export class PsiService {
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmaEliminacion.next(estado);
   }
+
+ 
+  getSpecCountByPsi():Observable<psispecialtyDTO[]> {
+    let token = sessionStorage.getItem("token");
+
+    return this.http.get<psispecialtyDTO[]>(`${this.url}/psi-count`,{
+      headers: new HttpHeaders().set('Authorization', `Bearer ${token}`).set('Content-Type', 'application/json')
+    });
+  }
+
 }
 
