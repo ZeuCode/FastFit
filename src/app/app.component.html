@@ -121,6 +121,14 @@
             </div>
           </div>
 
+          <div *ngIf="role=='ADMIN'">
+            <div routerLink="pages/YUTUBE" class="botonItem" [class.active]="activeButton === 8"
+              (click)="setActiveButton(8)">
+              <mat-icon aria-label="Reporte Reseñas" class="icono">analytics</mat-icon>
+              <span class="nombre_icono">Reporte Pagos</span>
+            </div>
+          </div>
+
           <!-- <div *ngIf="role=='ADMIN'"></div> -->
           <div *ngIf="role=='ADMIN'"></div>
           <div *ngIf="role=='ADMIN'"></div>

@@ -39,6 +39,7 @@ import { ReportepaymentComponent } from './reportepayment/reportepayment.compone
 
 import { ReportpsispecComponent } from './reportpsispec/reportpsispec.component';
 import { ReportclientstatsComponent } from './reportclientstats/reportclientstats.component';
+import { ApiyoutubeComponent } from './apiyoutube/apiyoutube.component';
 
 
 const routes: Routes = [
@@ -158,6 +159,11 @@ const routes: Routes = [
   {
     path: 'reportspecpsi',
     component: ReportpsispecComponent
+  },
+  //API DE YOUTUBE
+  {
+    path: 'YUTUBE',
+    component: ApiyoutubeComponent
   },
 
   //path para appointmet
