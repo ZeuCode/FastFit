@@ -1,4 +1,7 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBK5cLBwHIR3Y8NnYMEyCEjNhiSNE9rh8w"></script>
+
 <div class="diseno" *ngIf="verificar()">
+
   <div class="mat-toolbar">
     <div class="logo"></div>
     <div></div>
@@ -122,10 +125,18 @@
           </div>
 
           <div *ngIf="role=='ADMIN'">
-            <div routerLink="pages/YUTUBE" class="botonItem" [class.active]="activeButton === 8"
-              (click)="setActiveButton(8)">
-              <mat-icon aria-label="Reporte Reseñas" class="icono">analytics</mat-icon>
-              <span class="nombre_icono">Reporte Pagos</span>
+            <div routerLink="pages/YUTUBE" class="botonItem" [class.active]="activeButton === 17"
+              (click)="setActiveButton(17)">
+              <mat-icon aria-label="Reporte Youtube" class="icono">payment</mat-icon>
+              <span class="nombre_icono">Youtube</span>
+            </div>
+          </div>
+
+          <div *ngIf="role=='ADMIN'">
+            <div routerLink="pages/maps" class="botonItem" [class.active]="activeButton === 18"
+              (click)="setActiveButton(18)">
+              <mat-icon aria-label="Reporte Maps" class="icono">maps</mat-icon>
+              <span class="nombre_icono">Maps</span>
             </div>
           </div>
 

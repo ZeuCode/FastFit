@@ -91,6 +91,7 @@ import { ReportpsispecComponent } from './reportpsispec/reportpsispec.component'
 import { ReportclientstatsComponent } from './reportclientstats/reportclientstats.component';
 import { ReportepaymentComponent } from './reportepayment/reportepayment.component';
 import { ApiyoutubeComponent } from './apiyoutube/apiyoutube.component';
+import { ApimapsComponent } from './apimaps/apimaps.component';
 
 
 
@@ -154,7 +155,8 @@ import { ApiyoutubeComponent } from './apiyoutube/apiyoutube.component';
     ReportreviewpsiComponent,
     ReportepaymentComponent,
     ReportpsispecComponent,
-    ApiyoutubeComponent
+    ApiyoutubeComponent,
+    ApimapsComponent
   ],
   imports: [
     CommonModule,

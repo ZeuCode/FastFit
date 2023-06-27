@@ -10,7 +10,7 @@ declare const gapi: any;
 })
 export class ApiyoutubeComponent implements OnInit{
   private apiKey = 'AIzaSyBlqzAUJ9KY1ywDMi4VfRWVDAovMgcz2B8'; // Reemplaza con tu clave de API
-  private videoId = 'lGsUbzF3zZo'; // ID del video
+  private videoId = 'dj22DLcUEV4'; // ID del video
 
   ngOnInit() {
     this.loadYouTubeIframeAPI();
