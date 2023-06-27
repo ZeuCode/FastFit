@@ -14,6 +14,7 @@ export class ApiyoutubeComponent implements OnInit{
 
   ngOnInit() {
     this.loadYouTubeIframeAPI();
+    this.loadVideo();
   }
 
   loadYouTubeIframeAPI() {

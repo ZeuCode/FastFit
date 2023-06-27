@@ -124,7 +124,12 @@
             </div>
           </div>
 
-          <div *ngIf="role=='ADMIN'">
+          <!-- <div *ngIf="role=='ADMIN'"></div> -->
+          <div *ngIf="role=='ADMIN'"></div>
+          <div *ngIf="role=='ADMIN'"></div>
+          <div *ngIf="role=='ADMIN'"></div>
+
+          <div *ngIf="role=='USER'">
             <div routerLink="pages/YUTUBE" class="botonItem" [class.active]="activeButton === 17"
               (click)="setActiveButton(17)">
               <mat-icon aria-label="Reporte Youtube" class="icono">payment</mat-icon>
@@ -132,20 +137,17 @@
             </div>
           </div>
 
-          <div *ngIf="role=='ADMIN'">
+          <div *ngIf="role=='USER'">
             <div routerLink="pages/maps" class="botonItem" [class.active]="activeButton === 18"
               (click)="setActiveButton(18)">
-              <mat-icon aria-label="Reporte Maps" class="icono">maps</mat-icon>
+              <mat-icon aria-label="Reporte Maps" class="icono">map</mat-icon>
               <span class="nombre_icono">Maps</span>
             </div>
           </div>
 
-          <!-- <div *ngIf="role=='ADMIN'"></div> -->
-          <div *ngIf="role=='ADMIN'"></div>
-          <div *ngIf="role=='ADMIN'"></div>
-          <div *ngIf="role=='ADMIN'"></div>
-
           <!-- Psicólogos MATCARD -->
+
+
           <div class="item" *ngIf="role == 'USER'">
             <div class="botonItem" routerLink="pages/Psychologists" [class.active]="activeButton === 1"
               (click)="setActiveButton(1)">
